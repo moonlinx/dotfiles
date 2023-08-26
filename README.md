@@ -1,0 +1,2 @@
+# .dotfiles
+Personal MacOS configurations
