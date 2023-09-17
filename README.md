@@ -14,4 +14,4 @@ Normal navigation with vim navigation customized for terminal applications.
 * [Paper - minimal text editor](https://papereditor.app)
 * [spt](https://github.com/Rigellute/spotify-tui)
 
-setup steps are in .install.sh
+setup steps are in  ```.install.sh ```
