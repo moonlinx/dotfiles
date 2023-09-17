@@ -1,2 +1,4 @@
 # dotfiles
-Personal MacOS configurations
+Personal MacOS dotfile congigurations
+
+WIP
