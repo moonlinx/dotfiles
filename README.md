@@ -1,4 +1,4 @@
 # dotfiles
 Personal MacOS dotfile congigurations
 
-WIP
+![sketchybar](/Users/devindelaney/Pictures/Screenshots/sketchybar.png)
