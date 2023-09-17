@@ -1,4 +1,5 @@
 # dotfiles
 Personal MacOS dotfile congigurations
 
-![sketchybar](https://github.com/erihome/dotfiles/assets/49962728/dab67c1a-3ee3-46be-900d-5bed8c2b7ed6)
+<img width="2556" alt="sketchybar_minimal" src="https://github.com/erihome/dotfiles/assets/49962728/a7ade506-62dd-4d70-89ab-6d5da0e92374">
+
