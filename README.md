@@ -7,7 +7,7 @@ Normal navigation with vim navigation customized for terminal applications.
 ### Installs
 * [Sketchybar]()
 * [yabai](https://github.com/koekeishiya/yabai)
-** Followed [tutorial](https://www.youtube.com/watch?v=k94qImbFKWE) by Josean Martinez 
+* Followed [tutorial](https://www.youtube.com/watch?v=k94qImbFKWE) by Josean Martinez 
 * [skhd](https://github.com/koekeishiya/skhd)
 * [neovim](https://neovim.io)
 * [btop](https://github.com/aristocratos/btop)
