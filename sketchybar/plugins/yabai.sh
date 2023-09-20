@@ -61,7 +61,7 @@ windows_on_spaces () {
     # done <<< "$CURRENT_SPACES"
 
     # sketchybar -m "${args[@]}"
-    /usr/bin/python3 $CONFIG_DIR/plugins/space.py
+    /usr/bin/python3 $CONFIG_DIR/plugins/space.py # New spaces python script to consolidate spaces
 }
 
 mouse_clicked() {
