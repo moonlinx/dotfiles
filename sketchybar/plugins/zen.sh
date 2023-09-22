@@ -11,7 +11,6 @@ zen_on() {
              --set spotify.anchor drawing=off \
              --set spotify.play updates=off \
              --set brew drawing=off
-             --set mail drawing=off
 }
 
 zen_off() {
@@ -24,7 +23,6 @@ zen_off() {
              --set volume_icon drawing=on \
              --set spotify.play updates=on \
              --set brew drawing=on
-             --set mail drawing=on
 }
 
 if [ "$1" = "on" ]; then

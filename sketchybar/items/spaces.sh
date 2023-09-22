@@ -3,7 +3,7 @@
 SPACE_ICONS=("I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X")
 
 # Destroy space on right click, focus space on left click.
-# New space by left clicking separator (>)
+# New space by left clicking separator (󰇙)
 
 sid=0
 spaces=()
@@ -19,9 +19,9 @@ do
     padding_left=2
     padding_right=2
     label.padding_right=20
-    icon.highlight_color=$CYAN
-    label.color=$WHITE
-    label.highlight_color=$YELLOW
+    icon.highlight_color=$RED
+    label.color=$GREY
+    label.highlight_color=$GREEN
     label.font="sketchybar-app-font:Regular:16.0"
     label.y_offset=-1
     background.color=$BACKGROUND_1
@@ -43,13 +43,13 @@ spaces_bracket=(
 
 separator=(
   icon=󰇙
-  icon.font="$FONT:Bold:16.0"
-  padding_left=11
-  padding_right=6
+  icon.font="$FONT:Heavy:16.0"
+  padding_left=10
+  padding_right=8
   label.drawing=off
   associated_display=active
   click_script='yabai -m space --create && sketchybar --trigger space_change'
-  icon.color=$GREY
+  icon.color=$WHITE
 )
 
 sketchybar --add bracket spaces_bracket '/space\..*/'  \

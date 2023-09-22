@@ -2,7 +2,7 @@
 
 source "$CONFIG_DIR/colors.sh"
 
-COUNT="$(/opt/homenbrew/bin/brew outdated | wc -l | tr -d ' ')"
+COUNT="$(brew outdated | wc -l | tr -d ' ')"
 
 COLOR=$RED
 
@@ -11,7 +11,7 @@ case "$COUNT" in
   ;;
   [1-2][0-9]) COLOR=$YELLOW
   ;;
-  [1-9]) COLOR=$WHITE
+  [1-9]) COLOR=$GREY
   ;;
   0) COLOR=$GREEN
      COUNT=􀆅

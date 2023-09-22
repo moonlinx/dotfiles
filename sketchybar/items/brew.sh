@@ -5,7 +5,7 @@
 
 brew=(
   icon=􀐛
-  label=""
+  label=?
   padding_right=10
   script="$PLUGIN_DIR/brew.sh"
 )

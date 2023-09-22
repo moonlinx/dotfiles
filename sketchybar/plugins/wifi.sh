@@ -1,11 +1,27 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-CURRENT_WIFI="$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I)"
-SSID="$(echo "$CURRENT_WIFI" | grep -o "SSID: .*" | sed 's/^SSID: //')"
-CURR_TX="$(echo "$CURRENT_WIFI" | grep -o "lastTxRate: .*" | sed 's/^lastTxRate: //')"
-WIFI_INTERFACE=$(networksetup -listallhardwareports | awk '/Wi-Fi/{getline; print $2}')
-WIFI_POWER=$(networksetup -getairportpower $WIFI_INTERFACE | awk '{print $4}')
-IP_ADDR=$(ipconfig getifaddr $WIFI_INTERFACE)
+update() {
+  source "$CONFIG_DIR/icons.sh"
+  LABEL="$INFO ($(ipconfig getifaddr en0))"
+  ICON="$([ -n "$INFO" ] && echo "$WIFI_CONNECTED" || echo "$WIFI_DISCONNECTED")"
 
-# POPUP_OFF="sketchybar --set wifi.control popup.drawing=off"
-POPUP_CLICK_SCRIPT="sketchybar --set \$NAME popup.drawing=toggle"
+  sketchybar --set $NAME icon="$ICON" label="$LABEL"
+}
+
+click() {
+  CURRENT_WIDTH="$(sketchybar --query $NAME | jq -r .label.width)"
+
+  WIDTH=0
+  if [ "$CURRENT_WIDTH" -eq "0" ]; then
+    WIDTH=dynamic
+  fi
+
+  sketchybar --animate sin 20 --set $NAME label.width="$WIDTH"
+}
+
+case "$SENDER" in
+  "wifi_change") update
+  ;;
+  "mouse.clicked") click
+  ;;
+esac

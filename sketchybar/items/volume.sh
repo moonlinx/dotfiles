@@ -5,12 +5,12 @@ volume_slider=(
   updates=on
   label.drawing=off
   icon.drawing=off
-  slider.highlight_color=$BLUE
+  slider.highlight_color=$YELLOW
   slider.background.height=5
   slider.background.corner_radius=3
   slider.background.color=$BACKGROUND_2
   slider.knob=􀀁
-  slider.knob.drawing=off
+  slider.knob.drawing=on
 )
 
 volume_icon=(
@@ -19,12 +19,11 @@ volume_icon=(
   icon=$VOLUME_100
   icon.width=0
   icon.align=left
-  icon.color=$GREY
+  icon.color=$YELLOW
   icon.font="$FONT:Regular:14.0"
   label.width=25
   label.align=left
   label.font="$FONT:Regular:14.0"
-  icon.color=$MAGENTA
 )
 
 status_bracket=(
@@ -36,11 +35,9 @@ sketchybar --add slider volume right            \
            --set volume "${volume_slider[@]}"   \
            --subscribe volume volume_change     \
                               mouse.clicked     \
-                              mouse.entered     \
-                              mouse.exited      \
                                                 \
            --add item volume_icon right         \
            --set volume_icon "${volume_icon[@]}"
 
-sketchybar --add bracket status brew github.bell volume_icon \
+sketchybar --add bracket status brew volume_icon \
            --set status "${status_bracket[@]}"
