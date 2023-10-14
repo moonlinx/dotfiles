@@ -6,11 +6,11 @@ POPUP_CLICK_SCRIPT='sketchybar --set $NAME popup.drawing=toggle'
 apple_logo=(
   icon=$APPLE
   icon.font="$FONT:Black:16.0"
-  icon.color=$ORANGE
-  padding_right=15
+  icon.color=$GREEN
+  padding_right=10
   label.drawing=off
   click_script="$POPUP_CLICK_SCRIPT"
-  popup.height=35
+  popup.height=30
 )
 
 apple_prefs=(
@@ -31,6 +31,18 @@ apple_lock=(
   click_script="pmset displaysleepnow; $POPUP_OFF"
 )
 
+apple_cycle=(
+  icon=$RESTART
+  label="Restart"
+  click_script="reboot; $POPUP_OFF"
+)
+
+apple_off=(
+  icon=$OFF
+  label="Shutdown"
+  click_script="halt; $POPUP_OFF"
+)
+
 sketchybar --add item apple.logo left                  \
            --set apple.logo "${apple_logo[@]}"         \
                                                        \
@@ -41,4 +53,10 @@ sketchybar --add item apple.logo left                  \
            --set apple.activity "${apple_activity[@]}" \
                                                        \
            --add item apple.lock popup.apple.logo      \
-           --set apple.lock "${apple_lock[@]}"
+           --set apple.lock "${apple_lock[@]}"         \
+                                                       \
+           --add item apple.cycle popup.apple.logo     \
+           --set apple.cycle "${apple_cycle[@]}"       \
+                                                       \
+           --add item apple.off popup.apple.logo       \
+           --set apple.off "${apple_off[@]}"

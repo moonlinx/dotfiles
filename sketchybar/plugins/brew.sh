@@ -7,11 +7,11 @@ COUNT="$(brew outdated | wc -l | tr -d ' ')"
 COLOR=$RED
 
 case "$COUNT" in
-  [3-5][0-9]) COLOR=$ORANGE
+  [3-5][0-9]) COLOR=$RED
   ;;
-  [1-2][0-9]) COLOR=$YELLOW
+  [1-2][0-9]) COLOR=$ORANGE
   ;;
-  [1-9]) COLOR=$GREY
+  [1-9]) COLOR=$YELLOW
   ;;
   0) COLOR=$GREEN
      COUNT=􀆅
