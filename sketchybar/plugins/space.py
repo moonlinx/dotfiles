@@ -3,7 +3,7 @@
 import os, json, re
 
 ICON_MAP = [
-    {"regex": r"1Password 7", "icon": ":one_password:"},
+    {"regex": r"1Password", "icon": ":one_password:"},
     {"regex": r"Affinity Designer", "icon": ":affinity_designer:"},
     {"regex": r"Affinity Photo", "icon": ":affinity_photo:"},
     {"regex": r"Affinity Publisher", "icon": ":affinity_publisher:"},
@@ -19,9 +19,9 @@ ICON_MAP = [
     {"regex": r"Bitwarden", "icon": ":bit_warden:"},
     {"regex": r"Blender", "icon": ":blender:"},
     {"regex": r"Brave Browser", "icon": ":brave_browser:"},
-    {"regex": r"Calendar|Fantastical|Cron", "icon": ":calendar:"},
+    {"regex": r"Calendar|Fantastical|Cron|Morgen", "icon": ":calendar:"},
     {"regex": r"Calibre", "icon": ":book:"},
-    {"regex": r"Canary Mail|HEY|Mail|Mailspring|MailMate|邮件|Outlook|Mimestream", "icon": ":mail:"},
+    {"regex": r"Canary Mail|HEY|Mail|Mailspring|MailMate|邮件|Outlook|Gmail|Mimestream", "icon": ":mail:"},
     {"regex": r"Caprine", "icon": ":caprine:"},
     {"regex": r"Chromium|Google Chrome|Google Chrome Canary", "icon": ":google_chrome:"},
     {"regex": r"CleanMyMac X", "icon": ":desktop:"},
@@ -89,7 +89,7 @@ ICON_MAP = [
     {"regex": r"Pine", "icon": ":pine:"},
     {"regex": r"Podcasts", "icon": ":podcasts:"},
     {"regex": r"PomoDone App", "icon": ":pomodone:"},
-    {"regex": r"Preview|Skim|zathura", "icon": ":pdf:"},
+    {"regex": r"Preview|Skim|zathura|PDFgear", "icon": ":pdf:"},
     {"regex": r"qutebrowser", "icon": ":qute_browser:"},
     {"regex": r"Reeder", "icon": ":reeder5:"},
     {"regex": r"Reminders", "icon": ":reminders:"},
@@ -174,4 +174,10 @@ for app in apps:
 args = ' '.join([f'--set space.{space} label="{to_formatted_icons(apps)}" label.drawing=on' for space, apps in spaces.items()])
 default_args = "--set spaces_bracket drawing=off --set '/space\..*/' background.drawing=on --animate sin 10"
 
-os.system(f'sketchybar -m {default_args} {args}')
+args2 = ''
+spaces = json.loads(os.popen('yabai -m query --spaces').read())
+for space in spaces:
+    if not space['windows']:
+        args2 = f'{args2} --set space.{space["index"]} label="" label.drawing=off'
+
+os.system(f'sketchybar -m {default_args} {args} {args2}')

@@ -326,7 +326,7 @@ case $@ in
 "Preview" | "Skim" | "zathura")
   icon_result=":pdf:"
   ;;
-"1Password 7")
+"1Password 7" | "1Password")
   icon_result=":one_password:"
   ;;
 "Code" | "Code - Insiders")

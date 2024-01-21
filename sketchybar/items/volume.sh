@@ -1,43 +1,45 @@
 #!/bin/bash
 
 volume_slider=(
-  script="$PLUGIN_DIR/volume.sh"
-  updates=on
-  label.drawing=off
-  icon.drawing=off
-  slider.highlight_color=$LIME
-  slider.background.height=5
-  slider.background.corner_radius=3
-  slider.background.color=$BACKGROUND_2
-  slider.knob=􀀁
-  slider.knob.drawing=on
+	script="$PLUGIN_DIR/volume.sh"
+	updates=on
+	label.drawing=off
+	icon.drawing=off
+	slider.highlight_color=$CHERRYBL
+	slider.background.height=5
+	slider.background.corner_radius=3
+	slider.background.color=$BACKGROUND_2
+	slider.knob=􀀁
+	slider.knob.drawing=on
 )
 
 volume_icon=(
-  click_script="$PLUGIN_DIR/volume_click.sh"
-  padding_left=10
-  icon=$VOLUME_100
-  icon.width=0
-  icon.align=left
-  icon.color=$LIME
-  icon.font="$FONT:Regular:14.0"
-  label.width=25
-  label.align=left
-  label.font="$FONT:Regular:14.0"
+	click_script="$PLUGIN_DIR/volume_click.sh"
+	padding_left=12
+	icon=$VOLUME_100
+	icon.width=0
+	icon.align=left
+	icon.color=$TRANSPARENT
+	icon.font="$FONT:Regular:14.0"
+	label.width=25
+	label.align=left
+	label.font="$FONT:Regular:14.0"
 )
 
 status_bracket=(
-  background.color=$BACKGROUND_1
-  background.border_color=$BACKGROUND_2
+	background.color=$BACKGROUND_1
+	background.border_color=$BACKGROUND_2
 )
 
-sketchybar --add slider volume right            \
-           --set volume "${volume_slider[@]}"   \
-           --subscribe volume volume_change     \
-                              mouse.clicked     \
-                                                \
-           --add item volume_icon right         \
-           --set volume_icon "${volume_icon[@]}"
+sketchybar --add slider volume right \
+	--set volume "${volume_slider[@]}" \
+	--subscribe volume volume_change \
+	mouse.clicked \
+	\
+	--add item volume_icon right \
+	--set volume_icon "${volume_icon[@]}"
 
 sketchybar --add bracket status brew volume_icon \
-           --set status "${status_bracket[@]}"
+	--set status "${status_bracket[@]}"
+
+# =􀀁
