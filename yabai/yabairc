@@ -10,7 +10,7 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # padding set to 9px except top padding which is lowered to fit the bar
-yabai -m config top_padding 44
+yabai -m config top_padding 7
 yabai -m config bottom_padding 7
 yabai -m config left_padding 7
 yabai -m config right_padding 7
@@ -39,6 +39,7 @@ yabai -m config mouse_action2 resize
 yabai -m mouse_drop_action swap
 
 # apps that yabai won't touch
+yabai -m rule --add app="Reminders$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --ad app="^DaisyDisk$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
