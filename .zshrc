@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="fox"
+# ZSH_THEME="fox"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -111,28 +118,43 @@ source $ZSH/oh-my-zsh.sh
 alias lias ll='exa -la --icons'
 alias ls='exa -l --icons'
 alias t='tree -a'
-alias v="vim"
+alias vimm="vim"
 alias x="exit"
+alias gn="sudo shutdown -h now"
+alias lt="ls -hT"
+alias lock="pmset displaysleepnow"
+alias cat="bat"
+alias rm="trash"
+
+#Brew Commands
+alias update="brew update"
+alias upgrade="brew upgrade"
+alias list="brew list"
+alias outdated="brew outdated"
 
 #git aliases
-alias ga='git add'
-alias gp='git push'
+alias add='git add -A'
+alias push='git push'
 alias gl='git log'
 alias gs='git status'
-alias gd='git diff'
+alias gdiff='git diff'
 alias gdc='git diff --cached'
-alias gm='git commit -m'
+alias commit='git commit -m'
 alias gma='git commit -am'
 alias gb='git branch'
 alias gc='git checkout'
 alias gra='git remote add'
 alias grr='git remote rm'
-alias gpu='git pull'
-alias gcl='git clone'
+alias pull='git pull'
+alias clone='git clone'
 
 
 # ___________________________________________
 
+# Pywal
+export PATH="${PATH}:/Users/devindelaney/Library/Python/3.11/lib/python/site-packages"
+
+# fzf base
 export FZF_BASE=/path/to/fzf/install/dir
 
 # fzf stuff
@@ -158,3 +180,25 @@ export VISUAL=$EDITOR
 export FZF_DEFAULT_OPS="--extended"
 
 export PATH="${PATH}:/Users/devindelaney/Library/Python/3.11/lib/python/site-packages"
+
+# Sketchybar add for brew
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
+
+# - - - - - - - - - - - - - - - - - - - - -
+# Run neofetch on opening
+neofetch
+# - - - - - - - - - - - - - - - - - - - - -
+# spicetify path
+export PATH=$PATH:/Users/devindelaney/.spicetify
+
+#Powerlevel10k theme
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
