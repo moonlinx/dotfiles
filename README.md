@@ -1,4 +1,4 @@
-# dotfiles
+# (.)files
 
 Personal MacOS dotfile congigurations.
 <img width="2556" alt="sketchybar_minimal" src="https://github.com/erihome/dotfiles/assets/49962728/a7ade506-62dd-4d70-89ab-6d5da0e92374">
@@ -16,15 +16,15 @@ Normal navigation with vim navigation customized for terminal applications.
 ## Dotfiles are symlinked on my machine
 
 ### Install with stow:
-
-````sh
-stow --target ~/.config .```
-
+```sh
+stow --target ~/.config
+```
 ### Homebrew installation:
+
 ```sh
 # Leaving a machine
 brew leaves > leaves.txt
 
 # Fresh installation
-xargs brew install < leaves.txt```
-````
+xargs brew install < leaves.txt
+```
