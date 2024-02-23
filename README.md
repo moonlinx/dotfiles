@@ -16,10 +16,9 @@ Normal navigation with vim navigation customized for terminal applications.
 ## Dotfiles are symlinked on my machine
 
 ### Install with stow:
-
-'''sh
-stow --target ~/.config```
-
+```sh
+stow --target ~/.config
+```
 ### Homebrew installation:
 
 ```sh
@@ -27,4 +26,5 @@ stow --target ~/.config```
 brew leaves > leaves.txt
 
 # Fresh installation
-xargs brew install < leaves.txt```
+xargs brew install < leaves.txt
+```
