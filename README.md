@@ -12,6 +12,19 @@ Normal navigation with vim navigation customized for terminal applications.
 - [skhd](https://github.com/koekeishiya/skhd)
   [JankyBorders](https://github.com/FelixKratz/JankyBorders)
 - [neovim](https://neovim.io) / [lazyvim](https://www.lazyvim.org/) - package manager
-- [btop](https://github.com/aristocratos/btop)
 
-setup steps are in `.install.sh `
+## Dotfiles are symlinked on my machine
+
+### Install with stow:
+
+````sh
+stow --target ~/.config .```
+
+### Homebrew installation:
+```sh
+# Leaving a machine
+brew leaves > leaves.txt
+
+# Fresh installation
+xargs brew install < leaves.txt```
+````
