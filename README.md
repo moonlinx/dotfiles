@@ -17,14 +17,14 @@ Normal navigation with vim navigation customized for terminal applications.
 
 ### Install with stow:
 
-````sh
-stow --target ~/.config .```
+'''sh
+stow --target ~/.config```
 
 ### Homebrew installation:
+
 ```sh
 # Leaving a machine
 brew leaves > leaves.txt
 
 # Fresh installation
 xargs brew install < leaves.txt```
-````
