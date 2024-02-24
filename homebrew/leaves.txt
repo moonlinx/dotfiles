@@ -8,6 +8,7 @@ eza
 fd
 felixkratz/formulae/borders
 felixkratz/formulae/sketchybar
+ffmpegthumbnailer
 fzf
 gh
 git
@@ -28,8 +29,10 @@ node
 openssh
 php
 pngpaste
+poppler
 powerlevel10k
 procs
+ranger
 ripgrep
 starship
 stow
@@ -37,7 +40,9 @@ switchaudio-osx
 tldr
 tmux
 tree
+unar
 unzip
+yazi
 zfdang/free-for-macos/free-for-macos
 zoxide
 zsh
