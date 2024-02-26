@@ -1,0 +1,8 @@
+# yazi.toml
+[manager]
+sort_by = "alphabetical"
+sort_sensitive = true
+linemode = "none"
+show_hidden = true
+show_symlink = true
+

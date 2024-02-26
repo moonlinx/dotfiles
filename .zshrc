@@ -24,7 +24,7 @@ alias rm="trash"
 alias c="clear"
 alias z="zoxide"
 # alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
-alias y="yazi"
+alias ya="yazi"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"

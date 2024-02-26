@@ -30,8 +30,13 @@ brew install --cask iina
 brew install --cask keka
 brew install --cask latest
 brew install --cask lulu
+brew install --cask middleclick
 brew install --cask obsidian
 brew install --cask raycast
 brew install --cask sf-symbols
 brew install --cask spotify
 brew install --cask wezterm
+
+# Fresh installation
+# Ensure that the leaves txt file is in the same directory
+xargs brew install < leaves.txt
