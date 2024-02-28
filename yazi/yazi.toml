@@ -8,8 +8,8 @@ show_symlink = true
 
 [preview]
 tab_size = 1
-max_width = 600
-max_height = 900
+max_width = 1500
+max_height = 3000
 cache_dir = ""
 image_filter = "triangle"
 image_quality = 75
