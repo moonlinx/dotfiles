@@ -83,6 +83,8 @@ style = 'yellow bold'
 symbol = ' '
 disabled = false
 
+[docker_context]
+format = 'via [ $context](blue bold)'
 
 [aws]
 symbol = "  "
@@ -103,8 +105,8 @@ symbol = " "
 symbol = " "
 
 
-[docker_context]
-symbol = " "
+# [docker_context]
+# symbol = " "
 
 [elixir]
 symbol = " "

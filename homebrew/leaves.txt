@@ -4,6 +4,8 @@ bloznelis/tap/kbt
 blueutil
 btop
 cmake
+docker
+doggo
 eza
 fd
 felixkratz/formulae/borders
@@ -30,7 +32,6 @@ openssh
 php
 pngpaste
 poppler
-powerlevel10k
 procs
 ranger
 ripgrep
@@ -43,6 +44,7 @@ tree
 unar
 unzip
 yazi
+yt-dlp
 zfdang/free-for-macos/free-for-macos
 zoxide
 zsh
