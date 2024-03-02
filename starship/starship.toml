@@ -10,8 +10,9 @@ right_format = """$git_metrics$git_branch$git_status$python"""
 
 # Drop ugly default prompt characters
 [character]
-success_symbol = "[❯](green bold)"
-error_symbol = "[❮](red bold)"
+success_symbol = "[󰄬 ](green bold)"
+error_symbol = "[ ](red bold)"
+vicmd_symbol = "[ ](blue bold)"
 # ---
 
 # Display OS symbol at the very begining
