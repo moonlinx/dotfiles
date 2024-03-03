@@ -16,9 +16,11 @@ Normal navigation with vim navigation customized for terminal applications.
 ## Dotfiles are symlinked on my machine
 
 ### Install with stow:
+
 ```sh
 stow --target ~/.config
 ```
+
 ### Homebrew installation:
 
 ```sh
@@ -27,4 +29,12 @@ brew leaves > leaves.txt
 
 # Fresh installation
 xargs brew install < leaves.txt
+```
+
+### Kill Dock
+
+Follow this command to kill the dock:
+
+```sh
+defaults write com.apple.Dock autohide-delay -float 0; killall Dock
 ```

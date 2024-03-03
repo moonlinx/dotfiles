@@ -3,7 +3,7 @@
 sort_by = "alphabetical"
 sort_sensitive = true
 linemode = "mtime"
-show_hidden = true
+show_hidden = false
 show_symlink = true
 
 [preview]
