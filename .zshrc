@@ -21,9 +21,8 @@ alias lt="ls -hT --color=always"
 alias lock="pmset displaysleepnow"
 alias cat="bat"
 alias rm="trash"
-alias c="clear"
 alias z="zoxide"
-# alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias ya="yazi"
 
 # Nmap
@@ -107,13 +106,9 @@ export PATH=$PATH:/Users/devindelaney/.spicetify
 # AUTOSUGGESTIONS___________________________________________
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^w' autosuggest-execute
-bindkey '^e' autosuggest-accept
+bindkey '^e' autosuggest-execute
+# bindkey '^e' autosuggest-accept
 bindkey '^u' autosuggest-toggle
-bindkey '^L' vi-forward-word
-bindkey '^k' up-line-or-search
-bindkey '^j' down-line-or-search
-
 
 # SYYNTAX HIGHLIGHTING___________________________________________
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
