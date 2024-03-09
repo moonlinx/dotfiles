@@ -58,7 +58,8 @@ YABAI_FULLSCREEN_ZOOM=􀏜
 YABAI_PARENT_ZOOM=􀥃
 YABAI_FLOAT=􀢌
 YABAI_GRID=􀧍
-
+YABAI_BSP=􀏜
+ERROR_ICON=􀏎
 # ---------------------------------------------------
 
 #Extra icons to use
