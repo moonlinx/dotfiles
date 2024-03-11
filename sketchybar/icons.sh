@@ -42,14 +42,13 @@ VOLUME_0=􀊣
 # ---------------------------------------------------
 
 # Network
-WIFI_CONNECTED=􀙇
-# WIFI_NO_INTERNET=􀙥
-WIFI_DISCONNECTED=􀙈
-HOTSPOT=􀉤
-NETWORK=􀤆
-SPEED=􀍾
-IP=􀅴
-BLUETOOTH==
+export WIFI=􀙇
+export WIFI_NO_INTERNET=􀙥
+export WIFI_OFF=􀙈
+export HOTSPOT=􀉤
+export NETWORK=􀤆
+export SPEED=􀍾
+export IP=􀅴
 # ---------------------------------------------------
 
 # Yabai Icons

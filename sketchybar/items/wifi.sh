@@ -1,14 +1,16 @@
 #!/bin/bash
 
-source "$CONFIG_DIR/icons.sh"
+source "$PLUGIN_DIR/wifi.sh"
 
 wifi=(
-	padding_right=7
-	label.width=0
-	icon="$WIFI_DISCONNECTED"
 	script="$PLUGIN_DIR/wifi.sh"
+	click_script="$POPUP_CLICK_SCRIPT"
+	label.padding_right=10
+	update_freq=100
 )
 
+rm -f /tmp/sketchybar_speed
+rm -f /tmp/sketchybar_wifi
 sketchybar --add item wifi right \
 	--set wifi "${wifi[@]}" \
-	--subscribe wifi wifi_change mouse.clicked
+	--subscribe wifi system_woke
