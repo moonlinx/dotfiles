@@ -3,6 +3,9 @@
 Personal MacOS dotfile congigurations.
 ![sketchybar@2x](https://github.com/moonlinx/dotfiles/assets/49962728/8bc75917-8bad-492d-936c-dbf840256a6f)
 
+This config tree:
+https://github.com/moonlinx/dotfiles/tree/8beae42ea12945ba884f9ec6217f61ef886deb12
+
 Normal navigation with vim navigation customized for terminal applications.
 
 ### Installs
