@@ -1,7 +1,7 @@
-# (.)files
+# .dotfiles
 
 Personal MacOS dotfile congigurations.
-<img width="2556" alt="sketchybar_minimal" src="https://github.com/erihome/dotfiles/assets/49962728/a7ade506-62dd-4d70-89ab-6d5da0e92374">
+![sketchybar@2x](https://github.com/moonlinx/dotfiles/assets/49962728/8bc75917-8bad-492d-936c-dbf840256a6f)
 
 Normal navigation with vim navigation customized for terminal applications.
 
@@ -11,7 +11,7 @@ Normal navigation with vim navigation customized for terminal applications.
 - [yabai](https://github.com/koekeishiya/yabai)
 - [skhd](https://github.com/koekeishiya/skhd)
   [JankyBorders](https://github.com/FelixKratz/JankyBorders)
-- [neovim](https://neovim.io) / [lazyvim](https://www.lazyvim.org/) - package manager
+- [neovim](https://neovim.io) / [lazyvim](https://www.lazyvim.org/) - nvim package manager
 
 ## Dotfiles are symlinked on my machine
 
