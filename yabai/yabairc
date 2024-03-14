@@ -2,41 +2,33 @@
 
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 
-# Set the layout of the selected space
-# bsp, stack or float
-yabai -m config layout bsp
-yabai -m config window_placement second_child
-
-# padding set to 9px except top padding which is lowered to fit the bar
-yabai -m config top_padding 6
-yabai -m config bottom_padding 7
-yabai -m config left_padding 7
-yabai -m config right_padding 7
-yabai -m config window_gap 7
-
-# Create space on the active display
-yabai -m space --create
-
-# Delete focused space and focus first space on display
-yabai -m space --destroy
-
-# mouse settings
-yabai -m config focus_follows_mouse autoraise
-
-# center mouse on window with focus
-yabai -m config mouse_follows_focus on
-
-# modifier for clicking and dragging with mouse
-yabai -m config mouse_modifier alt
-# set modifier + left-click drag to move window
-yabai -m config mouse_action1 move
-# set modifier + right-click drag to resize window
-yabai -m config mouse_action2 resize
-
-# when window is dropped in center of another window, swap them (on edges it will split it)
-yabai -m mouse_drop_action swap
+yabai -m config external_bar all:40:0 \
+	mouse_follows_focus on \
+	focus_follows_mouse on \
+	window_zoom_persist off \
+	window_placement second_child \
+	window_shadow float \
+	window_opacity on \
+	window_opacity_duration 0.4 \
+	active_window_opacity 1.0 \
+	normal_window_opacity 0.8 \
+	window_animation_duration 0.5 \
+	window_animation_easing ease_out_quint \
+	insert_feedback_color 0xff9dd274 \
+	split_ratio 0.50 \
+	auto_balance on \
+	auto_padding on \
+	mouse_modifier fn \
+	mouse_action1 move \
+	mouse_action2 resize \
+	mouse_drop_action swap \
+	\
+	top_padding 6 \
+	bottom_padding 7 \
+	left_padding 7 \
+	right_padding 7 \
+	window_gap 7
 
 # apps that yabai won't touch
 yabai -m rule --add app="Reminders$" manage=off
@@ -47,3 +39,7 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|System Preferences|System Settings|Archive Utility|Python|App Store|Steam|Alfred|Activity Monitor)$" manage=off
+
+yabai -m config layout bsp
+
+echo "yabai configuration loaded.."

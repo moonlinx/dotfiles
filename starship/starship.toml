@@ -2,7 +2,7 @@
 format = '''
 $os$hostname$directory
 $character'''
-add_newline = true
+add_newline = false
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
