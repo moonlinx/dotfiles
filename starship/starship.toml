@@ -2,7 +2,7 @@
 format = '''
 $os$hostname$directory
 $character'''
-add_newline = false
+add_newline = true
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
@@ -17,7 +17,7 @@ vicmd_symbol = "[ ](blue bold)"
 
 # Display OS symbol at the very begining
 [os]
-format = '[$symbol](bold purple) '   
+format = '[$symbol](bold cyan) '   
 disabled = false
 
 # ---y
