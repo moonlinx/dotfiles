@@ -17,7 +17,7 @@ vicmd_symbol = "[ ](blue bold)"
 
 # Display OS symbol at the very begining
 [os]
-format = '[$symbol](bold cyan) '   
+format = '[$symbol](bold grey) '   
 disabled = false
 
 # ---y
