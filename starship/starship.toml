@@ -6,7 +6,7 @@ add_newline = true
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
-right_format = """$git_metrics$git_branch$git_status$python"""
+right_format = """$git_metrics$git_branch$git_status$python$docker_context"""
 
 # Drop ugly default prompt characters
 [character]
@@ -85,7 +85,11 @@ symbol = ' '
 disabled = false
 
 [docker_context]
-format = 'via [ $context](blue bold)'
+detect_extensions = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+symbol = '🐳' 
+style = 'blue bold'
+format = 'via [$symbol$context]'
+disabled = false
 
 [aws]
 symbol = "  "
