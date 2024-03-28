@@ -2,11 +2,11 @@
 format = '''
 $os$hostname$directory
 $character'''
-add_newline = true
+add_newline = false
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
-right_format = """$git_metrics$git_branch$git_status$python$docker_context"""
+right_format = """$git_metrics$git_branch$git_status$python$docker_context$aws$lua"""
 
 # Drop ugly default prompt characters
 [character]
@@ -17,7 +17,7 @@ vicmd_symbol = "[ ](blue bold)"
 
 # Display OS symbol at the very begining
 [os]
-format = '[$symbol](bold grey) '   
+format = '[$symbol](bold white) '   
 disabled = false
 
 # ---y
@@ -88,11 +88,20 @@ disabled = false
 detect_extensions = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
 symbol = '🐳' 
 style = 'blue bold'
-format = 'via [$symbol$context]'
+format = 'via [$symbol$context]($style) '
+disabled = false
+
+[lua]
+format = 'via [$symbol($version)]($style)'
+symbol = ' '
+detect_extensions = ['lua']
 disabled = false
 
 [aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
 symbol = "  "
+disabled = true
+
 
 [buf]
 symbol = " "
@@ -109,9 +118,6 @@ symbol = " "
 [dart]
 symbol = " "
 
-
-# [docker_context]
-# symbol = " "
 
 [elixir]
 symbol = " "
@@ -153,9 +159,6 @@ symbol = " "
 [kotlin]
 symbol = " "
 
-[lua]
-symbol = " "
-
 [memory_usage]
 symbol = "󰍛 "
 
@@ -194,7 +197,7 @@ HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
 Linux = " "
 Mabox = " "
-Macos = " " 
+Macos = "󰫢 " 
 # " " " "
 Manjaro = " "
 Mariner = " "

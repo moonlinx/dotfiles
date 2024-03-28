@@ -87,15 +87,6 @@ export FZF_DEFAULT_OPS="--extended"
 
 export PATH="${PATH}:/Users/devindelaney/Library/Python/3.11/lib/python/site-packages"
 
-# Sketchybar add for brew ----------------------------------------
-function brew() {
-  command brew "$@" 
-
-  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
-    sketchybar --trigger brew_update
-  fi
-}
-
 # - - - - - - - - - - - - - - - - - - - - -
 # Run neofetch on opening
 neofetch
@@ -115,3 +106,4 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ZOXIDE___________________________________________
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(atuin init zsh)"
