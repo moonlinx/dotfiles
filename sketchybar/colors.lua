@@ -7,6 +7,7 @@ return {
 	leaf = 0xff30B700,
 	blue = 0xff76cce0,
 	cyan = 0xff00ffff,
+	arise = 0xffbdf2f5,
 	yellow = 0xffe7c664,
 	gold = 0xffe7b744,
 	cream = 0xfffffdd0,

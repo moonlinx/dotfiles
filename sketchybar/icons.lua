@@ -4,7 +4,7 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "󰌪 ",
+		apple = "󰽤 ",
 		gear = "􀍟",
 		cpu = "􀫥",
 		clipboard = "􀉄",
@@ -90,3 +90,25 @@ if not (settings.icons == "NerdFont") then
 else
 	return icons.nerdfont
 end
+
+-- Extra icons to use
+-- PENGUIN=󰻀
+-- PARROT=
+-- DEBIAN=
+-- LEAF=󰌪
+-- BAT=󰭟
+-- RICE=󰟪
+-- LOTUS=𑁍
+-- PACKAGE=􀐛
+-- LIGHT=󰛨
+-- MOON=
+-- TIMER= 󱤥
+-- RAIN= 
+-- UBUNTU= 
+-- BEEHIVE= 󱃎
+-- SAKURA=❀
+-- MOON = 󰤄
+-- FOX = 󰮠
+-- MOON2 = ☽
+-- FULL_MOON= 󰽤
+-- LIGHT_DARK = 󰔎
