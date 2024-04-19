@@ -207,7 +207,7 @@ return {
 	["zathura"] = ":pdf:",
 	["Obsidian"] = ":obsidian:",
 	["Thunderbird"] = ":thunderbird:",
-	["Firefox"] = ":firefox:",
+	["Firefox"] = ":firefox_developer_edition:",
 	["WezTerm"] = ":wezterm:",
 	["default"] = ":default:",
 }
