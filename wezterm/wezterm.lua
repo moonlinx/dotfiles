@@ -3,9 +3,9 @@ return {
 	-- color_scheme = 'termnial.sexy',
 	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
-	font_size = 13.0,
+	font_size = 13.5,
 	-- macos_window_background_blur = 40,
-	macos_window_background_blur = 18,
+	macos_window_background_blur = 20,
 
 	-- window_background_image = '/Users/omerhamerman/Downloads/3840x1080-Wallpaper-041.jpg',
 	-- window_background_image_hsb = {
@@ -14,7 +14,7 @@ return {
 	-- 	saturation = 0.5,
 	-- },
 	-- window_background_opacity = 0.92,
-	window_background_opacity = 0.50,
+	window_background_opacity = 0.60,
 	-- window_background_opacity = 0.78,
 	-- window_background_opacity = 0.20,
 	window_decorations = "RESIZE",
