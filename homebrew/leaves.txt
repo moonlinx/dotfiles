@@ -4,6 +4,7 @@ bettercap
 bloznelis/tap/kbt
 blueutil
 btop
+cbonsai
 cmake
 docker
 doggo
@@ -16,6 +17,7 @@ ffmpegthumbnailer
 fzf
 gh
 git
+git-delta
 gnu-sed
 hashicorp/tap/terraform
 htop
@@ -52,6 +54,8 @@ tokyo-cabinet
 tree
 unar
 unzip
+wget
+wtfis
 yazi
 yt-dlp
 zfdang/free-for-macos/free-for-macos
