@@ -24,6 +24,8 @@ alias rm="trash"
 alias z="zoxide"
 alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias ya="yazi"
+alias d="delta"
+alias yt="yt-dlp"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
@@ -148,3 +150,6 @@ eval "$(atuin init zsh)"
 # MANPAGES
 # Colored manpages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# FZF git
+source ~/.fzf-git.sh/fzf-git.sh
