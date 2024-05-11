@@ -208,6 +208,6 @@ return {
 	["Obsidian"] = ":obsidian:",
 	["Thunderbird"] = ":thunderbird:",
 	["Firefox"] = ":firefox_developer_edition:",
-	["WezTerm"] = ":wezterm:",
+	["WezTerm"] = ":kitty:" --[[ ":wezterm:" ]],
 	["default"] = ":default:",
 }
