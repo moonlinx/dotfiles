@@ -10,9 +10,9 @@ yabai -m config external_bar all:40:0 \
 	window_placement second_child \
 	window_shadow float \
 	window_opacity on \
-	window_opacity_duration 0.4 \
+	window_opacity_duration 0.2 \
 	active_window_opacity 1.0 \
-	normal_window_opacity 0.8 \
+	normal_window_opacity 0.7 \
 	window_animation_duration 0.2 \
 	window_animation_easing ease_out_quint \
 	insert_feedback_color 0xff9dd274 \
@@ -37,6 +37,7 @@ yabai -m rule --ad app="^DaisyDisk$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
+yabai -m rule --add app="^Facetime$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|System Preferences|System Settings|Archive Utility|Python|App Store|Steam|Alfred|Activity Monitor|Raycast)$" manage=off
 
