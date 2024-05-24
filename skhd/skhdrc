@@ -5,7 +5,6 @@
 #  \/ | \_/|   |_/\_/|_/
 
 # Applications
-# cmd - return : osascript ~/.config/skhd/iterm.scpt
 cmd - return : open -n -a "wezterm"
 
 # change window focus within space

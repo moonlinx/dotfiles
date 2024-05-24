@@ -11,9 +11,8 @@ source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 alias l="eza -l --icons --git -a"
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias la="eza --icons --all"
+alias la="tree"
 alias lt="eza --tree --level=2 --long --icons --git"
-alias t='tree -a'
 alias vimm="vim"
 alias x="exit"
 alias gn="sudo shutdown -h now"
@@ -31,6 +30,7 @@ alias yt="yt-dlp"
 alias nm="nmap -sC -sV -oN nmap"
 
 #git aliases
+
 alias ga='git add -A'
 alias gp='git push'
 alias gl='git log'
@@ -45,6 +45,13 @@ alias gra='git remote add'
 alias grr='git remote rm'
 alias gpl='git pull'
 alias gcl='git clone'
+
+# Docker
+alias dco="docker compose"
+alias dps="docker ps"
+alias dpa="docker ps -a"
+alias dl="docker ps -l -q"
+alias dx="docker exec -it"
 
 # Dirs
 alias ..="cd .."
@@ -153,3 +160,11 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # FZF git
 source ~/.fzf-git.sh/fzf-git.sh
+
+# NAVIGATION________________________________________
+cx() { cd "$@" && l; }
+fcd() { cd "$(find . -type d -not -path '*/.*' | fzf)" && l; }
+f() { echo "$(find . -type f -not -path '*/.*' | fzf)" | pbcopy }
+fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }
+
+eval "$(zoxide init zsh)"
