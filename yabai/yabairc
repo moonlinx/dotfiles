@@ -35,6 +35,7 @@ yabai -m rule --add app="Reminders$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --ad app="^DaisyDisk$" manage=off
 yabai -m rule --add app="^Numi$" manage=off
+yabai -m rule --add app="^Ente Auth$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add app="^Facetime$" manage=off
