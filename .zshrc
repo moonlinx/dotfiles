@@ -1,6 +1,3 @@
-# # Path to your oh-my-zsh installation.
-# export ZSH="$HOME/.oh-my-zsh"
-
 # Starship ----------------------------------------
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -159,11 +156,6 @@ export FZF_DEFAULT_OPS="--extended"
 export PATH="${PATH}:/Users/devindelaney/Library/Python/3.11/lib/python/site-packages"
 
 # - - - - - - - - - - - - - - - - - - - - -
-# Run neofetch on opening
-neofetch
-# - - - - - - - - - - - - - - - - - - - - -
-# spicetify path
-export PATH=$PATH:/Users/devindelaney/.spicetify
 
 # AUTOSUGGESTIONS___________________________________________
 
@@ -187,4 +179,3 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 source ~/.fzf-git.sh/fzf-git.sh
 
 eval "$(zoxide init zsh)"
-
