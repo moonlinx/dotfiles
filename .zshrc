@@ -1,3 +1,13 @@
+# ---- Oh-my-posh ---- 
+# ---- Prompt ----
+# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+# #
+# No terminal in apple terminal
+#
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#   eval "$(oh-my-posh init zsh)"
+# fi
+
 # Starship ----------------------------------------
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
