@@ -1,10 +1,8 @@
-atuin
 bat
 bettercap
 bloznelis/tap/kbt
 blueutil
 btop
-cbonsai
 cmake
 docker
 doggo
@@ -51,6 +49,7 @@ switchaudio-osx
 tldr
 tmux
 tokyo-cabinet
+topgrade
 tree
 unar
 unzip
