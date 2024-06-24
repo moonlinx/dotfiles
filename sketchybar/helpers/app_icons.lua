@@ -210,6 +210,6 @@ return {
 	["Obsidian"] = ":obsidian:",
 	["Thunderbird"] = ":thunderbird:",
 	["Firefox"] = ":firefox_developer_edition:",
-	["WezTerm"] = ":wezterm:",
+	["WezTerm"] = ":terminal:",
 	["default"] = ":default:",
 }

@@ -48,6 +48,8 @@ read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style) '
 disabled = false
 
+#TODO: equal out distance in icons
+#
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
@@ -62,7 +64,7 @@ stashed = '  '
 modified = '  '
 staged = '[++\($count\)](green)'
 renamed = ' 襁'
-deleted = ' '
+deleted = '  '
 disabled = false
 
 # Shows current git branch
