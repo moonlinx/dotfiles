@@ -46,6 +46,7 @@ return {
 	["Docker Desktop"] = ":docker:",
 	["Matlab"] = ":matlab:",
 	["VLC"] = ":vlc:",
+	["IINA"] = ":vlc:",
 	["Alacritty"] = ":alacritty:",
 	["Pages"] = ":pages:",
 	["Pages 文稿"] = ":pages:",

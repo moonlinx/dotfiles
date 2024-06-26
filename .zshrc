@@ -35,6 +35,7 @@ alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nv
 alias ya="yazi"
 alias d="delta"
 alias yt="yt-dlp"
+alias fetch="fastfetch"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
