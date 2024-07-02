@@ -4,7 +4,7 @@ return {
 	color_scheme = "Catppuccin Mocha",
 	enable_tab_bar = false,
 	font_size = 13.5,
-	macos_window_background_blur = 35,
+	macos_window_background_blur = 45,
 	-- macos_window_background_blur = 30,
 
 	-- window_background_image = '/Users/omerhamerman/Downloads/3840x1080-Wallpaper-041.jpg',
@@ -14,7 +14,7 @@ return {
 	-- 	saturation = 0.5,
 	-- },
 	-- window_background_opacity = 0.92,
-	window_background_opacity = 0.40,
+	window_background_opacity = 0.55,
 	-- window_background_opacity = 0.78,
 	-- window_background_opacity = 0.20,
 	window_decorations = "RESIZE",

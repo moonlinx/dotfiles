@@ -19,7 +19,7 @@ sbar.default({
 		font = {
 			family = settings.font.text,
 			style = settings.font.style_map["Semibold"],
-			size = 13.0,
+			size = 12.0,
 		},
 		color = colors.white,
 		padding_left = settings.paddings,

@@ -13,3 +13,15 @@ max_height = 3000
 cache_dir = ""
 image_filter = "triangle"
 image_quality = 75
+
+[opener]
+edit = [
+	{ run = 'nvim "$@"', block = true },
+]
+play = [
+	{ run = 'mpv "$@"', orphan = true, for = "unix" },
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open" },
+]
+# ...
