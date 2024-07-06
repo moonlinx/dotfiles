@@ -4,13 +4,14 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "󰚀 ",
+		apple = "􀇱",
 		gear = "􀍟",
 		cpu = "􀫥",
 		clipboard = "􀉄",
+		calendar = "􀉉",
 
 		switch = {
-			on = "􁏮",
+			on = "􁏻",
 			off = "􁏯",
 		},
 		volume = {
@@ -31,8 +32,8 @@ local icons = {
 		wifi = {
 			upload = "􀄨",
 			download = "􀄩",
-			connected = "􀙇",
-			disconnected = "􀙈",
+			connected = "􀤆",
+			disconnected = "􁣡",
 			router = "􁓤",
 		},
 		media = {
@@ -93,6 +94,7 @@ end
 
 -- Extra icons to use
 -- PENGUIN=󰻀
+-- YINYANG=󰚀
 -- PARROT=
 -- DEBIAN=
 -- LEAF=󰌪
@@ -106,7 +108,7 @@ end
 -- RAIN= 
 -- UBUNTU= 
 -- BEEHIVE= 󱃎
--- SAKURA=❀
+-- SAKURA= ❀
 -- MOON = 󰤄
 -- FOX = 󰮠
 -- MOON2 = ☽

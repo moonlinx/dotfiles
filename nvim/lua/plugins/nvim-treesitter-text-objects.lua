@@ -2,7 +2,6 @@ return {
   "nvim-treesitter/nvim-treesitter-textobjects",
   lazy = true,
   config = function()
-    -- TODO: fix the nvim treesitter information so that it can connect properly
     require("nvim-treesitter.configs").setup({
       textobjects = {
         select = {

@@ -3,7 +3,6 @@ return {
 	group_paddings = 5,
 
 	icons = "sf-symbols", -- alternatively available: NerdFont
-	animated_icons = true,
 
 	-- This is a font configuration for SF Pro and SF Mono (installed manually)
 	font = require("helpers.default_font"),
