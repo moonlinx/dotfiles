@@ -81,7 +81,8 @@ function take {
 
 
 # fzf base
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
+# eval "$(fzf --zsh)"
 # --- setup fzf theme ---
 fg="#CBE0F0"
 # bg="#011628"

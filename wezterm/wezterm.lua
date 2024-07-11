@@ -1,22 +1,24 @@
 local wezterm = require("wezterm")
 return {
-	-- color_scheme = 'termnial.sexy',
-	color_scheme = "Catppuccin Mocha",
-	enable_tab_bar = false,
-	font_size = 13.5,
-	macos_window_background_blur = 45,
-	-- macos_window_background_blur = 30,
 
-	-- window_background_image = '/Users/omerhamerman/Downloads/3840x1080-Wallpaper-041.jpg',
-	-- window_background_image_hsb = {
-	-- 	brightness = 0.01,
-	-- 	hue = 1.0,
-	-- 	saturation = 0.5,
-	-- },
-	-- window_background_opacity = 0.92,
-	window_background_opacity = 0.55,
-	-- window_background_opacity = 0.78,
-	-- window_background_opacity = 0.20,
+	-- Color Scheme
+	color_scheme = "Catppuccin Mocha",
+
+	-- Tab Bar
+	enable_tab_bar = false,
+
+	-- Font
+	font_size = 13.0,
+	line_height = 1.0,
+
+	-- Blur
+	macos_window_background_blur = 55,
+
+	-- Opacity
+	window_background_opacity = 0.70,
+	-- text_background_opacity = 0.70,
+
+	-- Window
 	window_decorations = "RESIZE",
 	keys = {
 		{
@@ -25,6 +27,8 @@ return {
 			action = wezterm.action.ToggleFullScreen,
 		},
 	},
+
+	-- Mouse stuff
 	mouse_bindings = {
 		-- Ctrl-click will open the link under the mouse cursor
 		{
