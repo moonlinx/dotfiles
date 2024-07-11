@@ -28,14 +28,14 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "tsserver",
+        "stylua",
+        "spellcheck",
         "html",
         "cssls",
         "tailwindcss",
         "svelte",
         "lua_ls",
         "graphql",
-        "emmet_ls",
-        "prismals",
         "pyright",
       },
       -- auto-install configured servers (with lspconfig)
