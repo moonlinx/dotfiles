@@ -35,7 +35,7 @@ alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nv
 alias ya="yazi"
 alias d="delta"
 alias yt="yt-dlp"
-alias fetch="fastfetch"
+alias fetch="neofetch"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
@@ -191,3 +191,4 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 source ~/.fzf-git.sh/fzf-git.sh
 
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
