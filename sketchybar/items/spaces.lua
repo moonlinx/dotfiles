@@ -9,12 +9,12 @@ for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
-			font = { family = settings.font.numbers },
+			font = { family = settings.font.icons },
 			string = i,
 			padding_left = 15,
 			padding_right = 8,
 			color = colors.white,
-			highlight_color = colors.cyan,
+			highlight_color = colors.strawberry,
 		},
 		label = {
 			padding_right = 20,

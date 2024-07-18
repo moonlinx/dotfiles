@@ -15,12 +15,13 @@ return {
 	magenta = 0xffb39df3,
 	purple = 0xff9500FF,
 	violet = 0xffd7bffd,
+	strawberry = 0xffed89a8,
 	grey = 0xff7f8490,
 	transparent = 0x00000000,
 
 	bar = {
-		bg = 0xff181819,
-		-- bg = 0xf02c2e34,
+		-- bg = 0xff181819,
+		bg = 0xf02c2e34,
 		border = 0xff2c2e34,
 	},
 	popup = {
