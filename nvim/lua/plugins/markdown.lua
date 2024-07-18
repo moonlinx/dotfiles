@@ -1,5 +1,6 @@
 return {
   "MeanderingProgrammer/markdown.nvim",
+  name = "render-markdown",
   -- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
   -- dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
@@ -85,7 +86,7 @@ return {
         icons = { "󰼏 ", "󰎨  ", "󰼑  ", "󰎲  ", "󰼓  ", "󰎴  " },
         -- Added to the sign column
         -- The 'level' is used to index into the array using a cycle
-        signs = { "󰫎 " },
+        signs = { "󰌖 " },
         -- The 'level' is used to index into the array using a clamp
         -- Highlight for the heading icon and extends through the entire line
         backgrounds = { "DiffAdd", "DiffChange", "DiffDelete" },
