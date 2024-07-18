@@ -181,7 +181,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ZOXIDE___________________________________________
 eval "$(zoxide init --cmd cd zsh)"
-# eval "$(atuin init zsh)"
 
 # MANPAGES
 # Colored manpages
@@ -191,4 +190,4 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 source ~/.fzf-git.sh/fzf-git.sh
 
 eval "$(zoxide init zsh)"
-eval "$(atuin init zsh)"
+# eval "$(atuin init zsh)"
