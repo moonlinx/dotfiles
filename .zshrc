@@ -36,6 +36,7 @@ alias ya="yazi"
 alias d="delta"
 alias yt="yt-dlp"
 alias fetch="neofetch"
+alias sp="spotify_player"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"

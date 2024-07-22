@@ -46,15 +46,6 @@ return {
         { name = "path" }, -- file system paths
       }),
 
-      {
-        name = "nvim_lsp",
-        option = {
-          markdown_oxide = {
-            keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
-          },
-        },
-      },
-
       -- configure lspkind for vs-code like pictograms in completion menu
       -- WARNING: Missing dependencies for the formatting. Needs to be fixed.
       formatting = {
