@@ -16,7 +16,8 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
 /* hide some things */
 #tabbrowser-tabs,                       /* native tabs            */
 #alltabs-button,                        /* all tabs button        */
-#private-browsing-indicator-with-label  /* private mode indicator */
+#private-browsing-indicator-with-label, /* private mode indicator */
+.titlebar-spacer
 
 {display: none}
 
@@ -81,6 +82,8 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
 #TabsToolbar-customization-target{
   position: absolute;
   
+  opacity: var(--dyn-opct);
+  
   right: 0;
   top: calc(var(--toolbar-item-hgt) * 2) !important;
   bottom: 0;
@@ -88,8 +91,44 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
+  align-content: center !important;
+  width: var(--toolbar-button-wdt) !important;
   
   & > * {padding: 3px !important;}
+  
+  /* bookmarks inside toolbar */
+  #PlacesToolbar {width: 40px !important;}
+  
+  /* searchbar inside toolbar */
+  --searchbar-hgt: 170px;
+  #search-container{
+    margin-inline: 0px !important;
+    margin-block: 2px !important;
+    padding: 5px !important;
+    padding-block: 0px !important;
+    
+    min-width: var(--toolbar-button-wdt) !important;
+    width: var(--toolbar-button-wdt) !important;
+    min-height: var(--toolbar-item-hgt) !important;
+    max-height: var(--searchbar-hgt) !important;
+    
+    #searchbar {height: var(--searchbar-hgt) !important;}
+    
+    .searchbar-search-button, .search-go-container {position: absolute}
+    .searchbar-search-button {margin-top: 5px !important;}
+    .search-go-container {
+      margin-top: calc(var(--searchbar-hgt) - 33px ) !important;
+      margin-left: 1.48px !important; 
+    }
+    
+    .searchbar-textbox{
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      padding-inline-start: 25px !important;
+      padding-inline-end: 35px !important;
+      cursor: vertical-text !important;
+    }
+  }
 }
 
 /* space for window controls */
@@ -177,20 +216,18 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
   }
   
   /* make all panel content invisible (it will visible when hover) */
-  #TabsToolbar,
-  #PanelUI-menu-button,
-  #unified-extensions-button
-  {
-    & > *:not(.titlebar-buttonbox-container) {
-      transition: var(--transition) !important;
-      opacity: 0;
-    }
+  :is(#PanelUI-menu-button, #unified-extensions-button) > *,
+  #TabsToolbar-customization-target > *:not(#tabbrowser-tabs) {
+    transition: var(--transition) !important;
+    opacity: 0;
   }
   
   #TabsToolbar-customization-target{
     /* make the toolbar height dynamic */
     position: relative !important;
     top: 0px !important;
+    padding-bottom: 3px !important;
+    
     /* styled spacer */
     toolbarspring{
       background-color: color-mix(in srgb, var(--bt-col) 15%, var(--debug-col-2)) !important;
@@ -201,7 +238,8 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
     }
     
     /* limit toolbar items width */
-    & > * {max-width: var(--toolbar-button-wdt) !important;}
+    & > toolbarbutton {margin-left: 1px !important;}
+    & > *:not(#tabbrowser-tabs) {max-width: var(--toolbar-button-wdt) !important;}
   }
   
   /* styles for extensions button */
@@ -212,6 +250,7 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
     #TabsToolbar:hover
     .titlebar-buttonbox-container:not(:hover),
     #TabsToolbar-customization-target *:not(#firefox-view-button)[open],
+    #TabsToolbar-customization-target #searchbar:focus-within,
     #PanelUI-menu-button[open],
     #PanelUI-menu-button:hover,
     #unified-extensions-button[open],
@@ -223,10 +262,10 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
     {
       right: calc(var(--right-margin) + var(--margin));
       
-      & > *:not(.titlebar-buttonbox-container) {opacity: 1 !important;}
+      & > *:not(.titlebar-buttonbox-container), #TabsToolbar-customization-target > * {opacity: 1 !important;}
     }
     #TabsToolbar{
-      width: calc(var(--toolbar-button-wdt) + 4px) !important;;
+      width: calc(var(--toolbar-button-wdt) + 4px) !important;
       padding-right: 0px !important;
       
       background-color: var(--tb-col) !important;
@@ -278,6 +317,8 @@ Tab bar has been transformed into vertical toolbar on the right side of the wind
     right: 10px !important;
   }
   
+  #TabsToolbar-customization-target toolbarpaletteitem {width: 46px !important;}
+  #wrapper-search-container {max-height: var(--searchbar-hgt) !important;}
   #wrapper-unified-extensions-button {opacity: 1 !important;}
   
   #unified-extensions-button{

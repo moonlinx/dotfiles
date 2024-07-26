@@ -138,6 +138,7 @@ richlistitem,
 panel tree,
 menulist,
 button,
+select,
 input:not([type="checkbox"]),
 #urlbar-background,
 #preview-image,
@@ -151,7 +152,24 @@ input:not([type="checkbox"]),
 richlistbox
 {border-radius: var(--big-rounding) !important;}
 
-/* dialog */
+/* disable pointer events in clean mode */ 
+#main-window[titlepreface*="?"]{
+  #nav-bar:not(:has(#urlbar[breakout-extend])),
+  #sidebar,
+  #TabsToolbar,
+  #PersonalToolbar
+  {pointer-events: none !important;}
+}
+
+/*
+
+--- DIALOG ------------------------------------------------------------------------------------------------------------------------------------------
+
+Styles for dialogs e.g. "confirm deleting extension"
+
+*/
+
+
 #commonDialogWindow, #commonDialogWindow .titleIcon{
   background-color: transparent !important;
   color: var(--bt-col) !important;
@@ -180,16 +198,20 @@ richlistbox
   }
 }
 
-.dialogBox {margin-top: var(--margin) !important;}
+#window-modal-dialog {margin-top: var(--margin) !important;} /* shift top-aligned dialogs little bit lower */
+.sizeDetermined #infoBody {min-height: 20px !important;} /* add minimal height to alert text */
+#searchbar-anon-search-settings {margin-inline-end: 7px !important;} /* margin for settings button in searcbar popup */
+#PopupSearchAutoComplete {--panel-border-radius: var(--big-rounding) !important;} /* rounding for this popup */
 
-/* disable pointer events in clean mode */ 
-#main-window[titlepreface*="?"]{
-  #nav-bar:not(:has(#urlbar[breakout-extend])),
-  #sidebar,
-  #TabsToolbar,
-  #PersonalToolbar
-  {pointer-events: none !important;}
-}
+/* print dialog */
+print-preview::before,
+print-preview .previewStack::before,
+.printPreviewNavigation::before
+{display: none !important;}
+
+.printDialogBox::before {border-radius: var(--rounding) !important;}
+
+.printDialogBox {margin-top: var(--margin) !important;}
 
 /*
 
@@ -199,25 +221,22 @@ Ctrl + Shift + S
 
 */
 
-#screenshotsPagePanel{
-  --vert-offset: 8px;
-  --hor-offset: 10px;
-  
+#screenshotsPagePanel{  
   position: fixed !important;
   transition: var(--transition);
   
   bottom: calc(
     var(--bottom-margin) 
-    - var(--vert-offset)
     + var(--screenshot-tool-hgt)
   );
   
-  left: var(--hor-offset);
+  left: 0;
   
   z-index: -1 !important;
   width: var(--sdbr-wdt) !important;
 }
 
+/* for smooth transition */
 #screenshotsPagePanel[hidden]{
   display: flex !important;
   opacity: 0;
@@ -232,6 +251,21 @@ screenshots-buttons{
   display: flex !important;
   height: var(--screenshot-tool-hgt) !important;
   width: var(--sdbr-wdt) !important;
+  padding: calc(var(--margin) / 2) !important;
+  
+  top: 0px !important;
+  inset-inline-end: 0px !important;
+}
+
+.screenshot-button{
+  width: calc(
+    var(--sdbr-wdt) / 2
+    - var(--margin) * 1.5
+  )!important;
+  
+  margin: calc(var(--margin) / 2) !important;
+  padding-top: 56px !important;
+  background-position-y: 10px !important;
 }
 
 /* when sidebar hidden */
@@ -240,13 +274,12 @@ screenshots-buttons{
     bottom: calc(
       var(--bottom-margin)
       + var(--margin)
-      - var(--vert-offset)
       + var(--screenshot-tool-hgt)
-      );
+    );
 
     left: calc(
       var(--left-margin)
-      + var(--margin) * 2
+      + var(--margin)
     );
   }
   
@@ -258,24 +291,47 @@ screenshots-buttons{
 
 --- CONTEXT MENU ------------------------------------------------------------------------------------------------------------------------------------
 
+Apply theme colors to context menus and menubar
+
 */
 
-/* apply dynamic colors to context menus and menubar*/
+/* in page context menu */
 #contentAreaContextMenu[showservicesmenu="true"],
-#contentAreaContextMenu[showservicesmenu="true"] menupopup,
-#toolbar-context-menu,
-#toolbar-menubar menupopup
+#contentAreaContextMenu[showservicesmenu="true"] menupopup
 {
-  --panel-background: var(--bg-col)!important;                        
-  --panel-border-color: var(--tb-col) !important;                    
+  --panel-background: var(--bg-col)!important;
+  --panel-border-color: var(--tb-col) !important;
+  
   --toolbar-field-focus-background-color: var(--bt-col) !important;
   --panel-color: var(--bt-col) !important;  
   
   menu:where([_moz-menuactive="true"]:not([disabled="true"])), menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
-    background-color: var(--tb-col) !important;
+    background-color: var(--panel-item-hover-bgcolor) !important;
     color: var(--bt-col) !important;
   }
-}     
+}
+
+/* toolbar menu */
+#toolbar-menubar menupopup,
+#toolbar-context-menu, #toolbar-context-menu menupopup,
+#unified-extensions-context-menu, #unified-extensions-context-menu menupopup,
+#placesContext, #placesContext menupopup,
+#downloadsContextMenu, #downloadsContextMenu menupopup,
+#sidebarMenu-popup, #PopupSearchAutoComplete,
+:is(#back-button, #forward-button) menupopup,
+#permission-popup-menulist menupopup
+{
+  --panel-background: var(--pp-col)!important;  
+  --panel-border-color: var(--tb-col) !important;
+  
+  --toolbar-field-focus-background-color: var(--bt-col) !important;
+  --panel-color: var(--bt-col) !important;  
+  
+  menu:where([_moz-menuactive="true"]:not([disabled="true"])), menuitem:where([_moz-menuactive="true"]:not([disabled="true"])) {
+    background-color: var(--panel-item-hover-bgcolor) !important;
+    color: var(--bt-col) !important;
+  }
+}
 
 /*
 
@@ -309,8 +365,36 @@ Right click > Customize toolbar
   }
 }
 
-:root[customizing] .customization-target:not(#widget-overflow-fixed-list) {
-  min-width: 0px !important;
+toolbarpaletteitem#wrapper-search-container[place="palette"] #searchbar {background-color: var(--bg-col) !important;}
+
+:root[customizing] .customization-target:not(#widget-overflow-fixed-list) {min-width: 0px !important;}
+
+/* red sidebar icon styles */
+#main-window{
+  --shyfox-string-sidebar-button-tooltip: "This button is only shown when the sidebar is disabled and is colored red to attract attention";
+  &[lang="ru"]{--shyfox-string-sidebar-button-tooltip: "Эта кнопка отображается только тогда, когда боковая панель отключена, и окрашена в красный цвет, чтобы привлечь внимание";}
+}
+
+#wrapper-sidebar-button[place="palette"] .toolbarbutton-icon {
+  padding: 2px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border-radius: 6px !important;
+}
+
+#wrapper-sidebar-button[mousedown]{
+  &::after{
+    content: var(--shyfox-string-sidebar-button-tooltip) !important;
+    text-align: left !important;
+    position: absolute;
+    color: black !important;
+    background-color: white !important;
+    border-radius: var(--rounding);
+    padding: 5px;
+    width: 160px !important;
+    margin-left: 40px;
+    margin-top: 40px;
+  }
 }
 
 /*
@@ -324,7 +408,7 @@ Sometimes Firefox shows notifications at the top of the window suggesting, for e
 #tab-notification-deck, .global-notificationbox{
   position: fixed !important;
   transition: var(--transition) !important;
-  z-index: 2 !important;
+  z-index: 0 !important;
   vbox {background-color: transparent !important;}
   background-color: transparent !important;
   width: auto;
@@ -391,6 +475,7 @@ File Edit View History Bookmarks Tools Help
     
     border-radius: var(--rounding);
     background-color: var(--tb-col) !important;
+    & > * {opacity: var(--dyn-opct);}
     
     /* outline only when visible */
     &:not([inactive="true"]) {
@@ -425,7 +510,7 @@ File Edit View History Bookmarks Tools Help
   margin-left: 3% !important;
 }
 
-.rdm-toolbar, .devtools-button, .user-agent {border-radius: var(--rounding) !important;}
+.rdm-toolbar, .user-agent {border-radius: var(--rounding) !important;}
 
 .user-agent {border: 1px solid grey !important;}
 
@@ -436,10 +521,18 @@ File Edit View History Bookmarks Tools Help
 */
 
 /* fix some items dissapearing */
-#titlebar {opacity: 1 !important;}
+#titlebar {
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
 
 :root[tabsintitlebar] #titlebar:-moz-window-inactive {
   opacity: 1 !important;
+}
+
+#navigator-toolbox:-moz-window-inactive {
+  background-color: initial !important;
+  color: initial !important;
 }
 
 /* remove annoying line at the top of the window */
@@ -447,6 +540,13 @@ File Edit View History Bookmarks Tools Help
   margin-top: -1px !important;
   position: relative;
   z-index: 3;
+}
+
+/* weird margin fix */
+#tabbrowser-tabpanels {
+  & browser[type="content"] {
+    margin: 0 !important;
+  }
 }
 
 
@@ -461,18 +561,15 @@ File Edit View History Bookmarks Tools Help
 .footer-button {
   &:not([disabled]) {
     &[default], &.primary {
-      background-color: var(--shy-color) !important;;
+      background-color: var(--shy-accent-color) !important;;
       &:hover {
-        background-color: color-mix(in srgb, black 10%,var(--shy-color)) !important;
+        background-color: color-mix(in srgb, var(--bt-col, black) 10%,var(--shy-accent-color)) !important;
       }
     }
   }
 }
 
-::selection {
-    color: White !important;
-    background: var(--shy-color) !important;
-}
+::selection {background: var(--shy-accent-color) !important;}
 
 #tracking-protection-icon-box[active]{
   fill: var(--shy-color) !important;
@@ -485,7 +582,13 @@ File Edit View History Bookmarks Tools Help
   }
 }
 
-.urlbarView-row[selected] {background-color: var(--shy-color) !important;}
+.urlbarView-row[selected] {background-color: var(--shy-accent-color) !important;}
+
+.urlbarView-favicon {
+  .urlbarView-row[type="tabtosearch"]:not([selected]) > .urlbarView-row-inner > .urlbarView-no-wrap > & {
+    color: var(--shy-color) !important;
+  }
+}
 
 .ctrlTab-preview:focus > .ctrlTab-preview-inner, #ctrlTab-showAll:focus {border-color: var(--shy-color) !important;}
 
@@ -497,6 +600,7 @@ File Edit View History Bookmarks Tools Help
   --toolbarbutton-icon-fill-attention:           var(--shy-color) !important;
   --fxview-primary-action-background:            var(--shy-color) !important;
   --toolbar-field-focus-border-color:            var(--shy-color) !important;
+  --uei-button-attention-dot-color:              var(--shy-color) !important;
   --button-primary-active-bgcolor:               var(--shy-color) !important;
   --button-primary-hover-bgcolor:                var(--shy-color) !important;
   --uc-checkbox-checked-bgcolor:                 var(--shy-color) !important;

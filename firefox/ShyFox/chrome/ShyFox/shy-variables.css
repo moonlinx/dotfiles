@@ -9,9 +9,9 @@ Values of these variables can be changed safely and most likely nothing will bre
 
 */
 
-:root{ 
+:root, #screenshots-component *{
   /* accent color */
-  --shy-color: #3584E4;
+  --shy-accent-color: #3584E4;
   
   /* window border thickness and size of many margins */
   --margin: 0.8rem;
@@ -19,6 +19,8 @@ Values of these variables can be changed safely and most likely nothing will bre
   /* rounded corners radius of most elements */
   --rounding: 11.5px;
   --big-rounding: 15px;
+  --bigger-rounding: 20px;
+  --giant-rounding: 30px;
   
   /* animations time */
   --trans-dur: 0.25s;
@@ -30,9 +32,15 @@ Values of these variables can be changed safely and most likely nothing will bre
   
   --findbar-wdt: 70vw;
   
+  /* intensity of blur (new tab) */
+  --blur-radius: 10px;
+  
+  /* brightness of inactive window elements */
+  --inactive-opct: 0.7;
+  
   /* transparency of indicator bars showing the position of hidden panels */
   --hide-bar-opct: 0.2;
-  &[titlepreface*="?"]{--hide-bar-opct: 0;} /* clean mode */
+  &:-moz-window-inactive{--hide-bar-opct: 0.1;}
   
   /* how much shorter these bars than panels */
   --hide-bar-wdt-pad: 10px;
@@ -53,6 +61,14 @@ Values of these variables can be changed safely and most likely nothing will bre
   --debug-col-2: transparent;  /* rgba(0, 255, 0, 0.2); color of window dragging hitboxes     */
 }
 
+
+/* accent color toggle */
+:root{--shy-color: var(--shy-accent-color)}
+
+@media (-moz-bool-pref: "shyfox.fill.accent.with.icons.fill.color"){
+  :root{--shy-color: var(--toolbar-color, var(--shy-accent-color)) !important;}
+}
+
 /* 
 
 --- VARIABLES ----------------------------------------------------------------------------------------------------------------------------------
@@ -63,11 +79,17 @@ Reserved values and all sorts of dynamic variables. You should not touch them.
 
 :root{
   
-  /* pick browser colors */                     /* used for:          */
-  --bg-col: var(--lwt-accent-color);            /* darker background  */
-  --tb-col: var(--toolbar-bgcolor);             /* lighter background */
-  --bt-col: var(--toolbarbutton-icon-fill);     /* text or icons      */
-  --st-col: var(--sidebar-background-color);    /* not used now       */
+  --ActiveCaption: ActiveCaption;
+  
+  /* pick browser colors */                                           /* used for:          */ 
+  --bg-col: var(--lwt-accent-color, var(--ActiveCaption, tomato));    /* darker background  */       /* tomato is the fallback color */
+  --tb-col: var(--toolbar-bgcolor, tomato);                           /* lighter background */       /* meaning something went wrong */
+  --bt-col: var(--toolbarbutton-icon-fill);                           /* text or icons      */
+  --pp-col: var(--arrowpanel-background);                             /* popup color        */
+  
+  /* dynamic opacity */
+  --dyn-opct: 1;
+  &:-moz-window-inactive{--dyn-opct: var(--inactive-opct);}
   
   /* shared shortcuts for commonly used parameters */
   --outline: 1px solid var(--arrowpanel-background);      /* outline around almost anything              */
@@ -78,7 +100,7 @@ Reserved values and all sorts of dynamic variables. You should not touch them.
   --toolbar-item-hgt: 40px;       /* height of all panels elements: buttons, urlbar, etc.                                   */
   --toolbar-button-wdt: 45px;     /* width of all panels buttons                                                            */
   --hide-bar-padding: 3px;        /* how much indicator bars showing the position of hidden panels is thinner than --margin */
-  --screenshot-tool-hgt: 145px;   
+  --screenshot-tool-hgt: 145px;   /* height of `ctrl + shift + s` tool buttons  */
   
   /* hiding the window border in fullscreen mode and assigning --margin to it in windowed mode */
   --left-margin:   0px;
@@ -93,8 +115,8 @@ Reserved values and all sorts of dynamic variables. You should not touch them.
     --bottom-margin: var(--margin);
   }
   
-  /* hide indication bars in fullscreen */
-  &:is([inFullscreen="true"], [inDOMFullscreen="true"]){
+  /* hide indication bars in fullscreen or clean mode */
+  &:is([inFullscreen="true"], [inDOMFullscreen="true"], [titlepreface*="?"]){
     --hide-bar-opct: 0 !important;
   }
   
