@@ -9,6 +9,7 @@ cmake
 docker
 dust
 eza
+fastfetch
 fd
 felixkratz/formulae/borders
 felixkratz/formulae/sketchybar
@@ -21,6 +22,7 @@ gnu-sed
 hashicorp/tap/terraform
 htop
 ifstat
+imagemagick
 imap-uw
 iproute2mac
 jesseduffield/lazydocker/lazydocker

@@ -24,10 +24,10 @@ yabai -m config external_bar all:40:0 \
   mouse_action2 resize \
   mouse_drop_action swap \
   \
-  top_padding 8 \
-  bottom_padding 7 \
-  left_padding 7 \
-  right_padding 7 \
+  top_padding 9 \
+  bottom_padding 8 \
+  left_padding 8 \
+  right_padding 8 \
   window_gap 8
 #something
 
