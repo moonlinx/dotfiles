@@ -4,14 +4,14 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "􀆾",
+		apple = "􁐌",
 		gear = "􀍟",
 		cpu = "􀫥",
 		clipboard = "􀉄",
 		calendar = "􀉉",
 
 		switch = {
-			on = "􁏻",
+			on = "􁏮",
 			off = "􁏯",
 		},
 		volume = {

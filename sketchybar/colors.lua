@@ -2,12 +2,12 @@ return {
 	black = 0xff181819,
 	white = 0xffe2e2e3,
 	red = 0xfffc5d7c,
-	green = 0xff9ed072,
+	green = 0xff56c38f,
 	lime = 0xff32cd32,
 	leaf = 0xff30B700,
 	blue = 0xff76cce0,
 	cyan = 0xff00ffff,
-	arise = 0xffbdf2f5,
+	arise = 0xffe6f8f7,
 	yellow = 0xffe7c664,
 	gold = 0xffe7b744,
 	cream = 0xfffffdd0,
@@ -21,7 +21,7 @@ return {
 
 	bar = {
 		-- bg = 0xff181819,
-		bg = 0xf02c2e34,
+		bg = 0xBF2c2e34,
 		border = 0xff2c2e34,
 	},
 	popup = {
