@@ -1,3 +1,4 @@
+age
 atuin
 bash
 bat
@@ -44,13 +45,16 @@ openssh
 php
 pngpaste
 poppler
+portal
 procs
 ranger
 ripgrep
 spotify_player
+sshs
 starship
 stow
 switchaudio-osx
+termshark
 tldr
 tmux
 tokyo-cabinet
