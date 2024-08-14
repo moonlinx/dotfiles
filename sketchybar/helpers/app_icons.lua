@@ -213,6 +213,7 @@ return {
 	["Obsidian"] = ":obsidian:",
 	["Thunderbird"] = ":thunderbird:",
 	["Firefox"] = ":firefox_developer_edition:",
+	["VirusTotal"] = ":default:",
 	["WezTerm"] = ":terminal:",
 	["default"] = ":default:",
 }

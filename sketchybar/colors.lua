@@ -13,7 +13,7 @@ return {
 	cream = 0xfffffdd0,
 	orange = 0xfff39660,
 	magenta = 0xffb39df3,
-	purple = 0xff9500FF,
+	purple = 0xff917ae7,
 	violet = 0xffd7bffd,
 	strawberry = 0xffed89a8,
 	grey = 0xff7f8490,

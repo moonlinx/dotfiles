@@ -7,7 +7,7 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 
 local cal = sbar.add("item", {
 	icon = {
-		color = colors.black,
+		color = colors.arise,
 		padding_left = 8,
 		font = {
 			style = settings.font.style_map["Black"],
@@ -15,7 +15,7 @@ local cal = sbar.add("item", {
 		},
 	},
 	label = {
-		color = colors.black,
+		color = colors.arise,
 		padding_right = 8,
 		width = 49,
 		align = "right",
@@ -26,8 +26,8 @@ local cal = sbar.add("item", {
 	padding_left = 1,
 	padding_right = 1,
 	background = {
-		color = colors.arise,
-		border_color = colors.black,
+		color = colors.transparent,
+		border_color = colors.arise,
 		border_width = 1,
 	},
 })

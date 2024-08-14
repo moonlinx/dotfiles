@@ -4,17 +4,18 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local spaces = {}
+local japaneseNums = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
 			font = { family = settings.font.icons },
-			string = i,
+			string = japaneseNums[i],
 			padding_left = 15,
 			padding_right = 8,
-			color = colors.white,
-			highlight_color = colors.cyan,
+			color = colors.arise,
+			highlight_color = colors.purple,
 		},
 		label = {
 			padding_right = 20,
@@ -26,10 +27,10 @@ for i = 1, 10, 1 do
 		padding_right = 1,
 		padding_left = 1,
 		background = {
-			color = colors.bg1,
+			color = colors.transparent,
 			border_width = 1,
 			height = 26,
-			border_color = colors.black,
+			border_color = colors.grey,
 		},
 		popup = { background = { border_width = 5, border_color = colors.black } },
 	})
@@ -68,14 +69,14 @@ for i = 1, 10, 1 do
 
 	space:subscribe("space_change", function(env)
 		local selected = env.SELECTED == "true"
-		local color = selected and colors.grey or colors.bg2
+		local color = selected and colors.white or colors.bg2
 		space:set({
 			icon = { highlight = selected },
 			label = { highlight = selected },
 			background = { border_color = selected and colors.black or colors.bg2 },
 		})
 		space_bracket:set({
-			background = { border_color = selected and colors.grey or colors.bg2 },
+			background = { border_color = selected and colors.white or colors.bg2 },
 		})
 	end)
 
