@@ -13,7 +13,7 @@ Normal navigation with vim navigation customized for terminal applications.
 - [Sketchybar](https://github.com/FelixKratz/SketchyBar)
 - [yabai](https://github.com/koekeishiya/yabai)
 - [skhd](https://github.com/koekeishiya/skhd)
-  [JankyBorders](https://github.com/FelixKratz/JankyBorders)
+- [JankyBorders](https://github.com/FelixKratz/JankyBorders)
 - [neovim](https://neovim.io) / [lazyvim](https://www.lazyvim.org/) - nvim package manager
 
 ## Dotfiles are symlinked on my machine
@@ -39,5 +39,5 @@ xargs brew install < leaves.txt
 Follow this command to kill the dock:
 
 ```sh
-defaults write com.apple.Dock autohide-delay -float 0; killall Dock
+defaults write com.apple.Dock autohide-delay -float 1000; killall Dock
 ```

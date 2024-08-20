@@ -37,6 +37,7 @@ alias d="delta"
 alias yt="yt-dlp"
 alias fetch="neofetch"
 alias sp="spotify_player"
+alias py="python3"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
