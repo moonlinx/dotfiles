@@ -43,6 +43,7 @@ return {
 	["JetBrains Rider"] = ":rider:",
 	["DEVONthink 3"] = ":devonthink3:",
 	["Docker"] = ":docker:",
+	["OrbStack"] = ":docker:",
 	["Docker Desktop"] = ":docker:",
 	["Matlab"] = ":matlab:",
 	["VLC"] = ":vlc:",

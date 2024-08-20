@@ -4,7 +4,7 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local spaces = {}
-local japaneseNums = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一" }
+local japaneseNums = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
@@ -20,8 +20,8 @@ for i = 1, 10, 1 do
 		label = {
 			padding_right = 20,
 			color = colors.grey,
-			highlight_color = colors.white,
-			font = "sketchybar-app-font:Regular:16.0",
+			highlight_color = colors.arise,
+			font = "sketchybar-app-font:Regular:15.0",
 			y_offset = -1,
 		},
 		padding_right = 1,
@@ -73,10 +73,10 @@ for i = 1, 10, 1 do
 		space:set({
 			icon = { highlight = selected },
 			label = { highlight = selected },
-			background = { border_color = selected and colors.black or colors.bg2 },
+			background = { border_color = selected and colors.white or colors.bg2 },
 		})
 		space_bracket:set({
-			background = { border_color = selected and colors.white or colors.bg2 },
+			background = { border_color = selected and colors.grey or colors.bg2 },
 		})
 	end)
 
