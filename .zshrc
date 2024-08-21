@@ -159,7 +159,7 @@ setopt hist_find_no_dups
 if [ $(command -v nvim) ]; then
   export EDITOR=$(which nvim)
   alias vim=$EDITOR
-  alias v=$EDITOR
+  alias nv=$EDITOR
 fi
 
 export SUDO_EDITOR=$EDITOR

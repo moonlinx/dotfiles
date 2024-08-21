@@ -1,12 +1,12 @@
 # ~/.config/starship.toml
 format = '''
-$directory
+$os  in $directory
 $character'''
 add_newline = true
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
-right_format = """$git_metrics$git_branch$git_status"""
+right_format = """$git_metrics$git_branch$git_status$python"""
 
 # Drop ugly default prompt characters
 [character]
@@ -17,8 +17,8 @@ vicmd_symbol = "[ ](blue bold)"
 
 # Display OS symbol at the very begining
 [os]
-format = '[$symbol](bold white) '   
-disabled = true
+format = '[$symbol](bold grey)'   
+disabled = false
 
 # ---y
 
@@ -48,8 +48,6 @@ read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style) '
 disabled = false
 
-#TODO: equal out distance in icons
-#
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
@@ -79,6 +77,13 @@ disabled = false
 #Show git metrics i.e: puts, files, pulls, etc.
 [git_metrics]
 disabled = false
+
+[python]
+symbol = '  '
+style = 'yellow bold'
+virtualenv = 'venv'
+version = 'v${raw}'
+format = 'via [${symbol}(${version} )(\($virtualenv\) )]($style)'
 
 [buf]
 symbol = " "
@@ -174,7 +179,7 @@ HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
 Linux = " "
 Mabox = " "
-Macos = "󰔛 " 
+Macos = "" 
 # " " " "
 Manjaro = " "
 Mariner = " "
