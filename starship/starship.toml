@@ -1,12 +1,12 @@
 # ~/.config/starship.toml
 format = '''
-$os  in $directory
+$os in $directory
 $character'''
 add_newline = true
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
-right_format = """$git_metrics$git_branch$git_status$python"""
+right_format = """$git_metrics$git_branch$git_status$python$jobs$cmd_duration"""
 
 # Drop ugly default prompt characters
 [character]
@@ -48,6 +48,12 @@ read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style) '
 disabled = false
 
+[directory.substitutions]
+'Documents' = '󰈙 '
+'Downloads' = '  '
+'Music' = '  '
+'Pictures' = '  '
+
 # Shows current git status
 [git_status]
 format = '[$all_status$ahead_behind]($style) '
@@ -67,7 +73,7 @@ disabled = false
 
 # Shows current git branch
 [git_branch]
-symbol = '󰊤   = '
+symbol = '󰊤   [on](bold grey) '
 format = 'via [$symbol$branch]($style)'
 # truncation_length = 4
 truncation_symbol = '…/'
@@ -78,11 +84,22 @@ disabled = false
 [git_metrics]
 disabled = false
 
+[cmd_duration]
+min_time = 500
+style = 'bold grey'
+format = '[$duration]($style)'
+
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol]($style)'
+
 [python]
 symbol = '  '
-style = 'yellow bold'
-virtualenv = 'venv'
-version = 'v${raw}'
+style = 'teal bold'
+# virtualenv = true
+version_format = 'v${raw}'
 format = 'via [${symbol}(${version} )(\($virtualenv\) )]($style)'
 
 [buf]
@@ -179,7 +196,7 @@ HardenedBSD = "󰞌 "
 Illumos = "󰈸 "
 Linux = " "
 Mabox = " "
-Macos = "" 
+Macos = " " 
 # " " " "
 Manjaro = " "
 Mariner = " "
