@@ -10,7 +10,7 @@ yabai -m config external_bar all:40:0 \
   window_placement second_child \
   window_shadow float \
   window_opacity on \
-  window_opacity_duration 0.2 \
+  window_opacity_duration 0.4 \
   active_window_opacity 1.0 \
   normal_window_opacity 0.7 \
   window_animation_duration 0.2 \

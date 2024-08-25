@@ -53,10 +53,16 @@ shift + alt - e : yabai -m space --balance
 # shift + cmd - w : yabai -m window --resize top:0:20
 
 # swap windows
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - h : yabai -m window --swap west
-shift + alt - l : yabai -m window --swap east
+shift + alt - s : yabai -m window --swap south
+shift + alt - w : yabai -m window --swap north
+shift + alt - a : yabai -m window --swap west
+shift + alt - d : yabai -m window --swap east
+
+# resize window
+alt + shift - h : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
+alt + shift - k : yabai -m window north --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
+alt + shift - j : yabai -m window south --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
+alt + shift - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
 # move window and split
 ctrl + alt - j : yabai -m window --warp south
@@ -67,10 +73,6 @@ ctrl + alt - l : yabai -m window --warp east
 # move window to display top and bottom
 shift + alt - g : yabai -m window --display west; yabai -m display --focus north;
 shift + alt - s : yabai -m window --display east; yabai -m display --focus south;
-
-#move window to prev and next space
-shift + alt - p : yabai -m window --space prev;
-shift + alt - n : yabai -m window --space next;
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;

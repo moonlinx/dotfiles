@@ -37,6 +37,7 @@ alias d="delta"
 alias yt="yt-dlp"
 alias fetch="neofetch"
 alias sp="spotify_player"
+alias wifi="wifi-password"
 alias py="python3"
 
 # Nmap
@@ -159,7 +160,7 @@ setopt hist_find_no_dups
 if [ $(command -v nvim) ]; then
   export EDITOR=$(which nvim)
   alias vim=$EDITOR
-  alias nv=$EDITOR
+  alias v=$EDITOR
 fi
 
 export SUDO_EDITOR=$EDITOR
