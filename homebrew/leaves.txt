@@ -7,7 +7,6 @@ bloznelis/tap/kbt
 blueutil
 btop
 cmake
-docker
 dust
 eza
 fastfetch
@@ -26,11 +25,11 @@ ifstat
 imagemagick
 imap-uw
 iproute2mac
-jesseduffield/lazydocker/lazydocker
 jesseduffield/lazygit/lazygit
 jq
 koekeishiya/formulae/skhd
 koekeishiya/formulae/yabai
+lazydocker
 libiconv
 lmdb
 mailsy
@@ -49,6 +48,7 @@ portal
 procs
 ranger
 ripgrep
+speedtest-cli
 spotify_player
 sshs
 starship
@@ -62,6 +62,7 @@ tree
 unar
 unzip
 wget
+wifi-password
 wtfis
 yazi
 zfdang/free-for-macos/free-for-macos
