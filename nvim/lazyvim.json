@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.lang.python",
     "lazyvim.plugins.extras.util.dot"
   ],
   "news": {

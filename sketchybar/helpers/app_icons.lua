@@ -30,6 +30,7 @@ return {
 	["Anytype"] = ":anytype:",
 	["TeamSpeak 3"] = ":team_speak:",
 	["LibreWolf"] = ":libre_wolf:",
+	["Zen Browser"] = ":element:",
 	["Neovide"] = ":neovide:",
 	["neovide"] = ":neovide:",
 	["Spotlight"] = ":spotlight:",

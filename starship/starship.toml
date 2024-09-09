@@ -1,6 +1,6 @@
 # ~/.config/starship.toml
 format = '''
-$os in $directory
+$directory
 $character'''
 add_newline = true
 command_timeout = 1000
@@ -18,7 +18,7 @@ vicmd_symbol = "[ ](blue bold)"
 # Display OS symbol at the very begining
 [os]
 format = '[$symbol](bold grey)'   
-disabled = false
+disabled = true
 
 # ---y
 
@@ -48,11 +48,11 @@ read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style) '
 disabled = false
 
-[directory.substitutions]
-'Documents' = '󰈙 '
-'Downloads' = '  '
-'Music' = '  '
-'Pictures' = '  '
+# [directory.substitutions]
+# 'Documents' = '󰈙 '
+# 'Downloads' = '  '
+# 'Music' = '  '
+# 'Pictures' = '  '
 
 # Shows current git status
 [git_status]
