@@ -73,6 +73,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
+
+# VI Mode!!!
+bindkey jj vi-cmd-mode
 # FUNCTIONS ___________________________________________
 #
 #Create a directory and cd diretctly into it
