@@ -12,10 +12,10 @@ return {
 	line_height = 1.0,
 
 	-- Blur
-	macos_window_background_blur = 55,
+	macos_window_background_blur = 40,
 
 	-- Opacity
-	window_background_opacity = 0.40,
+	window_background_opacity = 0.30,
 	-- text_background_opacity = 0.20,
 
 	-- Window

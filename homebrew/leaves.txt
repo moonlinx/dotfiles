@@ -1,5 +1,4 @@
 age
-atuin
 bash
 bat
 bettercap
@@ -7,6 +6,7 @@ bloznelis/tap/kbt
 blueutil
 btop
 cmake
+dooit
 dust
 eza
 fastfetch
@@ -32,7 +32,6 @@ koekeishiya/formulae/yabai
 lazydocker
 libiconv
 lmdb
-mailsy
 mpv
 nano
 neofetch

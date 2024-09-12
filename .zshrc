@@ -1,20 +1,11 @@
-# ---- Oh-my-posh ---- 
-# ---- Prompt ----
-# eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
-# #
-# No terminal in apple terminal
-#
-# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-#   eval "$(oh-my-posh init zsh)"
-# fi
-
 # Starship ----------------------------------------
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
-# FZF-Tab 
 autoload -U compinit; compinit
 source ~/.fzf-tab/fzf-tab.plugin.zsh
+
+# ZSH Autocomplete
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # System Aliases ----------------------------------------
@@ -29,7 +20,6 @@ alias gn="sudo shutdown -h now"
 alias lt="ls -hT --color=always"
 alias lock="pmset displaysleepnow"
 alias cat="bat"
-# alias rm="trash"
 alias z="zoxide"
 alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias ya="yazi"
@@ -83,12 +73,12 @@ function take {
     mkdir -p $1
     cd $1
 }
-# _____FZF_____
 
+# _____FZF_____
 
 # fzf base
 source <(fzf --zsh)
-# eval "$(fzf --zsh)"
+
 # --- setup fzf theme ---
 fg="#CBE0F0"
 # bg="#011628"
@@ -143,9 +133,10 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-
+#
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -178,8 +169,8 @@ export PATH="${PATH}:/Users/devindelaney/Library/Python/3.11/lib/python/site-pac
 # AUTOSUGGESTIONS___________________________________________
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-bindkey '^e' autosuggest-execute
-# bindkey '^e' autosuggest-accept
+# bindkey '^e' autosuggest-execute
+bindkey '^e' autosuggest-accept
 bindkey '^u' autosuggest-toggle
 
 # SYYNTAX HIGHLIGHTING___________________________________________
@@ -188,12 +179,13 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ZOXIDE___________________________________________
 eval "$(zoxide init --cmd cd zsh)"
 
-# MANPAGES
 # Colored manpages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # FZF git
-source ~/.fzf-git.sh/fzf-git.sh
+# source ~/.fzf-git.sh/fzf-git.sh
 
 eval "$(zoxide init zsh)"
-# eval "$(atuin init zsh)"
+
+# Enable fzf-tab
+enable-fzf-tab

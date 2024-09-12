@@ -73,7 +73,6 @@ echo "Please find and install the following apps from the following links
 https://stacher.io/
 https://github.com/Vencord/Vesktop?tab=readme-ov-file
 https://www.screen.studio/download
-https://apps.apple.com/us/app/heic-converter/id1294126402
 https://obsproject.com/download"
 
 # Give time to copy all of the links
