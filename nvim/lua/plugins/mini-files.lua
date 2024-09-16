@@ -45,7 +45,7 @@ return {
       -- If set to false, files are moved to the trash directory
       -- To get this dir run :echo stdpath('data')
       -- ~/.local/share/neobean/mini.files/trash
-      permanent_delete = false,
+      permanent_delete = true,
     },
   },
   keys = {
@@ -221,11 +221,11 @@ return {
             vim.api.nvim_buf_set_extmark(buf_id, nsMiniFiles, i - 1, 0, {
               -- NOTE: if you want the signs on the right uncomment those and comment
               -- the 3 lines after
-              -- virt_text = { { symbol, hlGroup } },
-              -- virt_text_pos = "right_align",
-              sign_text = symbol,
-              sign_hl_group = hlGroup,
-              priority = 2,
+              virt_text = { { symbol, hlGroup } },
+              virt_text_pos = "right_align",
+              --   sign_text = symbol,
+              --   sign_hl_group = hlGroup,
+              --   priority = 2,
             })
           else
           end

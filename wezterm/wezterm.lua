@@ -15,7 +15,7 @@ return {
 	macos_window_background_blur = 40,
 
 	-- Opacity
-	window_background_opacity = 0.30,
+	window_background_opacity = 0.35,
 	-- text_background_opacity = 0.20,
 
 	-- Window
