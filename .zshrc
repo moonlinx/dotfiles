@@ -29,6 +29,7 @@ alias fetch="neofetch"
 alias sp="spotify_player"
 alias wifi="wifi-password"
 alias py="python3"
+alias rm="trash"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
