@@ -1,6 +1,9 @@
 return {
   "goolord/alpha-nvim",
-  event = "VimEnter",
+  requires = {
+    "echasnovski/mini.icons",
+    "nvim-lua/plenary.nvim",
+  },
   config = function()
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
@@ -29,16 +32,18 @@ return {
       "⠀⠀⠀⠀⠀⣿⣟⠀⠀⠀⠀⠀⠀⢻⣿⡀⠀⢀⣼⣿⠀⠀⢸⣿⠀⠀⠀⢰⣿⠇⠀⢰⣿⣇⠀⠀⣠⣿⡏⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠁⠀⠀⠀⣀⣀⣠⣿⣿⣀⡀⠀⢠⣿⡟⢠⣿⡟⢀⣿⡿⠀⠀⠀⠀⠀",
       "⠀⠀⠀⠀⠀⠛⠛⠛⠛⠛⠛⠁⠀⠈⠛⠿⠟⠋⠛⠃⠀⠀⠛⠛⠀⠀⠀⠘⠛⠀⠀⠀⠙⠿⠿⠛⠙⠛⠃⠀⠀⠚⠛⠀⠀⠀⠀⠀⠀⠀⠘⠿⠿⠃⠀⠀⠀⠀⠿⠿⠿⠿⠿⠿⠿⠀⠸⠿⠇⠸⠿⠇⠸⠿⠇⠀⠀⠀⠀⠀",
       "                                                                                ",
+      "                              ⟦ M O O N - 𝕍𝔼ℝ 2.0 ⟧                             ",
     }
 
     -- Set menu
     dashboard.section.buttons.val = {
-      dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
-      dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
-      dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
-      dashboard.button("c", " " .. " Config", LazyVim.pick.config_files()),
-      dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+      dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("f", "󰭎 " .. " Find file", ":Telescope find_files <CR>"),
+      dashboard.button("r", "󰄉 " .. " Recent files", ":Telescope oldfiles <CR>"),
+      dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
+      dashboard.button("c", "󰒓 " .. " Settings", LazyVim.pick.config_files()),
+      -- dashboard.button("d", "󱗼 " .. " Dotfiles", ":Telescope $HOME/.dotfiles <CR>"),
+      dashboard.button("q", "󰿅 " .. " Quit", ":qa<CR>"),
     }
 
     -- Send config to alpha

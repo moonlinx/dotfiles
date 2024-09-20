@@ -33,6 +33,7 @@ return {
         "python",
         "markdown",
         "markdown_inline",
+        "latex",
         "svelte",
         "graphql",
         "bash",
