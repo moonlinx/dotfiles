@@ -33,6 +33,7 @@ yabai -m config external_bar all:40:0 \
 
 # apps that yabai won't touch
 yabai -m rule --add app="Reminders$" manage=off
+yabai -m rule --add app="^Zoom.us$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --ad app="^DaisyDisk$" manage=off
 yabai -m rule --add app="^Numi$" manage=off

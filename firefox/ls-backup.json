@@ -1,0 +1,140 @@
+{
+  "yags-general": {
+    "img": "https://e1.pxfuel.com/desktop-wallpaper/907/107/desktop-wallpaper-anime-solo-leveling-igris-solo-leveling.jpg",
+    "title": "Arise",
+    "displayImg": true,
+    "font": "Quicksand",
+    "enableFonts": false,
+    "fontSize": 1.1
+  },
+  "yags-search": {
+    "placeholder": "What query plagues you?",
+    "engine": "https://www.bing.com/search?q={query}",
+    "forwardingLookup": {
+      "/": "/",
+      "deepl": "https://deepl.com/",
+      "reddit": "https://reddit.com/",
+      "maps": "https://maps.google.com/"
+    }
+  },
+  "yags-theme": {
+    "inverted": false,
+    "color": {
+      "name": "custom",
+      "bg": {
+        "shade": "#000000",
+        "base": "#000000",
+        "surface": "#000000",
+        "highlight": "#000000"
+      },
+      "fg": {
+        "shade": "#708BB2",
+        "base": "#9FB1CB",
+        "surface": "#CED7E4",
+        "highlight": "#FDFDFE"
+      },
+      "primary": {
+        "bg": "#204183",
+        "base": "#6A90DB",
+        "fg": "#EDF2FB"
+      },
+      "secondary": {
+        "bg": "#990827",
+        "base": "#F64C70",
+        "fg": "#FEE5EA"
+      },
+      "palette": {
+        "red": "#E06C75",
+        "green": "#98C379",
+        "yellow": "#E5C07B",
+        "blue": "#61AFEF",
+        "purple": "#C678DD",
+        "cyan": "#56B6C2",
+        "orange": "#FFBB7C"
+      }
+    },
+    "space": {
+      "smallest": "0.125rem",
+      "small": "0.5rem",
+      "medium": "1rem",
+      "large": "1.5rem",
+      "largest": "3rem"
+    }
+  },
+  "yags-surface": {
+    "shadow": {
+      "amount": 5,
+      "blur": 0,
+      "offset": 12,
+      "shadow": "12px 12px 0px rgb(32, 65, 131), 24px 24px 0px rgb(62.25, 50.75, 108), 36px 36px 0px rgb(92.5, 36.5, 85), 48px 48px 0px rgb(122.75, 22.25, 62), 60px 60px 0px rgb(153, 8, 39)"
+    },
+    "borderRadius": 8,
+    "maxWidth": 1250
+  },
+  "yags-bookmarks": [
+    {
+      "id": "n1gGaATxADYCi0HK",
+      "label": "Reddit",
+      "bookmarks": [
+        {
+          "id": "wMdNwkdgJPvedj93",
+          "label": "r/unixporn",
+          "url": "https://www.reddit.com/r/unixporn/"
+        },
+        {
+          "id": "Ew87cNxKeiMQIZR6",
+          "label": "r/selfhosted",
+          "url": "https://www.reddit.com/r/selfhosted/"
+        },
+        {
+          "id": "5XyUAeNw5nZjafdZ",
+          "label": "r/piracy",
+          "url": "https://www.reddit.com/r/piracy/"
+        },
+        {
+          "id": "oWAHUZjvPGnSgEZf",
+          "label": "r/home",
+          "url": "https://www.reddit.com/?feed=home"
+        }
+      ]
+    },
+    {
+      "id": "2Trfq1k5w6XfR7Ut",
+      "label": "Security",
+      "bookmarks": [
+        {
+          "id": "yhCEhUiCsYfRjBmd",
+          "label": "any.run",
+          "url": "https://any.run/"
+        },
+        {
+          "id": "YeiRmZG2kfLlSEky",
+          "label": "crowdsec",
+          "url": "https://app.crowdsec.net/cti"
+        }
+      ]
+    },
+    {
+      "id": "HrQ8vhH8lH1gy4OL",
+      "label": "Responsibilities",
+      "bookmarks": [
+        {
+          "id": "fs7YwXg8nBvFbGwV",
+          "label": "school",
+          "url": "https://www.nvcc.edu/"
+        }
+      ]
+    },
+    {
+      "id": "gNnvzPNKziAQw7F9",
+      "label": "Lab",
+      "bookmarks": [
+        {
+          "id": "mTyRQHbuyPjPKfmz",
+          "label": "Homepage",
+          "url": "http://192.168.1.182:13000/"
+        }
+      ]
+    }
+  ]
+}

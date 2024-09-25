@@ -10,7 +10,6 @@ cmake
 cpp-gsl
 dust
 eza
-fastfetch
 fd
 felixkratz/formulae/borders
 felixkratz/formulae/sketchybar
@@ -39,6 +38,7 @@ neofetch
 neovim
 nlohmann-json
 nmap
+node
 notmuch
 nowplaying-cli
 openssh
@@ -59,6 +59,7 @@ termshark
 tldr
 tmux
 tokyo-cabinet
+trash
 tree
 unar
 unzip

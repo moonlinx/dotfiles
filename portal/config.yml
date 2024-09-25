@@ -1,0 +1,5 @@
+relay: portal.spatiumportae.com
+verbose: false
+prompt_overwrite_files: true
+relay_serve_port: 8080
+tui_style: rich

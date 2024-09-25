@@ -6,6 +6,7 @@
 
 # Applications
 cmd - return : open -n -a "wezterm"
+# cmd - return : open -n -a "kitty"
 
 # change window focus within space
 alt - j : yabai -m window --focus south

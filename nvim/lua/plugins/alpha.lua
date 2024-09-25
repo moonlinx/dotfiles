@@ -1,5 +1,6 @@
 return {
   "goolord/alpha-nvim",
+  event = "VimEnter",
   requires = {
     "echasnovski/mini.icons",
     "nvim-lua/plenary.nvim",
