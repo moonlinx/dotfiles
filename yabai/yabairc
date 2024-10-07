@@ -1,49 +1,85 @@
 #!/usr/bin/env sh
 
-sudo yabai --load-sa
+# This command is the one that loads the scripting addition
+# Configure your user to execute `yabai --load-sa` as the root user without having to enter a password.
+#  https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
-yabai -m config external_bar all:40:0 \
-  mouse_follows_focus on \
-  focus_follows_mouse autoraise \
-  window_zoom_persist off \
-  window_placement second_child \
-  window_shadow float \
-  window_opacity on \
-  window_opacity_duration 0.4 \
-  active_window_opacity 1.0 \
-  normal_window_opacity 0.7 \
-  window_animation_duration 0.2 \
-  window_animation_easing ease_out_quint \
-  insert_feedback_color 0xff9dd274 \
-  split_ratio 0.50 \
-  auto_balance on \
-  auto_padding on \
-  mouse_modifier alt \
-  mouse_action1 move \
-  mouse_action2 resize \
-  mouse_drop_action swap \
-  \
-  top_padding 7 \
-  bottom_padding 8 \
-  left_padding 8 \
-  right_padding 8 \
-  window_gap 8
-#something
+# Configure the layout mode
+# "stack" - is what I use, keeps a single app on the front
+# "bsp" - binary space partitioning enables automatic tiling (partitioning)
+# "float" - default mode, windows are not managed
+# yabai -m config layout stack
+yabai -m config layout bsp
+# yabai -m config layout float
 
-# apps that yabai won't touch
+# ###############################################################################
+#                          Custom padding settings
+###############################################################################
+yabai -m config top_padding 7
+yabai -m config bottom_padding 8
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
+
+###############################################################################
+#                                  Misc
+###############################################################################
+yabai -m config external_bar all:40:0
+yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse off
+yabai -m config window_zoom_persist off
+yabai -m config window_placement second_child
+yabai -m config window_shadow float
+yabai -m window_opacity off
+yabai -m window_opacity_duration 0.4
+yabai -m active_window_opacity 1.0
+yabai -m normal_window_opacity 0.7
+yabai -m window_animation_duration 0.4
+yabai -m window_animation_easing ease_out_quint
+yabai -m insert_feedback_color 0xff9dd274
+yabai -m split_ratio 0.50
+yabai -m auto_balance on
+yabai -m auto_padding on
+yabai -m mouse_modifier fn
+yabai -m mouse_action1 move
+yabai -m mouse_action2 resize
+yabai -m mouse_drop_action swap
+
+# yabai -m config window_animation_duration    0.4
+# yabai -m config window_animation_easing      ease_out_quint
+# yabai -m config mouse_follows_focus          on
+# yabai -m config focus_follows_mouse          on
+# yabai -m config window_origin_display        default
+# yabai -m config window_placement             second_child
+# yabai -m config window_topmost               off
+# yabai -m config window_shadow                on
+# yabai -m config window_opacity               off
+# yabai -m config window_opacity_duration      0.4
+# yabai -m config active_window_opacity        0.85
+# yabai -m config normal_window_opacity        0.72
+# yabai -m config window_border                off
+# yabai -m config insert_feedback_color        0xffd75f5f
+# yabai -m config split_ratio                  0.50
+# yabai -m config mouse_modifier               alt
+# yabai -m config mouse_action1                move
+# yabai -m config mouse_action2                resize
+# yabai -m config menubar_opacity              1.0
+# yabai -m config focus_follows_mouse          autofocus
+# # when window is dropped in center of another window, swap them (on edges it will split it)
+# yabai -m mouse_drop_action                   swap
+###############################################################################
+#                              Excluded apps
+###############################################################################
+
+# Apps excluded from window management, so you can resize them and move them around
 yabai -m rule --add app="Reminders$" manage=off
-yabai -m rule --add app="^Zoom.us$" manage=off
+yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --ad app="^DaisyDisk$" manage=off
-yabai -m rule --add app="^Numi$" manage=off
-yabai -m rule --add app="^Ente Auth$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add app="^Facetime$" manage=off
+yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|Time Machine|System Settings|Archive Utility|Python|App Store|Steam|Alfred|Activity Monitor|Raycast)$" manage=off
-
-yabai -m config layout bsp
-
-echo "yabai configuration loaded.."

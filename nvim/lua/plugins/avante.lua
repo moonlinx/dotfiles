@@ -83,7 +83,7 @@ return {
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "echasnovski/mini.icons",
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
+    -- "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",

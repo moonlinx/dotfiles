@@ -44,7 +44,7 @@ return {
       dashboard.button("t", " " .. " Find text", ":Telescope live_grep <CR>"),
       dashboard.button("c", "󰒓 " .. " Settings", LazyVim.pick.config_files()),
       -- dashboard.button("d", "󱗼 " .. " Dotfiles", ":Telescope $HOME/.dotfiles <CR>"),
-      dashboard.button("q", "󰿅 " .. " Quit", ":qa<CR>"),
+      dashboard.button("q", " " .. " Quit", ":qa<CR>"),
     }
 
     -- Send config to alpha

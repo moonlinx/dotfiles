@@ -28,6 +28,18 @@ return {
 		},
 	},
 
+	-- default_prog = {
+	-- 	"/bin/zsh",
+	-- 	"--login",
+	-- 	"-c",
+	-- 	[[
+	--    if command -v tmux >/dev/null 2>&1; then
+	--      tmux attach || tmux new;
+	--    else
+	--      exec zsh;
+	--    fi
+	--    ]],
+	-- },
 	-- Mouse stuff
 	mouse_bindings = {
 		-- Ctrl-click will open the link under the mouse cursor

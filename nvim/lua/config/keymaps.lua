@@ -14,6 +14,17 @@ keymap.set("", ";", ":", { desc = "swap colon with semi colon" })
 -- Noice
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 
+-- Open Telescope buffers as I get a file preview,
+-- that's basically the main benefit lamw25wmal
+vim.keymap.set(
+  "n",
+  "<S-h>",
+  -- Notice that I start it in normal mode to navigate similarly to bufexplorer,
+  -- the ivy theme is also similar to bufexplorer and tmux sessions
+  "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
+  { desc = "[P]Open telescope buffers" }
+)
+
 -- ############################################################################
 --                         Begin of markdown section
 -- ############################################################################

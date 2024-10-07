@@ -44,7 +44,7 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
-        { name = "codeium" },
+        { name = "codeium" }, -- codeium completion
       }),
 
       -- configure lspkind for vs-code like pictograms in completion menu
@@ -53,6 +53,14 @@ return {
           maxwidth = 50,
           ellipsis_char = "...",
         }),
+      },
+      {
+        name = "nvim_lsp",
+        option = {
+          markdown_oxide = {
+            keyword_pattern = [[\(\k\| \|\/\|#\)\+]],
+          },
+        },
       },
     })
   end,
