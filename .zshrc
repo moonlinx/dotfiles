@@ -136,6 +136,7 @@ alias sp="spotify_player"
 alias wifi="wifi-password"
 alias py="python3"
 alias rm="trash"
+alias c="clear"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap"
