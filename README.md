@@ -1,3 +1,5 @@
+![mr-fox-dotfiles](https://github.com/user-attachments/assets/5d1a16c9-8c86-45f3-9917-6b3d2d3ba7ae)
+
 # .dotfiles
 
 Dotfiles for my M3 Max Macbook Pro: Running macOS Sonoma 14.6.
