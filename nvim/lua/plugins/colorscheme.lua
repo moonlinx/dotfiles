@@ -30,10 +30,25 @@ return {
         types = {},
       },
       color_overrides = {
-        mocha = {
-          base = "#000000",
-          mantle = "#000000",
-          crust = "#000000",
+        frappe = {
+          red = "#ff657a",
+          maroon = "#F29BA7",
+          peach = "#ff9b5e",
+          yellow = "#eccc81",
+          green = "#a8be81",
+          teal = "#9cd1bb",
+          sky = "#A6C9E5",
+          sapphire = "#86AACC",
+          blue = "#5d81ab",
+          lavender = "#66729C",
+          mauve = "#b18eab",
+          text = "#fcfcfa",
+          surface2 = "#535763",
+          surface1 = "#3a3d4b",
+          surface0 = "#30303b",
+          base = "#202027",
+          mantle = "#1c1d22",
+          crust = "#171719",
         },
       },
       integrations = {
@@ -75,7 +90,7 @@ return {
 --         -- Compiled file's destination location
 --         compile_path = vim.fn.stdpath("cache") .. "/nightfox",
 --         compile_file_suffix = "_compiled", -- Compiled file suffix
---         transparent = false, -- Disable setting background
+--         transparent = true, -- Disable setting background
 --         terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
 --         dim_inactive = false, -- Non focused panes set to alternative background
 --         module_default = true, -- Default enable value for modules

@@ -1,5 +1,8 @@
 local opt = vim.opt -- for conciseness
 
+-- Python debugging
+vim.g.python3_host_prog = "~/.virtualenvs/debugpy/bin/python"
+
 -- Function to get the full path and replace the home directory with ~
 local function get_winbar_path()
   local full_path = vim.fn.expand("%:p")
