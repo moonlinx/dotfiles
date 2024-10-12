@@ -10,7 +10,7 @@ right_format = """$git_metrics$git_branch$git_status$python$jobs$cmd_duration"""
 
 # Drop ugly default prompt characters
 [character]
-success_symbol = "[ ](green bold)"
+success_symbol = "[❯](green bold)"
 error_symbol = "[ ](red bold)"
 vicmd_symbol = "[ ](blue bold)"
 # ---
@@ -42,7 +42,7 @@ disabled = false
 style = 'bold purple'
 truncation_length = 10
 truncation_symbol = '…/  '
-home_symbol = ' ~'
+home_symbol = '~'
 read_only_style = '197'
 read_only = '  '
 format = '[$path]($style)[$read_only]($read_only_style) '
