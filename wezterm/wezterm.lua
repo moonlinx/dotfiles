@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 return {
 
 	-- Color Scheme
-	color_scheme = "Catppuccin Mocha",
+	color_scheme = "Catppuccin Frappe",
 
 	-- Tab Bar
 	enable_tab_bar = false,
@@ -12,10 +12,10 @@ return {
 	line_height = 1.0,
 
 	-- Blur
-	macos_window_background_blur = 45,
+	macos_window_background_blur = 10,
 
 	-- Opacity
-	window_background_opacity = 0.55,
+	window_background_opacity = 0.90,
 	-- text_background_opacity = 0.20,
 
 	-- Window
@@ -28,18 +28,6 @@ return {
 		},
 	},
 
-	-- default_prog = {
-	-- 	"/bin/zsh",
-	-- 	"--login",
-	-- 	"-c",
-	-- 	[[
-	--    if command -v tmux >/dev/null 2>&1; then
-	--      tmux attach || tmux new;
-	--    else
-	--      exec zsh;
-	--    fi
-	--    ]],
-	-- },
 	-- Mouse stuff
 	mouse_bindings = {
 		-- Ctrl-click will open the link under the mouse cursor
