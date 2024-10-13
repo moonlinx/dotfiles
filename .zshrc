@@ -117,7 +117,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # Aliases
 
 alias l="eza -l --icons --git -a"
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza -G --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias la="tree"
 alias lt="eza --tree --level=2 --long --icons --git"
 alias vimm="vim"
