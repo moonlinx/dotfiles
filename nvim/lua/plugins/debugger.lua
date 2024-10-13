@@ -1,4 +1,5 @@
 return {
+  lazy = true,
   "mfussenegger/nvim-dap-python",
   keys = {
     -- **Test-Related Key Mappings**

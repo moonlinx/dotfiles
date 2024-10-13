@@ -1,3 +1,17 @@
+local palette = {
+  red = "#ff657a",
+  maroon = "#F29BA7",
+  peach = "#ff9b5e",
+  yellow = "#eccc81",
+  green = "#a8be81",
+  teal = "#9cd1bb",
+  sky = "#A6C9E5",
+  sapphire = "#86AACC",
+  blue = "#5d81ab",
+  lavender = "#66729C",
+  mauve = "#b18eab",
+}
+
 -- colorscheme == catppuccin
 return {
   {
@@ -11,6 +25,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     priority = 1000,
     opts = {
       no_italic = false,
@@ -31,17 +46,6 @@ return {
       },
       color_overrides = {
         frappe = {
-          red = "#ff657a",
-          maroon = "#F29BA7",
-          peach = "#ff9b5e",
-          yellow = "#eccc81",
-          green = "#a8be81",
-          teal = "#9cd1bb",
-          sky = "#A6C9E5",
-          sapphire = "#86AACC",
-          blue = "#5d81ab",
-          lavender = "#66729C",
-          mauve = "#b18eab",
           text = "#fcfcfa",
           surface2 = "#535763",
           surface1 = "#3a3d4b",
@@ -54,7 +58,7 @@ return {
       integrations = {
         telescope = {
           enabled = true,
-          style = "lazyvim",
+          style = "nvchad",
         },
         dropbar = {
           enabled = true,
