@@ -11,7 +11,7 @@ return {
       chunk = {
         enable = true,
         style = {
-          { fg = "#89B5FA" },
+          { fg = "#eccc81" },
           { fg = "#F38BA8" },
         },
         chars = {
@@ -19,7 +19,7 @@ return {
           vertical_line = "│",
           left_top = "╭",
           left_bottom = "╰",
-          -- right_arrow = "┤",
+          right_arrow = "┤",
         },
 
         duration = 200,
