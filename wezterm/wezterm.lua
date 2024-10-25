@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 
-local custom = wezterm.color.get_builtin_schemes()["Catppuccin Frappe"]
+local custom = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
 custom.background = "#1c1d22"
 custom.tab_bar.background = "#040404"
 custom.tab_bar.inactive_tab.bg_color = "#0f0f0f"
@@ -9,9 +9,9 @@ return {
 
 	-- Color Scheme
 	color_scheme = {
-		["Catppuccin Frappe"] = custom,
+		["Catppuccin Mocha"] = custom,
 	},
-	color_scheme = "Catppuccin Frappe",
+	color_scheme = "Catppuccin Mocha",
 
 	-- Tab Bar
 	enable_tab_bar = false,
@@ -21,21 +21,21 @@ return {
 	line_height = 1.0,
 
 	-- Blur
-	macos_window_background_blur = 15,
+	macos_window_background_blur = 35,
 
 	-- Opacity
-	window_background_opacity = 0.95,
+	window_background_opacity = 0.75,
 	-- text_background_opacity = 0.20,
 
 	-- Window
 	window_decorations = "RESIZE",
-	keys = {
-		{
-			key = "f",
-			mods = "CTRL",
-			action = wezterm.action.ToggleFullScreen,
-		},
-	},
+	-- keys = {
+	-- 	{
+	-- 		key = "f",
+	-- 		mods = "CTRL",
+	-- 		action = wezterm.action.ToggleFullScreen,
+	-- 	},
+	-- },
 
 	-- Mouse stuff
 	mouse_bindings = {
