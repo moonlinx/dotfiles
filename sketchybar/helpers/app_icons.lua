@@ -30,7 +30,8 @@ return {
 	["Anytype"] = ":anytype:",
 	["TeamSpeak 3"] = ":team_speak:",
 	["LibreWolf"] = ":libre_wolf:",
-	["Zen Browser"] = ":zotero:",
+	-- ["Zen Browser"] = ":zotero:",
+	["Zen Browser"] = ":firefox_developer_edition:",
 	["Neovide"] = ":neovide:",
 	["neovide"] = ":neovide:",
 	["Spotlight"] = ":spotlight:",
@@ -217,6 +218,6 @@ return {
 	["Thunderbird"] = ":thunderbird:",
 	["Firefox"] = ":firefox_developer_edition:",
 	["VirusTotal"] = ":default:",
-	["WezTerm"] = ":wezterm:",
+	["WezTerm"] = ":iterm:",
 	["default"] = ":default:",
 }
