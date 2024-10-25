@@ -7,4 +7,5 @@ return {
   -- { "hrsh7th/nvim-cmp", enabled = false },
   -- { "neovim/nvim-lspconfig", enabled = false },
   { "saghen/blink.cmp", enabled = false },
+  -- { "Exafunction/codeium.vim", enabled = false },
 }
