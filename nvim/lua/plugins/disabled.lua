@@ -8,4 +8,5 @@ return {
   -- { "neovim/nvim-lspconfig", enabled = false },
   { "saghen/blink.cmp", enabled = false },
   -- { "Exafunction/codeium.vim", enabled = false },
+  -- { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
 }

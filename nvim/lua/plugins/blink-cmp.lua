@@ -1,8 +1,8 @@
 return {
   "saghen/blink.cmp",
   dependencies = { "rafamadriz/friendly-snippets" },
-  -- event = { "LspAttach", "InsertCharPre" },
-  lazy = false,
+  event = { "LspAttach", "InsertCharPre" },
+  -- lazy = false,
   version = "v0.*",
   opts = {
     highlight = {
