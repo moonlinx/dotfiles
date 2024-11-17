@@ -145,7 +145,7 @@ alias py="python3"
 alias rm="trash"
 
 # Nmap
-alias nm="nmap -sC -sV -oN nmap"
+alias nm="nmap -sC -sV -oN nmap-output.txt"
 
 #git aliases
 

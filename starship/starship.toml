@@ -73,9 +73,8 @@ disabled = false
 
 # Shows current git branch
 [git_branch]
-symbol = '󰊤   [on](bold grey) '
+symbol = ' [on](bold grey) '
 format = 'via [$symbol$branch]($style)'
-# truncation_length = 4
 truncation_symbol = '…/'
 style = 'bold yellow'
 disabled = false
