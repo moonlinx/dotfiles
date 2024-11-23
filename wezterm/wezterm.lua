@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 return {
 
 	-- Color Scheme
-	color_scheme = "Tokyo Night (Gogh)",
+	color_scheme = "Catppuccin Mocha",
 
 	-- Tab Bar
 	enable_tab_bar = false,
@@ -20,13 +20,6 @@ return {
 
 	-- Window
 	window_decorations = "RESIZE",
-	keys = {
-		{
-			key = "f",
-			mods = "CTRL",
-			action = wezterm.action.ToggleFullScreen,
-		},
-	},
 
 	-- Mouse stuff
 	mouse_bindings = {
