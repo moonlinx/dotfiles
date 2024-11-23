@@ -144,6 +144,12 @@ alias wifi="wifi-password"
 alias py="python3"
 alias rm="trash"
 
+# aerospace commands
+# def ff []
+# {
+#   aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {2}")+abort'
+# }
+
 # Nmap
 alias nm="nmap -sC -sV -oN nmap-output.txt"
 
