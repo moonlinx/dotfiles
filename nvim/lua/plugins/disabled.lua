@@ -9,5 +9,6 @@ return {
   { "saghen/blink.cmp", enabled = false },
   -- { "Exafunction/codeium.vim", enabled = false },
   -- { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
-  { "Exafunction/codeium.vim", enabled = false },
+  -- { "Exafunction/codeium.vim", enabled = false },
+  { "goolord/alpha-nvim", enabled = false },
 }
