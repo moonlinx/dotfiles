@@ -1,8 +1,7 @@
 # ~/.config/starship.toml
 format = '''
-$directory
-$character'''
-add_newline = true
+$directory$character '''
+add_newline = false
 command_timeout = 1000
 # format = """$os$hostname$directory"""
 # move the rest of the prompt to the right
@@ -10,7 +9,7 @@ right_format = """$git_metrics$git_branch$git_status$python$jobs$cmd_duration"""
 
 # Drop ugly default prompt characters
 [character]
-success_symbol = "[❯](green bold)"
+success_symbol = "[❯ :](green bold)"
 error_symbol = "[❯❯](red bold)"
 vicmd_symbol = "[ ](blue bold)"
 # ---
@@ -73,7 +72,7 @@ disabled = false
 
 # Shows current git branch
 [git_branch]
-symbol = ' [on](bold grey) '
+symbol = ' [on](bold grey) '
 format = 'via [$symbol$branch]($style)'
 truncation_symbol = '…/'
 style = 'bold yellow'
