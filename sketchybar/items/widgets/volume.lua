@@ -24,7 +24,7 @@ local volume_icon = sbar.add("item", "widgets.volume2", {
 		color = colors.grey,
 		font = {
 			style = settings.font.style_map["Regular"],
-			size = 15.0,
+			size = 14.0,
 		},
 	},
 	label = {
@@ -32,7 +32,7 @@ local volume_icon = sbar.add("item", "widgets.volume2", {
 		align = "left",
 		font = {
 			style = settings.font.style_map["Regular"],
-			size = 15.0,
+			size = 14.0,
 		},
 	},
 })
@@ -41,7 +41,7 @@ local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
 	volume_icon.name,
 	volume_percent.name,
 }, {
-	-- background = { color = colors.bg1 },
+	background = { color = colors.bg1 },
 	popup = { align = "center" },
 })
 
@@ -144,7 +144,11 @@ local function volume_toggle_details(env)
 end
 
 local function volume_scroll(env)
-	local delta = env.SCROLL_DELTA
+	local delta = env.INFO.delta
+	if not (env.INFO.modifier == "ctrl") then
+		delta = delta * 10.0
+	end
+
 	sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 
