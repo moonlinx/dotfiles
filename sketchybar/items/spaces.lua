@@ -4,18 +4,19 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local spaces = {}
-local japaneseNums = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" }
+-- local japaneseNums = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
 			font = { family = settings.font.icons },
-			string = japaneseNums[i],
+			-- string = japaneseNums[i],
+			string = i,
 			padding_left = 15,
 			padding_right = 8,
 			color = colors.arise,
-			highlight_color = colors.teal,
+			highlight_color = colors.red,
 		},
 		label = {
 			padding_right = 20,
@@ -128,8 +129,8 @@ space_window_observer:subscribe("space_windows_change", function(env)
 	for app, count in pairs(env.INFO.apps) do
 		no_app = false
 		local lookup = app_icons[app]
-		local icon = ((lookup == nil) and app_icons["default"] or lookup)
-		icon_line = icon_line .. " " .. icon
+		local icon = ((lookup == nil) and app_icons["Default"] or lookup)
+		icon_line = icon_line .. icon
 	end
 
 	if no_app then
