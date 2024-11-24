@@ -1,13 +1,13 @@
 # Starship ----------------------------------------
-# eval "$(starship init zsh)"
-# export STARSHIP_CONFIG=~/.config/starship/starship.toml
+eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Oh My Posh --------------------------------------
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/zen.toml)"
-# As the standard terminal has issues displaying the ANSI characters correctly, you might want to skip loading just for that terminal
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
-fi
+# eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/zen.toml)"
+# # As the standard terminal has issues displaying the ANSI characters correctly, you might want to skip loading just for that terminal
+# if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+#   eval "$(oh-my-posh init zsh)"
+# fi
 
 # Install Homebrew -------------------------------
 if [[ -f "/opt/homebrew/bin/brew" ]] then
