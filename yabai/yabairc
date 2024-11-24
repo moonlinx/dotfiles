@@ -7,7 +7,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # Configure the layout mode
-# "stack" - is what I use, keeps a single app on the front
+# "stack" - keeps a single app on the front
 # "bsp" - binary space partitioning enables automatic tiling (partitioning)
 # "float" - default mode, windows are not managed
 # yabai -m config layout stack
