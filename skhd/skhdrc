@@ -6,7 +6,10 @@
 
 # Applications
 cmd - return : open -n -a "wezterm"
-# cmd - return : open -n -a "kitty"
+
+# change layout of desktop
+ctrl + alt - a : yabai -m space --layout bsp
+ctrl + alt - d : yabai -m space --layout stack
 
 # change window focus within space
 alt - j : yabai -m window --focus south
@@ -74,7 +77,6 @@ ctrl + alt - l : yabai -m window --warp east
 # move window to display top and bottom
 shift + alt - g : yabai -m window --display west; yabai -m display --focus north;
 shift + alt - s : yabai -m window --display east; yabai -m display --focus south;
-
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;
