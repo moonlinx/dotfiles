@@ -12,7 +12,10 @@ return {
 	line_height = 1.0,
 
 	-- Blur
-	macos_window_background_blur = 50,
+	macos_window_background_blur = 30,
+
+	-- FPS
+	max_fps = 120,
 
 	-- Opacity
 	window_background_opacity = 0.80,
