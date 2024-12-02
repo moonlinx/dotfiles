@@ -46,36 +46,6 @@ final_space = true
   background = 'transparent'
   foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}green{{end}}']
 
-# [[blocks]]
-#   type = 'prompt'
-#   alignment = 'left'
-#   newline = false
-#
-#   [[blocks.segments]]
-#     template = ' {{ .Path }}'
-#     foreground = 'blue'
-#     background = 'transparent'
-#     type = 'path'
-#     style = 'plain'
-#
-#     [blocks.segments.properties]
-#       cache_duration = 'none'
-#       style = 'full'
-
-  # [[blocks.segments]]
-  #   template = ' | {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} '
-  #   foreground = '#F3C267'
-  #   background = 'transparent'
-  #   type = 'git'
-  #   style = 'plain'
-  #   foreground_templates = ['{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}', '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}', '{{ if gt .Ahead 0 }}#B388FF{{ end }}', '{{ if gt .Behind 0 }}#B388FF{{ end }}']
-
-    # [blocks.segments.properties]
-    #   branch_max_length = 25.0
-    #   fetch_stash_count = true
-    #   fetch_status = true
-    #   fetch_upstream_icon = true
-
 [[blocks]]
   type = 'prompt'
   alignment = 'right'
