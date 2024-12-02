@@ -4,15 +4,19 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "􀆺",
+		apple = "􀣺",
 		gear = "􀍟",
 		cpu = "􀫥",
 		clipboard = "􀉄",
 		calendar = "􀉉",
 
+		slow = "􀓑",
+		fast = "􀓏",
+		error = "􀆚",
+
 		switch = {
-			on = "􁏮",
-			off = "􁏯",
+			on = "󰍜 ",
+			off = "􁚬",
 		},
 		volume = {
 			_100 = "􀊩",
@@ -40,6 +44,13 @@ local icons = {
 			back = "􀊊",
 			forward = "􀊌",
 			play_pause = "􀊈",
+		},
+		yabai = {
+			stack = "􀏭",
+			fullscreen_zoom = "􀏜",
+			parent_zoom = "􀥃",
+			float = "􀢌",
+			grid = "􀧍",
 		},
 	},
 
@@ -91,26 +102,3 @@ if not (settings.icons == "NerdFont") then
 else
 	return icons.nerdfont
 end
-
--- Extra icons to use
--- PENGUIN=󰻀
--- YINYANG=󰚀
--- PARROT=
--- DEBIAN=
--- LEAF=󰌪
--- BAT=󰭟
--- RICE=󰟪
--- LOTUS=𑁍
--- PACKAGE=􀐛
--- LIGHT=󰛨
--- MOON=
--- TIMER= 󱤥
--- RAIN= 
--- UBUNTU= 
--- BEEHIVE= 󱃎
--- SAKURA= ❀
--- MOON = 󰤄
--- FOX = 󰮠
--- MOON2 = ☽
--- FULL_MOON= 󰽤
--- LIGHT_DARK = 󰔎

@@ -4,14 +4,12 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local spaces = {}
--- local japaneseNums = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
 			font = { family = settings.font.icons },
-			-- string = japaneseNums[i],
 			string = i,
 			padding_left = 15,
 			padding_right = 8,
@@ -114,7 +112,7 @@ local spaces_indicator = sbar.add("item", {
 		width = 0,
 		padding_left = 0,
 		padding_right = 8,
-		string = "Spaces",
+		string = "Menu",
 		color = colors.bg1,
 	},
 	background = {
