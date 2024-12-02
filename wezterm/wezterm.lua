@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 return {
 
 	-- Color Scheme
-	color_scheme = "Catppuccin Mocha",
+	color_scheme = "Tokyo Night (Gogh)",
 
 	-- Tab Bar
 	enable_tab_bar = false,

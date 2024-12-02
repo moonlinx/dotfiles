@@ -1,5 +1,5 @@
 # ~/.config/starship.toml
-format = '''$directory$character '''
+format = '''$directory$character'''
 add_newline = false
 palette = "catppuccin_mocha"
 command_timeout = 1000

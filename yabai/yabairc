@@ -3,8 +3,8 @@
 # This command is the one that loads the scripting addition
 # Configure your user to execute `yabai --load-sa` as the root user without having to enter a password.
 #  https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Configure the layout mode
 # "stack" - keeps a single app on the front
@@ -36,7 +36,7 @@ yabai -m window_opacity off
 yabai -m window_opacity_duration 0.4
 yabai -m active_window_opacity 1.0
 yabai -m normal_window_opacity 0.7
-yabai -m window_animation_duration 0.8
+yabai -m window_animation_duration 0.0
 yabai -m window_animation_easing ease_out_quint
 yabai -m insert_feedback_color 0xff9dd274
 yabai -m split_ratio 0.50
