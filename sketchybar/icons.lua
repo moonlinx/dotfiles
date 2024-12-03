@@ -9,6 +9,8 @@ local icons = {
 		cpu = "􀫥",
 		clipboard = "􀉄",
 		calendar = "􀉉",
+		brew = "􀐚",
+		keyboard = "􀇳",
 
 		slow = "􀓑",
 		fast = "􀓏",

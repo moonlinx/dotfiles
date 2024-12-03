@@ -112,7 +112,7 @@ local spaces_indicator = sbar.add("item", {
 		width = 0,
 		padding_left = 0,
 		padding_right = 8,
-		string = "Menu",
+		string = "Menu" or "Spaces",
 		color = colors.bg1,
 	},
 	background = {
