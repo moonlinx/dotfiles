@@ -38,6 +38,9 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   callback = update_winbar,
 })
 
+-- Remove diagnostics
+vim.diagnostic.config({ virtual_text = false })
+
 -- line numbers
 opt.relativenumber = false -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)

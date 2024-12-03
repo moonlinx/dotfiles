@@ -14,6 +14,12 @@ keymap.set("", ";", ":", { desc = "swap colon with semi colon" })
 -- Noice
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 
+-- Moving windows
+vim.keymap.set("n", "<leader><left>", ":vertical resize +20<cr>")
+vim.keymap.set("n", "<leader><right>", ":vertical resize -20<cr>")
+vim.keymap.set("n", "<leader><up>", ":resize +10<cr>")
+vim.keymap.set("n", "<leader><down>", ":resize -10<cr>")
+
 -- Open Telescope buffers as I get a file preview,
 -- that's basically the main benefit lamw25wmal
 vim.keymap.set(
