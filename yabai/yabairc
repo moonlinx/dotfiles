@@ -85,3 +85,9 @@ yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|Time Machine|System Settings|Archive Utility|Python|App Store|Activity Monitor|Raycast|mpv)$" manage=off
+###############################################################################
+#                              Signals
+###############################################################################
+
+# Add signal to make yabai focus the other window when I close one
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
