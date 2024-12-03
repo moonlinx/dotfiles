@@ -112,7 +112,7 @@ local spaces_indicator = sbar.add("item", {
 		width = 0,
 		padding_left = 0,
 		padding_right = 8,
-		string = "Menu" or "Spaces",
+		string = "Menu",
 		color = colors.bg1,
 	},
 	background = {
@@ -143,6 +143,9 @@ spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
 	local currently_on = spaces_indicator:query().icon.value == icons.switch.on
 	spaces_indicator:set({
 		icon = currently_on and icons.switch.off or icons.switch.on,
+		label = {
+			string = currently_on and "Spaces" or "Menu",
+		},
 	})
 end)
 
