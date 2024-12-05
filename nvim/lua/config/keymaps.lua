@@ -8,9 +8,32 @@ local keymap = vim.keymap -- for conciseness
 
 -- use jk to exit insert mode
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+
 -- Change colon line key to semi colon
 keymap.set("", ":", ";", { desc = "swap colon with semi colon" })
 keymap.set("", ";", ":", { desc = "swap colon with semi colon" })
+
+-- cut to system clipboard (normal mode)
+vim.keymap.set("n", "<C-x>", '"+d', { desc = "cut to system clipboard", noremap = true, silent = true })
+
+-- copy to system clipboard (normal mode)
+vim.keymap.set("n", "<C-c>", '"+y', { desc = "copy to system clipboard", noremap = true, silent = true })
+
+-- paste from system clipboard (normal mode)
+vim.keymap.set("n", "<C-v>", '"+p', { desc = "paste from system clipboard", noremap = true, silent = true })
+
+-- cut to system clipboard (visual mode)
+vim.keymap.set("x", "<C-x>", '"+d', { desc = "cut to system clipboard", noremap = true, silent = true })
+
+-- copy to system clipboard (visual mode)
+vim.keymap.set("x", "<C-c>", '"+y', { desc = "copy to system clipboard", noremap = true, silent = true })
+
+-- copy the whole paragraph to sys clipboard
+vim.api.nvim_set_keymap("n", "yap", '"+yap', { noremap = true, silent = true })
+
+-- paste from system clipboard (insert mode)
+vim.keymap.set("i", "<C-v>", '<Esci>"+pgI', { desc = "paste from system clipboard", noremap = true, silent = true })
+
 -- Noice
 vim.api.nvim_set_keymap("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 
