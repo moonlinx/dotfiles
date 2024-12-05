@@ -147,6 +147,7 @@ return {
 	["Mail"] = ":mail:",
 	["Mailspring"] = ":mail:",
 	["MailMate"] = ":mail:",
+	["Mimestream"] = ":mail:",
 	["Superhuman"] = ":mail:",
 	["Spark"] = ":mail:",
 	["邮件"] = ":mail:",
