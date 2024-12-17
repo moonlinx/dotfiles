@@ -6,21 +6,21 @@ return {
     ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
     provider = "claude", -- Recommend using Claude
     auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-    claude = {
-      endpoint = "https://api.anthropic.com",
-      model = "claude-3-5-sonnet-20240620",
-      api_key_name = "ANTHROPIC_API_KEY",
+    -- claude = {
+    --   endpoint = "https://api.anthropic.com",
+    --   model = "claude-3-5-sonnet-20240620",
+    --   api_key_name = "ANTHROPIC_API_KEY",
+    --   temperature = 0,
+    --   max_tokens = 4096,
+    -- },
+    openai = {
+      endpoint = "https://api.openai.com/v1",
+      model = "o1-mini-2024-09-12",
+      model = "o1-mini",
+      api_key_name = "OPENAI_API_KEY",
       temperature = 0,
       max_tokens = 4096,
     },
-    -- openai = {
-    -- endpoint = "https://api.openai.com/v1",
-    -- model = "o1-mini-2024-09-12",
-    -- model = "o1-mini",
-    -- api_key_name = "OPENAI_API_KEY",
-    -- temperature = 0,
-    -- max_tokens = 4096,
-    -- },
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
