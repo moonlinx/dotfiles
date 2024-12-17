@@ -6,7 +6,7 @@ return {
 	lime = 0xff32cd32,
 	leaf = 0xff30B700,
 	blue = 0xff76cce0,
-	cyan = 0xff00ffff,
+	cyan = 0xffb2fdff,
 	teal = 0xff00B5B8,
 	arise = 0xffe6f8f7,
 	yellow = 0xffe7c664,
@@ -15,14 +15,15 @@ return {
 	orange = 0xfff39660,
 	magenta = 0xffb39df3,
 	purple = 0xff917ae7,
-	violet = 0xffd7bffd,
+	violet = 0xff7d4a95,
 	strawberry = 0xffed89a8,
 	grey = 0xff7f8490,
 	transparent = 0x00000000,
 
 	bar = {
 		-- bg = 0xf02c2e34,
-		bg = 0xBF2c2e34,
+		-- bg = 0xBF2c2e34,
+		bg = 0x00000000,
 		border = 0xff2c2e34,
 	},
 	popup = {

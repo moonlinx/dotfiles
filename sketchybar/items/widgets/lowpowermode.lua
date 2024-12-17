@@ -21,7 +21,7 @@ local lowpowermode = sbar.add("item", "widgets.lowpowermode", {
 
 local lowpowermodebracket = sbar.add("bracket", "widgets.lowpowermode.bracket", { lowpowermode.name }, {
 	background = {
-		color = colors.transparent,
+		color = colors.black,
 		border_color = color,
 		border_width = 1,
 	},

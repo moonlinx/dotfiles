@@ -90,7 +90,7 @@ return {
 	["Final Cut Pro"] = ":final_cut_pro:",
 	["Finder"] = ":finder:",
 	["访达"] = ":finder:",
-	["Firefox"] = ":firefox:",
+	["Firefox"] = ":firefox_developer_edition:",
 	["Firefox Developer Edition"] = ":firefox_developer_edition:",
 	["Firefox Nightly"] = ":firefox_developer_edition:",
 	["Folx"] = ":folx:",

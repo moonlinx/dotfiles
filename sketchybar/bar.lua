@@ -8,7 +8,7 @@ sbar.bar({
 	padding_left = 2,
 	y_offset = 2,
 	position = "top",
-	margin = 50,
+	margin = 3,
 	corner_radius = 10,
 	notch_width = 0,
 })
