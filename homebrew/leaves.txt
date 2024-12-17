@@ -1,5 +1,7 @@
 age
+asciiquarium
 atuin
+bash
 bat
 bettercap
 bloznelis/tap/kbt
@@ -7,7 +9,6 @@ blueutil
 btop
 cli11
 cmake
-direnv
 dust
 eza
 fastfetch
@@ -20,13 +21,11 @@ gh
 git
 git-delta
 gnu-sed
-go@1.22
 hashicorp/tap/terraform
 htop
 ifstat
 imap-uw
 iproute2mac
-jandedobbeleer/oh-my-posh/oh-my-posh
 jesseduffield/lazygit/lazygit
 jq
 jstkdng/programs/ueberzugpp
