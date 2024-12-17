@@ -3,8 +3,12 @@
 # This command is the one that loads the scripting addition
 # Configure your user to execute `yabai --load-sa` as the root user without having to enter a password.
 #  https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
-sudo yabai --load-sa
+#
+#  If you have any issue with space creation or anything of that nature, you will have to reload the sa and kill the dock
+#  https://github.com/koekeishiya/yabai/issues/2151#issuecomment-1987040750
+
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 # Configure the layout mode
 # "stack" - keeps a single app on the front
@@ -17,7 +21,7 @@ yabai -m config layout bsp
 # ###############################################################################
 #                          Custom padding settings
 ###############################################################################
-yabai -m config top_padding 7
+yabai -m config top_padding 5
 yabai -m config bottom_padding 8
 yabai -m config left_padding 8
 yabai -m config right_padding 8
@@ -47,28 +51,6 @@ yabai -m mouse_action1 move
 yabai -m mouse_action2 resize
 yabai -m mouse_drop_action swap
 
-# yabai -m config window_animation_duration    0.4
-# yabai -m config window_animation_easing      ease_out_quint
-# yabai -m config mouse_follows_focus          on
-# yabai -m config focus_follows_mouse          on
-# yabai -m config window_origin_display        default
-# yabai -m config window_placement             second_child
-# yabai -m config window_topmost               off
-# yabai -m config window_shadow                on
-# yabai -m config window_opacity               off
-# yabai -m config window_opacity_duration      0.4
-# yabai -m config active_window_opacity        0.85
-# yabai -m config normal_window_opacity        0.72
-# yabai -m config window_border                off
-# yabai -m config insert_feedback_color        0xffd75f5f
-# yabai -m config split_ratio                  0.50
-# yabai -m config mouse_modifier               alt
-# yabai -m config mouse_action1                move
-# yabai -m config mouse_action2                resize
-# yabai -m config menubar_opacity              1.0
-# yabai -m config focus_follows_mouse          autofocus
-# # when window is dropped in center of another window, swap them (on edges it will split it)
-# yabai -m mouse_drop_action                   swap
 ###############################################################################
 #                              Excluded apps
 ###############################################################################
@@ -84,7 +66,8 @@ yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
-yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|Time Machine|System Settings|Archive Utility|Python|App Store|Activity Monitor|Raycast|mpv)$" manage=off
+yabai -m rule --add app="^(LuLu|Calculator|Software Update|Dictionary|Time Machine|System Settings|Archive Utility|Python|App Store|Messages|Activity Monitor|Raycast|mpv)$" manage=off
+
 ###############################################################################
 #                              Signals
 ###############################################################################
