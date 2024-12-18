@@ -38,8 +38,8 @@ local icons = {
 		wifi = {
 			upload = "􀄨",
 			download = "􀄩",
-			connected = "􀤆",
-			disconnected = "􁣡",
+			connected = "􀙇",
+			disconnected = "􀙈",
 			router = "􁓤",
 		},
 		media = {

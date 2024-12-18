@@ -28,8 +28,8 @@ cmd + alt - w : yabai -m space --destroy
 #change focus between external displays (top and bottom)
 alt - e: yabai -m display --focus east
 alt - w: yabai -m display --focus west
-alt - u: yabai -m display --focus north
-alt - d: yabai -m display --focus south
+# alt - u: yabai -m display --focus north
+# alt - d: yabai -m display --focus south
 # rotate layout clockwise
 shift + alt - r : yabai -m space --rotate 270
 
@@ -74,8 +74,8 @@ ctrl + alt - h : yabai -m window --warp west
 ctrl + alt - l : yabai -m window --warp east
 
 # move window to display top and bottom
-shift + alt - g : yabai -m window --display west; yabai -m display --focus north;
-shift + alt - s : yabai -m window --display east; yabai -m display --focus south;
+# shift + alt - g : yabai -m window --display west; yabai -m display --focus north;
+# shift + alt - s : yabai -m window --display east; yabai -m display --focus south;
 
 # move window to space #
 shift + alt - 1 : yabai -m window --space 1;
