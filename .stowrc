@@ -1,0 +1,7 @@
+--target=~/.config
+--ignore=.stowrc
+--ignore=DS_Store
+--ignore=atuin/*
+--ignore=raycast/*
+--ignore=rayscast/*
+--ignore=autostart/*

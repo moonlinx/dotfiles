@@ -23,9 +23,9 @@ yabai -m config layout bsp
 ###############################################################################
 yabai -m config top_padding 5
 yabai -m config bottom_padding 9
-yabai -m config left_padding 10
-yabai -m config right_padding 10
-yabai -m config window_gap 9
+yabai -m config left_padding 8
+yabai -m config right_padding 8
+yabai -m config window_gap 8
 
 ###############################################################################
 #                                  Misc
