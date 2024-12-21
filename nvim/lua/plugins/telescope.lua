@@ -45,20 +45,20 @@ return {
       -- fF is NOT working properly as it only finds sibling files of current file, but I don't care
       -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#find-sibling-files-of-current-file
       -- I figured I needed to use 'telescope.builtin' on the telescope github page
-      -- {
-      --   "<leader>fF",
-      --   function()
-      --     require("telescope.builtin").find_files({ cwd = vim.fn.expand("%:p:h") })
-      --   end,
-      --   desc = "Find Files (cwd)",
-      -- },
-      -- {
-      --   "<leader>ff",
-      --   function()
-      --     require("telescope.builtin").find_files({})
-      --   end,
-      --   desc = "Find Files (root dir)",
-      -- },
+      {
+        "<leader>fF",
+        function()
+          require("telescope.builtin").find_files({ cwd = vim.fn.expand("%:p:h") })
+        end,
+        desc = "Find Files (cwd)",
+      },
+      {
+        "<leader>ff",
+        function()
+          require("telescope.builtin").find_files({})
+        end,
+        desc = "Find Files (root dir)",
+      },
 
       -- I tried disabling this keymap, but I couldn't
       -- So fuck it, I'm adding the keymap that I need here, which is to

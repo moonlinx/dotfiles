@@ -52,6 +52,8 @@ vim.keymap.set(
   -- the ivy theme is also similar to bufexplorer and tmux sessions
   "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
   { desc = "[P]Open telescope buffers" }
+  -- "<cmd>FzfLua buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
+  -- { desc = "[P]Open FzfLua buffers" }
 )
 
 -- ############################################################################

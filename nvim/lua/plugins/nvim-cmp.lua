@@ -9,6 +9,7 @@ return {
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
     "onsails/lspkind.nvim", -- vs-code like pictograms
+    "ray-x/lsp_signature.nvim", -- signature completion
   },
   config = function()
     local cmp = require("cmp")
@@ -19,6 +20,16 @@ return {
 
     -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
+
+    -- signature stuff
+    require("lsp_signature").setup({
+      bind = true,
+      doc_lines = 5,
+      floating_window = true,
+      hint_enable = false,
+      handler_opts = { border = "single" },
+      extra_trigger_chars = { "(", "," },
+    })
 
     cmp.setup({
       completion = {
@@ -44,7 +55,7 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
-        { name = "codeium" }, -- codeium completion
+        -- { name = "codeium" }, -- codeium completion
       }),
 
       -- configure lspkind for vs-code like pictograms in completion menu
