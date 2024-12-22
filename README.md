@@ -20,7 +20,7 @@ Dotfiles for my M3 Max Macbook Pro: Running macOS Sonoma 14.6.
 stow --target ~/.config
 ```
 
-### Homebrew installation:
+### Homebrew installation
 
 ```sh
 # Leaving a machine
