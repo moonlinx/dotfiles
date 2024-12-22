@@ -107,14 +107,14 @@ return {
 
       {
         "<leader>tl",
-        "<cmd>TodoTelescope keywords=TODO<cr>",
-        desc = "[P]TODO list (Telescope)",
+        "<cmd>TodoFzfLua keywords=TODO<cr>",
+        desc = "[P]TODO list (FZFLua)",
       },
 
       {
         "<leader>ta",
-        "<cmd>TodoTelescope keywords=PERF,HACK,TODO,NOTE,FIX<cr>",
-        desc = "[P]TODO list ALL (Telescope)",
+        "<cmd>TodoFzfLua keywords=PERF,HACK,TODO,NOTE,FIX<cr>",
+        desc = "[P]TODO list ALL (FZFLua))",
       },
     },
   },

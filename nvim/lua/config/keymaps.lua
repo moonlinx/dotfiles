@@ -50,10 +50,10 @@ vim.keymap.set(
   "<S-h>",
   -- Notice that I start it in normal mode to navigate similarly to bufexplorer,
   -- the ivy theme is also similar to bufexplorer and tmux sessions
-  "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
-  { desc = "[P]Open telescope buffers" }
-  -- "<cmd>FzfLua buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
-  -- { desc = "[P]Open FzfLua buffers" }
+  -- "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
+  -- { desc = "[P]Open telescope buffers" }
+  "<cmd>FzfLua buffers sort_mru=true sort_lastused=true initial_mode=normal theme=ivy<cr>",
+  { desc = "[P]Open FzfLua buffers" }
 )
 
 -- ############################################################################

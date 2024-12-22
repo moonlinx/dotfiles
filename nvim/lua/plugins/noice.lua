@@ -1,6 +1,5 @@
 return {
   "folke/noice.nvim",
-  commit = "d9328ef903168b6f52385a751eb384ae7e906c6f",
   event = "VeryLazy",
   opts = {
     require("noice").setup({
@@ -10,6 +9,7 @@ return {
           ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
           ["vim.lsp.util.stylize_markdown"] = true,
           ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+          ["config.lsp.signature.enabled"] = false,
         },
       },
       -- you can enable a preset for easier configuration
