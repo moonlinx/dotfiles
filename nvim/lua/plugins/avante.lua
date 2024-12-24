@@ -4,8 +4,8 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-    provider = "claude", -- Recommend using Claude
-    auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+    provider = "openai", -- Recommend using Claude
+    auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
     -- claude = {
     --   endpoint = "https://api.anthropic.com",
     --   model = "claude-3-5-sonnet-20240620",
@@ -91,7 +91,6 @@ return {
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "echasnovski/mini.icons",
-    -- "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",

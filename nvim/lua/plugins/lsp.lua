@@ -7,6 +7,9 @@ return {
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
 
+    -- import blink plugin
+    local capabilities = require("blink.cmp").get_lsp_capabilities()
+
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
