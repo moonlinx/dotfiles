@@ -107,7 +107,6 @@ return {
         })
       end,
     })
-
     -- configure prisma orm server
     lspconfig["prismals"].setup({
       capabilities = capabilities,

@@ -38,7 +38,7 @@ disabled = false
 
 # Shows current directory
 [directory]
-style = 'sapphire'
+style = 'black'
 truncation_length = 10
 truncation_symbol = '…/  '
 home_symbol = '~'
