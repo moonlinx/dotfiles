@@ -13,6 +13,7 @@ return {
 	gold = 0xffe7b744,
 	cream = 0xfffffdd0,
 	orange = 0xfff39660,
+	peach = 0xfffab387,
 	magenta = 0xffb39df3,
 	purple = 0xff917ae7,
 	violet = 0xff7d4a95,
