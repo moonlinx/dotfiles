@@ -105,7 +105,7 @@ local hostname = sbar.add("item", {
 		width = popup_width / 2,
 	},
 	label = {
-		max_chars = 20,
+		max_chars = 24,
 		string = "????????????",
 		width = popup_width / 2,
 		align = "right",
@@ -184,6 +184,17 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
 				color = connected and colors.white or colors.red,
 			},
 		})
+	end)
+	sbar.exec("scutil --nc list | grep 'Connected'", function(result)
+		local connected = not (result == "")
+		if connected then
+			wifi:set({
+				icon = {
+					string = icons.wifi.vpn,
+					color = colors.white,
+				},
+			})
+		end
 	end)
 end)
 

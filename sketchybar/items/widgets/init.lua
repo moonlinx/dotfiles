@@ -1,5 +1,7 @@
 require("items.widgets.battery")
-require("items.widgets.lowpowermode")
+require("items.widgets.restart")
+require("items.widgets.clipboard")
 require("items.widgets.volume")
 require("items.widgets.wifi")
 require("items.widgets.cpu")
+require("items.widgets.ram")
