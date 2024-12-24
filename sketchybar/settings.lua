@@ -46,4 +46,3 @@ local function load_config()
 end
 
 return load_config()
-
