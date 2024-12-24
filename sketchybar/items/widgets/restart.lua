@@ -10,7 +10,7 @@ if not settings.restart.hide then
 	})
 
 	sbar.add("bracket", "widgets.restart.bracket", { restart.name }, {
-		background = { color = colors.bg1 },
+		background = { color = colors.black },
 	})
 
 	sbar.add("item", "widgets.restart.padding", {

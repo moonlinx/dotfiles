@@ -1,5 +1,6 @@
 require("items.widgets.battery")
-require("items.widgets.restart")
+-- require("items.widgets.weather")
+-- require("items.widgets.restart")
 require("items.widgets.clipboard")
 require("items.widgets.volume")
 require("items.widgets.wifi")

@@ -66,7 +66,7 @@ clipboard:subscribe("mouse.exited.global", function()
 end)
 
 sbar.add("bracket", "widgets.clipboard.bracket", { clipboard.name }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.black },
 })
 
 sbar.add("item", "widgets.clipboard.padding", {

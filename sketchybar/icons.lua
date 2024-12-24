@@ -11,7 +11,6 @@ local icons = {
 		clipboard_list = "􁕜",
 		restart = "􀚁",
 		ram = "􀫦",
-		keyboard = "􀇳",
 		weather = {
 			sunny = "􀆭",
 			partly = "􀇔",
@@ -22,10 +21,6 @@ local icons = {
 			foggy = "􀇊",
 			stormy = "􀇞",
 		},
-
-		slow = "􀓑",
-		fast = "􀓏",
-		error = "􀆚",
 
 		switch = {
 			on = "󰍜 ",
@@ -60,13 +55,6 @@ local icons = {
 			play_pause = "􀊈",
 			play = "􀊄",
 			pause = "􀊆",
-		},
-		yabai = {
-			stack = "􀏭",
-			fullscreen_zoom = "􀏜",
-			parent_zoom = "􀥃",
-			float = "􀢌",
-			grid = "􀧍",
 		},
 	},
 

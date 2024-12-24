@@ -4,7 +4,7 @@ local settings = require("settings")
 
 local ram = sbar.add("graph", "widgets.ram", 42, {
 	position = "right",
-	graph = { color = colors.blue },
+	graph = { color = colors.orange },
 	background = {
 		height = 22,
 		color = { alpha = 0 },
@@ -30,7 +30,7 @@ local ram = sbar.add("graph", "widgets.ram", 42, {
 })
 
 sbar.add("bracket", "widgets.ram.bracket", { ram.name }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.black },
 })
 
 sbar.add("item", "widgets.ram.padding", {
