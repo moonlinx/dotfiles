@@ -18,12 +18,40 @@ local battery = sbar.add("item", "widgets.battery", {
 local remaining_time = sbar.add("item", {
 	position = "popup." .. battery.name,
 	icon = {
-		string = "Time remaining:",
+		string = "??",
 		width = 100,
 		align = "left",
 	},
 	label = {
 		string = "??:??h",
+		width = 100,
+		align = "right",
+	},
+})
+
+local battery_condition = sbar.add("item", {
+	position = "popup." .. battery.name,
+	icon = {
+		string = "Battery condition:",
+		width = 100,
+		align = "left",
+	},
+	label = {
+		string = "Normal",
+		width = 100,
+		align = "right",
+	},
+})
+
+local battery_capacity = sbar.add("item", {
+	position = "popup." .. battery.name,
+	icon = {
+		string = "Maximum capacity:",
+		width = 100,
+		align = "left",
+	},
+	label = {
+		string = "86%",
 		width = 100,
 		align = "right",
 	},
@@ -88,13 +116,30 @@ battery:subscribe("mouse.clicked", function(env)
 		sbar.exec("pmset -g batt", function(batt_info)
 			local found, _, remaining = batt_info:find(" (%d+:%d+) remaining")
 			local label = found and remaining .. "h" or "No estimate"
-			remaining_time:set({ label = label })
+
+			local charging, _, _ = batt_info:find("AC Power")
+			local icon = charging and "Time till full:" or "Time remaining:"
+			remaining_time:set({ icon = icon, label = label })
+		end)
+
+		sbar.exec("system_profiler SPPowerDataType", function(batt_info)
+			local found, _, condition = batt_info:find("Condition: (%a+)")
+			local label = found and condition or "Unknown"
+			battery_condition:set({ label = label })
+
+			local found, _, capacity = batt_info:find("Maximum Capacity: (%d+)%%")
+			local label = found and capacity .. "%" or "Unknown"
+			battery_capacity:set({ label = label })
 		end)
 	end
 end)
 
+battery:subscribe("mouse.exited.global", function()
+	battery:set({ popup = { drawing = "off" } })
+end)
+
 sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
-	-- background = { color = colors.transparent },
+	-- background = { color = colors.bg1 }
 })
 
 sbar.add("item", "widgets.battery.padding", {
