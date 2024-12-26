@@ -114,7 +114,7 @@ config = {
 	macos_window_background_blur = 60,
 
 	-- Opacity
-	window_background_opacity = 0.85,
+	window_background_opacity = 0.80,
 
 	-- https://wezfurlong.org/wezterm/config/lua/wezterm/font.html
 	-- font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" }),
