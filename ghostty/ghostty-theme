@@ -1,0 +1,6 @@
+theme = dark:catppuccin-frappe,light:catppuccin-latte
+
+background-opacity = 0.80
+background-blur-radius = 60
+
+background = #222222
