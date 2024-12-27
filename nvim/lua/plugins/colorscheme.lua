@@ -28,6 +28,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
+      flavour = "frappe",
       no_italic = false,
       term_colors = true,
       transparent_background = true,

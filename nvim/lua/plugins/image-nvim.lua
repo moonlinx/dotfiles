@@ -34,12 +34,14 @@ return {
     "vhyrro/luarocks.nvim",
     -- this plugin needs to run before anything else
     priority = 1001,
+    lazy = true,
     opts = {
       rocks = { "magick" },
     },
   },
   {
     "3rd/image.nvim",
+    lazy = true,
     dependencies = { "luarocks.nvim" },
     config = function()
       require("image").setup({
