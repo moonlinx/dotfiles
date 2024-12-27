@@ -110,7 +110,7 @@ window-padding-x = 4,2
 window-padding-y = 6,0
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 13.5
+font-size = 14
 
 # Valid values:
 # 
@@ -163,7 +163,7 @@ confirm-close-surface = false
 #  work in all environments; see the additional notes below for more
 #  information.
 # keybind = global:cmd+s=toggle_quick_terminal
-keybind = cmd+s=toggle_quick_terminal
+keybind = global:cmd+/=toggle_quick_terminal
 
 mouse-hide-while-typing = true
 window-decoration = true
@@ -192,6 +192,5 @@ quick-terminal-animation-duration = 0.08
 # quick-terminal-animation-duration = 0
 
 keybind = super+i=inspector:toggle
-keybind = global:cmd+/=toggle_quick_terminal
 # This doesn't work when in tmux, if outside tmux the regular ctrl+l works
 # keybind = super+k=clear_screen

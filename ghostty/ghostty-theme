@@ -1,4 +1,4 @@
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:catppuccin-macchiato,light:catppuccin-latte
 
 background-opacity = 0.80
 background-blur-radius = 60
