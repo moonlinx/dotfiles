@@ -120,6 +120,7 @@ return {
 	["Inkscape"] = ":inkscape:",
 	["Insomnia"] = ":insomnia:",
 	["Iris"] = ":iris:",
+	["Ghostty"] = ":iterm:",
 	["iTerm"] = ":iterm:",
 	["iTerm2"] = ":iterm:",
 	["Jellyfin Media Player"] = ":jellyfin:",
