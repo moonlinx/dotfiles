@@ -2,4 +2,6 @@ return {
   -- This is the plugin that shows tabs, I don't need it as I use BufExplorer and snipe
   { "akinsho/bufferline.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  -- { "ibhagwan/fzf-lua", enabled = false },
+  { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
 }

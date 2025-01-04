@@ -74,7 +74,7 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
 		if charging then
 			icon = icons.battery.charging
 		else
-			if found and charge > 51 then
+			if found and charge > 60 then
 				icon = ""
 				label = ""
 				drawing = "off"

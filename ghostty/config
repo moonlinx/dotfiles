@@ -26,7 +26,7 @@ config-file = ghostty-theme
 # custom-shader = shaders/bloom075.glsl
 # custom-shader = shaders/bloom060.glsl
 # custom-shader = shaders/bloom050.glsl
-custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/bloom025.glsl
 # custom-shader = shaders/crt.glsl
 # custom-shader = shaders/cubes.glsl
 # custom-shader = shaders/gradient-background.glsl
@@ -110,7 +110,7 @@ window-padding-x = 4,2
 window-padding-y = 6,0
 
 font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-size = 13
 
 # Valid values:
 # 
@@ -131,6 +131,9 @@ macos-titlebar-style = hidden
 # Confirms that a surface should be closed before closing it. This defaults to
 # true. If set to false, surfaces will close without any confirmation.
 confirm-close-surface = false
+
+# close-on-child-death = true
+# macos-quit-when-last-window-closed = true
 
 # Toggle the "quick" terminal. The quick terminal is a terminal that
 # appears on demand from a keybinding, often sliding in from a screen

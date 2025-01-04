@@ -114,13 +114,13 @@ config = {
 	macos_window_background_blur = 60,
 
 	-- Opacity
-	window_background_opacity = 0.80,
+	window_background_opacity = 0.85,
 
 	-- https://wezfurlong.org/wezterm/config/lua/wezterm/font.html
 	-- font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" }),
 	font = wezterm.font("JetBrainsMono Nerd Font"),
 	-- font_size = 14.5,
-	font_size = 13,
+	font_size = 14,
 
 	-- I don't use tabs
 	enable_tab_bar = false,

@@ -99,7 +99,7 @@ disabled = false
 
 [aws]
 format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
-disabled = false
+disabled = true
 style = 'bold sky'
 symbol = " "
 

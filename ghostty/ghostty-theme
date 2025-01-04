@@ -1,6 +1,18 @@
-theme = dark:catppuccin-macchiato,light:catppuccin-latte
+# Theme
+theme = dark:catppuccin-mocha,light:catppuccin-latte
 
+# Opacity
 background-opacity = 0.80
+
+# Blur
 background-blur-radius = 60
 
-background = #222222
+# Background Color
+background = #0B0A08
+# background = #20202e
+
+# Icon
+macos-icon = custom-style
+macos-icon-frame = plastic
+macos-icon-ghost-color = cba6f7
+macos-icon-screen-color = 181825
