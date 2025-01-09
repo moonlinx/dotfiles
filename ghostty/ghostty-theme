@@ -8,8 +8,8 @@ background-opacity = 0.80
 background-blur-radius = 60
 
 # Background Color
-background = #0B0A08
-# background = #20202e
+# background = #0B0A08
+background = #222222
 
 # Icon
 macos-icon = custom-style
