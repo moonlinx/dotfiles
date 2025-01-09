@@ -5,7 +5,7 @@
 #  \/ | \_/|   |_/\_/|_/
 
 # Applications
-cmd - return : open -n -a "wezterm"
+cmd - return : open -n -a "ghostty"
 
 # change layout of desktop
 ctrl + alt - a : yabai -m space --layout bsp
