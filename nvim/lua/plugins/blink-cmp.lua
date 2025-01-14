@@ -21,13 +21,11 @@ return {
   enabled = true,
   opts = function(_, opts)
     -- Merge custom sources with the existing ones from lazyvim
-    -- NOTE: by default lazyvim already includes the lazydev source, so not
-    -- adding it here again
     opts.sources = vim.tbl_deep_extend(
       "force",
       opts.sources or {},
       {
-        default = { "lsp", "path", "snippets", "buffer", "luasnip" },
+        default = { "lsp", "path", "snippets", "buffer" },
         providers = {
           lsp = {
             name = "lsp",
@@ -51,13 +49,12 @@ return {
           },
           path = {
             name = "Path",
-            enabled = true,
             module = "blink.cmp.sources.path",
             score_offset = 3,
             -- When typing a path, I would get snippets and text in the
             -- suggestions, I want those to show only if there are no path
             -- suggestions
-            fallbacks = { "snippets", "luasnip", "buffer" },
+            fallbacks = { "luasnip", "buffer" },
             opts = {
               trailing_slash = false,
               label_trailing_slash = true,
@@ -70,6 +67,7 @@ return {
           buffer = {
             name = "Buffer",
             enabled = true,
+            max_items = 3,
             module = "blink.cmp.sources.buffer",
             min_keyword_length = 4,
           },
@@ -95,13 +93,47 @@ return {
           end,
         },
       },
-      signature == { enabled = true },
+      -- Experimental signature help support
+      signature
+        == {
+          enabled = true,
+          trigger = {
+            blocked_trigger_characters = {},
+            blocked_retrigger_characters = {},
+            -- When true, will show the signature help window when the cursor comes after a trigger character when entering insert mode
+            show_on_insert_on_trigger_character = true,
+          },
+          window = {
+            min_width = 1,
+            max_width = 100,
+            max_height = 10,
+            border = "padded",
+            winblend = 0,
+            winhighlight = "Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder",
+            scrollbar = false, -- Note that the gutter will be disabled when border ~= 'none'
+            -- Which directions to show the window,
+            -- falling back to the next direction when there's not enough space,
+            -- or another window is in the way
+            direction_priority = { "n", "s" },
+            -- Disable if you run into performance issues
+            treesitter_highlighting = true,
+            show_documentation = true,
+          },
+        },
+      -- Displays a preview of the selected item on the current line
+      completion.ghost_text == {
+          enabled = false,
+        },
 
       -- This comes from the luasnip extra, if you don't add it, won't be able to
       -- jump forward or backward in luasnip snippets
       -- https://www.lazyvim.org/extras/coding/luasnip#blinkcmp-optional
-      snippets
+      opts.snippets
         == {
+          preset = "luasnip",
+          -- This comes from the luasnip extra, if you don't add it, won't be able to
+          -- jump forward or backward in luasnip snippets
+          -- https://www.lazyvim.org/extras/coding/luasnip#blinkcmp-optional
           expand = function(snippet)
             require("luasnip").lsp_expand(snippet)
           end,
@@ -118,20 +150,18 @@ return {
       opts.keymap
         == {
           preset = "default",
-          ["<Tab>"] = { "snippet_forward", "fallback" },
-          ["<S-Tab>"] = { "snippet_backward", "fallback" },
+          ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+          ["<C-e>"] = { "hide" },
+          ["<C-y>"] = { "select_and_accept" },
 
-          ["<Up>"] = { "select_prev", "fallback" },
-          ["<Down>"] = { "select_next", "fallback" },
           ["<C-p>"] = { "select_prev", "fallback" },
           ["<C-n>"] = { "select_next", "fallback" },
 
           ["<C-b>"] = { "scroll_documentation_up", "fallback" },
           ["<C-f>"] = { "scroll_documentation_down", "fallback" },
 
-          ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-          ["<C-e>"] = { "hide", "fallback" },
-          ["<CR>"] = {},
+          ["<Tab>"] = { "snippet_forward", "fallback" },
+          ["<S-Tab>"] = { "snippet_backward", "fallback" },
         }
     )
 
