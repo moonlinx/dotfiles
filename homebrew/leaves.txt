@@ -7,6 +7,7 @@ bettercap
 bloznelis/tap/kbt
 blueutil
 btop
+cbonsai
 cli11
 cmake
 dust
@@ -34,6 +35,8 @@ koekeishiya/formulae/yabai
 lazydocker
 libiconv
 lmdb
+lsd
+luarocks
 mas
 mpv
 nano
@@ -69,6 +72,7 @@ unzip
 wget
 wifi-password
 wtfis
+xclip
 yazi
 zfdang/free-for-macos/free-for-macos
 zoxide
