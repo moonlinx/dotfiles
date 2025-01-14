@@ -116,15 +116,18 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Aliases
 
-alias l="eza -l --icons --git -a"
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias la="tree"
-alias lt="eza --tree --level=2 --long --icons --git"
+# alias ll="eza -l --icons --git -a"
+alias ll="lsd -l --git"
+# alias ls="eza --color=always --grid --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="lsd --git"
+# alias la="eza -a"
+alias la="lsd -a"
+# alias lt="eza --tree --level=2 --long --icons --git"
+alias lt="lsd --tree --depth=2 --long --git"
 alias vimm="vim"
 alias x="exit"
 alias gn="sudo shutdown -h now"
-alias lt="ls -hT --color=always"
-alias lock="pmset displaysleepnow"
+# alias lt="ls -hT --color=always"
 alias cat="bat"
 alias z="zoxide"
 alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
@@ -136,12 +139,7 @@ alias sp="spotify_player"
 alias wifi="wifi-password"
 alias py="python3"
 alias rm="trash"
-
-# aerospace commands
-# def ff []
-# {
-#   aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {2}")+abort'
-# }
+alias ping="ping -c 5"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap-output.txt"
