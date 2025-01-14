@@ -137,10 +137,10 @@ config = {
 	-- default_cursor_style = "BlinkingBlock",
 
 	-- I don't like the the "Linear", which gives it a fade effect between blinks
-	cursor_blink_ease_out = "Constant",
-	cursor_blink_ease_in = "Constant",
+	-- cursor_blink_ease_out = "Constant",
+	-- cursor_blink_ease_in = "Constant",
 	-- Setting this to 0 disables blinking
-	cursor_blink_rate = 0,
+	-- cursor_blink_rate = 0,
 
 	colors = {
 		-- 	foreground = "#fcfcfc",
