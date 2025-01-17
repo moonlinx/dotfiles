@@ -12,6 +12,7 @@ cli11
 cmake
 dust
 eza
+espanso
 fastfetch
 fd
 felixkratz/formulae/borders
