@@ -65,6 +65,7 @@ return {
 	["Deezer"] = ":deezer:",
 	["Default"] = ":default:",
 	["CleanMyMac X"] = ":desktop:",
+	["iPhone Mirroring"] = ":desktop:",
 	["DEVONthink 3"] = ":devonthink3:",
 	["DingTalk"] = ":dingtalk:",
 	["钉钉"] = ":dingtalk:",
