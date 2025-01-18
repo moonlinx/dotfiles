@@ -14,7 +14,7 @@ Dotfiles for my M3 Max Macbook Pro: Running macOS Sonoma 14.6.
 
 ## Installation
 
-**Before you get started** make sure you give full disk access permission to your terminal (for writing macos defaults). `System Preferences -> Privacy -> Full Disk Access`.
+**Before you get started** make sure you give full disk access (test) permission to your terminal (for writing macos defaults). `System Preferences -> Privacy -> Full Disk Access`.
 
 ```sh
 stow --target ~/.config
@@ -30,30 +30,17 @@ brew leaves > leaves.txt
 xargs brew install < leaves.txt
 ```
 
-## Installation
-
-**Before you get started** make sure you give full disk access permission to your terminal (for writing macos defaults). `System Preferences -> Privacy -> Full Disk Access`.
-
-To install:
-
-`curl -L https://git.io/JeA7g | sh`
-
-This expands to [run.sh](https://github.com/gretzky/dotfiles/blob/master/run.sh) which will fetch this repo and run the install script.
-
 ## File overview
 
 - Configs for the following tools:
   - git
   - [Wezterm](./wezterm)
-  - [colorls](./colorls)
   - [fzf](./fzf)
   - [neovim](./nvim)
   - [skhd](./skhd)
   - [starship](./starship)
   - [tmux](./tmux)
-  - [VSCode](./vscode)
   - [yabai](./yabai)
-  - [z](./z)
 - Shell environment configs:
   - [Antigen](https://github.com/zsh-users/antigen) for zsh plugin management
   - [`.zshrc`](./zsh/.zshrc)
@@ -62,7 +49,6 @@ This expands to [run.sh](https://github.com/gretzky/dotfiles/blob/master/run.sh)
   - [`.aliases`](./zsh/.aliases)
   - [`.exports`](./zsh/.exports)
 - [`Brewfile`](./Brewfile) - contains all homebrew packages, casks, and mac appstore apps
-- [VSCode settings](./vscode/settings.json)
 
 The install script will also setup Python and Node versions/environments:
 
