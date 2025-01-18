@@ -12,7 +12,6 @@ cli11
 cmake
 dust
 eza
-espanso
 fastfetch
 fd
 felixkratz/formulae/borders
@@ -36,7 +35,6 @@ koekeishiya/formulae/yabai
 lazydocker
 libiconv
 lmdb
-lsd
 luarocks
 mas
 mpv
