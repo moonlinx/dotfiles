@@ -4,17 +4,19 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local spaces = {}
+local sino_korean = { "일", "이", "세", "사", "오", "의", "리", "네", "세", "예" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
 			font = { family = settings.font.icons },
-			string = i,
+			string = sino_korean[i],
 			padding_left = 15,
 			padding_right = 8,
 			color = colors.arise,
 			highlight_color = colors.peach,
+			align = "center",
 		},
 		label = {
 			padding_right = 20,
@@ -72,10 +74,10 @@ for i = 1, 10, 1 do
 		space:set({
 			icon = { highlight = selected },
 			label = { highlight = selected },
-			background = { border_color = selected and colors.white or colors.bg2 },
+			background = { border_color = selected and colors.grey or colors.bg2 },
 		})
 		space_bracket:set({
-			background = { border_color = selected and colors.grey or colors.bg2 },
+			background = { border_color = selected and colors.arise or colors.bg2 },
 		})
 	end)
 
@@ -116,7 +118,7 @@ local spaces_indicator = sbar.add("item", {
 		color = colors.bg1,
 	},
 	background = {
-		color = colors.with_alpha(colors.white, 0.0),
+		color = colors.with_alpha(colors.arise, 0.0),
 		border_color = colors.with_alpha(colors.bg1, 0.0),
 	},
 })

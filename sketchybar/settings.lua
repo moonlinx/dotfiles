@@ -28,7 +28,7 @@ local function load_config()
 		icons = "sf-symbols", -- alternatively available: NerdFont
 		paddings = 3,
 		restart = {
-			hide = true,
+			hide = false,
 		},
 		weather = {
 			location = false,

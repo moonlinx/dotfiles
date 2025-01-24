@@ -11,6 +11,7 @@ local icons = {
 		clipboard_list = "􁕜",
 		restart = "􀚁",
 		ram = "􀫦",
+		bluetooth = "􀖀",
 		weather = {
 			sunny = "􀆭",
 			partly = "􀇔",
