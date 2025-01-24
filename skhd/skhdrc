@@ -5,11 +5,12 @@
 #  \/ | \_/|   |_/\_/|_/
 
 # Applications
-cmd - return : open -n -a "wezterm"
+rcmd - return : open -n -a "wezterm"
 
 # change layout of desktop
-ctrl + alt - a : yabai -m space --layout bsp
-ctrl + alt - d : yabai -m space --layout stack
+ctrl + alt - b : yabai -m space --layout bsp
+ctrl + alt - f : yabai -m space --layout float
+ctrl + alt - s : yabai -m space --layout stack
 
 # change window focus within space
 alt - j : yabai -m window --focus south
