@@ -33,6 +33,7 @@ local icons = {
 			_33 = "􀊥",
 			_10 = "􀊡",
 			_0 = "􀊣",
+			headphones = "􀺭",
 		},
 		battery = {
 			_100 = "􀛨",
@@ -56,6 +57,15 @@ local icons = {
 			play_pause = "􀊈",
 			play = "􀊄",
 			pause = "􀊆",
+		},
+		yabai = {
+			yabai_stack = "􀏭",
+			yabai_fullscreen_zoom = "􀂓",
+			yabai_parent_zoom = "􀥃",
+			yabai_float = "􀢌",
+			yabai_grid = "􀧍",
+			yabai_split_vertical = "􀘜",
+			yabai_split_horizontal = "􀧋",
 		},
 	},
 
