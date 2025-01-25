@@ -1,8 +1,8 @@
 # SketchyBar Config
 
-This repository is my personal configuration for [SketchyBar](https://github.com/FelixKratz/SketchyBar), a macOS plugin to customize the top menu bar. My configuration is largely derived from and built upon [this repository](https://github.com/FelixKratz/dotfiles).
+This repository is my personal configuration for [SketchyBar](https://github.com/FelixKratz/SketchyBar), a macOS plugin to customize the top menu bar. My configuration is largely derived from and built upon [this repository](https://github.com/FelixKratz/dotfi
 
-![SketchyBar Config Appearance](~/Pictures/Screenshots/sketchybar_appearance.png)
+![SketchyBar Config Appearance](https://github.com/user-attachments/assets/eba2970a-4195-4cc9-9ce1-3dc73f72b8cf)
 
 ## Notable Enhancements
 
