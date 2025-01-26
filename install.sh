@@ -25,34 +25,31 @@ brew install --cask 1password
 brew install --cask alt-tab
 brew install --cask activitywatch
 brew install --cask appcleaner
-brew install --cask applite
 brew install --cask cleanshot
 brew install --cask drawio
 brew install --cask espanso
-brew install --cask hyperkey
-brew install --cask firefox
 brew install --cask ghostty
-brew install --cask jan
 brew install --cask freetube
 brew install --cask iina
 brew install --cask keka
 brew install --cask knockknock
+brew install --cask karabiner-elements
 brew install --cask latest
 brew install --cask little-snitch
-brew install --cask lulu
 brew install --cask melonds
 brew install --cask middleclick
 brew install --cask mimestream
 brew install --cask maccy
+brew install --cask notion
 brew install --cask obsidian
 brew install alienator88/homebrew-cask/pearcleaner
 brew install --cask protonvpn
 brew install --cask pictogram
 brew install --cask raycast
 brew install --cask sf-symbols
-brew install --cask spacelauncher
 brew install --cask spotify
 brew install --cask wezterm
+brew install --cask zen-browser
 
 # Extras
 brew install tailscale
@@ -72,6 +69,7 @@ sleep 5
 echo "Please find and install the following apps from the following links
 https://stacher.io/
 https://github.com/Vencord/Vesktop?tab=readme-ov-file
+freetube
 
 # Give time to copy all of the links
 sleep 10
@@ -133,4 +131,3 @@ echo "Please head to the Homebrew folder to install the leaves."
 
 
 echo "Installation complete...\n"
-echo "This is a test"
