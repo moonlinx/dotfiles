@@ -1,6 +1,7 @@
 age
 asciiquarium
 atuin
+banh-canh/ytui/ytui
 bash
 bat
 bettercap
@@ -59,6 +60,7 @@ spotify_player
 sshs
 starship
 stow
+superfile
 switchaudio-osx
 termshark
 tldr
