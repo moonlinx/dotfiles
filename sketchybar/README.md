@@ -3,10 +3,10 @@
 This repository is my personal configuration for [SketchyBar](https://github.com/FelixKratz/SketchyBar), a macOS plugin to customize the top menu bar. My configuration is largely derived from and built upon [this repository](<https://github.com/FelixKratz/dotfi>
 
 ![SketchyBar Config Appearance (Lua)](https://github.com/user-attachments/assets/eba2970a-4195-4cc9-9ce1-3dc73f72b8cf)
-
 - This resides here: [branch](https://github.com/moonlinx/dotfiles/commit/55fe15abee8af0d7a5ac5ecd103bdd04a4220a32)
-![SketchyBar Config Appearance (Shell)](https://github.com/user-attachments/assets/9e5c8a0a-2a5e-4b1e-8b5a-3a5c7d0b9b0a)
-- This resides here: [branch](url)
+
+![SketchyBar Config Appearance (Shell)](https://github.com/user-attachments/assets/7de0d822-68bc-4db2-8564-afe65a9666d2)
+- This resides here: [branch](https://github.com/moonlinx/dotfiles/commit/493d1bf2aa8ae74a6365fae5ff61165871e57a56)
 
 ## Notable Enhancements
 
