@@ -112,14 +112,14 @@ config = {
 	window_decorations = "RESIZE",
 
 	-- Blur
-	macos_window_background_blur = 60,
+	macos_window_background_blur = 70,
 
 	-- Opacity
-	window_background_opacity = 0.80,
+	window_background_opacity = 0.85,
 
 	-- https://wezfurlong.org/wezterm/config/lua/wezterm/font.html
 	-- font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" }),
-	font = wezterm.font("JetBrainsMono Nerd Font"),
+	-- font = wezterm.font("JetBrainsMono Nerd Font"),
 	-- font_size = 14.5,
 	font_size = 14,
 
