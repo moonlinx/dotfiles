@@ -6,7 +6,7 @@ This repository is my personal configuration for [SketchyBar](https://github.com
 
 - This resides here: [branch](https://github.com/moonlinx/dotfiles/commit/55fe15abee8af0d7a5ac5ecd103bdd04a4220a32)
 
-![SketchyBar Config Appearance (Shell)](https://github.com/user-attachments/assets/7de0d822-68bc-4db2-8564-afe65a9666d2)
+![SketchyBar Config Appearance (Shell)](https://github.com/user-attachments/assets/db4d5e7d-1507-4958-a854-f034c7672a5f)
 
 - This resides here: [branch](https://github.com/moonlinx/dotfiles/commit/493d1bf2aa8ae74a6365fae5ff61165871e57a56)
 
