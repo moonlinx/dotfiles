@@ -17,13 +17,12 @@ brew tap FelixKratz/formulae
 brew tap koekeishiya/formulae
 brew tap espanso/espanso
 
-sleep 1
+sleep 10
 
 # Casks
 echo "Installing Brew Casks..."
 brew install --cask 1password
 brew install --cask alt-tab
-brew install --cask activitywatch
 brew install --cask appcleaner
 brew install --cask cleanshot
 brew install --cask drawio
@@ -42,7 +41,7 @@ brew install --cask mimestream
 brew install --cask maccy
 brew install --cask notion
 brew install --cask obsidian
-brew install alienator88/homebrew-cask/pearcleaner
+brew install --cask pearcleaner
 brew install --cask protonvpn
 brew install --cask pictogram
 brew install --cask raycast
@@ -57,19 +56,18 @@ brew install wireshark
 brew install git
 
 # Install repository
-mkdir .dotfiles
-cd .dotfiles
-git clone https://github.com/moonlinx/dotfiles.git 
+# mkdir .dotfiles
+# cd .dotfiles
+# git clone https://github.com/moonlinx/dotfiles.git 
 
-cd ~
+# cd ~
 
-sleep 5
+# sleep 5
 
 # Find these other apps
 echo "Please find and install the following apps from the following links
 https://stacher.io/
 https://github.com/Vencord/Vesktop?tab=readme-ov-file
-freetube
 
 # Give time to copy all of the links
 sleep 10
@@ -110,7 +108,6 @@ defaults write com.apple.AppleMultitouchTrackpad "Dragging" -bool "false"
 defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerDrag" -bool "true"
 defaults write com.apple.dock "mru-spaces" -bool "false"
 defaults write com.apple.dock "expose-group-apps" -bool "false" && killall Dock
-defaults write com.apple.dock autohide-delay -float 0.80;killall Dock
 
 
 # Start Services
