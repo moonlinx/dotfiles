@@ -134,7 +134,7 @@ alias ff="fastfetch"
 alias sp="spotify_player"
 alias wifi="wifi-password"
 alias py="python3"
-alias rm="trash"
+# alias rm="trash"
 alias ping="ping -c 5"
 
 # Nmap
