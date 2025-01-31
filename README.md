@@ -4,13 +4,15 @@
 
 Dotfiles for my M3 Max Macbook Pro: Running macOS Sonoma 15.2.
 
-- Terminal: [Wezterm](https://github.com/wez/wezterm) using zsh w/ [starship prompt](https://github.com/starship/starship) and [eza](https://github.com/eza-community/eza)
-- Window Management: [yabai](https://github.com/koekeishiya/yabai) and [JankyBorders](https://github.com/FelixKratz/JankyBorders)
-- Bar: [Sketchybar](https://github.com/FelixKratz/SketchyBar)
-- File Management: [yazi](https://github.com/sxyazi/yazi)
-- Hotkeys: [skhd](https://github.com/koekeishiya/skhd)
-- Vim: [neovim](https://neovim.io) / [lazyvim](https://github.com/LazyVim/LazyVim) to manage plugins
-- Tools: [tmux](https://github.com/tmux/tmux), [zoxide](https://github.com/ajeetdsouza/zoxide), [fzf](https://github.com/junegunn/fzf)
+- **Terminal** : [Wezterm](https://github.com/wez/wezterm) using zsh w/ [starship prompt](https://github.com/starship/starship) and [eza](https://github.com/eza-community/eza)
+- **Window Management** : [yabai](https://github.com/koekeishiya/yabai) and [JankyBorders](https://github.com/FelixKratz/JankyBorders)
+- **Launcher**: [Raycast](https://www.raycast.com)
+- **Bar** : [Sketchybar](https://github.com/FelixKratz/SketchyBar)
+- **File Management** : [yazi](https://github.com/sxyazi/yazi)
+- **Hotkeys** : [skhd](https://github.com/koekeishiya/skhd)
+- **Vim** : [neovim](https://neovim.io) / [lazyvim](https://github.com/LazyVim/LazyVim) to manage plugins
+- **Tools** : [tmux](https://github.com/tmux/tmux), [zoxide](https://github.com/ajeetdsouza/zoxide), [fzf](https://github.com/junegunn/fzf)
+- **Browser**: [Zen-Browser](https://zen-browser.app/)
 
 ## Installation
 
