@@ -1,0 +1,8 @@
+# Ignore .env files for secret and keyword caching
+.env
+
+# Ignore DS.Store Files
+.DS.Store
+
+# Ignore log files so that people can't read system Info
+.log
