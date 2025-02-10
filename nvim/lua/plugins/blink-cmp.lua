@@ -18,15 +18,76 @@ return {
   },
 
   "saghen/blink.cmp",
-  enabled = true,
+  -- enabled = true,
+  dependencies = {
+    {
+      "Kaiser-Yang/blink-cmp-git",
+      dependencies = { "nvim-lua/plenary.nvim" },
+    },
+  },
   opts = function(_, opts)
     -- Merge custom sources with the existing ones from lazyvim
     opts.sources = vim.tbl_deep_extend(
       "force",
       opts.sources or {},
       {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer", "git", "dictionary" },
         providers = {
+          git = {
+            -- Because we use filetype to enable the source,
+            -- we can make the score higher
+            score_offset = 100,
+            module = "blink-cmp-git",
+            name = "Git",
+            -- enabled this source at the beginning to make it possible to pre-cache
+            -- at very beginning
+            enabled = true,
+            -- only show this source when filetype is gitcommit or markdown
+            should_show_items = function()
+              return vim.o.filetype == "gitcommit" or vim.o.filetype == "markdown"
+            end,
+            --- @module 'blink-cmp-git'
+            --- @type blink-cmp-git.Options
+            opts = {
+              kind_icons = {
+                OPENPR = "",
+                CLOSEDPR = "",
+                MERGEDPR = "",
+                OPENIssue = "",
+                CLOSEDIssue = "",
+              },
+              git_centers = {
+                github = {
+                  pull_request = {
+                    separate_output = function(output)
+                      return github_pr_or_issue_separate_output(output, true)
+                    end,
+                    configure_score_offset = github_pr_or_issue_configure_score_offset,
+                  },
+                  issue = {
+                    separate_output = function(output)
+                      return github_pr_or_issue_separate_output(output, false)
+                    end,
+                    configure_score_offset = github_pr_or_issue_configure_score_offset,
+                  },
+                },
+              },
+            },
+          },
+          dictionary = {
+            module = "blink-cmp-dictionary",
+            name = "Dict",
+            min_keyword_length = 3,
+            max_items = 5,
+            score_offset = -3,
+            --- @module 'blink-cmp-dictionary'
+            --- @type blink-cmp-dictionary.Options
+            opts = {
+              dictionary_files = {
+                vim.fn.expand("~/.config/nvim/spell/en.utf-8.add"),
+              },
+            },
+          },
           lsp = {
             name = "lsp",
             enabled = true,
@@ -107,7 +168,7 @@ return {
             min_width = 1,
             max_width = 100,
             max_height = 10,
-            border = "padded",
+            border = "single",
             winblend = 0,
             winhighlight = "Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder",
             scrollbar = false, -- Note that the gutter will be disabled when border ~= 'none'
@@ -120,9 +181,21 @@ return {
             show_documentation = true,
           },
         },
+      opts.completion
+        == {
+          menu = {
+            border = "single",
+          },
+          documentation = {
+            auto_show = true,
+            window = {
+              border = "single",
+            },
+          },
+        },
       -- Displays a preview of the selected item on the current line
       completion.ghost_text == {
-          enabled = false,
+          enabled = true,
         },
 
       -- This comes from the luasnip extra, if you don't add it, won't be able to
@@ -164,7 +237,6 @@ return {
           ["<S-Tab>"] = { "snippet_backward", "fallback" },
         }
     )
-
     return opts
   end,
 }

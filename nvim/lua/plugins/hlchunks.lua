@@ -11,8 +11,9 @@ return {
       chunk = {
         enable = true,
         style = {
-          { fg = "#fab387" },
-          { fg = "#F38BA8" },
+          -- { fg = "#fab387" },
+          { fg = "#fcfcfa" },
+          { fg = "#ff657a" },
         },
 
         chars = {

@@ -42,8 +42,11 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
 vim.diagnostic.config({ virtual_text = false })
 
 -- line numbers
-opt.relativenumber = false -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+-- opt.relativenumber = false -- show relative line numbers
+-- opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+vim.opt.numberwidth = 3
+vim.opt.signcolumn = "yes:1"
+vim.opt.statuscolumn = "%l%s"
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)

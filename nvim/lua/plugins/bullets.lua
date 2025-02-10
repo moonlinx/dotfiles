@@ -14,4 +14,17 @@
 
 return {
   "bullets-vim/bullets.vim",
+  -- NOTE: enable the plugin only for specific filetypes, if you don't do this,
+  -- and you use the new snacks picker by folke, you won't be able to select a
+  -- file with <CR> when in insert mode, only in normal mode
+  ft = { "markdown", "text", "gitcommit", "scratch" },
+  config = function()
+    -- Disable deleting the last empty bullet when pressing <cr> or 'o'
+    -- default = 1
+    vim.g.bullets_delete_last_bullet_if_empty = 1
+
+    -- (Optional) Add other configurations here
+    -- For example, enabling/disabling mappings
+    -- vim.g.bullets_set_mappings = 1
+  end,
 }
