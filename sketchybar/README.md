@@ -4,7 +4,7 @@ This repository is my personal configuration for [SketchyBar](https://github.com
 
 ![SketchyBar Config Appearance (Lua)](https://github.com/user-attachments/assets/eba2970a-4195-4cc9-9ce1-3dc73f72b8cf)
 
-- This resides here: [branch.lua](https://github.com/moonlinx/dotfiles/commit/55fe15abee8af0d7a5ac5ecd103bdd04a4220a32)
+- This resides here: [branch.lua](https://github.com/moonlinx/dotfiles/tree/0216622f385348725818f8ca742a41b4be7434e8/sketchybar)
 
 ![SketchyBar Config Appearance (Shell)](https://github.com/user-attachments/assets/db4d5e7d-1507-4958-a854-f034c7672a5f)
 
