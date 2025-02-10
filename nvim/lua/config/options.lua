@@ -42,11 +42,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
 vim.diagnostic.config({ virtual_text = false })
 
 -- line numbers
--- opt.relativenumber = false -- show relative line numbers
--- opt.number = true -- shows absolute line number on cursor line (when relative number is on)
-vim.opt.numberwidth = 3
-vim.opt.signcolumn = "yes:1"
-vim.opt.statuscolumn = "%l%s"
+opt.relativenumber = false -- show relative line numbers
+opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
@@ -56,6 +53,7 @@ opt.autoindent = true -- copy indent from current line when starting new one
 
 -- line wrapping
 opt.wrap = true -- enable line wrapping
+vim.opt.textwidth = 80 -- wrap lines at 80 characters
 
 -- search settings
 opt.ignorecase = true -- ignore case when searching

@@ -100,11 +100,11 @@ return {
             layout = "ivy",
           })
         end,
-        desc = "[P]Search for incomplete tasks",
+        desc = "[P]Search for complete tasks",
       },
       -- -- List git branches with Snacks_picker to quickly switch to a new branch
       {
-        "<leader>eb",
+        "<leader>pb",
         function()
           Snacks.picker.git_branches({
             layout = "select",
@@ -112,11 +112,20 @@ return {
         end,
         desc = "List Branches",
       },
+      {
+        "<leader>pws",
+        function()
+          Snacks.picker.grep_word({
+            layout = "ivy",
+          })
+        end,
+        mode = { "n", "x" },
+      },
       -- Used in LazyVim to view the different keymaps, this by default is
       -- configured as <leader>sk but I run it too often
       -- Sometimes I need to see if a keymap is already taken or not
       {
-        "<leader>ek",
+        "<leader>pk",
         function()
           Snacks.picker.keymaps({
             layout = "vertical",
@@ -342,38 +351,7 @@ return {
         },
       },
       statuscolumn = { enabled = true },
+      zen = { enabled = false },
     },
   },
 }
--- return {
---   "folke/snacks.nvim",
---   priority = 1000,
---   lazy = false,
---   opts = {
---     dashboard = {
---       width = 50,
---       preset = {
---         header = [[
---    _____                       ____   _____
---   /     \   ____   ____   ____ \   \ /  /__| _____
---  /  \ /  \ / __ \ / __ \ /    \ \   \  /|  |/     \
--- /    \    \  \_\ )  \_\ )   |  \ \    / |  |  | |  \
--- \____/\_  /\____/ \____/|___|  /  \  /  |__|__|_|  /
---         \/                   \/    \/            \/ ]],
---       },
---       sections = {
---         { section = "header" },
---         { section = "keys", gap = 1, padding = 2 },
---         {
---           padding = 1,
---           title = [[
--- ______  /\___________________/\     a r i s e
---       \/                       \  _______________
---                                 \/                ]],
---         },
---         { section = "startup" },
---       },
---     },
---     statuscolumn = { enabled = true },
---   },
--- }

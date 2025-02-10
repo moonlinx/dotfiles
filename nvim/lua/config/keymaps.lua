@@ -555,11 +555,15 @@ vim.keymap.set("n", "<leader>td", function()
   end
 end, { desc = "[P]TODO toggle item done or not" })
 
+-- HACK: Create table of contents in neovim with markdown-toc
+-- https://youtu.be/BVyrXsZ_ViA
+--
 -- Generate/update a Markdown TOC
 -- To generate the TOC I use the markdown-toc plugin
 -- https://github.com/jonschlinkert/markdown-toc
 -- And the markdown-toc plugin installed as a LazyExtra
-vim.keymap.set("n", "<leader>mt", function()
+-- Function to update the Markdown TOC with customizable headings
+local function update_markdown_toc(heading2, heading3)
   local path = vim.fn.expand("%") -- Expands the current file name to a full path
   local bufnr = 0 -- The current buffer number, 0 references the current active buffer
   -- Save the current view
@@ -575,31 +579,49 @@ vim.keymap.set("n", "<leader>mt", function()
       -- Frontmatter start detected, now find the end
       for j = i + 1, #lines do
         if lines[j]:match("^---$") then
-          frontmatter_end = j -- Save the end line of the frontmatter
+          frontmatter_end = j
           break
         end
       end
     end
     -- Checks for the TOC marker
     if line:match("^%s*<!%-%-%s*toc%s*%-%->%s*$") then
-      toc_exists = true -- Sets the flag if TOC marker is found
-      break -- Stops the loop if TOC marker is found
+      toc_exists = true
+      break
     end
   end
-  -- Inserts H1 heading and <!-- toc --> at the appropriate position
+  -- Inserts H2 and H3 headings and <!-- toc --> at the appropriate position
   if not toc_exists then
+    local insertion_line = 1 -- Default insertion point after first line
     if frontmatter_end > 0 then
-      -- Insert after frontmatter
-      vim.api.nvim_buf_set_lines(bufnr, frontmatter_end, frontmatter_end, false, { "", "# Contents", "<!-- toc -->" })
+      -- Find H1 after frontmatter
+      for i = frontmatter_end + 1, #lines do
+        if lines[i]:match("^#%s+") then
+          insertion_line = i + 1
+          break
+        end
+      end
     else
-      -- Insert at the top if no frontmatter
-      vim.api.nvim_buf_set_lines(bufnr, 0, 0, false, { "# Contents", "<!-- toc -->" })
+      -- Find H1 from the beginning
+      for i, line in ipairs(lines) do
+        if line:match("^#%s+") then
+          insertion_line = i + 1
+          break
+        end
+      end
     end
+    -- Insert the specified headings and <!-- toc --> without blank lines
+    -- Insert the TOC inside a H2 and H3 heading right below the main H1 at the top lamw25wmal
+    vim.api.nvim_buf_set_lines(bufnr, insertion_line, insertion_line, false, { heading2, heading3, "<!-- toc -->" })
   end
-  -- Silently save the file, in case TOC being created for first time (yes, you need the 2 saves)
+  -- Silently save the file, in case TOC is being created for the first time
   vim.cmd("silent write")
   -- Silently run markdown-toc to update the TOC without displaying command output
-  vim.fn.system("markdown-toc -i " .. path)
+  -- vim.fn.system("markdown-toc -i " .. path)
+  -- I want my bulletpoints to be created only as "-" so passing that option as
+  -- an argument according to the docs
+  -- https://github.com/jonschlinkert/markdown-toc?tab=readme-ov-file#optionsbullets
+  vim.fn.system('markdown-toc --bullets "-" -i ' .. path)
   vim.cmd("edit!") -- Reloads the file to reflect the changes made by markdown-toc
   vim.cmd("silent write") -- Silently save the file
   vim.notify("TOC updated and file saved", vim.log.levels.INFO)
@@ -622,7 +644,23 @@ vim.keymap.set("n", "<leader>mt", function()
   -- end
   -- Restore the saved view (including folds)
   vim.cmd("loadview")
-end, { desc = "[P]Insert/update Markdown TOC" })
+end
+
+-- HACK: Create table of contents in neovim with markdown-toc
+-- https://youtu.be/BVyrXsZ_ViA
+--
+-- Keymap for English TOC
+vim.keymap.set("n", "<leader>mtt", function()
+  update_markdown_toc("## Contents", "### Table of contents")
+end, { desc = "[P]Insert/update Markdown TOC (English)" })
+
+-- HACK: Create table of contents in neovim with markdown-toc
+-- https://youtu.be/BVyrXsZ_ViA
+--
+-- Keymap for Spanish TOC lamw25wmal
+vim.keymap.set("n", "<leader>mts", function()
+  update_markdown_toc("## Contenido", "### Tabla de contenido")
+end, { desc = "[P]Insert/update Markdown TOC (Spanish)" })
 
 -- Save the cursor position globally to access it across different mappings
 _G.saved_positions = {}
