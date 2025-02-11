@@ -180,26 +180,6 @@ end, { desc = "[P]Toggle bullet point (dash)" })
 --   end
 -- end, { desc = "Toggle bullet point at the beginning of the current line" })
 
--- Keymap to switch spelling language to English lamw25wmal
--- To save the language settings configured on each buffer, you need to add
--- "localoptions" to vim.opt.sessionoptions in the `lua/config/options.lua` file
-vim.keymap.set("n", "<leader>msle", function()
-  vim.opt.spelllang = "en"
-  vim.cmd("echo 'Spell language set to English'")
-end, { desc = "[P]Spelling language English" })
-
--- Keymap to switch spelling language to Spanish lamw25wmal
-vim.keymap.set("n", "<leader>msls", function()
-  vim.opt.spelllang = "es"
-  vim.cmd("echo 'Spell language set to Spanish'")
-end, { desc = "[P]Spelling language Spanish" })
-
--- Keymap to switch spelling language to both spanish and english lamw25wmal
-vim.keymap.set("n", "<leader>mslb", function()
-  vim.opt.spelllang = "en,es"
-  vim.cmd("echo 'Spell language set to Spanish and English'")
-end, { desc = "[P]Spelling language Spanish and English" })
-
 -- Show spelling suggestions / spell suggestions
 vim.keymap.set("n", "<leader>mss", function()
   -- Simulate pressing "z=" with "m" option using feedkeys
@@ -653,14 +633,6 @@ end
 vim.keymap.set("n", "<leader>mtt", function()
   update_markdown_toc("## Contents", "### Table of contents")
 end, { desc = "[P]Insert/update Markdown TOC (English)" })
-
--- HACK: Create table of contents in neovim with markdown-toc
--- https://youtu.be/BVyrXsZ_ViA
---
--- Keymap for Spanish TOC lamw25wmal
-vim.keymap.set("n", "<leader>mts", function()
-  update_markdown_toc("## Contenido", "### Tabla de contenido")
-end, { desc = "[P]Insert/update Markdown TOC (Spanish)" })
 
 -- Save the cursor position globally to access it across different mappings
 _G.saved_positions = {}
