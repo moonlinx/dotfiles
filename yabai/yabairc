@@ -21,7 +21,7 @@ yabai -m config layout bsp
 # ###############################################################################
 #                          Custom padding settings
 ###############################################################################
-yabai -m config top_padding 4
+yabai -m config top_padding 3
 yabai -m config bottom_padding 8
 yabai -m config left_padding 8
 yabai -m config right_padding 8
