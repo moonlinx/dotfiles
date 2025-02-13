@@ -6,8 +6,11 @@ return {
   },
   config = function()
     require("markview").setup({
-      modes = { "n", "i", "no", "c" },
-      hybrid_modes = { "n", "i" },
+      preview = {
+        icon_provider = "mini",
+        modes = { "n", "i", "no", "c" },
+        hybrid_modes = { "n", "i" },
+      },
     })
   end,
 }
