@@ -195,7 +195,7 @@ return {
         },
       -- Displays a preview of the selected item on the current line
       completion.ghost_text == {
-          enabled = true,
+          enabled = false,
         },
 
       -- This comes from the luasnip extra, if you don't add it, won't be able to
