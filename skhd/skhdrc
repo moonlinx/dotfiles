@@ -6,6 +6,8 @@
 
 # Applications
 rcmd - return : open -n -a "wezterm"
+# rcmd - return : open -n -a "ghostty"
+# rcmd - return : open -n -a "kitty"
 
 # change layout of desktop
 ctrl + alt - b : yabai -m space --layout bsp
