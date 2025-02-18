@@ -7,14 +7,17 @@ local icons = {
 		apple = "􀣺",
 		gear = "􀍟",
 		cpu = "􀫥",
+		calendar = "􀉉",
 		clipboard = "􀉄",
 		clipboard_list = "􁕜",
 		restart = "􀚁",
 		bluetooth = "􀖀",
 
 		switch = {
-			on = "󰍜",
-			off = "􁚬",
+			-- on = "󰍜",
+			on = "􀱢 ",
+			-- off = "􁚬 ",
+			off = "􂧰 ",
 		},
 		volume = {
 			_100 = "􀊩",
@@ -38,7 +41,7 @@ local icons = {
 			connected = "􀙇",
 			disconnected = "􀙈",
 			router = "􁓤",
-			vpn = "􀞙",
+			vpn = "􀞚 ",
 		},
 		media = {
 			back = "􀊊",
