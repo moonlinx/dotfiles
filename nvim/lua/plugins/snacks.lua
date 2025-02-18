@@ -143,7 +143,7 @@ return {
             show_empty = true,
             supports_live = true,
             -- In case you want to override the layout for this keymap
-            -- layout = "vscode",
+            -- layout = "ivy",
           })
         end,
         desc = "Find Files",
@@ -216,7 +216,7 @@ return {
         -- I like the "ivy" layout, so I set it as the default globaly, you can
         -- still override it in different keymaps
         layout = {
-          preset = "telescope",
+          preset = "default",
           -- When reaching the bottom of the results in the picker, I don't want
           -- it to cycle and go back to the top
           cycle = false,

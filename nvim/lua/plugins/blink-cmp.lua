@@ -1,13 +1,3 @@
--- Filename: ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
--- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
-
--- completion plugin with support for LSPs and external sources that updates
--- on every keystroke with minimal overhead
-
--- https://www.lazyvim.org/extras/coding/blink
--- https://github.com/saghen/blink.cmp
--- Documentation site: https://cmp.saghen.dev/
-
 return {
   -- add blink.compat
   {
@@ -18,62 +8,15 @@ return {
   },
 
   "saghen/blink.cmp",
-  -- enabled = true,
-  dependencies = {
-    {
-      "Kaiser-Yang/blink-cmp-git",
-      dependencies = { "nvim-lua/plenary.nvim" },
-    },
-  },
+  dependencies = {},
   opts = function(_, opts)
     -- Merge custom sources with the existing ones from lazyvim
     opts.sources = vim.tbl_deep_extend(
       "force",
       opts.sources or {},
       {
-        default = { "lsp", "path", "snippets", "buffer", "git", "dictionary" },
+        default = { "lsp", "path", "snippets", "buffer", "dictionary" },
         providers = {
-          git = {
-            -- Because we use filetype to enable the source,
-            -- we can make the score higher
-            score_offset = 100,
-            module = "blink-cmp-git",
-            name = "Git",
-            -- enabled this source at the beginning to make it possible to pre-cache
-            -- at very beginning
-            enabled = true,
-            -- only show this source when filetype is gitcommit or markdown
-            should_show_items = function()
-              return vim.o.filetype == "gitcommit" or vim.o.filetype == "markdown"
-            end,
-            --- @module 'blink-cmp-git'
-            --- @type blink-cmp-git.Options
-            opts = {
-              kind_icons = {
-                OPENPR = "",
-                CLOSEDPR = "",
-                MERGEDPR = "",
-                OPENIssue = "",
-                CLOSEDIssue = "",
-              },
-              git_centers = {
-                github = {
-                  pull_request = {
-                    separate_output = function(output)
-                      return github_pr_or_issue_separate_output(output, true)
-                    end,
-                    configure_score_offset = github_pr_or_issue_configure_score_offset,
-                  },
-                  issue = {
-                    separate_output = function(output)
-                      return github_pr_or_issue_separate_output(output, false)
-                    end,
-                    configure_score_offset = github_pr_or_issue_configure_score_offset,
-                  },
-                },
-              },
-            },
-          },
           dictionary = {
             module = "blink-cmp-dictionary",
             name = "Dict",
@@ -84,7 +27,7 @@ return {
             --- @type blink-cmp-dictionary.Options
             opts = {
               dictionary_files = {
-                vim.fn.expand("~/.config/nvim/spell/en.utf-8.add"),
+                vim.fn.expand("~/.config/nvim/spell/en.utf-8.add.spl"),
               },
             },
           },
@@ -154,49 +97,137 @@ return {
           end,
         },
       },
-      -- Experimental signature help support
-      signature
+      fuzzy == {
+        use_frecency = true,
+      },
+      completion
         == {
-          enabled = true,
-          trigger = {
-            blocked_trigger_characters = {},
-            blocked_retrigger_characters = {},
-            -- When true, will show the signature help window when the cursor comes after a trigger character when entering insert mode
-            show_on_insert_on_trigger_character = true,
+          keyword = {
+            range = "full",
           },
-          window = {
-            min_width = 1,
-            max_width = 100,
-            max_height = 10,
-            border = "single",
-            winblend = 0,
-            winhighlight = "Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder",
-            scrollbar = false, -- Note that the gutter will be disabled when border ~= 'none'
-            -- Which directions to show the window,
-            -- falling back to the next direction when there's not enough space,
-            -- or another window is in the way
-            direction_priority = { "n", "s" },
-            -- Disable if you run into performance issues
-            treesitter_highlighting = true,
-            show_documentation = true,
+          accept = {
+            auto_brackets = {
+              enabled = true,
+            },
           },
-        },
-      opts.completion
-        == {
+          list = {
+            selection = { preselect = false, auto_insert = true },
+          },
           menu = {
-            border = "single",
+            border = "rounded",
+            max_height = 15,
+            scrolloff = 0,
+            draw = {
+              align_to = "cursor",
+              padding = 0,
+              columns = {
+                { "kind_icon" },
+                { "label", "label_description", gap = 1 },
+                { "source_name" },
+              },
+              components = {
+                source_name = {
+                  text = function(ctx)
+                    return "[" .. ctx.source_name .. "]"
+                  end,
+                },
+                label = {
+                  text = function(ctx)
+                    if not vim.g.rime_enabled then
+                      return ctx.label .. ctx.label_detail
+                    end
+                    local client = vim.lsp.get_client_by_id(ctx.item.client_id)
+                    if not client or client.name ~= "rime_ls" then
+                      return ctx.label .. ctx.label_detail
+                    end
+                    local code_start = #ctx.label_detail + 1
+                    for i = 1, #ctx.label_detail do
+                      local ch = string.sub(ctx.label_detail, i, i)
+                      if ch >= "a" and ch <= "z" then
+                        code_start = i
+                        break
+                      end
+                    end
+                    local code_end = #ctx.label_detail - 4
+                    local code = ctx.label_detail:sub(code_start, code_end)
+                    code = string.gsub(code, "  ·  ", " ")
+                    if code ~= "" then
+                      code = " <" .. code .. ">"
+                    end
+                    return ctx.label .. code
+                  end,
+                  highlight = function(ctx, text)
+                    if ctx.source_name == "Git" then
+                      local id_len = #(ctx.label:match("^[^%s]+"))
+                      -- Find id like #123, !123 or hash,
+                      -- but not for commit and mention
+                      if id_len > 0 and id_len ~= #ctx.label then
+                        local highlights = {
+                          {
+                            0,
+                            id_len,
+                            group = "BlinkCmpGitLabel" .. ctx.kind,
+                          },
+                          {
+                            id_len,
+                            #ctx.label - id_len,
+                            require("blink.cmp.config.completion.menu").default.draw.components.label.highlight(
+                              ctx,
+                              text
+                            ),
+                          },
+                        }
+                        -- characters matched on the label by the fuzzy matcher
+                        for _, idx in ipairs(ctx.label_matched_indices) do
+                          table.insert(highlights, { idx, idx + 1, group = "BlinkCmpLabelMatch" })
+                        end
+                        return highlights
+                      end
+                    end
+                    return require("blink.cmp.config.completion.menu").default.draw.components.label.highlight(
+                      ctx,
+                      text
+                    )
+                  end,
+                },
+              },
+            },
           },
           documentation = {
             auto_show = true,
+            auto_show_delay_ms = 0,
+            update_delay_ms = 100,
+            treesitter_highlighting = true,
             window = {
-              border = "single",
+              border = "rounded",
             },
           },
         },
-      -- Displays a preview of the selected item on the current line
-      completion.ghost_text == {
-          enabled = false,
+      signature == {
+        enabled = true,
+        window = {
+          border = "rounded",
         },
+      },
+      keymap
+        == {
+          preset = "default",
+          ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+          ["<C-e>"] = { "hide" },
+          ["<C-y>"] = { "select_and_accept" },
+
+          ["<C-p>"] = { "select_prev", "fallback" },
+          ["<C-n>"] = { "select_next", "fallback" },
+
+          ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+          ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+          ["<Tab>"] = { "snippet_forward", "fallback" },
+          ["<S-Tab>"] = { "snippet_backward", "fallback" },
+        },
+      appearance == {
+        nerd_font_variant = "mono",
+      },
 
       -- This comes from the luasnip extra, if you don't add it, won't be able to
       -- jump forward or backward in luasnip snippets
@@ -219,22 +250,6 @@ return {
           jump = function(direction)
             require("luasnip").jump(direction)
           end,
-        },
-      opts.keymap
-        == {
-          preset = "default",
-          ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-          ["<C-e>"] = { "hide" },
-          ["<C-y>"] = { "select_and_accept" },
-
-          ["<C-p>"] = { "select_prev", "fallback" },
-          ["<C-n>"] = { "select_next", "fallback" },
-
-          ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-          ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-
-          ["<Tab>"] = { "snippet_forward", "fallback" },
-          ["<S-Tab>"] = { "snippet_backward", "fallback" },
         }
     )
     return opts
