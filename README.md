@@ -2,6 +2,25 @@
 
 # .dotfiles
 
+## Contents
+
+### Table of contents
+
+<!-- toc -->
+
+- [Overview](#overview)
+- [Installation](#installation)
+  * [Homebrew installation](#homebrew-installation)
+- [File overview](#file-overview)
+  * [Customization](#customization)
+    + [Git](#git)
+    + [Color Schemes](#color-schemes)
+- [Acknowledgements](#acknowledgements)
+
+<!-- tocstop -->
+
+## Overview
+
 Dotfiles for my M3 Max Macbook Pro: Running macOS Sonoma 15.2.
 
 - **Terminal** : [Wezterm](https://github.com/wez/wezterm) using zsh w/ [starship prompt](https://github.com/starship/starship) and [eza](https://github.com/eza-community/eza)
@@ -55,7 +74,6 @@ xargs brew install < leaves.txt
 The install script will also setup Python and Node versions/environments:
 
 - [pyenv](https://github.com/pyenv/pyenv) sets the global Python version to 3.12
-- [n](https://github.com/tj/n) sets the global Node version to LTS
 
 ### Customization
 
