@@ -1,6 +1,7 @@
 # SketchyBar Config
 
-This repository is my personal configuration for [SketchyBar](https://github.com/FelixKratz/SketchyBar), a macOS plugin to customize the top menu bar. My configuration is largely derived from and built upon [this repository](<https://github.com/FelixKratz/dotfiles>)
+This repository is my personal configuration for [SketchyBar](https://github.com/FelixKratz/SketchyBar), a macOS plugin to customize the top menu bar.
+My configuration is largely derived from and built upon [this repository](https://github.com/FelixKratz/dotfiles).
 
 ![SketchyBar Config Appearance (Lua)](https://github.com/user-attachments/assets/eba2970a-4195-4cc9-9ce1-3dc73f72b8cf)
 
@@ -16,13 +17,8 @@ In addition to possessing all the features of the aforementioned configuration, 
 
 - **Battery Health** information, displayed when the Battery Widget is clicked.
 - Redesigned **Calendar Widget** that takes up less space and opens Calendar when clicked.
-- **Clipboard Widget** that displays up to five of your last copied items. Clicking an item re-copies it.
-- Support for a **JSON Configuration File** to customize various aspects of the bar.
 - Improved **Media Widget**, with superior play/pause functionality.
-- **Restart Widget** to refresh SketchyBar; useful for development.
-- **RAM Widget** that displays the current RAM utilization, along with a graph.
 - **VPN Icon** that displays on the **Wifi Widget**, when a connected to a VPN.
-- **Weather Widget** that displays current temperature and conditions, with a pop-up menu displaying semi-hourly forecast for the next two days.
 
 ## Installation
 
