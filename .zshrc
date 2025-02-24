@@ -192,7 +192,6 @@ eval "$(direnv hook zsh)"
 # Using Trash Command to replace rm
 export PATH="/opt/homebrew/opt/trash/bin:$PATH"
 
-
 # This is for ruby stuff that is required for github blog
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
