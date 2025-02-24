@@ -26,7 +26,7 @@ return {
       watch_gitdir = {
         follow_files = true,
       },
-      current_line_blame = true,
+      current_line_blame = false,
       current_line_blame_opts = {
         delay = 100,
       },
