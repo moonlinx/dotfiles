@@ -113,6 +113,8 @@ return {
       heading = {
         -- Turn on / off heading icon & background rendering
         enabled = true,
+        -- Turn on / off render mode
+        render_modes = false,
         -- Turn on / off any sign column related rendering
         sign = true,
         -- Determines how icons fill the available space:
@@ -122,16 +124,16 @@ return {
         -- Replaces '#+' of 'atx_h._marker'
         -- The number of '#' in the heading determines the 'level'
         -- The 'level' is used to index into the array using a cycle
-        icons = { "󰼏 ", "󰎨  ", "󰼑  ", "󰎲  ", "󰼓  ", "󰎴  " },
+        icons = { "󰼏 ", "󰎨 ", "󰼑 ", "󰎲 ", "󰼓 ", "󰎴 " },
         -- Added to the sign column if enabled
         -- The 'level' is used to index into the array using a cycle
-        signs = { "󰫎 " },
+        signs = { "󰌖 " },
         -- Width of the heading background:
         --  block: width of the heading text
         --  full:  full width of the window
         -- Can also be an array of the above values in which case the 'level' is used
         -- to index into the array using a clamp
-        width = "full",
+        width = "block",
         -- Amount of padding to add to the left of headings
         left_pad = 0,
         -- Amount of padding to add to the right of headings when width is 'block'
@@ -166,6 +168,7 @@ return {
           "RenderMarkdownH5",
           "RenderMarkdownH6",
         },
+        custom = {},
       },
       code = {
         -- Turn on / off code block & inline code rendering
@@ -285,40 +288,29 @@ return {
         highlight = "RenderMarkdownQuote",
       },
       pipe_table = {
-        -- Turn on / off pipe table rendering
         enabled = true,
-        -- Pre configured settings largely for setting table border easier
-        --  heavy:  use thicker border characters
-        --  double: use double line border characters
-        --  round:  use round border corners
-        --  none:   does nothing
-        preset = "none",
-        -- Determines how the table as a whole is rendered:
-        --  none:   disables all rendering
-        --  normal: applies the 'cell' style rendering to each row of the table
-        --  full:   normal + a top & bottom line that fill out the table when lengths match
+        render_modes = false,
+        preset = "double",
         style = "full",
-        -- Determines how individual cells of a table are rendered:
-        --  overlay: writes completely over the table, removing conceal behavior and highlights
-        --  raw:     replaces only the '|' characters in each row, leaving the cells unmodified
-        --  padded:  raw + cells are padded with inline extmarks to make up for any concealed text
-        cell = "padded",
-        -- Gets placed in delimiter row for each column, position is based on alignmnet
-        alignment_indicator = "━",
-        -- Characters used to replace table border
-        -- Correspond to top(3), delimiter(3), bottom(3), vertical, & horizontal
-        -- stylua: ignore
-        border = {
-            '┌', '┬', '┐',
-            '├', '┼', '┤',
-            '└', '┴', '┘',
-            '│', '─',
-        },
-        -- Highlight for table heading, delimiter, and the line above
+        -- cell = "padded",
+        -- padding = 1,
+        -- min_width = 0,
+        -- border = {
+        --   "┌",
+        --   "┬",
+        --   "┐",
+        --   "├",
+        --   "┼",
+        --   "┤",
+        --   "└",
+        --   "┴",
+        --   "┘",
+        --   "│",
+        --   "─",
+        -- },
+        alignment_indicator = "┅",
         head = "RenderMarkdownTableHead",
-        -- Highlight for everything else, main table rows and the line below
         row = "RenderMarkdownTableRow",
-        -- Highlight for inline padding used to add back concealed space
         filler = "RenderMarkdownTableFill",
       },
       -- Callouts are a special instance of a 'block_quote' that start with a 'shortcut_link'
@@ -333,7 +325,6 @@ return {
         important = { raw = "[!IMPORTANT]", rendered = "󰅾 Important", highlight = "RenderMarkdownHint" },
         warning = { raw = "[!WARNING]", rendered = "󰀪 Warning", highlight = "RenderMarkdownWarn" },
         caution = { raw = "[!CAUTION]", rendered = "󰳦 Caution", highlight = "RenderMarkdownError" },
-        -- Obsidian: https://help.obsidian.md/Editing+and+formatting/Callouts
         abstract = { raw = "[!ABSTRACT]", rendered = "󰨸 Abstract", highlight = "RenderMarkdownInfo" },
         summary = { raw = "[!SUMMARY]", rendered = "󰨸 Summary", highlight = "RenderMarkdownInfo" },
         tldr = { raw = "[!TLDR]", rendered = "󰨸 Tldr", highlight = "RenderMarkdownInfo" },
@@ -360,23 +351,29 @@ return {
       link = {
         -- Turn on / off inline link icon rendering
         enabled = true,
-        -- Inlined with 'image' elements
+        render_modes = false,
+        footnote = {
+          superscript = true,
+          prefix = "",
+          suffix = "",
+        },
         image = "󰥶 ",
-        -- Inlined with 'email_autolink' elements
         email = "󰀓 ",
-        -- Fallback icon for 'inline_link' elements
         hyperlink = "󰌹 ",
-        -- Applies to the fallback inlined icon
         highlight = "RenderMarkdownLink",
-        -- Define custom destination patterns so icons can quickly inform you of what a link
-        -- contains. Applies to 'inline_link' and wikilink nodes.
-        -- Can specify as many additional values as you like following the 'web' pattern below
-        --   The key in this case 'web' is for healthcheck and to allow users to change its values
-        --   'pattern':   Matched against the destination text see :h lua-pattern
-        --   'icon':      Gets inlined before the link text
-        --   'highlight': Highlight for the 'icon'
+        wiki = { icon = "󱗖 ", highlight = "RenderMarkdownWikiLink" },
         custom = {
-          web = { pattern = "^http[s]?://", icon = "󰖟 ", highlight = "RenderMarkdownLink" },
+          web = { pattern = "^http", icon = "󰖟 " },
+          discord = { pattern = "discord%.com", icon = "󰙯 " },
+          github = { pattern = "github%.com", icon = "󰊤 " },
+          gitlab = { pattern = "gitlab%.com", icon = "󰮠 " },
+          google = { pattern = "google%.com", icon = "󰊭 " },
+          neovim = { pattern = "neovim%.io", icon = " " },
+          reddit = { pattern = "reddit%.com", icon = "󰑍 " },
+          stackoverflow = { pattern = "stackoverflow%.com", icon = "󰓌 " },
+          wikipedia = { pattern = "wikipedia%.org", icon = "󰖬 " },
+          youtube = { pattern = "youtube%.com", icon = "󰗃 " },
+          python = { pattern = "%.py$", icon = "󰌠 " },
         },
       },
       sign = {
