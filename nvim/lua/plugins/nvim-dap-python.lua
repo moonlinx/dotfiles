@@ -1,3 +1,8 @@
+-- Configs and instructions come from here:
+-- https://www.reddit.com/r/neovim/comments/1fgq6rq/comment/lrebxuh/
+-- https://github.com/mfussenegger/nvim-dap-python
+-- Debug capabilities in neovim
+
 return {
   lazy = true,
   "mfussenegger/nvim-dap-python",
