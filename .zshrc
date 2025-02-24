@@ -110,7 +110,10 @@ export VISUAL=$EDITOR
 export FZF_DEFAULT_OPS="--extended"
 
 # Python
-export PATH="${PATH}:/Users/devindelaney/Library/Python/3.11/lib/python/site-packages"
+export PATH="${PATH}:/Users/fox/Library/Python/3.11/lib/python/site-packages"
+
+# Adding Python to path
+export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 
 # Colored manpages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -134,7 +137,7 @@ alias ff="fastfetch"
 alias sp="spotify_player"
 alias wifi="wifi-password"
 alias py="python3"
-# alias rm="trash"
+alias rm="trash"
 alias ping="ping -c 5"
 
 # Nmap
@@ -184,3 +187,13 @@ function take {
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh)"
+eval "$(direnv hook zsh)"
+
+# Using Trash Command to replace rm
+export PATH="/opt/homebrew/opt/trash/bin:$PATH"
+
+
+# This is for ruby stuff that is required for github blog
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1
