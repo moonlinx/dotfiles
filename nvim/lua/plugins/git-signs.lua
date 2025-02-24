@@ -3,17 +3,17 @@ return {
   config = function()
     require("gitsigns").setup({
       signs = {
-        add = { text = "" },
-        change = { text = "" },
-        delete = { text = "" },
+        add = { text = "┃" },
+        change = { text = "┃" },
+        delete = { text = "_" },
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
         untracked = { text = "┆" },
       },
       signs_staged = {
-        add = { text = "+" },
-        change = { text = "~" },
-        delete = { text = "-" },
+        add = { text = "┃" },
+        change = { text = "┃" },
+        delete = { text = "_" },
         topdelete = { text = "‾" },
         changedelete = { text = "~" },
         untracked = { text = "┆" },
@@ -26,8 +26,10 @@ return {
       watch_gitdir = {
         follow_files = true,
       },
-      current_line_blame = false,
-
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 100,
+      },
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
