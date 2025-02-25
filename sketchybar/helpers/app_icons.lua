@@ -312,7 +312,7 @@ return {
 	["Yuque"] = ":yuque:",
 	["语雀"] = ":yuque:",
 	["Zed"] = ":zed:",
-	["Zen Browser"] = ":zen_browser:",
+	["Zen"] = ":zen_browser:",
 	["Twilight"] = ":firefox_developer_edition:",
 	["Zeplin"] = ":zeplin:",
 	["zoom.us"] = ":zoom:",
