@@ -97,6 +97,7 @@ return {
         "Kaiser-Yang/blink-cmp-git",
         dependencies = { "nvim-lua/plenary.nvim" },
       },
+      "Kaiser-Yang/blink-cmp-avante",
     },
     opts = function(_, opts)
       -- I noticed that telescope was extremeley slow and taking too long to open,
@@ -117,13 +118,25 @@ return {
       -- Merge custom sources with the existing ones from lazyvim
       -- NOTE: by default lazyvim already includes the lazydev source, so not adding it here again
       opts.sources = vim.tbl_deep_extend("force", opts.sources or {}, {
-        default = { "lsp", "path", "snippets", "buffer", "git", "dictionary" },
+        default = {
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
+          "git",
+          "dictionary",
+          "avante",
+        },
         providers = {
           -- markdown = {
           --   name = "Render",
           --   module = "render-markdown.integ.blink",
           --   fallbacks = { "lsp" },
           -- },
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+          },
           git = {
             -- Because we use filetype to enable the source,
             -- we can make the score higher
