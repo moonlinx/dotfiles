@@ -136,6 +136,8 @@ alias wifi="wifi-password"
 alias py="python3"
 alias rm="trash"
 alias ping="ping -c 5"
+alias cp="cp -iv"
+alias mv="mv -iv"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap-output.txt"
@@ -171,8 +173,22 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+# Alias for FZF
+# Link: https://github.com/junegunn/fzf
+if [[ -x "$(command -v fzf)" ]]; then
+    alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
+    # Alias to fuzzy find files in the current folder(s), preview them, and launch in an editor
+		alias preview='open $(fzf --info=inline --query="${@}")'
+    if [[ -x "$(command -v xdg-open)" ]]; then
+	else
+		alias preview='edit $(fzf --info=inline --query="${@}")'
+	fi
+fi
+
+
 # VI Mode!!!
 bindkey jj vi-cmd-mode
+
 
 #Create a directory and cd diretctly into it
 function take {
@@ -180,17 +196,19 @@ function take {
     cd $1
 }
 
-# Shell integrations
+# Shell integrations  ----------------------------------------
+
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(atuin init zsh)"
-eval "$(direnv hook zsh)"
 
 # Using Trash Command to replace rm
 export PATH="/opt/homebrew/opt/trash/bin:$PATH"
 
 # Adding Python to path
 export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # This is for ruby stuff that is required for github blog
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
