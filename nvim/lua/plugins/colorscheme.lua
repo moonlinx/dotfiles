@@ -28,7 +28,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = "frappe",
+      flavour = "mocha", -- Latte, Frappe, Macchiato, Mocha
       no_italic = false,
       term_colors = true,
       transparent_background = true,
@@ -55,6 +55,15 @@ return {
           mantle = "#1c1d22",
           crust = "#171719",
         },
+        mocha = {
+          text = "#fcfcfa",
+          surface2 = "#535763",
+          surface1 = "#3a3d4b",
+          surface0 = "#30303b",
+          base = "#202027",
+          mantle = "#1c1d22",
+          crust = "#171719",
+        },
       },
       integrations = {
         telescope = {
@@ -65,6 +74,17 @@ return {
           enabled = true,
           color_mode = true,
         },
+        blink_cmp = {
+          enabled = true,
+        },
+      },
+      highlight_overrides = {
+        mocha = function(mocha)
+          return {
+            IblScope = { fg = mocha.none, style = { "bold" } },
+            BlinkCmpMenuSelection = { fg = mocha.base, bg = mocha.blue },
+          }
+        end,
       },
     },
   },
