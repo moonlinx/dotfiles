@@ -204,6 +204,9 @@ eval "$(zoxide init --cmd cd zsh)"
 # Using Trash Command to replace rm
 export PATH="/opt/homebrew/opt/trash/bin:$PATH"
 
+# Set XDG config home
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Adding Python to path
 export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 
