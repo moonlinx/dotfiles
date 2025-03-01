@@ -63,13 +63,13 @@ for kind_name, hl in pairs(blink_cmp_git_label_name_highlight) do
 end
 
 return {
-  -- add blink.compat
-  {
-    "saghen/blink.compat",
-    lazy = true,
-    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-    opts = {},
-  },
+  -- -- add blink.compat
+  -- {
+  --   "saghen/blink.compat",
+  --   lazy = true,
+  --   -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+  --   opts = {},
+  -- },
   -- Filename: ~/github/dotfiles-latest/neovim/neobean/lua/pl
   -- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
 
@@ -104,15 +104,15 @@ return {
       -- assumed related to blink, so disabled blink and in fact it was related
       -- :lua print(vim.bo[0].filetype)
       -- So I'm disabling blink.cmp for Telescope
-      opts.enabled = function()
-        -- Get the current buffer's filetype
-        local filetype = vim.bo[0].filetype
-        -- Disable for Telescope buffers
-        if filetype == "TelescopePrompt" or filetype == "minifiles" or filetype == "snacks_picker_input" then
-          return false
-        end
-        return true
-      end
+      -- opts.enabled = function()
+      --   -- Get the current buffer's filetype
+      --   local filetype = vim.bo[0].filetype
+      --   -- Disable for Telescope buffers
+      --   if filetype == "TelescopePrompt" or filetype == "minifiles" or filetype == "snacks_picker_input" then
+      --     return false
+      --   end
+      --   return true
+      -- end
 
       -- NOTE: The new way to enable LuaSnip
       -- Merge custom sources with the existing ones from lazyvim
@@ -124,15 +124,17 @@ return {
           "snippets",
           "buffer",
           "git",
-          "dictionary",
+          "markdown",
+          -- "dictionary",
           "avante",
         },
         providers = {
-          -- markdown = {
-          --   name = "Render",
-          --   module = "render-markdown.integ.blink",
-          --   fallbacks = { "lsp" },
-          -- },
+          markdown = {
+            name = "RenderMarkdown",
+            module = "render-markdown.integ.blink",
+            fallbacks = { "lsp" },
+            score_offset = 100,
+          },
           avante = {
             module = "blink-cmp-avante",
             name = "Avante",
@@ -140,7 +142,7 @@ return {
           git = {
             -- Because we use filetype to enable the source,
             -- we can make the score higher
-            score_offset = 100,
+            score_offset = 80,
             module = "blink-cmp-git",
             name = "Git",
             -- enabled this source at the beginning to make it possible to pre-cache
@@ -230,7 +232,7 @@ return {
             enabled = true,
             module = "blink.cmp.sources.lsp",
             kind = "LSP",
-            min_keyword_length = 2,
+            -- min_keyword_length = 2,
             -- When linking markdown notes, I would get snippets and text in the
             -- suggestions, I want those to show only if there are no LSP
             -- suggestions
@@ -239,17 +241,27 @@ return {
             -- Disabling fallbacks as my snippets wouldn't show up when editing
             -- lua files
             -- fallbacks = { "snippets", "buffer" },
+            fallbacks = { "snippets", "luasnip", "buffer" },
             score_offset = 90, -- the higher the number, the higher the priority
+          },
+          luasnip = {
+            name = "luasnip",
+            enabled = true,
+            module = "blink.cmp.sources.luasnip",
+            min_keyword_length = 2,
+            fallbacks = { "snippets" },
+            score_offset = 85, -- the higher the number, the higher the priority
+            max_items = 8,
           },
           path = {
             name = "Path",
             module = "blink.cmp.sources.path",
-            score_offset = 25,
+            score_offset = 3,
             -- When typing a path, I would get snippets and text in the
             -- suggestions, I want those to show only if there are no path
             -- suggestions
-            fallbacks = { "snippets", "buffer" },
-            min_keyword_length = 2,
+            fallbacks = { "luasnip", "buffer" },
+            -- min_keyword_length = 2,
             opts = {
               trailing_slash = false,
               label_trailing_slash = true,
@@ -265,7 +277,7 @@ return {
             max_items = 3,
             module = "blink.cmp.sources.buffer",
             min_keyword_length = 4,
-            score_offset = 15, -- the higher the number, the higher the priority
+            -- score_offset = 15, -- the higher the number, the higher the priority
           },
           snippets = {
             name = "snippets",
@@ -281,41 +293,41 @@ return {
           --
           -- NOTE: For the word definitions make sure "wn" is installed
           -- brew install wordnet
-          dictionary = {
-            module = "blink-cmp-dictionary",
-            name = "Dict",
-            score_offset = 20, -- the higher the number, the higher the priority
-            -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
-            enabled = true,
-            max_items = 8,
-            min_keyword_length = 3,
-            opts = {
-              -- -- The dictionary by default now uses fzf, make sure to have it
-              -- -- installed
-              -- -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
-              --
-              -- Do not specify a file, just the path, and in the path you need to
-              -- have your .txt files
-              dictionary_directories = { vim.fn.expand("~/github/dotfiles-latest/dictionaries") },
-              -- Notice I'm also adding the words I add to the spell dictionary
-              dictionary_files = {
-                vim.fn.expand("~/.dotfiles/nvim/spell/en.utf-8.add.spl"),
-              },
-              -- --  NOTE: To disable the definitions uncomment this section below
-              --
-              -- separate_output = function(output)
-              --   local items = {}
-              --   for line in output:gmatch("[^\r\n]+") do
-              --     table.insert(items, {
-              --       label = line,
-              --       insert_text = line,
-              --       documentation = nil,
-              --     })
-              --   end
-              --   return items
-              -- end,
-            },
-          },
+          -- dictionary = {
+          --   module = "blink-cmp-dictionary",
+          --   name = "Dict",
+          --   score_offset = 20, -- the higher the number, the higher the priority
+          --   -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
+          --   enabled = true,
+          --   max_items = 8,
+          --   min_keyword_length = 3,
+          --   opts = {
+          --     -- -- The dictionary by default now uses fzf, make sure to have it
+          --     -- -- installed
+          --     -- -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
+          --     --
+          --     -- Do not specify a file, just the path, and in the path you need to
+          --     -- have your .txt files
+          --     dictionary_directories = { vim.fn.expand("~/github/dotfiles-latest/dictionaries") },
+          --     -- Notice I'm also adding the words I add to the spell dictionary
+          --     dictionary_files = {
+          --       vim.fn.expand("~/.dotfiles/nvim/spell/en.utf-8.add.spl"),
+          --     },
+          --     -- --  NOTE: To disable the definitions uncomment this section below
+          --     --
+          --     -- separate_output = function(output)
+          --     --   local items = {}
+          --     --   for line in output:gmatch("[^\r\n]+") do
+          --     --     table.insert(items, {
+          --     --       label = line,
+          --     --       insert_text = line,
+          --     --       documentation = nil,
+          --     --     })
+          --     --   end
+          --     --   return items
+          --     -- end,
+          --   },
+          -- },
         },
       })
       opts.cmdline = {
@@ -341,12 +353,26 @@ return {
         --     range = "full",
         --   },
         menu = {
-          border = "single",
+          border = "rounded",
+          max_height = 15,
+          scrolloff = 0,
+          draw = {
+            align_to = "cursor",
+            padding = 0,
+            columns = {
+              { "kind_icon" },
+              { "label", "label_description", gap = 1 },
+              { "source_name" },
+            },
+          },
         },
         documentation = {
           auto_show = true,
+          auto_show_delay_ms = 0,
+          update_delay_ms = 100,
+          treesitter_highlighting = true,
           window = {
-            border = "single",
+            border = "rounded",
           },
         },
         -- Displays a preview of the selected item on the current line
@@ -408,6 +434,11 @@ return {
     end,
 
     -- Experimental signature help support
-    signature = { enabled = true },
+    signature = {
+      enabled = true,
+      window = {
+        border = "rounded",
+      },
+    },
   },
 }
