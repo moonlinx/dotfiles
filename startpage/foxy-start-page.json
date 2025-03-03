@@ -1,0 +1,260 @@
+{
+  "username": "Fox",
+  "theme": {
+    "name": "catppuccin-mocha",
+    "backgroundColor": "#121317",
+    "windowColor": "#1e212b",
+    "textColor": "#e2e2e2",
+    "black": "#16161e",
+    "red": "#ec6183",
+    "green": "#2ed8a2",
+    "yellow": "#e8b195",
+    "blue": "#2bc3de",
+    "magenta": "#d1aff8",
+    "cyan": "#62e0e2",
+    "white": "#e2e2e2",
+    "gray": "#97989d"
+  },
+  "wallpaper": {
+    "url": "assets/default-wallpaper.svg",
+    "easing": "ease-in-out",
+    "fadeIn": true,
+    "blur": false
+  },
+  "terminal": {
+    "fixedHeight": true,
+    "windowGlow": true,
+    "windowGlowColor": "#291f3325",
+    "textGlow": false,
+    "opacity": 0,
+    "blur": 25
+  },
+  "prompt": {
+    "ctrlC": true,
+    "placeholder": "command...",
+    "placeholderColor": "gray",
+    "userColor": "green",
+    "atColor": "gray",
+    "hostColor": "magenta",
+    "promptColor": "magenta",
+    "promptSymbol": "❯",
+    "caretColor": "green",
+    "selectionBg": "yellow",
+    "selectionFg": "black"
+  },
+  "fetch": {
+    "timeFormat": "HH:mm",
+    "dateFormat": "DD/MM/YYYY",
+    "titleColor": "yellow",
+    "image": "assets/Galaxy-Candy.jpg",
+    "data": [
+      "Time: {time}",
+      "Date: {date}",
+      "{seperator}",
+      "OS: {osName} {osVersion}",
+      "Theme: {theme}",
+      "{seperator}",
+      "Browser: {browser} {browserVersion}",
+      "Engine: {engineName}",
+      "{seperator}",
+      "{colors}"
+    ]
+  },
+  "urlLaunch": {
+    "target": "_self",
+    "hoverColor": "magenta"
+  },
+  "search": {
+    "default": "https://duckduckgo.com/?q={}",
+    "target": "_self",
+    "shortcutRegex": "([A-Za-z0-9]+) (.*)",
+    "shortcuts": [
+      {
+        "alias": "g",
+        "name": "Google Search",
+        "url": "https://google.com/search?q={}"
+      },
+      {
+        "alias": "d",
+        "name": "DuckDuckGo Search",
+        "url": "https://duckduckgo.com/?q={}"
+      },
+      {
+        "alias": "b",
+        "name": "Brave Search",
+        "url": "https://search.brave.com/search?q={}"
+      },
+      {
+        "alias": "gh",
+        "name": "Github Search",
+        "url": "https://github.com/search?q={}"
+      },
+      {
+        "alias": "s",
+        "name": "Stack Overflow Search",
+        "url": "https://stackoverflow.com/search?q={}"
+      },
+      {
+        "alias": "r",
+        "name": "Subreddit Search",
+        "url": "https://reddit.com/r/{}"
+      },
+      {
+        "alias": "w",
+        "name": "Wikipedia Search",
+        "url": "https://en.wikipedia.org/wiki/{}"
+      }
+    ]
+  },
+  "sections": {
+    "list": [
+      {
+        "title": "General",
+        "color": "green",
+        "align": "left",
+        "links": [
+          {
+            "name": "Youtube",
+            "url": "https://www.youtube.com/",
+            "icon": "simple-icons:youtube"
+          },
+          {
+            "name": "Claude",
+            "url": "https://claude.ai/login",
+            "icon": "simple-icons:claude"
+          },
+          {
+            "name": "NOVA",
+            "url": "https://www.nvcc.edu/student-resources/technology/sis/index.html",
+            "icon": "simple-icons:semanticscholar"
+          }
+        ]
+      },
+      {
+        "title": "Dev",
+        "color": "magenta",
+        "align": "left",
+        "links": [
+          {
+            "name": "GitHub",
+            "url": "https://github.com",
+            "icon": "mdi:github"
+          },
+          {
+            "name": "Codefinity",
+            "url": "https://codefinity.com/profile/my-home",
+            "icon": "simple-icons:coder"
+          },
+          {
+            "name": "Dev.to",
+            "url": "https://dev.to",
+            "icon": "material-symbols:logo-dev"
+          },
+          {
+            "name": "Stack Overflow",
+            "url": "https://stackoverflow.com/",
+            "icon": "mdi:stack-overflow"
+          }
+        ]
+      },
+      {
+        "title": "Social",
+        "color": "cyan",
+        "align": "left",
+        "links": [
+          {
+            "name": "Twitter",
+            "url": "https://twitter.com",
+            "icon": "mdi:twitter"
+          },
+          {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/",
+            "icon": "mdi:reddit"
+          }
+        ]
+      },
+      {
+        "title": "Reddit",
+        "color": "red",
+        "align": "left",
+        "links": [
+          {
+            "name": "r/unixporn",
+            "url": "https://www.reddit.com/r/unixporn/",
+            "icon": "simple-icons:terminus"
+          },
+          {
+            "name": "r/Piracy",
+            "url": "https://www.reddit.com/r/Piracy/",
+            "icon": "mdi:pirate"
+          },
+          {
+            "name": "r/cybersecurity",
+            "url": "https://www.reddit.com/r/cybersecurity/",
+            "icon": "simple-icons:awssecretsmanager"
+          },
+          {
+            "name": "r/dataisbeautiful",
+            "url": "https://www.reddit.com/r/dataisbeautiful/",
+            "icon": "mdi:analytics"
+          }
+        ]
+      },
+      {
+        "title": "Science",
+        "color": "blue",
+        "align": "left",
+        "links": [
+          {
+            "name": "PopSci",
+            "url": "https://popsci.com/",
+            "icon": "material-symbols:science"
+          },
+          {
+            "name": "Space",
+            "url": "fa6-solid:user-astronaut",
+            "icon": "mdi:reddit"
+          },
+          {
+            "name": "NASA",
+            "url": "https://blogs.nasa.gov/",
+            "icon": "simple-icons:nasa"
+          },
+          {
+            "name": "ESA",
+            "url": "https://blogs.esa.int/",
+            "icon": "mdi:black-mesa"
+          }
+        ]
+      },
+      {
+        "title": "Tech",
+        "color": "yellow",
+        "align": "left",
+        "links": [
+          {
+            "name": "TechCrunch",
+            "url": "https://techcrunch.com/",
+            "icon": "game-icons:techno-heart"
+          },
+          {
+            "name": "Verge",
+            "url": "https://www.theverge.com/",
+            "icon": "arcticons:verge"
+          },
+          {
+            "name": "It's Foss",
+            "url": "https://itsfoss.com/",
+            "icon": "ri:mastodon-fill"
+          },
+          {
+            "name": "9To5 Linux",
+            "url": "https://9to5linux.com/",
+            "icon": "uil:linux"
+          }
+        ]
+      }
+    ]
+  }
+}
