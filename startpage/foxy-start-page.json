@@ -170,7 +170,7 @@
           {
             "name": "Instagram",
             "url": "https://www.instagram.com/",
-            "icon": "mdi:reddit"
+            "icon": "simple-icons:instagram"
           }
         ]
       },
@@ -182,7 +182,7 @@
           {
             "name": "r/unixporn",
             "url": "https://www.reddit.com/r/unixporn/",
-            "icon": "simple-icons:terminus"
+            "icon": "simple-icons:gnometerminal"
           },
           {
             "name": "r/Piracy",
@@ -209,12 +209,7 @@
           {
             "name": "PopSci",
             "url": "https://popsci.com/",
-            "icon": "material-symbols:science"
-          },
-          {
-            "name": "Space",
-            "url": "fa6-solid:user-astronaut",
-            "icon": "mdi:reddit"
+            "icon": "simple-icons:trino"
           },
           {
             "name": "NASA",
