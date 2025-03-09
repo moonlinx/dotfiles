@@ -130,7 +130,7 @@ alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nv
 alias ya="yazi"
 alias d="delta"
 alias yt="yt-dlp"
-alias ff="fastfetch"
+alias f="fastfetch"
 alias sp="spotify_player"
 alias wifi="wifi-password"
 alias py="python3"
@@ -173,17 +173,20 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
-# Alias for FZF
-# Link: https://github.com/junegunn/fzf
-if [[ -x "$(command -v fzf)" ]]; then
-    alias fzf='fzf --preview "bat --style=numbers --color=always --line-range :500 {}"'
-    # Alias to fuzzy find files in the current folder(s), preview them, and launch in an editor
-		alias preview='open $(fzf --info=inline --query="${@}")'
-    if [[ -x "$(command -v xdg-open)" ]]; then
-	else
-		alias preview='edit $(fzf --info=inline --query="${@}")'
-	fi
-fi
+# Aerospace listing
+# def ff () {
+# aerospace list-windows --all | fzf --bind 'enter:execute(bash -c "aerospace focus --window-id {1}")+abort'
+# }
+
+# Alias for yabai window listing
+# def ff() {
+#   yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | \
+#   fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
+# }
+# def ff() {
+#   yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | \
+#   fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
+# }
 
 
 # VI Mode!!!
