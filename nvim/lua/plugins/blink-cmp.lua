@@ -90,15 +90,15 @@ return {
             -- fallbacks = { "snippets", "luasnip", "buffer" },
             score_offset = 90, -- the higher the number, the higher the priority
           },
-          -- luasnip = {
-          --   name = "luasnip",
-          --   enabled = true,
-          --   module = "blink.cmp.sources.luasnip",
-          --   min_keyword_length = 2,
-          --   fallbacks = { "snippets" },
-          --   score_offset = 85, -- the higher the number, the higher the priority
-          --   max_items = 6,
-          -- },
+          luasnip = {
+            name = "luasnip",
+            enabled = true,
+            module = "blink.cmp.sources.luasnip",
+            min_keyword_length = 2,
+            fallbacks = { "snippets" },
+            score_offset = 85, -- the higher the number, the higher the priority
+            max_items = 6,
+          },
           path = {
             name = "Path",
             module = "blink.cmp.sources.path",
