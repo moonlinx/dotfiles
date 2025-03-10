@@ -179,14 +179,10 @@ alias ......="cd ../../../../.."
 # }
 
 # Alias for yabai window listing
-# def ff() {
-#   yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | \
-#   fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
-# }
-# def ff() {
-#   yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | \
-#   fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
-# }
+def ff() {
+  yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | \
+  fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
+}
 
 
 # VI Mode!!!
