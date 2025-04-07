@@ -9,16 +9,15 @@ local volume_percent = sbar.add("item", "widgets.volume1", {
 	icon = { drawing = false },
 	label = {
 		string = "??%",
-		padding_left = -1,
 		font = { family = settings.font.numbers },
 	},
+	padding_left = -2,
 })
 
 local volume_icon = sbar.add("item", "widgets.volume2", {
 	position = "right",
 	padding_right = -1,
 	icon = {
-		string = icons.volume._100,
 		width = 0,
 		align = "left",
 		color = colors.grey,
@@ -41,7 +40,11 @@ local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
 	volume_icon.name,
 	volume_percent.name,
 }, {
-	background = { color = colors.bg1 },
+	background = {
+		color = colors.bg1,
+		border_color = colors.bg2,
+		border_width = 2,
+	},
 	popup = { align = "center" },
 })
 
@@ -69,26 +72,45 @@ local volume_slider = sbar.add("slider", popup_width, {
 })
 
 volume_percent:subscribe("volume_change", function(env)
-	local volume = tonumber(env.INFO)
 	local icon = icons.volume._0
-	if volume > 60 then
-		icon = icons.volume._100
-	elseif volume > 30 then
-		icon = icons.volume._66
-	elseif volume > 10 then
-		icon = icons.volume._33
-	elseif volume > 0 then
-		icon = icons.volume._10
-	end
+	local volume = tonumber(env.INFO)
+	sbar.exec("SwitchAudioSource -t output -c", function(result)
+		Current_output_device = result:sub(1, -2)
+		if Current_output_device == "AirPods Max " or Current_output_device == "Power to the Max" then
+			icon = "􀺹"
+		elseif Current_output_device == "AirPods2" then
+			icon = "􀟥"
+		elseif Current_output_device == "Arctis Nova Pro Wireless" then
+			icon = "􀑈"
+		elseif Current_output_device == "AirPods Pro" then
+			icon = "􁄡"
+		elseif Current_output_device == "Ear (2)" then
+			icon = "􀪷"
+		-- elseif Current_output_device == "MacBook Pro Speakers" then
+		-- 	icon = "􀟛"
+		elseif Current_output_device == "MacBook Pro Speakers" or "CalDigit TS4 Audio - Rear" then
+			icon = "􀝏"
+		else
+			if volume > 60 then
+				icon = icons.volume._100
+			elseif volume > 30 then
+				icon = icons.volume._66
+			elseif volume > 10 then
+				icon = icons.volume._33
+			elseif volume > 0 then
+				icon = icons.volume._10
+			end
+		end
 
-	local lead = ""
-	if volume < 10 then
-		lead = "0"
-	end
+		local lead = ""
+		if volume < 10 then
+			lead = "0"
+		end
 
-	volume_icon:set({ label = icon })
-	volume_percent:set({ label = lead .. volume .. "%" })
-	volume_slider:set({ slider = { percentage = volume } })
+		volume_icon:set({ label = icon })
+		volume_percent:set({ label = lead .. volume .. "%" })
+		volume_slider:set({ slider = { percentage = volume } })
+	end)
 end)
 
 local function volume_collapse_details()
@@ -144,11 +166,7 @@ local function volume_toggle_details(env)
 end
 
 local function volume_scroll(env)
-	local delta = env.INFO.delta
-	if not (env.INFO.modifier == "ctrl") then
-		delta = delta * 10.0
-	end
-
+	local delta = env.SCROLL_DELTA
 	sbar.exec('osascript -e "set volume output volume (output volume of (get volume settings) + ' .. delta .. ')"')
 end
 
