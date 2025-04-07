@@ -2,23 +2,29 @@ local colors = require("colors")
 local icons = require("icons")
 local settings = require("settings")
 
+-- Menu watcher to monitor app changes
 local menu_watcher = sbar.add("item", {
 	drawing = false,
 	updates = false,
 })
+
+-- Space Swap event
 local space_menu_swap = sbar.add("item", {
 	drawing = false,
 	updates = true,
 })
 sbar.add("event", "swap_menus_and_spaces")
 
+-- Maximum number of menu items to display
 local max_items = 15
 local menu_items = {}
+
+-- Create the menu items that will appear inline
 for i = 1, max_items, 1 do
 	local menu = sbar.add("item", "menu." .. i, {
 		padding_left = settings.paddings,
 		padding_right = settings.paddings,
-		drawing = false,
+		drawing = false, -- Hidden by default
 		icon = { drawing = false },
 		label = {
 			font = {
@@ -42,6 +48,7 @@ local menu_padding = sbar.add("item", "menu.padding", {
 	width = 5,
 })
 
+-- Function to update menu contents
 local function update_menus(env)
 	sbar.exec("$CONFIG_DIR/helpers/menus/bin/menus -l", function(menus)
 		sbar.set("/menu\\..*/", { drawing = false })
@@ -70,7 +77,7 @@ space_menu_swap:subscribe("swap_menus_and_spaces", function(env)
 	else
 		menu_watcher:set({ updates = true })
 		sbar.set("/space\\..*/", { drawing = false })
-		sbar.set("front_app", { drawing = false })
+		sbar.set("front_app", { drawing = true })
 		update_menus()
 	end
 end)

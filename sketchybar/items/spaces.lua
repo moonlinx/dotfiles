@@ -4,14 +4,15 @@ local settings = require("settings")
 local app_icons = require("helpers.app_icons")
 
 local spaces = {}
-local sino_korean = { "일", "이", "세", "사", "오", "의", "리", "네", "세", "예" }
+-- local sino_korean = { "일", "이", "세", "사", "오", "의", "리", "네", "세", "예" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {
 			font = { family = settings.font.icons },
-			string = sino_korean[i],
+			-- string = sino_korean[i],
+			string = i,
 			padding_left = 15,
 			padding_right = 8,
 			color = colors.arise,
@@ -22,13 +23,13 @@ for i = 1, 10, 1 do
 			padding_right = 20,
 			color = colors.grey,
 			highlight_color = colors.arise,
-			font = "sketchybar-app-font:Regular:15.0",
-			y_offset = -1,
+			font = "sketchybar-app-font:Regular:16.0",
+			y_offset = 0,
 		},
 		padding_right = 1,
 		padding_left = 1,
 		background = {
-			color = colors.bg2,
+			color = colors.bg1,
 			border_width = 1,
 			height = 26,
 			border_color = colors.grey,
@@ -134,7 +135,7 @@ space_window_observer:subscribe("space_windows_change", function(env)
 	end
 
 	if no_app then
-		icon_line = " —"
+		icon_line = "—"
 	end
 	sbar.animate("tanh", 10, function()
 		spaces[env.INFO.space]:set({ label = icon_line })
