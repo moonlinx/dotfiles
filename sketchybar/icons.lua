@@ -16,10 +16,10 @@ local icons = {
 		bluetooth = "􀖀",
 
 		switch = {
-			-- on = "󰍜",
-			on = "􀱢 ",
-			-- off = "􁚬 ",
-			off = "􂧰 ",
+			on = " 󰍜",
+			-- on = "􀱢 ",
+			off = "􁚬 ",
+			-- off = "􂧰 "
 		},
 		volume = {
 			_100 = "􀊩",
