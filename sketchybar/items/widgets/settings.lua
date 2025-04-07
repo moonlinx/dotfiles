@@ -41,6 +41,16 @@ edit_configuration:subscribe("mouse.clicked", function()
 	)
 end)
 
+local system_settings = sbar.add("item", {
+	position = "popup." .. settings_widget.name,
+	icon = { string = icons.gear },
+	label = { string = "System Settings" },
+})
+
+system_settings:subscribe("mouse.clicked", function()
+	sbar.exec("open -a System\\ Settings")
+end)
+
 sbar.add("bracket", "widgets.settings.bracket", { settings_widget.name }, {
 	background = { color = colors.bg1 },
 })
