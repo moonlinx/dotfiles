@@ -1,0 +1,97 @@
+#
+# ███████╗██╗███████╗██╗  ██╗
+# ██╔════╝██║██╔════╝██║  ██║
+# █████╗  ██║███████╗███████║
+# ██╔══╝  ██║╚════██║██╔══██║
+# ██║     ██║███████║██║  ██║
+# ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝
+# A smart and user-friendly command line
+# https://fishshell.com/
+# cSpell:words shellcode pkgx direnv
+
+# Nothing to do if not inside an interactive shell
+if not status is-interactive
+    return 0
+end
+
+# Remove the gretting message.
+set -U fish_greeting
+
+# Set up Ghostty's shell integration.
+if test -n "$GHOSTTY_RESOURCES_DIR"
+    source $GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
+end
+
+eval (/opt/homebrew/bin/brew shellenv)
+
+starship init fish | source # https://starship.rs/
+zoxide init fish | source # 'ajeetdsouza/zoxide'
+fzf --fish | source # 'https://github.com/junegunn/fzf'
+
+# Figure out which operating system we're in
+set -l os (uname)
+
+# Neovim.
+abbr -a nv nvim
+abbr -a nvp nvim +Man!
+
+# Vi mode.
+set -g fish_key_bindings fish_vi_key_bindings
+set fish_vi_force_cursor 1
+set fish_cursor_default block
+set fish_cursor_insert line
+set fish_cursor_replace_one underscore
+
+# Git abbreviations.
+abbr -a g git
+abbr -a ga git add -A
+abbr -a gp git push
+abbr -a gpl git pull
+abbr -a gcl git clone
+abbr -a gb git branch
+abbr -a gcm git commit
+abbr -a gco git checkout
+abbr -a gf git fetch
+abbr -a gl lazygit
+abbr -a gm git merge
+abbr -a gst git status
+
+# Use Nvim as the manpage viewer
+export MANPAGER="nvim +Man!"
+
+# Aliases
+
+alias ll="eza -l --icons --git "
+alias ls="eza --color=always --grid --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias la="eza -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias vimm="vim"
+alias x="exit"
+alias gn="sudo shutdown -h now"
+alias cat="bat"
+alias z="zoxide"
+alias sv="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+alias ya="yazi"
+alias d="delta"
+alias yt="yt-dlp"
+alias f="fastfetch"
+alias sp="spotify_player"
+alias wifi="wifi-password"
+alias py="python3"
+alias rm="trash"
+alias ping="ping -c 5"
+alias cp="cp -iv"
+alias mv="mv -iv"
+
+# Sesh
+alias s="./.config/scripts/sesh_start"
+
+# Nmap
+alias nm="nmap -sC -sV -oN nmap-output.txt"
+
+# Dirs
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
