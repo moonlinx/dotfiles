@@ -26,6 +26,7 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light jeffreytse/zsh-vi-mode
+zinit load atuinsh/atuin
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -101,7 +102,7 @@ _fzf_comprun() {
 if [ $(command -v nvim) ]; then
   export EDITOR=$(which nvim)
   alias vim=$EDITOR
-  alias v=$EDITOR
+  alias nv=$EDITOR
 fi
 
 export SUDO_EDITOR=$EDITOR
@@ -113,11 +114,15 @@ export FZF_DEFAULT_OPS="--extended"
 export PATH="${PATH}:/Users/fox/Library/Python/3.11/lib/python/site-packages"
 
 # Colored manpages
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# Use bat to view man pages
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#
+# Use Nvim as the manpage viewer
+export MANPAGER="nvim +Man!"
 
 # Aliases
 
-alias ll="eza -l --icons --git -a"
+alias ll="eza -l --icons --git "
 alias ls="eza --color=always --grid --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias la="eza -a"
 alias lt="eza --tree --level=2 --long --icons --git"
@@ -138,6 +143,9 @@ alias rm="trash"
 alias ping="ping -c 5"
 alias cp="cp -iv"
 alias mv="mv -iv"
+
+# Sesh
+# alias s="./.dotfiles/scripts/sesh_start"
 
 # Nmap
 alias nm="nmap -sC -sV -oN nmap-output.txt"
@@ -184,6 +192,26 @@ def ff() {
   fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
 }
 
+deff s() {
+sesh connect "$(
+  sesh list --icons --hide-duplicates | fzf --no-border \
+    --ansi \
+    --list-border \
+    --no-sort --prompt '   ' \
+    --color 'list-border:6,input-border:3,preview-border:4,header-bg:-1,header-border:6' \
+    --input-border \
+    --header-border \
+    --bind 'tab:down,btab:up' \
+    --bind 'ctrl-a:change-prompt(   )+reload(sesh list --icons)' \
+    --bind 'ctrl-t:change-prompt(   )+reload(sesh list -t --icons)' \
+    --bind 'ctrl-g:change-prompt(   )+reload(sesh list -c --icons)' \
+    --bind 'ctrl-x:change-prompt(󰉋   )+reload(sesh list -z --icons)' \
+    --bind 'ctrl-f:change-prompt(󰭎   )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+    --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+    --preview-window 'right:70%' \
+    --preview 'sesh preview {}'
+)"
+}
 
 # VI Mode!!!
 bindkey jj vi-cmd-mode
@@ -194,6 +222,29 @@ function take {
     mkdir -p $1
     cd $1
 }
+
+# Drop into fish if:
+# - The parent process isn't fish.
+# - Not running a command like `bash -c 'echo foo'`.
+# if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} && ${SHLVL} == 1 ]]; then
+#     # Let fish whether it's a login shell.
+#     if ! shopt -q login_shell; then
+#         exec fish --login
+#     else
+#         exec fish
+#     fi
+# fi
+# Drop into fish if:
+# - The parent process isn't fish.
+# - Not running a command like `zsh -c 'echo foo'`.
+if [[ "$(ps -o comm= -p $PPID)" != "fish" && -z "$ZSH_EXECUTION_STRING" && "$SHLVL" == 1 ]]; then
+    # Check if this is a login shell
+    if [[ -o login ]]; then
+        exec fish --login
+    else
+        exec fish
+    fi
+fi
 
 # Shell integrations  ----------------------------------------
 
@@ -209,6 +260,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Adding Python to path
 export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:$PATH"
 
+export PATH="/Users/fox/.local/bin:$PATH"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
@@ -216,3 +269,6 @@ source <(fzf --zsh)
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
 source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.4.1
+# eval "$(atuin init zsh)"
+
+export PATH=$PATH:/Users/fox/.spicetify
