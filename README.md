@@ -11,7 +11,6 @@
 - [Overview](#overview)
 - [Installation](#installation)
   * [Homebrew installation](#homebrew-installation)
-- [File overview](#file-overview)
   * [Customization](#customization)
     + [Git](#git)
     + [Color Schemes](#color-schemes)
@@ -51,30 +50,6 @@ brew leaves > leaves.txt
 xargs brew install < leaves.txt
 ```
 
-## File overview
-
-- Configs for the following tools:
-  - git
-  - [Wezterm](./wezterm)
-  - [fzf](./fzf)
-  - [neovim](./nvim)
-  - [skhd](./skhd)
-  - [starship](./starship)
-  - [tmux](./tmux)
-  - [yabai](./yabai)
-- Shell environment configs:
-  - [Antigen](https://github.com/zsh-users/antigen) for zsh plugin management
-  - [`.zshrc`](./zsh/.zshrc)
-  - [`.zlogin.sh`](./zsh/.zlogin.sh)
-  - [`.zshenv.sh`](./zsh/.zshenv.sh)
-  - [`.aliases`](./zsh/.aliases)
-  - [`.exports`](./zsh/.exports)
-- [`Brewfile`](./Brewfile) - contains all homebrew packages, casks, and mac appstore apps
-
-The install script will also setup Python and Node versions/environments:
-
-- [pyenv](https://github.com/pyenv/pyenv) sets the global Python version to 3.12
-
 ### Customization
 
 #### Git
@@ -92,3 +67,4 @@ The install script will also setup Python and Node versions/environments:
 - [alrra/dotfiles](https://github.com/alrra/dotfiles)
 - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [gretzky/dotfiles](https://github.com/gretzky/dotfiles)
+- [waytoabv/dotfiles](https://github.com/waytoabv/Dotfiles)
