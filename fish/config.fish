@@ -24,7 +24,7 @@ end
 
 eval (/opt/homebrew/bin/brew shellenv)
 
-# starship init fish | source # https://starship.rs/
+starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
 fzf --fish | source # 'https://github.com/junegunn/fzf'
 
@@ -32,13 +32,13 @@ fzf --fish | source # 'https://github.com/junegunn/fzf'
 set -l os (uname)
 
 # System maintenance.
-# abbr -a --position anywhere s sudo
-# if test "$os" = Darwin
-#     abbr -a --position anywhere b brew
-# else if test "$os" = Linux
-#     abbr -a j journalctl
-#     abbr -a pc --position anywhere pacman
-# end
+abbr -a --position anywhere ss sudo
+if test "$os" = Darwin
+    abbr -a --position anywhere b brew
+else if test "$os" = Linux
+    abbr -a j journalctl
+    abbr -a pc --position anywhere pacman
+end
 
 # Add completions from stuff installed with Homebrew.
 if test "$os" = Darwin
@@ -50,21 +50,24 @@ if test "$os" = Darwin
     end
 end
 
-# $PATHS
+# $PATH
+
+# Scripts
 fish_add_path $HOME/.config/scripts # my custom scripts
 
 # Using Trash Command to replace rm
-fish_add_path /opt/homebrew/opt/trash/bin:$PATH
+fish_add_path --path /opt/homebrew/opt/trash/bin
 
 # Set XDG config home
 fish_add_path XDG_CONFIG_HOME=$HOME/.config
 
 # Adding Python to path
-fish_add_path /opt/homebrew/opt/python@3.13/libexec/bin:$PATH
+fish_add_path --path /opt/homebrew/opt/python@3.13/libexec/bin
 
-fish_add_path /Users/fox/.local/bin:$PATH
+fish_add_path --path /Users/fox/.local/bin
 
 # Use Nvim as the manpage viewer
 export MANPAGER="nvim +Man!"
 
-starship init fish | source # https://starship.rs/
+#FZF Fish configures
+fzf_configure_bindings --directory=\cf

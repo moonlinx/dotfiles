@@ -9,6 +9,9 @@
 # cSpell:disable
 
 # Brew
+abbr bu "brew update"
+abbr bug "brew upgrade"
+abbr bo "brew outdated"
 abbr bi "brew install"
 abbr bic "brew install --cask"
 abbr bin "brew info"
