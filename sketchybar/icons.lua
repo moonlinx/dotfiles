@@ -4,31 +4,45 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "􀣺",
+		apple = "󰣇", --"􀣺", --󱚞
 		gear = "􀍟",
-		cpu = "􀫥",
+		cpu = "󰒆",
 		calendar = "􀉉",
+		clipboard = "􀉄",
 		settings = "􀣋",
 		restart = "􀚁",
 		stop = "􀜪",
 		pencil = "􀈊",
 		ram = "􀫦",
-		bluetooth = "􀖀",
+		circle_restart = "􀖋",
+		circle_shutdown = "􀷄",
+		circle_sleep = "􀆼",
+		circle_power = "􀷄",
+		circle_quit = "􀁡",
+		user = "􀓤",
 
 		switch = {
+			-- on = "􁏮",
+			-- off = "􁏯",
+
 			on = " 󰍜",
 			-- on = "􀱢 ",
 			off = "􁚬 ",
 			-- off = "􂧰 "
 		},
+		zen = {
+			off = " 􀆺",
+			on = " 􀆹",
+		},
+
 		volume = {
 			_100 = "􀊩",
 			_66 = "􀊧",
 			_33 = "􀊥",
 			_10 = "􀊡",
 			_0 = "􀊣",
-			headphones = "􀺭",
 		},
+
 		battery = {
 			_100 = "􀛨",
 			_75 = "􀺸",
@@ -37,14 +51,17 @@ local icons = {
 			_0 = "􀛪",
 			charging = "􀢋",
 		},
+
 		wifi = {
 			upload = "􀄨",
 			download = "􀄩",
 			connected = "􀙇",
 			disconnected = "􀙈",
 			router = "􁓤",
-			vpn = "􀞚 ",
+			vpn = "󰌾",
+			test = "",
 		},
+
 		media = {
 			back = "􀊊",
 			forward = "􀊌",
@@ -52,6 +69,7 @@ local icons = {
 			play = "􀊄",
 			pause = "􀊆",
 		},
+
 		yabai = {
 			stack = "􀏭",
 			fullscreen_zoom = "􀂓",
@@ -62,52 +80,6 @@ local icons = {
 			split_horizontal = "􀧋",
 		},
 	},
-
-	-- Alternative NerdFont icons
-	nerdfont = {
-		plus = "",
-		loading = "",
-		apple = "",
-		gear = "",
-		cpu = "",
-		clipboard = "Missing Icon",
-
-		switch = {
-			on = "󱨥",
-			off = "󱨦",
-		},
-		volume = {
-			_100 = "",
-			_66 = "",
-			_33 = "",
-			_10 = "",
-			_0 = "",
-		},
-		battery = {
-			_100 = "",
-			_75 = "",
-			_50 = "",
-			_25 = "",
-			_0 = "",
-			charging = "",
-		},
-		wifi = {
-			upload = "",
-			download = "",
-			connected = "󰖩",
-			disconnected = "󰖪",
-			router = "Missing Icon",
-		},
-		media = {
-			back = "",
-			forward = "",
-			play_pause = "",
-		},
-	},
 }
 
-if not (settings.icons == "NerdFont") then
-	return icons.sf_symbols
-else
-	return icons.nerdfont
-end
+return icons.sf_symbols
