@@ -76,19 +76,19 @@ volume_percent:subscribe("volume_change", function(env)
 	local volume = tonumber(env.INFO)
 	sbar.exec("SwitchAudioSource -t output -c", function(result)
 		Current_output_device = result:sub(1, -2)
-		if Current_output_device == "AirPods Max " or Current_output_device == "Power to the Max" then
+		if Current_output_device == "AirPods Max" or Current_output_device == "Noise Eliminator" then
 			icon = "􀺹"
 		elseif Current_output_device == "AirPods2" then
 			icon = "􀟥"
-		elseif Current_output_device == "Arctis Nova Pro Wireless" then
-			icon = "􀑈"
 		elseif Current_output_device == "AirPods Pro" then
 			icon = "􁄡"
-		elseif Current_output_device == "Ear (2)" then
+		elseif Current_output_device == "Scarlett 2i2 USB" then
+			icon = "􀑫"
+		elseif
+			Current_output_device == "AirPods Pro V2" or Current_output_device == "Faith’s AirPods Pro - Find My"
+		then
 			icon = "􀪷"
-		-- elseif Current_output_device == "MacBook Pro Speakers" then
-		-- 	icon = "􀟛"
-		elseif Current_output_device == "MacBook Pro Speakers" or "CalDigit TS4 Audio - Rear" then
+		elseif Current_output_device == "CalDigit TS4 Audio - Rear" then
 			icon = "􀝏"
 		else
 			if volume > 60 then
