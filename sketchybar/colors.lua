@@ -22,12 +22,15 @@ return {
 	transparent = 0x00000000,
 
 	bar = {
-		bg = 0x00000000,
+		-- bg = 0x00000000,
+		bg = 0xf02c2e34,
 		border = 0xff2c2e34,
+		blur_radius = 60,
 	},
 	popup = {
-		bg = 0xc02c2e34,
-		border = 0xff7f8490,
+		bg = 0x991c1c1c,
+		border = 0xff414141,
+		blur_radius = 60,
 	},
 	bg1 = 0xff363944,
 	bg2 = 0xff414550,

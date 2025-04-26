@@ -10,7 +10,7 @@ local apps = sbar.add("bracket", "apps", {}, {
 	icon = {
 		padding_right = 15,
 		padding_left = 8,
-		color = colors.dirty_white,
+		color = colors.arise,
 		font = "sketchybar-app-font:Regular:16.0",
 		y_offset = -1,
 	},
@@ -89,13 +89,13 @@ local function update_windows(windows)
 			label = {
 				string = window_label,
 				highlight = window["has-focus"],
-				color = colors.purple,
-				highlight_color = colors.pink,
+				color = colors.grey,
+				highlight_color = colors.blue,
 			},
 			icon = {
 				string = icon,
 				font = "sketchybar-app-font:Regular:16.0",
-				color = colors.dirty_white,
+				color = colors.arise,
 			},
 			padding_right = 2,
 			click_script = "yabai -m window --focus " .. window["id"],

@@ -154,7 +154,7 @@ sbar.exec(query_workspaces, function(workspaces_and_monitors)
 				color = colors.with_alpha(colors.white, 0.3),
 				drawing = true,
 				font = { family = settings.font.numbers },
-				highlight_color = colors.peach,
+				highlight_color = colors.blue,
 				padding_left = 5,
 				padding_right = 3,
 				string = workspace_index,
