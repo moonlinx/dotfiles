@@ -4,7 +4,7 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "󰣇", --"􀣺", --󱚞
+		apple = "􀣺", --󱚞
 		gear = "􀍟",
 		cpu = "󰒆",
 		calendar = "􀉉",
@@ -14,12 +14,12 @@ local icons = {
 		stop = "􀜪",
 		pencil = "􀈊",
 		ram = "􀫦",
-		circle_restart = "􀖋",
-		circle_shutdown = "􀷄",
-		circle_sleep = "􀆼",
-		circle_power = "􀷄",
-		circle_quit = "􀁡",
-		user = "􀓤",
+		circle_restart = "􂣽",
+		circle_shutdown = "􀆨",
+		circle_sleep = "􀆹",
+		circle_power = "􀆨",
+		circle_quit = "􀆧",
+		user = "􀉪",
 
 		switch = {
 			-- on = "􁏮",
@@ -68,16 +68,6 @@ local icons = {
 			play_pause = "􀊈",
 			play = "􀊄",
 			pause = "􀊆",
-		},
-
-		yabai = {
-			stack = "􀏭",
-			fullscreen_zoom = "􀂓",
-			parent_zoom = "􀥃",
-			float = "􀢌",
-			grid = "􀧍",
-			split_vertical = "􀘜",
-			split_horizontal = "􀧋",
 		},
 	},
 }

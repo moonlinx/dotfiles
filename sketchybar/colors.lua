@@ -25,7 +25,6 @@ return {
 		-- bg = 0x00000000,
 		bg = 0xf02c2e34,
 		border = 0xff2c2e34,
-		blur_radius = 60,
 	},
 	popup = {
 		bg = 0x991c1c1c,
