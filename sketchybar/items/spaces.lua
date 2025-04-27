@@ -8,6 +8,7 @@ local spaces = {}
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
+		position = "left",
 		space = i,
 		icon = {
 			font = { family = settings.font.icons },
@@ -119,7 +120,7 @@ local spaces_indicator = sbar.add("item", {
 		color = colors.bg1,
 	},
 	background = {
-		color = colors.with_alpha(colors.arise, 0.0),
+		color = colors.with_alpha(colors.grey, 0.0),
 		border_color = colors.with_alpha(colors.bg1, 0.0),
 	},
 })
@@ -137,7 +138,7 @@ space_window_observer:subscribe("space_windows_change", function(env)
 	if no_app then
 		icon_line = "—"
 	end
-	sbar.animate("tanh", 10, function()
+	sbar.animate("tanh", 30, function()
 		spaces[env.INFO.space]:set({ label = icon_line })
 	end)
 end)
