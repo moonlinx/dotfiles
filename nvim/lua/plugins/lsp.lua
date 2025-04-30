@@ -14,14 +14,7 @@ return {
 
     local opts = { noremap = true, silent = true }
 
-    -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
-    opt({ "s" })
+    opts({ "s" })
 
     -- Ensure that dynamicRegistration is enabled! This allows the LS to take into account actions like the
     -- Create Unresolved File code action, resolving completions for unindexed code blocks, ...
@@ -30,6 +23,8 @@ return {
         dynamicRegistration = true,
       },
     }
+
+    -- Servers
 
     -- configure html server
     lspconfig["html"].setup({
