@@ -53,7 +53,7 @@ end
 # $PATH
 
 # Scripts
-fish_add_path $HOME/.config/scripts # my custom scripts
+fish_add_path $HOME/Developer/Scripts # my custom scripts
 
 # Using Trash Command to replace rm
 fish_add_path --path /opt/homebrew/opt/trash/bin
@@ -71,3 +71,4 @@ export MANPAGER="nvim +Man!"
 
 #FZF Fish configures
 fzf_configure_bindings --directory=\cf
+fzf_configure_bindings --processes=\cp
