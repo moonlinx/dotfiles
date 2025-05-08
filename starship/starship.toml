@@ -15,7 +15,7 @@ add_newline = false
 
 palette = "catppuccin_mocha"
 
-format = """➜ \
+format = """➜ : \
 $directory\
 ${custom.giturl}\
 $git_branch\
