@@ -42,7 +42,7 @@ stow --target ~/.config
 
 ### Homebrew installation
 
-```sh
+```bash
 # Leaving a machine
 brew leaves > leaves.txt
 
@@ -59,7 +59,7 @@ xargs brew install < leaves.txt
 #### Color Schemes
 
 - Wezterm color scheme is [Catppuccin - Machiatto](https://github.com/catppuccin/wezterm)
-- Neovim color scheme is [Catppuccin - Mocha]()
+- Neovim color scheme is [Catppuccin - Mocha](https://github.com/catppuccin/wezterm)
 
 ## Acknowledgements
 
