@@ -8,6 +8,7 @@
 --  ╚══╝╚══╝ ╚══════╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝
 -- A GPU-accelerated cross-platform terminal emulator
 -- https://wezfurlong.org/wezterm/
+
 -- Pull in the wezterm API
 
 local wezterm = require("wezterm")
