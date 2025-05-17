@@ -70,5 +70,5 @@ fish_add_path --path /Users/fox/.local/bin
 export MANPAGER="nvim +Man!"
 
 #FZF Fish configures
-fzf_configure_bindings --directory=\cf
 fzf_configure_bindings --processes=\cp
+fzf_configure_bindings --directory=\cf

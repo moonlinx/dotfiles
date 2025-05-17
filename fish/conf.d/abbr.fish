@@ -51,3 +51,6 @@ abbr -a gf git fetch
 abbr -a gl lazygit
 abbr -a gm git merge
 abbr -a gst git status
+
+# LazyGit
+abbr -a lg lazygit
