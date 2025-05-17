@@ -1,8 +1,6 @@
 -- Left items (L to R)
 require("items.apple")
 require("items.menus")
--- require("items.menua")
--- require("items.workspaces")
 require("items.spaces")
 require("items.front_app")
 
