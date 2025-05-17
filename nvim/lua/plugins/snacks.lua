@@ -29,7 +29,7 @@ return {
         desc = "Git Log",
       },
       {
-        "<leader>es",
+        "<leader>e",
         function()
           require("snacks").explorer()
         end,
