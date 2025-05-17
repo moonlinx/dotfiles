@@ -8,7 +8,7 @@ return {
     local lspconfig = require("lspconfig")
 
     -- import blink plugin
-    local capabilities = require("blink.cmp").get_lsp_capabilities()
+    local capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 
     local keymap = vim.keymap -- for conciseness
 
@@ -67,6 +67,12 @@ return {
       on_attach = on_attach,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
     })
+    -- configure marksman language slanderer
+    lspconfig["marksman"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "markdown", "markdown.mdx" },
+    })
 
     -- configure python server
     lspconfig["pyright"].setup({
@@ -81,12 +87,12 @@ return {
       on_attach = on_attach,
       settings = { -- custom settings for lua
         Lua = {
-          -- make the language server recognize "vim" global
+          -- Make the language server recognize "vim" global
           diagnostics = {
             globals = { "vim" },
           },
           workspace = {
-            -- make language server aware of runtime files
+            -- Make language server aware of runtime files
             library = {
               [vim.fn.expand("$VIMRUNTIME/lua")] = true,
               [vim.fn.stdpath("config") .. "/lua"] = true,
