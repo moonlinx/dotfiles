@@ -1,11 +1,11 @@
 return {
-  -- -- add blink.compat
-  -- {
-  --   "saghen/blink.compat",
-  --   lazy = true,
-  --   -- make sure to set opts so that lazy.nvim calls blink.compat's setup
-  --   opts = {},
-  -- },
+  -- add blink.compat
+  {
+    "saghen/blink.compat",
+    lazy = true,
+    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    opts = {},
+  },
   -- Filename: ~/github/dotfiles-latest/neovim/neobean/lua/pl
   -- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
 
@@ -28,11 +28,8 @@ return {
     -- version = "v0.9.3",
     dependencies = {
       "L3MON4D3/LuaSnip",
+      "mikavilpas/blink-ripgrep.nvim",
       "Kaiser-Yang/blink-cmp-dictionary",
-      -- {
-      --   "Kaiser-Yang/blink-cmp-git",
-      --   dependencies = { "nvim-lua/plenary.nvim" },
-      -- },
       "Kaiser-Yang/blink-cmp-avante",
     },
     opts = function(_, opts)
@@ -59,19 +56,20 @@ return {
           "path",
           "snippets",
           "buffer",
-          "markdown",
+          "ripgrep",
           "dictionary",
           "avante",
+          "markdown",
         },
         providers = {
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+          },
           markdown = {
             name = "RenderMarkdown",
             module = "render-markdown.integ.blink",
             fallbacks = { "lsp" },
-          },
-          avante = {
-            module = "blink-cmp-avante",
-            name = "Avante",
           },
           lsp = {
             name = "lsp",
@@ -87,8 +85,8 @@ return {
             -- Disabling fallbacks as my snippets wouldn't show up when editing
             -- lua files
             -- fallbacks = { "snippets", "buffer" },
-            -- fallbacks = { "snippets", "luasnip", "buffer" },
-            score_offset = 90, -- the higher the number, the higher the priority
+            fallbacks = { "snippets", "luasnip", "buffer" },
+            score_offset = 95, -- the higher the number, the higher the priority
           },
           luasnip = {
             name = "luasnip",
@@ -96,7 +94,7 @@ return {
             module = "blink.cmp.sources.luasnip",
             min_keyword_length = 2,
             fallbacks = { "snippets" },
-            score_offset = 85, -- the higher the number, the higher the priority
+            score_offset = 90, -- the higher the number, the higher the priority
             max_items = 6,
           },
           path = {
@@ -133,6 +131,22 @@ return {
             min_keyword_length = 2,
             score_offset = 85, -- the higher the number, the higher the priority
           },
+          -- https://github.com/mikavilpas/blink-ripgrep.nvim/
+          -- Just add to your dependencies and resources
+          ripgrep = {
+            module = "blink-ripgrep",
+            name = "RG",
+            score_offset = 50,
+            opts = {
+              prefix_min_len = 3,
+              context_size = 5,
+              max_filesize = "1M",
+              project_root_marker = vim.g.root_markers,
+              search_casing = "--smart-case",
+              project_root_fallback = false,
+              fallback_to_regex_highlighting = true,
+            },
+          },
           -- https://github.com/Kaiser-Yang/blink-cmp-dictionary
           -- In macOS to get started with a dictionary:
           -- cp /usr/share/dict/words ~/github/dotfiles-latest/dictionaries/words.txt
@@ -142,7 +156,7 @@ return {
           dictionary = {
             module = "blink-cmp-dictionary",
             name = "Dict",
-            score_offset = 20, -- the higher the number, the higher the priority
+            score_offset = 40, -- the higher the number, the higher the priority
             -- https://github.com/Kaiser-Yang/blink-cmp-dictionary/issues/2
             enabled = true,
             max_items = 8,
@@ -252,17 +266,17 @@ return {
       -- https://cmp.saghen.dev/configuration/keymap.html#default
       opts.keymap = {
         preset = "none",
-        ["<C-x>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-\\>"] = { "show", "show_documentation", "hide_documentation" },
         ["<C-c>"] = { "cancel", "fallback" },
-        ["<C-y>"] = { "select_and_accept" },
+        ["<CR>"] = { "accept", "fallback" },
 
         ["<C-p>"] = { "select_prev", "fallback" },
-        ["<C-n>"] = { "select_next", "fallback" },
+        ["<C-n>"] = { "select_next", "show" },
 
         ["<C-u>"] = { "scroll_documentation_up", "fallback" },
         ["<C-d>"] = { "scroll_documentation_down", "fallback" },
 
-        ["<Tab>"] = { "snippet_forward", "fallback" },
+        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
         ["<S-Tab>"] = { "snippet_backward", "fallback" },
       }
 
