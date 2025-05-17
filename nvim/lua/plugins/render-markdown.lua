@@ -71,6 +71,9 @@ return {
       -- The level of logs to write to file: vim.fn.stdpath('state') .. '/render-markdown.log'
       -- Only intended to be used for plugin development / debugging
       log_level = "error",
+      -- Print runtime of main update method.
+      -- Only intended to be used for plugin development / debugging.
+      log_runtime = false,
       -- Filetypes this plugin will run on
       file_types = { "markdown" },
       -- Out of the box language injections for known filetypes that allow markdown to be
@@ -99,16 +102,46 @@ return {
         below = 0,
       },
       latex = {
-        -- Whether LaTeX should be rendered, mainly used for health check
+        -- Turn on / off latex rendering.
         enabled = true,
-        -- Executable used to convert latex formula to rendered unicode
+        -- Additional modes to render latex.
+        render_modes = false,
+        -- Executable used to convert latex formula to rendered unicode.
         converter = "latex2text",
-        -- Highlight for LaTeX blocks
+        -- Highlight for latex blocks.
         highlight = "RenderMarkdownMath",
-        -- Amount of empty lines above LaTeX blocks
+        -- Determines where latex formula is rendered relative to block.
+        -- | above | above latex block |
+        -- | below | below latex block |
+        position = "below",
+        -- Number of empty lines above latex blocks.
         top_pad = 0,
-        -- Amount of empty lines below LaTeX blocks
+        -- Number of empty lines below latex blocks.
         bottom_pad = 0,
+      },
+      html = {
+        -- Turn on / off all HTML rendering
+        enabled = true,
+        comment = {
+          -- Turn on / off HTML comment concealing
+          conceal = false,
+        },
+      },
+      on = {
+        -- Called when plugin initially attaches to a buffer.
+        attach = function() end,
+        -- Called after plugin renders a buffer.
+        render = function() end,
+        -- Called after plugin clears a buffer.
+        clear = function() end,
+      },
+      completions = {
+        -- Settings for blink.cmp completions source
+        blink = { enabled = true },
+        -- Settings for coq_nvim completions source
+        coq = { enabled = false },
+        -- Settings for in-process language server completions
+        lsp = { enabled = false },
       },
       heading = {
         -- Turn on / off heading icon & background rendering
@@ -118,7 +151,7 @@ return {
         -- Turn on / off any sign column related rendering
         sign = true,
         -- Determines how icons fill the available space:
-        --  inline:  underlying '#'s are concealed resulting in a left aligned icon
+        --  inline: underlying '#'s are concealed resulting in a left aligned icon
         --  overlay: result is left padded with spaces to hide any additional '#'
         position = "overlay",
         -- Replaces '#+' of 'atx_h._marker'
@@ -140,7 +173,7 @@ return {
         right_pad = 0,
         -- Minimum width to use for headings when width is 'block'
         min_width = 0,
-        -- Determins if a border is added above and below headings
+        -- Determines if a border is added above and below headings
         border = false,
         -- Highlight the start of the border using the foreground highlight
         border_prefix = false,
@@ -176,10 +209,10 @@ return {
         -- Turn on / off any sign column related rendering
         sign = true,
         -- Determines how code blocks & inline code are rendered:
-        --  none:     disables all rendering
-        --  normal:   adds highlight group to code blocks & inline code, adds padding to code blocks
+        --  none: disables all rendering
+        --  normal: adds highlight group to code blocks & inline code, adds padding to code blocks
         --  language: adds language icon to sign column if enabled and icon + name above code blocks
-        --  full:     normal + language
+        --  full: normal + language
         style = "full",
         -- Determines where language icon is rendered:
         --  right: right side of code block
@@ -259,7 +292,7 @@ return {
         checked = {
           -- Replaces '[x]' of 'task_list_marker_checked'
           icon = "󰱒 ",
-          -- Highligh for the checked icon
+          -- Highlight for the checked icon
           highlight = "RenderMarkdownChecked",
         },
         -- Define custom checkbox states, more involved as they are not part of the markdown grammar
@@ -320,33 +353,169 @@ return {
       --   'rendered':  Replaces the 'raw' value when rendering
       --   'highlight': Highlight for the 'rendered' text and quote markers
       callout = {
-        note = { raw = "[!NOTE]", rendered = "󰋽 Note", highlight = "RenderMarkdownInfo" },
-        tip = { raw = "[!TIP]", rendered = "󰌶 Tip", highlight = "RenderMarkdownSuccess" },
-        important = { raw = "[!IMPORTANT]", rendered = "󰅾 Important", highlight = "RenderMarkdownHint" },
-        warning = { raw = "[!WARNING]", rendered = "󰀪 Warning", highlight = "RenderMarkdownWarn" },
-        caution = { raw = "[!CAUTION]", rendered = "󰳦 Caution", highlight = "RenderMarkdownError" },
-        abstract = { raw = "[!ABSTRACT]", rendered = "󰨸 Abstract", highlight = "RenderMarkdownInfo" },
-        summary = { raw = "[!SUMMARY]", rendered = "󰨸 Summary", highlight = "RenderMarkdownInfo" },
-        tldr = { raw = "[!TLDR]", rendered = "󰨸 Tldr", highlight = "RenderMarkdownInfo" },
-        info = { raw = "[!INFO]", rendered = "󰋽 Info", highlight = "RenderMarkdownInfo" },
-        todo = { raw = "[!TODO]", rendered = "󰗡 Todo", highlight = "RenderMarkdownInfo" },
-        hint = { raw = "[!HINT]", rendered = "󰌶 Hint", highlight = "RenderMarkdownSuccess" },
-        success = { raw = "[!SUCCESS]", rendered = "󰄬 Success", highlight = "RenderMarkdownSuccess" },
-        check = { raw = "[!CHECK]", rendered = "󰄬 Check", highlight = "RenderMarkdownSuccess" },
-        done = { raw = "[!DONE]", rendered = "󰄬 Done", highlight = "RenderMarkdownSuccess" },
-        question = { raw = "[!QUESTION]", rendered = "󰘥 Question", highlight = "RenderMarkdownWarn" },
-        help = { raw = "[!HELP]", rendered = "󰘥 Help", highlight = "RenderMarkdownWarn" },
-        faq = { raw = "[!FAQ]", rendered = "󰘥 Faq", highlight = "RenderMarkdownWarn" },
-        attention = { raw = "[!ATTENTION]", rendered = "󰀪 Attention", highlight = "RenderMarkdownWarn" },
-        failure = { raw = "[!FAILURE]", rendered = "󰅖 Failure", highlight = "RenderMarkdownError" },
-        fail = { raw = "[!FAIL]", rendered = "󰅖 Fail", highlight = "RenderMarkdownError" },
-        missing = { raw = "[!MISSING]", rendered = "󰅖 Missing", highlight = "RenderMarkdownError" },
-        danger = { raw = "[!DANGER]", rendered = "󱐌 Danger", highlight = "RenderMarkdownError" },
-        error = { raw = "[!ERROR]", rendered = "󱐌 Error", highlight = "RenderMarkdownError" },
-        bug = { raw = "[!BUG]", rendered = "󰨰 Bug", highlight = "RenderMarkdownError" },
-        example = { raw = "[!EXAMPLE]", rendered = "󰉹 Example", highlight = "RenderMarkdownHint" },
-        quote = { raw = "[!QUOTE]", rendered = "󱆨 Quote", highlight = "RenderMarkdownQuote" },
-        cite = { raw = "[!CITE]", rendered = "󱆨 Cite", highlight = "RenderMarkdownQuote" },
+        note = {
+          raw = "[!NOTE]",
+          rendered = "󰋽 Note",
+          highlight = "RenderMarkdownInfo",
+          category = "github",
+        },
+        tip = {
+          raw = "[!TIP]",
+          rendered = "󰌶 Tip",
+          highlight = "RenderMarkdownSuccess",
+          category = "github",
+        },
+        important = {
+          raw = "[!IMPORTANT]",
+          rendered = "󰅾 Important",
+          highlight = "RenderMarkdownHint",
+          category = "github",
+        },
+        warning = {
+          raw = "[!WARNING]",
+          rendered = "󰀪 Warning",
+          highlight = "RenderMarkdownWarn",
+          category = "github",
+        },
+        caution = {
+          raw = "[!CAUTION]",
+          rendered = "󰳦 Caution",
+          highlight = "RenderMarkdownError",
+          category = "github",
+        },
+        -- Obsidian: https://help.obsidian.md/Editing+and+formatting/Callouts
+        abstract = {
+          raw = "[!ABSTRACT]",
+          rendered = "󰨸 Abstract",
+          highlight = "RenderMarkdownInfo",
+          category = "obsidian",
+        },
+        summary = {
+          raw = "[!SUMMARY]",
+          rendered = "󰨸 Summary",
+          highlight = "RenderMarkdownInfo",
+          category = "obsidian",
+        },
+        tldr = {
+          raw = "[!TLDR]",
+          rendered = "󰨸 Tldr",
+          highlight = "RenderMarkdownInfo",
+          category = "obsidian",
+        },
+        info = {
+          raw = "[!INFO]",
+          rendered = "󰋽 Info",
+          highlight = "RenderMarkdownInfo",
+          category = "obsidian",
+        },
+        todo = {
+          raw = "[!TODO]",
+          rendered = "󰗡 Todo",
+          highlight = "RenderMarkdownInfo",
+          category = "obsidian",
+        },
+        hint = {
+          raw = "[!HINT]",
+          rendered = "󰌶 Hint",
+          highlight = "RenderMarkdownSuccess",
+          category = "obsidian",
+        },
+        success = {
+          raw = "[!SUCCESS]",
+          rendered = "󰄬 Success",
+          highlight = "RenderMarkdownSuccess",
+          category = "obsidian",
+        },
+        check = {
+          raw = "[!CHECK]",
+          rendered = "󰄬 Check",
+          highlight = "RenderMarkdownSuccess",
+          category = "obsidian",
+        },
+        done = {
+          raw = "[!DONE]",
+          rendered = "󰄬 Done",
+          highlight = "RenderMarkdownSuccess",
+          category = "obsidian",
+        },
+        question = {
+          raw = "[!QUESTION]",
+          rendered = "󰘥 Question",
+          highlight = "RenderMarkdownWarn",
+          category = "obsidian",
+        },
+        help = {
+          raw = "[!HELP]",
+          rendered = "󰘥 Help",
+          highlight = "RenderMarkdownWarn",
+          category = "obsidian",
+        },
+        faq = {
+          raw = "[!FAQ]",
+          rendered = "󰘥 Faq",
+          highlight = "RenderMarkdownWarn",
+          category = "obsidian",
+        },
+        attention = {
+          raw = "[!ATTENTION]",
+          rendered = "󰀪 Attention",
+          highlight = "RenderMarkdownWarn",
+          category = "obsidian",
+        },
+        failure = {
+          raw = "[!FAILURE]",
+          rendered = "󰅖 Failure",
+          highlight = "RenderMarkdownError",
+          category = "obsidian",
+        },
+        fail = {
+          raw = "[!FAIL]",
+          rendered = "󰅖 Fail",
+          highlight = "RenderMarkdownError",
+          category = "obsidian",
+        },
+        missing = {
+          raw = "[!MISSING]",
+          rendered = "󰅖 Missing",
+          highlight = "RenderMarkdownError",
+          category = "obsidian",
+        },
+        danger = {
+          raw = "[!DANGER]",
+          rendered = "󱐌 Danger",
+          highlight = "RenderMarkdownError",
+          category = "obsidian",
+        },
+        error = {
+          raw = "[!ERROR]",
+          rendered = "󱐌 Error",
+          highlight = "RenderMarkdownError",
+          category = "obsidian",
+        },
+        bug = {
+          raw = "[!BUG]",
+          rendered = "󰨰 Bug",
+          highlight = "RenderMarkdownError",
+          category = "obsidian",
+        },
+        example = {
+          raw = "[!EXAMPLE]",
+          rendered = "󰉹 Example",
+          highlight = "RenderMarkdownHint",
+          category = "obsidian",
+        },
+        quote = {
+          raw = "[!QUOTE]",
+          rendered = "󱆨 Quote",
+          highlight = "RenderMarkdownQuote",
+          category = "obsidian",
+        },
+        cite = {
+          raw = "[!CITE]",
+          rendered = "󱆨 Cite",
+          highlight = "RenderMarkdownQuote",
+          category = "obsidian",
+        },
       },
       link = {
         -- Turn on / off inline link icon rendering
