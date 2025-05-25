@@ -151,6 +151,11 @@ battery:subscribe("mouse.clicked", function(env)
 			battery_capacity:set({ label = label })
 		end)
 	end
+	-- A right click button in order to open up network preferences
+	if env.BUTTON == "right" then
+		sbar.exec("open /System/Library/PreferencePanes/Battery.prefPane")
+		return
+	end
 end)
 
 battery:subscribe("mouse.exited.global", function()

@@ -204,7 +204,7 @@ local function hide_details()
 	wifi_bracket:set({ popup = { drawing = false } })
 end
 
-local function toggle_details()
+local function toggle_details(env)
 	local should_draw = wifi_bracket:query().popup.drawing == "off"
 	if should_draw then
 		wifi_bracket:set({ popup = { drawing = true } })
@@ -225,6 +225,11 @@ local function toggle_details()
 		end)
 	else
 		hide_details()
+	end
+	-- A right click button in order to open up network preferences
+	if env.BUTTON == "right" then
+		sbar.exec("open /System/Library/PreferencePanes/Network.prefPane")
+		return
 	end
 end
 
