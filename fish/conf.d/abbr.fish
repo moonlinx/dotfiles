@@ -21,22 +21,9 @@ abbr blr "brew leaves --installed-on-request"
 abbr blp "brew leaves --installed-as-dependency"
 abbr bs "brew search"
 
-# Neovim.
-abbr -a nv nvim
-abbr -a nvp nvim +Man!
-
-abbr s sesh_start
-abbr s. "sesh connect ."
-abbr sc "sesh clone --cmdDir ~/c (pbpaste)"
-abbr sf "source ~/.config/fish/config.fish"
-abbr sr "sesh root"
-
-# Vi mode.
-set -g fish_key_bindings fish_vi_key_bindings
-set fish_vi_force_cursor 1
-set fish_cursor_default block
-set fish_cursor_insert line
-set fish_cursor_replace_one underscore
+# Espanso
+abbr ee "espanso edit"
+abbr er "espanso restart"
 
 # Git abbreviations.
 abbr -a g git
@@ -52,5 +39,36 @@ abbr -a gl lazygit
 abbr -a gm git merge
 abbr -a gst git status
 
+# LazyDocker
+abbr -a ld lazydocker
+
 # LazyGit
 abbr -a lg lazygit
+
+# Miscellaneous
+abbr d delta
+abbr ff fastfetch
+
+abbr fi "fisher install"
+abbr fr "fisher refresh"
+abbr fu "fisher update"
+
+abbr gn "sudo shutdown -h now"
+abbr nm "nmap -sC -sV -oN nmap-output.txt"
+abbr sp spotify_player
+abbr wifi wifi-password
+abbr x exit
+abbr ya yazi
+abbr yt yt-dlp
+abbr z zoxide
+
+# Neovim.
+abbr -a nv nvim
+abbr -a nvp nvim +Man!
+
+# Sesh
+abbr s sesh_start
+abbr s. "sesh connect ."
+abbr sc "sesh clone --cmdDir ~/c (pbpaste)"
+abbr sf "source ~/.config/fish/config.fish"
+abbr sr "sesh root"
