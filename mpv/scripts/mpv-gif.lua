@@ -45,7 +45,7 @@ palette = "%TEMP%palette.png"
 -- The roundabout way has to be used due to a some weird
 -- behavior with %TEMP% on the subtitles= parameter in ffmpeg
 -- on Windows–it needs to be quadruple backslashed
-subs = "C:/Users/%USERNAME%/AppData/Local/Temp/subs.srt"
+subs = "/tmp/subs.srt"
 
 function make_gif_with_subtitles()
 	make_gif_internal(true)
