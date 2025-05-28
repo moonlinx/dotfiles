@@ -11,13 +11,12 @@
 
 command_timeout = 1000
 
-add_newline = false
+add_newline = true 
 
 palette = "catppuccin_mocha"
 
-format = """➜ : \
+format = """[❯](lavender bold) \
 $directory\
-${custom.giturl}\
 $git_branch\
 $git_status\
 $git_metrics\
@@ -40,12 +39,12 @@ error_symbol = '[𝘹](bold fg:red)'
 vimcmd_symbol = '[ ](bold fg:sapphire)'
 vimcmd_replace_one_symbol = '[ ](bold fg:purple)'
 vimcmd_replace_symbol = '[ ](bold fg:purple)'
-vimcmd_visual_symbol = '[ ](bold fg:lavender)'
+vimcmd_visual_symbol = '[ ](bold fg:peach)'
 # ---
 
 # Display OS symbol at the very begining
 [os]
-format = '[$symbol](bold grey)'   
+format = '[$symbol](bold grey)'
 disabled = true
 
 # Shows the username
@@ -83,7 +82,7 @@ disabled = false
 
 # Shows current git status
 [git_status]
-format = ' [(-> $all_status$ahead_behind )]($style)'
+format = ' [(->   $all_status$ahead_behind )]($style)'
 # format = '[$all_status$ahead_behind]($style) '
 # style = 'bold green'
 # conflicted = ' 🏳'
@@ -102,7 +101,7 @@ disabled = false
 # Shows current git branch
 [git_branch]
 symbol = "[](black) "
-format =  '  on [$symbol$branch]($style)[](black)'
+format =  'on [$symbol$branch]($style)[](black)'
 truncation_symbol = '…/'
 style = 'fg:lavender bg:black'
 disabled = false
@@ -125,6 +124,7 @@ else
 fi
 echo "$GIT_REMOTE_SYMBOL "
 """
+
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 format = "at $output"
 
@@ -140,18 +140,21 @@ symbol = " "
 
 [terraform]
 symbol = " "
+disabled = true 
 style = "bold maroon"
 version_format = "v${raw}"
 format = '[$symbol$workspace]($style) '
 
 [python]
 symbol = '  '
+disabled = false
 style = 'bold mauve'
 version_format = 'v${raw}'
 format = 'via [${symbol}(${version} )(\($virtualenv\) )]($style)'
 
 [docker_context]
 symbol = " "
+disabled = false 
 format = '[ $symbol( $context) ]($style)'
 
 [palettes.catppuccin_mocha]
