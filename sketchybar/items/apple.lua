@@ -82,7 +82,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 		},
 		background = {
 			padding_left = 10,
-			padding_right = 20,
+			padding_right = 15,
 			color = colors.transparent,
 			height = 40, -- Reduced height for compactness
 			width = popup_width,
@@ -92,7 +92,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 
 	-- Hover effect
 	item:subscribe("mouse.entered", function()
-		sbar.animate("elastic", 15, function()
+		sbar.animate("elastic", 5, function()
 			item:set({
 				icon = {
 					padding_left = 5,
