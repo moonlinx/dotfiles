@@ -66,28 +66,18 @@ if [ $# -eq 0 ]; then
     case $choice in
     1)
       restart_yabai
-      echo -e "\nPress Enter to continue..."
-      read
       ;;
     2)
       restart_skhd
-      echo -e "\nPress Enter to continue..."
-      read
       ;;
     3)
       restart_sketchybar
-      echo -e "\nPress Enter to continue..."
-      read
       ;;
     4)
       restart_borders
-      echo -e "\nPress Enter to continue..."
-      read
       ;;
     5)
       restart_all
-      echo -e "\nPress Enter to continue..."
-      read
       ;;
     0)
       echo "Exiting..."
