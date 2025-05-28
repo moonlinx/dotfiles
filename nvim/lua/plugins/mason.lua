@@ -1,6 +1,5 @@
 return {
-  "williamboman/mason.nvim",
-  -- do not update this with config, nvim-java requires this be loaded with opts
+  "mason-org/mason.nvim",
   opts = {
     ui = {
       icons = {
