@@ -32,7 +32,7 @@ yabai -m config window_gap 8
 ###############################################################################
 yabai -m config external_bar all:40:0
 yabai -m config mouse_follows_focus on
-yabai -m config focus_follows_mouse off
+yabai -m config focus_follows_mouse autoraise # set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
 yabai -m config window_zoom_persist off
 yabai -m config window_placement second_child
 yabai -m config window_shadow float
@@ -46,7 +46,7 @@ yabai -m insert_feedback_color 0xff9dd274
 yabai -m split_ratio 0.50
 yabai -m auto_balance on
 yabai -m auto_padding on
-yabai -m mouse_modifier fn
+yabai -m mouse_modifier fn # set mouse interaction modifier key (default: fn, options: ctrl, opt, cmd)
 yabai -m mouse_action1 move
 yabai -m mouse_action2 resize
 yabai -m mouse_drop_action swap
