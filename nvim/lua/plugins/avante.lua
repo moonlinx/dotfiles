@@ -3,9 +3,17 @@ return {
   event = "VeryLazy",
   version = false, -- Never set this value to "*"! Never!
   opts = {
-    provider = "ollama",
-    ollama = {
-      model = "llama3.1:8b",
+    -- provider = "ollama",
+    -- ollama = {
+    --   model = "llama3.1:8b",
+    -- },
+    claude = {
+      endpoint = "https://api.anthropic.com",
+      model = "claude-sonnet-4-20250514",
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 4096,
+      disable_tools = true, -- disable tools!
     },
   },
   build = "make",
