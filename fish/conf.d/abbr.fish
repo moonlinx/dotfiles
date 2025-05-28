@@ -72,3 +72,8 @@ abbr s. "sesh connect ."
 abbr sc "sesh clone --cmdDir ~/c (pbpaste)"
 abbr sf "source ~/.config/fish/config.fish"
 abbr sr "sesh root"
+
+# Tmux
+abbr tn "tmux new-session -s"
+abbr tl "tmux list-sessions"
+abbr ta "tmux attach-session"
