@@ -9,7 +9,7 @@
 # https://fishshell.com/
 # cSpell:words shellcode pkgx direnv
 
-# Nothing to do if not inside an interactive shell
+# Nothing to do if not inside an interactive shell.
 if not status is-interactive
     return 0
 end
@@ -76,6 +76,20 @@ fish_add_path --path /Users/fox/.local/bin
 # Use Nvim as the manpage viewer
 export MANPAGER="nvim +Man!"
 
-#FZF Fish configures
-fzf_configure_bindings --processes=\cp
-fzf_configure_bindings --directory=\cf
+# Starship transient prompt for fish
+function starship_transient_prompt_func
+    starship module character
+end
+starship init fish | source
+enable_transience
+
+# function for yabai window listing - fish version
+function f
+    yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
+end
+
+# Function to create a directory and cd diretctly into it
+function take
+    mkdir -p $argv[1]
+    cd $argv[1]
+end
