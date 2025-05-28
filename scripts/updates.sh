@@ -84,7 +84,7 @@ elif [ "$OS" == "Linux" ]; then
   if command -v nala &>/dev/null; then
     echo "Using nala for system package management..."
     sudo nala update
-    sudo nala upgrade -y >/tmp/nala_output.txt 2>&1
+    sudo nala upgrade
 
     # Parse nala output to extract package upgrade info
     if grep -q "upgraded" /tmp/nala_output.txt; then
