@@ -6,8 +6,6 @@ return {
     -- make sure to set opts so that lazy.nvim calls blink.compat's setup
     opts = {},
   },
-  -- Filename: ~/github/dotfiles-latest/neovim/neobean/lua/pl
-  -- ~/github/dotfiles-latest/neovim/neobean/lua/plugins/blink-cmp.lua
 
   -- HACK: blink.cmp updates | Remove LuaSnip | Emoji and Dictionary Sources | Fix Jump Autosave Issue
   -- https://youtu.be/JrgfpWap_Pg
