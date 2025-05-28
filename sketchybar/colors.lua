@@ -1,5 +1,5 @@
 return {
-	black = 0xff181819,
+	black = 0xff11111b,
 	white = 0xffe2e2e3,
 	red = 0xfffc5d7c,
 	green = 0xff56c38f,
@@ -22,10 +22,11 @@ return {
 	transparent = 0x00000000,
 
 	bar = {
-		-- bg = 0x00000000,
-		-- bg = 0xf02c2e34,
-		-- bg = 0xff414141,
-		bg = 0x991c1c1c,
+		-- bg = 0x00000000, # Transparent background
+		-- bg = 0xf02c2e34, #
+		-- bg = 0xff414141, #
+		-- bg = 0x991c1c1c, # Mostly dark transparent
+		bg = 0xff181819,
 		border = 0xff2c2e34,
 	},
 	popup = {

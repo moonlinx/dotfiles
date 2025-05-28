@@ -12,10 +12,10 @@ local popup_width = 250
 
 local wifi_up = sbar.add("item", "widgets.wifi1", {
 	position = "right",
-	-- padding_left = -5,
+	padding_left = -5,
 	width = 0,
 	icon = {
-		padding_right = 1,
+		padding_right = 0,
 		padding_left = 0,
 		font = {
 			style = settings.font.style_map["Bold"],
@@ -24,7 +24,6 @@ local wifi_up = sbar.add("item", "widgets.wifi1", {
 		string = icons.wifi.upload,
 	},
 	label = {
-		padding_left = 4,
 		font = {
 			family = settings.font.numbers,
 			style = settings.font.style_map["Bold"],
@@ -56,7 +55,7 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 		color = colors.blue,
 		string = "??? Bps",
 	},
-	y_offset = -6,
+	y_offset = -4,
 })
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
