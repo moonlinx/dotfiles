@@ -2,7 +2,7 @@
 theme = catppuccin-mocha
 
 # Opacity
-background-opacity = 0.60
+background-opacity = 0.75
 
 # Blur
 background-blur-radius = 70
