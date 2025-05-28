@@ -70,6 +70,7 @@ return {
             name = "RenderMarkdown",
             module = "render-markdown.integ.blink",
             fallbacks = { "lsp" },
+            score_offset = 80, -- the higher the number, the higher the priority
           },
           lsp = {
             name = "lsp",
@@ -207,12 +208,16 @@ return {
           max_height = 15,
           scrolloff = 0,
           draw = {
-            align_to = "cursor",
-            padding = 0,
+            gap = 2,
+            -- align_to = "cursor",
+            -- padding = 0,
             columns = {
-              { "kind_icon" },
+              -- { "kind_icon" },
+              -- { "label", "label_description", gap = 1 },
+              -- { "source_name" },
+              { "source_name", gap = 1 },
               { "label", "label_description", gap = 1 },
-              { "source_name" },
+              { "kind_icon", "kind", gap = 2 },
             },
           },
         },
@@ -223,12 +228,13 @@ return {
           treesitter_highlighting = true,
           window = {
             border = "rounded",
+            winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
           },
         },
         -- Displays a preview of the selected item on the current line
-        ghost_text = {
-          enabled = true,
-        },
+        -- ghost_text = {
+        --   enabled = true,
+        -- },
       }
 
       -- opts.fuzzy = {
