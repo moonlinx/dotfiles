@@ -19,14 +19,15 @@ return {
 	violet = 0xff7d4a95,
 	strawberry = 0xffed89a8,
 	grey = 0xff7f8490,
+	hollow = 0xff9cb0da,
 	transparent = 0x00000000,
 
 	bar = {
-		-- bg = 0x00000000, # Transparent background
-		-- bg = 0xf02c2e34, #
-		-- bg = 0xff414141, #
-		-- bg = 0x991c1c1c, # Mostly dark transparent
-		bg = 0xff181819,
+		-- bg = 0x00000000, -- Transparent background
+		-- bg = 0xf02c2e34,
+		-- bg = 0xff414141,
+		-- bg = 0x991c1c1c, -- Mostly dark transparent
+		bg = 0xf0181819, -- Black
 		border = 0xff2c2e34,
 	},
 	popup = {

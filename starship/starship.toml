@@ -64,7 +64,7 @@ disabled = false
 
 # Shows current directory
 [directory]
-style = 'black'
+style = 'hollow'
 truncation_length = 10
 truncation_symbol = '…/  '
 home_symbol = '~'
@@ -170,6 +170,7 @@ green = "#a6e3a1"
 teal = "#94e2d5"
 sky = "#89dceb"
 sapphire = "#74c7ec"
+hollow = "#6f7489"
 grey = "#6c7086"
 blue = "#89b4fa"
 lavender = "#b4befe"

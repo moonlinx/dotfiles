@@ -10,9 +10,9 @@ sbar.add("item", { width = 5 })
 
 local apple = sbar.add("item", {
 	icon = {
-		font = { size = 19.0 },
+		font = { size = 22.0 },
 		string = icons.apple,
-		color = colors.arise,
+		color = colors.hollow,
 		padding_right = 5,
 		padding_left = 8,
 		border_color = colors.transparent,

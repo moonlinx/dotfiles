@@ -123,10 +123,10 @@ config = {
 	window_decorations = "RESIZE",
 
 	-- Blur
-	macos_window_background_blur = 70,
+	macos_window_background_blur = 80,
 
 	-- Opacity
-	window_background_opacity = 0.60,
+	window_background_opacity = 0.7,
 
 	-- https://wezfurlong.org/wezterm/config/lua/wezterm/font.html
 	-- font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold" }),
