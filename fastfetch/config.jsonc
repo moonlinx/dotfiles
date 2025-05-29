@@ -3,7 +3,7 @@
   "logo": {
     // "type": "file",
     "type": "auto",
-    "source": "~/.config/fastfetch/ASCII-Art-Night-Sky.txt",
+    "source": "~/.config/fastfetch/wolf.txt",
     "height": 10,
     "width": 10
   },
