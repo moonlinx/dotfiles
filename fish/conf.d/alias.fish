@@ -20,6 +20,7 @@ alias ping="ping -c 5"
 alias cp="cp -iv"
 alias mv="mv -iv"
 alias stat="stat -x"
+alias grep="rg --color=always"
 
 # Dirs
 alias ..="cd .."
