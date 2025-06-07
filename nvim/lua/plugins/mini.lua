@@ -1,6 +1,7 @@
 return {
   {
     "echasnovski/mini.files",
+    enabled = false,
     opts = {
       -- I didn't like the default mappings, so I modified them
       -- Module mappings created only inside explorer.

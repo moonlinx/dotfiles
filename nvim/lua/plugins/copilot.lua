@@ -6,21 +6,20 @@ return {
       enabled = false,
     },
     suggestion = {
-      auto_trigger = true,
       hide_during_completion = false,
       keymap = {
         accept = "<m-cr>",
-        accept_word = "<m-f>",
-        accept_line = "<c-f>",
+        accept_word = "<m-e>",
+        accept_line = "<c-e>",
         next = false,
         prev = false,
         dismiss = "<c-c>",
       },
     },
     filetypes = {
-      ["*"] = true,
+      markdown = true,
+      yaml = true,
+      lua = true,
     },
-    copilot_node_command = "node",
-    server_opts_overrides = {},
   },
 }

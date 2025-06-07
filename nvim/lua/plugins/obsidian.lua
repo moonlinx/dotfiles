@@ -21,31 +21,31 @@ return {
     workspaces = {
       {
         name = "notes",
-        path = "~/Notes-Vault",
+        path = "~/Notes",
       },
       {
         name = "projects",
-        path = "~/Notes-Vault/01 - Projects",
+        path = "~/Notes/01 - Projects",
       },
       {
         name = "eductation",
-        path = "~/Notes-Vault/02 - Areas/Education",
+        path = "~/Notes/02 - Areas/Education",
       },
       {
         name = "it",
-        path = "~/Notes-Vault/02 - Areas/IT",
+        path = "~/Notes/02 - Areas/IT",
       },
       {
         name = "professional",
-        path = "~/Notes-Vault/02 - Areas/Professional",
+        path = "~/Notes/02 - Areas/Professional",
       },
       {
         name = "spirituality",
-        path = "~/Notes-Vault/02 - Areas/Spirituality",
+        path = "~/Notes/02 - Areas/Spirituality",
       },
       {
         name = "personal",
-        path = "~/Notes-Vault/02 - Areas/Personal",
+        path = "~/Notes/02 - Areas/Personal",
       },
     },
 
@@ -61,7 +61,7 @@ return {
 
     daily_notes = {
       -- Optional, if you keep daily notes in a separate directory.
-      folder = "~/Notes-Vault/06 - Daily",
+      folder = "~/Notes/06 - Daily",
       -- Optional, if you want to change the date format for the ID of daily notes.
       date_format = "%Y-%m-%d",
       -- Optional, if you want to change the date format of the default alias of daily notes.
@@ -113,7 +113,7 @@ return {
     -- Where to put new notes. Valid options are
     --  * "current_dir" - put new notes in same directory as the current buffer.
     --  * "notes_subdir" - put new notes in the default notes subdirectory.
-    new_notes_location = "~/Notes-Vault/02 - Areas/Inbox",
+    new_notes_location = "~/Notes/02 - Areas/Inbox",
 
     -- Optional, customize how note IDs are generated given an optional title.
     ---@param title string|?
@@ -189,7 +189,7 @@ return {
 
     -- Optional, for templates (see below).
     templates = {
-      folder = "~/Notes-Vault/99 - Meta/templates",
+      folder = "~/Notes/99 - Meta/templates",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
       -- A map for custom variables, the key should be the variable and the value a function
@@ -334,7 +334,7 @@ return {
       -- The default folder to place images in via `:Obsidian pasteimg`.
       -- If this is a relative path it will be interpreted as relative to the vault root.
       -- You can always override this per image by passing a full path to the command instead of just a filename.
-      img_folder = "~/Notes-Vault/99 - Meta/assets/imgs", -- This is the default
+      img_folder = "~/Notes/99 - Meta/assets/imgs", -- This is the default
 
       -- A function that determines default name or prefix when pasting images via `:ObsidianPasteImg`.
       ---@return string

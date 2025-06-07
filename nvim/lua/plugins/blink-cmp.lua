@@ -56,14 +56,9 @@ return {
           "buffer",
           "ripgrep",
           "dictionary",
-          "avante",
           "markdown",
         },
         providers = {
-          avante = {
-            module = "blink-cmp-avante",
-            name = "Avante",
-          },
           markdown = {
             name = "RenderMarkdown",
             module = "render-markdown.integ.blink",
