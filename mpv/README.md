@@ -9,6 +9,9 @@ a wide variety of media file formats, audio and video codecs, and subtitle types
 
 This repo contains my personal mpv configurations and scripts that I use and are significantly better than default mpv, VLC, and MPC. Before installing, please take your time to read this whole README as common issues can be easily solved by simply reading carefully.
 
+> [!IMPORTANT]
+> The original version of this belongs to [noelsimbolon](https://github.com/noelsimbolon/mpv-config)
+
 ## Preview
 
 [![preview.png](https://i.postimg.cc/8zNHHPHy/preview.png)](https://postimg.cc/VdZnsw2M)
