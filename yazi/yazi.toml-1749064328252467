@@ -1,5 +1,5 @@
 # yazi.toml
-[mgr]
+[manager]
 sort_by = "alphabetical"
 sort_sensitive = true
 linemode = "mtime"
