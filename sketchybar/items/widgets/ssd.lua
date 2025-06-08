@@ -51,8 +51,8 @@ local ssd_bracket = sbar.add("bracket", "widgets.ssd.bracket", {
 	ssd_volume.name,
 }, {
 	background = {
-		color = colors.bg1,
-		border_color = colors.bg2,
+		color = colors.bg,
+		border_color = colors.bg,
 		border_width = 2,
 	},
 	popup = { align = "center", height = 30 },

@@ -41,8 +41,8 @@ local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
 	volume_percent.name,
 }, {
 	background = {
-		color = colors.bg1,
-		border_color = colors.bg2,
+		color = colors.bg,
+		border_color = colors.bg,
 		border_width = 2,
 	},
 	popup = { align = "center" },

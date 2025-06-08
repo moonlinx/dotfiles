@@ -69,7 +69,7 @@ local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
 	wifi_up.name,
 	wifi_down.name,
 }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.bg },
 	popup = { align = "center", height = 30 },
 })
 
@@ -93,7 +93,7 @@ local ssid = sbar.add("item", {
 	},
 	background = {
 		height = 2,
-		color = colors.grey,
+		color = colors.bg,
 		y_offset = -15,
 	},
 })
@@ -182,7 +182,7 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
 		wifi:set({
 			icon = {
 				string = connected and icons.wifi.connected or icons.wifi.disconnected,
-				color = connected and colors.green or colors.red,
+				color = connected and colors.blue or colors.red,
 			},
 		})
 	end)
@@ -192,7 +192,7 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
 			wifi:set({
 				icon = {
 					string = icons.wifi.vpn,
-					color = colors.blue,
+					color = colors.green,
 				},
 			})
 		end

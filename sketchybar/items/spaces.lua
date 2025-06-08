@@ -30,12 +30,12 @@ for i = 1, 10, 1 do
 		padding_right = 1,
 		padding_left = 1,
 		background = {
-			color = colors.bg1,
+			color = colors.black,
 			border_width = 1,
 			height = 26,
 			border_color = colors.grey,
 		},
-		popup = { background = { border_width = 5, border_color = colors.black } },
+		popup = { background = { border_width = 5, border_color = colors.grey } },
 	})
 
 	spaces[i] = space

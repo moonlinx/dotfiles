@@ -163,7 +163,7 @@ battery:subscribe("mouse.exited.global", function()
 end)
 
 sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.bg },
 })
 
 sbar.add("item", "widgets.battery.padding", {
