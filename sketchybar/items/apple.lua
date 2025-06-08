@@ -10,11 +10,11 @@ sbar.add("item", { width = 5 })
 
 local apple = sbar.add("item", {
 	icon = {
-		font = { size = 16.0 },
+		font = { size = 19.0 },
 		string = icons.apple,
 		color = colors.hollow,
-		padding_right = 5,
-		padding_left = 8,
+		padding_right = 1,
+		padding_left = 5,
 		border_color = colors.transparent,
 	},
 	label = { drawing = true },
@@ -29,17 +29,17 @@ local apple = sbar.add("item", {
 -- Double border for apple using a single item bracket
 sbar.add("bracket", { apple.name }, {
 	background = {
-		color = colors.transparent,
+		color = colors.bg,
 		height = 30,
 		-- Border around apple symbol
-		border_color = colors.transparent,
+		border_color = colors.bg,
 	},
 })
 
 -- Padding item required because of bracket
 sbar.add("item", { width = 3 })
 
--- Hover effect
+-- Hover effect for apple icon
 -- apple:subscribe("mouse.entered", function()
 -- 	sbar.animate("elastic", 15, function()
 -- 		apple:set({
@@ -75,7 +75,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 		label = {
 			string = label,
 			color = colors.arise,
-			padding_left = 10,
+			padding_left = 5,
 			padding_right = 20,
 			align = "left",
 			font = { size = 12 },
@@ -84,6 +84,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 			padding_left = 10,
 			padding_right = 15,
 			color = colors.transparent,
+			border_color = colors.transparent,
 			height = 40, -- Reduced height for compactness
 			width = popup_width,
 		},
@@ -101,7 +102,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 					font = { size = 16 },
 				},
 				label = {
-					color = colors.blue,
+					color = colors.grey,
 					padding_left = 10,
 					padding_right = 20,
 					align = "left",
