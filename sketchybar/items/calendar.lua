@@ -6,7 +6,7 @@ sbar.add("item", { position = "right", width = settings.group_paddings })
 
 local cal = sbar.add("item", {
 	icon = {
-		color = colors.white,
+		color = colors.hollow,
 		padding_left = 8,
 		font = {
 			style = settings.font.style_map["Black"],
@@ -14,8 +14,8 @@ local cal = sbar.add("item", {
 		},
 	},
 	label = {
-		color = colors.white,
-		padding_right = 8,
+		color = colors.hollow,
+		padding_right = 10, -- Padding is a bit uneven in order to match apple icon on the left
 		width = 45,
 		align = "right",
 		font = { family = settings.font.numbers },
