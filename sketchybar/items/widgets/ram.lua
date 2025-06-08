@@ -30,7 +30,7 @@ local ram = sbar.add("graph", "widgets.ram", 42, {
 })
 
 sbar.add("bracket", "widgets.ram.bracket", { ram.name }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.bg },
 })
 
 sbar.add("item", "widgets.ram.padding", {
@@ -57,5 +57,9 @@ ram:subscribe({ "routine", "forced", "system_woke" }, function(env)
 			graph = { color = color },
 			label = { string = "ram " .. load .. "%" },
 		})
+	end)
+
+	ram:subscribe("mouse.clicked", function(env)
+		sbar.exec("open -a 'Activity Monitor'")
 	end)
 end)
