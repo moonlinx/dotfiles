@@ -38,7 +38,7 @@ MacOS:
 
 Here are the steps to install mpv and to use my configuration files on MacOS:
 
-- Download the latest version of mpv from [mpv.io/installation](https://mpv.io/installation/) or utilizing homebrew **(recommended)**.
+- Download the latest version of mpv from [mpv.io/installation](https://mpv.io/installation/) or utilizing homebrew **(recommended)**. Also, download xclip as that is required on top of mpv
 
   ```bash
   brew install mpv xclip
