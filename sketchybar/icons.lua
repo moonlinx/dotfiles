@@ -4,7 +4,7 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "󰣇", --󱚞,
+		apple = "􀣺", --󱚞,
 		gear = "􀍟",
 		cpu = "󰒆",
 		calendar = "􀉉",
@@ -20,6 +20,20 @@ local icons = {
 		circle_power = "􀆨",
 		circle_quit = "􀆧",
 		user = "􀉪",
+		search = "􀊫 ",
+
+		weather = {
+			sun = "􀆬",
+			cloudy = "􀇣",
+			cloud_sun = "􀇕",
+			rain = "􁷍",
+			rain = "􁷍",
+			snowflake = "􀇏",
+			bolt = "􀇟",
+			fog = "􀇋",
+			mist = "􁃛",
+			cloud_rain = "􀇇",
+		},
 
 		switch = {
 			-- on = "􁏮",
