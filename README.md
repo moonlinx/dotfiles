@@ -22,7 +22,7 @@
 
 Dotfiles for my M3 Max Macbook Pro: Running macOS Sonoma 15.2.
 
-- **Terminal** : [Wezterm](https://github.com/wez/wezterm) using zsh w/ [starship prompt](https://github.com/starship/starship) and [eza](https://github.com/eza-community/eza)
+- **Terminal** : [Wezterm](https://github.com/wez/wezterm) using fish w/ [starship prompt](https://github.com/starship/starship) and [eza](https://github.com/eza-community/eza)
 - **Window Management** : [yabai](https://github.com/koekeishiya/yabai) and [JankyBorders](https://github.com/FelixKratz/JankyBorders)
 - **Launcher**: [Raycast](https://www.raycast.com)
 - **Bar** : [Sketchybar](https://github.com/FelixKratz/SketchyBar)
