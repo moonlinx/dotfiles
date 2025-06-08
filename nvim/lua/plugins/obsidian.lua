@@ -216,12 +216,11 @@ return {
       -- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
     end,
 
-    -- Optional, set to true if you use the Obsidian Advanced URI plugin.
-    -- https://github.com/Vinzent03/obsidian-advanced-uri
-    use_advanced_uri = false,
-
-    -- Optional, set to true to force ':Obsidian open' to bring the app to the foreground.
-    open_app_foreground = false,
+    open = {
+      func = function(uri)
+        vim.ui.open(uri, { cmd = { "open", "-a", "/Applications/Obsidian.app" } })
+      end,
+    },
 
     picker = {
       -- Set your preferred picker. Can be one of 'telescope.nvim', 'fzf-lua', 'mini.pick' or 'snacks.pick'.
