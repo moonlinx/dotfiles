@@ -99,6 +99,7 @@ volume_percent:subscribe("volume_change", function(env)
 				icon = icons.volume._33
 			elseif volume > 0 then
 				icon = icons.volume._10
+				color = colors.red
 			end
 		end
 

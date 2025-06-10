@@ -79,7 +79,7 @@ for i = 1, 10, 1 do
 			background = { border_color = selected and colors.grey or colors.bg2 },
 		})
 		space_bracket:set({
-			background = { border_color = selected and colors.arise or colors.bg2 },
+			background = { border_color = selected and colors.peach or colors.bg2 },
 		})
 	end)
 

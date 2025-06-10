@@ -36,7 +36,7 @@ search:subscribe("mouse.entered", function(env)
 	sbar.animate("elastic", 5, function()
 		search:set({
 			icon = {
-				color = colors.peach,
+				color = colors.red,
 				font = {
 					size = 18,
 				},
