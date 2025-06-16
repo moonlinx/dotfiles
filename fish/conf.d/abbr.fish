@@ -37,7 +37,7 @@ abbr -a gco git checkout
 abbr -a gf git fetch
 abbr -a gl lazygit
 abbr -a gm git merge
-abbr -a gst git status
+abbr -a gst git status --short
 
 # LazyDocker
 abbr -a ld lazydocker
