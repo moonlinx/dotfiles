@@ -24,7 +24,7 @@ show_loading() {
   for i in {1..3}; do
     for j in {1..3}; do
       echo -ne "."
-      sleep 0.3
+      sleep 0.2
     done
     echo -ne "\r${CYAN}${message}${NC}   \r${CYAN}${message}${NC}"
     sleep 0.1
@@ -36,21 +36,18 @@ show_loading() {
 restart_yabai() {
   show_loading "Restarting yabai"
   yabai --restart-service
-  sleep 1
 }
 
 # Function to restart skhd
 restart_skhd() {
   show_loading "Restarting skhd"
   skhd --restart-service
-  sleep 1
 }
 
 # Function to restart sketchybar
 restart_sketchybar() {
   show_loading "Restarting sketchybar"
   brew services restart sketchybar
-  sleep 1
 }
 
 # Function to restart borders
