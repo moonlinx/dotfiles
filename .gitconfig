@@ -10,22 +10,32 @@
 	ui = true
 
 [core]
-    pager = delta
+  pager = delta
+  compression = 9
+  whitespace = error
+  preloadindex = true
 
 [interactive]
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true    # use n and N to move between diff sections
-    side-by-side = true
-
-
+  navigate = true    # use n and N to move between diff sections
+  side-by-side = true
+  line-numbers = true
     # delta detects terminal colors automatically; set one of these to disable auto-detection
     # dark = true
     # light = true
 
 [merge]
-    conflictstyle = diff3
+  conflictstyle = diff3
 
 [diff]
-    colorMoved = default
+  colorMoved = default
+  context = 3
+  renames = copies
+  interHunkContext = 10
+
+[status]
+  branch = true
+  showStash = true
+  showUntrackedFiles = all
