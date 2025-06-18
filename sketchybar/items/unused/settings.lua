@@ -29,17 +29,17 @@ stop:subscribe("mouse.clicked", function()
 	sbar.exec("brew services stop sketchybar")
 end)
 
--- local edit_configuration = sbar.add("item", {
--- 	position = "popup." .. settings_widget.name,
--- 	icon = { string = icons.pencil },
--- 	label = { string = "Edit Config" },
--- })
---
--- edit_configuration:subscribe("mouse.clicked", function()
--- 	sbar.exec(
--- 		'osascript -e \'tell application "Terminal" to if (count of windows) = 0 then reopen\' -e \'tell application "Terminal" to activate\' -e \'tell application "Terminal" to do script "cd ~/.config/sketchybar && nvim " in front window\''
--- 	)
--- end)
+local edit_configuration = sbar.add("item", {
+	position = "popup." .. settings_widget.name,
+	icon = { string = icons.pencil },
+	label = { string = "Edit Config" },
+})
+
+edit_configuration:subscribe("mouse.clicked", function()
+	sbar.exec(
+		'osascript -e \'tell application "Terminal" to if (count of windows) = 0 then reopen\' -e \'tell application "Terminal" to activate\' -e \'tell application "Terminal" to do script "cd ~/.config/sketchybar && nvim " in front window\''
+	)
+end)
 
 local system_settings = sbar.add("item", {
 	position = "popup." .. settings_widget.name,

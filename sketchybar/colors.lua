@@ -27,11 +27,13 @@ return {
 
 	bar = {
 		-- bg = 0x00000000, -- Transparent background
+		-- bg = 0x00ffffff, -- Different Transparent background
 		-- bg = 0xf02c2e34,
 		-- bg = 0xff414141,
 		-- bg = 0x991c1c1c, -- Mostly dark transparent
 		bg = 0xf0181819, -- Black
 		border = 0xff2c2e34,
+		blur_radius = 80,
 	},
 	popup = {
 		bg = 0x991c1c1c,

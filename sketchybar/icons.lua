@@ -20,13 +20,14 @@ local icons = {
 		circle_power = "􀆨",
 		circle_quit = "􀆧",
 		user = "􀉪",
-		search = "􀊫 ",
+		search = "􀊫",
+		coffee_on = "􂊭",
+		coffee_off = "􀸘",
 
 		weather = {
 			sun = "􀆬",
 			cloudy = "􀇣",
 			cloud_sun = "􀇕",
-			rain = "􁷍",
 			rain = "􁷍",
 			snowflake = "􀇏",
 			bolt = "􀇟",

@@ -2,6 +2,7 @@
 require("items.apple")
 require("items.menus")
 require("items.spaces")
+-- require("items.spaces_yabai_simple")
 require("items.front_app")
 
 -- Right items (R to L)
