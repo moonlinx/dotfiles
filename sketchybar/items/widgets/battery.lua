@@ -89,28 +89,6 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
 				color = colors.red
 			end
 		end
-		-- if charging then
-		-- 	icon = icons.battery.charging
-		-- else
-		-- 	if found and charge > 75 then
-		-- 		icon = ""
-		-- 		label = ""
-		-- 		drawing = "off"
-		-- 		color = colors.grey
-		-- 		-- icon = icons.battery._100
-		-- 	elseif found and charge >= 70 then
-		-- 		icon = icons.battery._75
-		-- 	elseif found and charge >= 50 then
-		-- 		icon = icons.battery._50
-		-- 		color = colors.yellow
-		-- 	elseif found and charge >= 20 then
-		-- 		icon = icons.battery._25
-		-- 		color = colors.orange
-		-- 	else
-		-- 		icon = icons.battery._0
-		-- 		color = colors.red
-		-- 	end
-		-- end
 
 		local lead = ""
 		if found and charge < 10 then

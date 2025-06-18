@@ -84,9 +84,7 @@ volume_percent:subscribe("volume_change", function(env)
 			icon = "􁄡"
 		elseif Current_output_device == "Scarlett 2i2 USB" then
 			icon = "􀑫"
-		elseif
-			Current_output_device == "AirPods Pro V2" or Current_output_device == "Faith’s AirPods Pro - Find My"
-		then
+		elseif Current_output_device == "Moon Pods" then
 			icon = "􀪷"
 		elseif Current_output_device == "CalDigit TS4 Audio - Rear" then
 			icon = "􀝏"
@@ -99,7 +97,6 @@ volume_percent:subscribe("volume_change", function(env)
 				icon = icons.volume._33
 			elseif volume > 0 then
 				icon = icons.volume._10
-				color = colors.red
 			end
 		end
 
