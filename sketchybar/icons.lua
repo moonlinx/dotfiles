@@ -13,7 +13,7 @@ local icons = {
 		restart = "􀚁",
 		stop = "􀜪",
 		pencil = "􀈊",
-		ram = "􀫦",
+		ram = "􁎵",
 		circle_restart = "􂣽",
 		circle_shutdown = "􀆨",
 		circle_sleep = "􀆹",
@@ -41,9 +41,7 @@ local icons = {
 			-- off = "􁏯",
 
 			on = " 󰍜",
-			-- on = "􀱢 ",
 			off = "􁚬 ",
-			-- off = "􂧰 "
 		},
 		zen = {
 			off = " 􀆺",
