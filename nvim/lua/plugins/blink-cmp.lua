@@ -28,7 +28,6 @@ return {
       "L3MON4D3/LuaSnip",
       "mikavilpas/blink-ripgrep.nvim",
       "Kaiser-Yang/blink-cmp-dictionary",
-      "Kaiser-Yang/blink-cmp-avante",
     },
     opts = function(_, opts)
       -- I noticed that telescope was extremeley slow and taking too long to open,
