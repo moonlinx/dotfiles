@@ -28,13 +28,13 @@ return {
         end,
         desc = "Git Log",
       },
-      {
-        "<leader>es",
-        function()
-          require("snacks").explorer()
-        end,
-        desc = "Open Snacks Explorer",
-      },
+      -- {
+      --   "<leader>es",
+      --   function()
+      --     require("snacks").explorer()
+      --   end,
+      --   desc = "Open Snacks Explorer",
+      -- },
       {
         "<leader>rN",
         function()
@@ -182,7 +182,7 @@ return {
       -- Documentation for the picker
       -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
       explorer = {
-        enabled = true,
+        enabled = false,
         git_status = true,
         follow_file = false,
         layout = {
