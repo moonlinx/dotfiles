@@ -46,6 +46,7 @@ local function update_windows(windows)
 			not (
 				(
 					window["app"] == "Zen Browser"
+					or window["app"] == "Twilight"
 					or window["app"] == "FiveNotes"
 					or window["app"] == "kitty"
 					or window["app"] == "WezTerm"
