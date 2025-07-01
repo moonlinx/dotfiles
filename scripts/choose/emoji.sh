@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 export LANG=en_US.UTF-8
+emojis="$HOME/.config/scripts/stuff/emoji"
 
 selection=$(
-  cat "$HOME/Developer/Scripts/system-scripts/stuff/emoji" |
+  bat "$emojis" |
     choose -f "JetBrainsMono Nerd Font" -b "31748f" -c "eb6f92" |
     sed "s/ .*//"
 )
