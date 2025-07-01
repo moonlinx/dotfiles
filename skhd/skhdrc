@@ -4,15 +4,26 @@
 # / \_|/_) |/ \   /  |
 #  \/ | \_/|   |_/\_/|_/
 
+
+# SCRIPTS
+alt - a : "${HOME}"/.config/scripts/script-picker.sh
+# alt - return : "${HOME}"/.config/scripts/term/open-term.sh
+alt - e : "${HOME}"/.config/scripts/choose/emoji.sh
+alt - space : "${HOME}"/.config/scripts/choose/apps-picker.sh
+alt - w : "${HOME}"/.config/scripts/choose/wallpapers.sh
+alt - c : "${HOME}"/.config/scripts/choose/cam.sh
+# alt - s : "${HOME}"/.config/scripts/choose/sleep.sh
+# alt - n : "${HOME}"/.config/scripts/choose/notes.sh
+
 # Applications
 rcmd - return : open -n -a "wezterm"
 # rcmd - return : open -n -a "ghostty"
 # rcmd - return : open -n -a "kitty"
 
 # change layout of desktop
-ctrl + alt - b : yabai -m space --layout bsp
-ctrl + alt - f : yabai -m space --layout float
-ctrl + alt - s : yabai -m space --layout stack
+lctrl + alt - b : yabai -m space --layout bsp
+lctrl + alt - f : yabai -m space --layout float
+lctrl + alt - s : yabai -m space --layout stack
 
 # change window focus within space
 alt - j : yabai -m window --focus south
@@ -34,7 +45,8 @@ alt - w: yabai -m display --focus west
 # alt - u: yabai -m display --focus north
 # alt - d: yabai -m display --focus south
 # rotate layout clockwise
-shift + alt - r : yabai -m space --rotate 270
+alt - r : yabai -m space --rotate 270
+shift + alt - r : yabai -m space --rotate 90
 
 # flip along y-axis
 shift + alt - y : yabai -m space --mirror y-axis
@@ -43,7 +55,7 @@ shift + alt - y : yabai -m space --mirror y-axis
 shift + alt - x : yabai -m space --mirror x-axis
 
 # toggle window float
-shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+shift + alt - space : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 ## Stacks (shift + ctrl - ...)
 # Add the active window to the window or stack to the {direction}: shift + ctrl - {j, k, l, h}
@@ -58,6 +70,9 @@ shift + alt - f : yabai -m window --toggle zoom-fullscreen
 # balance out tree of windows (resize to occupy same area)
 shift + alt - e : yabai -m space --balance
 
+# Enable / Disable gaps in current workspace
+lctrl + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
 # swap windows
 shift + alt - s : yabai -m window --swap south
 shift + alt - w : yabai -m window --swap north
@@ -71,10 +86,10 @@ alt + shift - j : yabai -m window south --resize top:0:-20 2> /dev/null || yabai
 alt + shift - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
 
 # move window and split
-ctrl + alt - j : yabai -m window --warp south
-ctrl + alt - k : yabai -m window --warp north
-ctrl + alt - h : yabai -m window --warp west
-ctrl + alt - l : yabai -m window --warp east
+lctrl + alt - j : yabai -m window --warp south
+lctrl + alt - k : yabai -m window --warp north
+lctrl + alt - h : yabai -m window --warp west
+lctrl + alt - l : yabai -m window --warp east
 
 # move window to display top and bottom
 # shift + alt - g : yabai -m window --display west; yabai -m display --focus north;
