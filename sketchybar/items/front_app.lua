@@ -47,6 +47,7 @@ local function update_windows(windows)
 				(
 					window["app"] == "Zen Browser"
 					or window["app"] == "Twilight"
+					or window["app"] == "Firefox"
 					or window["app"] == "FiveNotes"
 					or window["app"] == "kitty"
 					or window["app"] == "WezTerm"
