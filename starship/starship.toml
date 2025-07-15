@@ -45,7 +45,28 @@ vimcmd_visual_symbol = '[ ](bold fg:peach)'
 # Display OS symbol at the very begining
 [os]
 format = '[$symbol](bold grey)'
-disabled = true
+disabled = true 
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
 
 # Shows the username
 [username]
