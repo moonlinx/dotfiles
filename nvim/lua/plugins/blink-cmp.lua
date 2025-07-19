@@ -127,9 +127,10 @@ return {
           -- https://github.com/mikavilpas/blink-ripgrep.nvim/
           -- Just add to your dependencies and resources
           ripgrep = {
+            enabled = true,
             module = "blink-ripgrep",
             name = "RG",
-            score_offset = 50,
+            -- score_offset = 50,
             opts = {
               prefix_min_len = 3,
               context_size = 5,

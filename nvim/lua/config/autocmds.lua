@@ -19,15 +19,15 @@
 --   { "🭼", "FloatBorder" },
 --   { "▏", "FloatBorder" },
 -- }
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-  callback = function()
-    vim.diagnostic.open_float(nil, {
-      focus = false,
-      border = "rounded",
-    })
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+--   callback = function()
+--     vim.diagnostic.open_float(nil, {
+--       focus = false,
+--       border = "rounded",
+--     })
+--   end,
+-- })
 
 -- When I open Markdown files I want to fold the Markdown headings
 -- Originally I thought about using it only for skitty-notes, but I think I want
