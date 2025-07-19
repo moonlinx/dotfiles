@@ -1,0 +1,35 @@
+#!/bin/bash
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+source "$CONFIG_DIR/settings.sh"
+
+sketchybar --bar "${bar[@]}" --default "${default[@]}"
+
+# --- Left Side Items ---
+source "$ITEM_DIR/disk.sh"
+source "$ITEM_DIR/ram.sh"
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/network_rates.sh"
+source "$ITEM_DIR/media.sh"
+
+# --- Center Items ---
+source "$ITEM_DIR/weather.sh"
+source "$ITEM_DIR/date.sh"
+source "$ITEM_DIR/time.sh"
+
+# --- Right Side Items ---
+source "$ITEM_DIR/sleep.sh"
+source "$ITEM_DIR/theme.sh"
+source "$ITEM_DIR/network.sh"
+source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/focus.sh"
+source "$ITEM_DIR/battery.sh"
+source "$ITEM_DIR/input.sh"
+source "$ITEM_DIR/center_window.sh"
+source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/qbar.sh" # This is for personal use only and is connected to my local server.
+
+# sketchybar --hotload on
+sketchybar --update
