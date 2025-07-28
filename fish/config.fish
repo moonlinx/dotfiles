@@ -24,6 +24,9 @@ set fish_cursor_default block
 set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 
+# Set neovim as default editor
+set -Ux EDITOR nvim # 'neovim/neovim' text editor
+
 # Set up Ghostty's shell integration.
 if test -n "$GHOSTTY_RESOURCES_DIR"
     source $GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
