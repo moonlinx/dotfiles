@@ -14,7 +14,7 @@ local cal = sbar.add("item", {
 		},
 	},
 	label = {
-		color = colors.pink,
+		color = colors.peach,
 		padding_right = 10, -- Padding is a bit uneven in order to match apple icon on the left
 		width = 45,
 		align = "right",

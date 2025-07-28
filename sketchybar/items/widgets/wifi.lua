@@ -192,7 +192,7 @@ wifi:subscribe({ "wifi_change", "system_woke" }, function(env)
 			wifi:set({
 				icon = {
 					string = icons.wifi.vpn,
-					color = colors.green,
+					color = colors.purple,
 				},
 			})
 		end

@@ -13,6 +13,7 @@ return {
 	yellow = 0xffe7c664,
 	gold = 0xffe7b744,
 	cream = 0xfffffdd0,
+	caramel = 0xffB67233,
 	orange = 0xfff39660,
 	peach = 0xfff5a97f,
 	magenta = 0xffb39df3,
@@ -28,10 +29,10 @@ return {
 	bar = {
 		-- bg = 0x00000000, -- Transparent background
 		-- bg = 0x00ffffff, -- Different Transparent background
-		bg = 0xf02c2e34, -- Grey Transparent
+		-- bg = 0xf02c2e34, -- Grey Transparent
 		-- bg = 0xff414141,
 		-- bg = 0x991c1c1c, -- Mostly dark transparent
-		-- bg = 0xf0181819, -- Black Transparent
+		bg = 0xf0181819, -- Black Transparent
 		border = 0xff2c2e34,
 		blur_radius = 80,
 	},

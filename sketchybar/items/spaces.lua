@@ -5,7 +5,7 @@ local app_icons = require("helpers.app_icons")
 
 local spaces = {}
 -- local sino_korean = { "일", "이", "세", "사", "오", "의", "리", "네", "세", "예" }
-local japanese = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" }
+-- local japanese = { "一", "二", "三", "四", "五", "六", "七", "八", "九", "十" }
 
 for i = 1, 10, 1 do
 	local space = sbar.add("space", "space." .. i, {
@@ -14,12 +14,12 @@ for i = 1, 10, 1 do
 		icon = {
 			font = { family = settings.font.icons },
 			-- string = sino_korean[i],
-			string = japanese[i],
-			-- string = i,
+			-- string = japanese[i],
+			string = i,
 			padding_left = 15,
 			padding_right = 8,
 			color = colors.arise,
-			highlight_color = colors.peach,
+			highlight_color = colors.red,
 			align = "center",
 		},
 		label = {

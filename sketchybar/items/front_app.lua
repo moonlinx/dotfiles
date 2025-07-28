@@ -92,7 +92,7 @@ local function update_windows(windows)
 				string = window_label,
 				highlight = window["has-focus"],
 				color = colors.grey,
-				highlight_color = colors.peach,
+				highlight_color = colors.pink,
 			},
 			icon = {
 				string = icon,

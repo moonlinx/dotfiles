@@ -7,7 +7,7 @@ local caffeine = sbar.add("item", "widgets.caffeine", {
 	icon = {
 		font = {
 			style = settings.font["Regular"],
-			size = 16,
+			size = 15,
 		},
 		padding_right = 2,
 	},
