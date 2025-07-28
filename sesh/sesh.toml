@@ -61,6 +61,10 @@ name = "neovim config"
 path = "~/.dotfiles/nvim"
 
 [[session]]
+name = "sketchybar config"
+path = "~/.dotfiles/sketchybar"
+
+[[session]]
 name = "sesh config"
 path = "~/.config/sesh"
 startup_command = "nvim sesh.toml"
