@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/bash
+env/bin/ bash
 
 # Install xCode cli tools
 echo "Installing commandline tools..."
@@ -51,7 +52,7 @@ brew install --cask wezterm
 brew install --cask zen-browser
 
 # Extras
-brew install tailscale
+brew install netbird
 brew install wireshark
 brew install git
 

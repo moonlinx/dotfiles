@@ -1,6 +1,9 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
+  ---@module 'render-markdown'
+  ---@type render.md.UserConfig
+
   config = function()
     require("render-markdown").setup({
       -- Whether Markdown should be rendered by default or not
@@ -141,7 +144,7 @@ return {
         -- Settings for coq_nvim completions source
         coq = { enabled = false },
         -- Settings for in-process language server completions
-        lsp = { enabled = false },
+        lsp = { enabled = true },
       },
       heading = {
         -- Turn on / off heading icon & background rendering
