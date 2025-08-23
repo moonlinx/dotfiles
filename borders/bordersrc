@@ -2,7 +2,7 @@
 
 options=(
   style=round
-  width=2.5
+  width=3.5
   hidpi=on
   active_color=0xffe1e3e4
   # active_color="gradient(top_left=0xffe1e3e4,bottom_right=0xff222222)"
