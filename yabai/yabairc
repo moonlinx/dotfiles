@@ -65,6 +65,7 @@ yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^OBS$" manage-off
 yabai -m rule --add app="^Be Focused$" manage=off
+yabai -m rule --add app="^Time Machine$" manage=off
 yabai -m rule --add app="^DaisyDisk$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
@@ -84,29 +85,29 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 yabai -m signal --add event=window_title_changed action="sketchybar --trigger title_change &> /dev/null"
 
 # Delete free spaces
-# yabai -m signal --add event=space_changed action='/Users/Klutchevski/CLI/yabai-space-autoclose &> /dev/null & disown'
-#
-# yabai -m signal --add event=space_created action='
-#   prev_space=$(yabai -m query --spaces --space)
-#   new_space=$(yabai -m query --spaces --space "$YABAI_SPACE_INDEX")
-#   space_id=$(jq -e "select(.\"is-native-fullscreen\") | .id" <<< "$new_space") || exit
-#   json_space=$(jq "{ id: $space_id, homeSpace: .id } | tojson" <<< "$prev_space")
-#   label=$(jq -Rr "ltrimstr(\"\\\"\") | rtrimstr(\"\\\"\")" <<< "$json_space")
-#   yabai -m space "$YABAI_SPACE_INDEX" --label "$label"
-# '
-#
-# yabai -m signal --add event=space_changed action='
-#   home_spaces=$(yabai -m query --spaces | jq "map(.label | try fromjson | .homeSpace // empty)")
-#   yabai -m query --spaces \
-#   | jq "
-#       map(
-#         select(.windows | length == 0)
-#         | select(.\"has-focus\" | not)
-#         | select(.id as \$x | $home_spaces | index(\$x) | not)
-#       )
-#       | reverse
-#       | .[]
-#       | .index
-#   " \
-#   | xargs -I{} yabai -m space --destroy {}
-# '
+yabai -m signal --add event=space_changed action='/Users/Klutchevski/CLI/yabai-space-autoclose &> /dev/null & disown'
+
+yabai -m signal --add event=space_created action='
+  prev_space=$(yabai -m query --spaces --space)
+  new_space=$(yabai -m query --spaces --space "$YABAI_SPACE_INDEX")
+  space_id=$(jq -e "select(.\"is-native-fullscreen\") | .id" <<< "$new_space") || exit
+  json_space=$(jq "{ id: $space_id, homeSpace: .id } | tojson" <<< "$prev_space")
+  label=$(jq -Rr "ltrimstr(\"\\\"\") | rtrimstr(\"\\\"\")" <<< "$json_space")
+  yabai -m space "$YABAI_SPACE_INDEX" --label "$label"
+'
+
+yabai -m signal --add event=space_changed action='
+  home_spaces=$(yabai -m query --spaces | jq "map(.label | try fromjson | .homeSpace // empty)")
+  yabai -m query --spaces \
+  | jq "
+      map(
+        select(.windows | length == 0)
+        | select(.\"has-focus\" | not)
+        | select(.id as \$x | $home_spaces | index(\$x) | not)
+      )
+      | reverse
+      | .[]
+      | .index
+  " \
+  | xargs -I{} yabai -m space --destroy {}
+'
