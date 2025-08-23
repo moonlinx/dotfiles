@@ -77,6 +77,9 @@ fish_add_path --path /opt/homebrew/opt/python@3.13/libexec/bin
 
 fish_add_path --path /Users/fox/.local/bin
 
+# Adding cargo to path
+fish_add_path --path /Users/fox/.cargo/bin
+
 # Use Nvim as the manpage viewer
 export MANPAGER="nvim +Man!"
 
