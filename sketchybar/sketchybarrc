@@ -1,5 +1,108 @@
-#!/usr/bin/env lua
+#!/bin/bash
+# Program Vars
 
--- Load the sketchybar-package and prepare the helper binaries
-require("helpers")
-require("init")
+if [[ -z $(ls /Library/Fonts/ | grep 'sketchybar-app-font') ]]; then
+  echo 'Sketchybarfont not found…'
+fi
+
+RELPATH="$(dirname "$0")"
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:$PATH
+mkdir -p ${TMPDIR}sketchybar
+
+source "$RELPATH/colors.sh"
+source "$RELPATH/icon_map.sh"
+source "$RELPATH/add_separator.sh"
+
+# Multi Purpose Property vars
+
+FONT="SF Pro"
+OUTER_PADDINGS=5
+INNER_PADDINGS=5
+X_BAR_PADDING=12
+BAR_HEIGHT=34
+
+# --- Bar & Default Properties ---
+
+bar=(
+  height=$BAR_HEIGHT
+  y_offset=4
+  margin=5
+  shadow=on
+  shadow.color=$TEXT_MOON
+  padding_left=0
+  padding_right=$X_BAR_PADDING
+  color=$BAR_COLOR
+  border_width=1
+  border_color=$BORDER_COLOR
+  corner_radius=14
+  blur_radius=40
+  notch_width=180
+)
+
+defaults=(
+  updates=when_shown
+  icon.font="$FONT:Regular:14.0"
+  icon.color=$ICON_COLOR
+  padding_left=$OUTER_PADDINGS
+  padding_right=$OUTER_PADDINGS
+  icon.padding_left=$INNER_PADDINGS
+  icon.padding_right=$INNER_PADDINGS
+  label.font="$FONT:Semibold:13.0"
+  label.color=$LABEL_COLOR
+  label.padding_left=$INNER_PADDINGS
+  label.padding_right=$INNER_PADDINGS
+  background.corner_radius=8
+  popup.y_offset=4
+  popup.background.border_width=1
+  popup.background.corner_radius=6
+  popup.background.border_color=$POPUP_BORDER_COLOR
+  popup.background.color=$POPUP_BACKGROUND_COLOR
+  popup.blur_radius=20
+  popup.background.shadow.drawing=on
+)
+
+zones=(
+  background.height=$(($BAR_HEIGHT - 8))
+  background.border_width=2
+  background.border_color=$HIGH_MED_MOON
+  background.color=$OVERLAY_MOON
+  background.corner_radius=8
+  blur_radius=24
+)
+
+sketchybar --bar "${bar[@]}"
+sketchybar --default "${defaults[@]}"
+
+# --- Bar Items ---
+
+# --- Left Items ---
+source "$RELPATH/sketchy-items/logo.sh"
+source "$RELPATH/sketchy-items/spaces.sh"
+source "$RELPATH/sketchy-items/frontapp.sh"
+source "$RELPATH/sketchy-items/menus.sh"
+source "$RELPATH/sketchy-items/calendar.sh"
+source "$RELPATH/sketchy-items/mic.sh"
+source "$RELPATH/sketchy-items/volume.sh"
+source "$RELPATH/sketchy-items/battery.sh"
+source "$RELPATH/sketchy-items/wifi.sh"
+# source "$RELPATH/sketchy-items/display.sh"
+source "$RELPATH/sketchy-items/more-menu.sh"
+source "$RELPATH/sketchy-items/packages.sh"
+source "$RELPATH/sketchy-items/currentuser.sh"
+source "$RELPATH/sketchy-items/notifications.sh"
+source "$RELPATH/sketchy-items/controls.sh"
+
+# --- Middle Items ---
+source "$RELPATH/sketchy-items/music.sh"
+source "$RELPATH/sketchy-items/cpu.sh"
+
+sketchybar --add bracket base-controls battery wifi display \
+  --set base-controls "${zones[@]}" \
+  --add bracket volume_controls volume_icon mic \
+  --set volume_controls "${zones[@]}" \
+  --add bracket more_menu '/moremenu\..*/' "${menuitem[@]}" \
+  --set more_menu "${zones[@]}"
+
+sketchybar --update
+
+echo "sketchybar configuation loaded.."

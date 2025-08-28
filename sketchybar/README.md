@@ -1,78 +1,56 @@
-# SketchyBar Config
+# Utility Bar - Rosé Pine Moon
+<div align=center>
+<img width="1470" height="40" alt="Screenshot 2025-08-21 at 12 39 13" src="https://github.com/user-attachments/assets/230c1063-cb96-4686-9745-270335e650e5" />
+<img width="1470" height="40" alt="Screenshot 2025-08-21 at 12 39 39" src="https://github.com/user-attachments/assets/c34be030-27f3-4bf4-a7df-d1119208c824" />
 
-This repository is my personal configuration for [SketchyBar](https://github.com/FelixKratz/SketchyBar), a macOS plugin to customize the top menu bar.
-My configuration is largely derived from and built upon [this repository](https://github.com/FelixKratz/dotfiles).
+</div>
 
-- I have two versions that I go back and forth between:
 
-=== The Lua Configuration Version ===
+This is a config I made which aggregate functionnality and aesthetics.
 
-![SketchyBar Config Appearance (Lua)](https://github.com/moonlinx/dotfiles/blob/main/screenshots/nowindow@2x.png?raw=true)
+See https://github.com/FelixKratz/SketchyBar/discussions/47?sort=new#discussioncomment-14058252
 
-- This resides here: [branch.lua](https://github.com/moonlinx/dotfiles/tree/0216622f385348725818f8ca742a41b4be7434e8/sketchybar)
+> [!WARNING] 
+> Some of the functionnalities of the bar are not working currently in MacOS Tahoe.
 
-=== The Shell Configuration Version ===
+## Install :
 
-![SketchyBar Config Appearance (Shell)](https://github.com/user-attachments/assets/db4d5e7d-1507-4958-a854-f034c7672a5f)
-
-- This resides here: [branch.sh](https://github.com/moonlinx/dotfiles/tree/736bcadc098b973124ede8856b81dc9ef379cff4/sketchybar)
-
-## Notable Enhancements
-
-In addition to possessing all the features of the aforementioned configuration, this also offers the following improvements:
-
-- New **Apple Menu** that gives _YOU_ the option as to what you want in your menu.
-- **Zen Mode** to hide or display system information and remove unnecessary
-  information for less distractions.
-- New Search to pull up your app searcher of choice.
-- **Battery Health** information, displayed when the Battery Widget is clicked.
-- Redesigned **Calendar Widget** that opens Calendar when clicked.
-- Improved **Media Widget**, with superior play/pause functionality.
-- **VPN Icon** that displays on the **Wifi Widget**, when a connected to a VPN.
-
-## Installation
-
-1. Install [Homebrew](https://brew.sh/).
-
-2. Install [Luarocks](https://luarocks.org/):
+Install sketchybar
 
 ```bash
-brew install luarocks
+brew tap FelixKratz/formulae
+brew install sketchybar
+brew services start sketchybar
 ```
 
-3. Install [Luajson](https://github.com/grafi-tt/lunajson):
+Install this config with its dependencies
 
 ```bash
-sudo luarocks install lunajson
+# brew install yabai # Recommended only if you already have a config
+# brew install brew install waydabber/betterdisplay/betterdisplaycli # Recommended if using better display Configure [here](<plugins/display/script.sh>)
+# (Also recommended for battery control - when clicking battery icon : https://github.com/mhaeuser/Battery-Toolkit)
+
+brew install media-control macmon imagemagick
+brew install --cask font-SF-Pro font-sketchybar-app-font
+
+mkdir -p ~/.config
+cd ~/.config/
+git clone https://www.github.com/Kcraft059/sketchybar-config sketchybar
+
+sketchybar --reload
 ```
 
-4. Run the following script, sourced from [this repository](https://github.com/FelixKratz/dotfiles):
+For yabai users : `yabai -m config external_bar all:36:0`
 
-```bash
-curl -L https://raw.githubusercontent.com/FelixKratz/dotfiles/master/install_sketchybar.sh | sh
-```
+For Nix-Darwin users see : https://github.com/Kcraft059/Nix-Config/blob/master/home/darwin/sketchybar.nix
 
-5. Run the following command to clone this repository and have it overwrite the SketchyBar configuration:
+> [!NOTE]
+> Aerospace isn't supported, if you wanna implement it see : https://github.com/FelixKratz/SketchyBar/discussions/47?sort=new#discussioncomment-14081291
 
-```bash
-git clone https://github.com/moonlinx/dotfiles.git
-```
+## A little demonstration of the functionalities :
 
-6. Restart SketchyBar:
+<img width="2940" height="1912" alt="Screenshot 2025-08-09 at 18 49 42" src="https://github.com/user-attachments/assets/23066c77-1b31-4372-a737-8bf450af1d80" />
+<img width="2940" height="1912" alt="Screenshot 2025-08-09 at 18 55 12" src="https://github.com/user-attachments/assets/0406413d-4468-4ba7-b55d-1c59e7e52cfb" />
 
-```bash
-brew services restart sketchybar
-```
 
-> [!IMPORTANT]
-> If something doesn't work, please let me know and I will fix and update!
-
-Credits go to the followingfor their awesome configs that I just took, tweaked,
-and modified ;)
-
-- [The OG - FelixKratx](https://github.com/FelixKratz/SketchyBar) - For creating
-  this masterpiece
-- [waytoabv](https://github.com/waytoabv/Dotfiles) - For the wonderful layout
-  ideas and yabai integration
-- [john-json](https://github.com/john-json/Ilstr01-sketchybar) - For the
-  beautiful apple menu and animations
+https://github.com/user-attachments/assets/c9db52a4-d7fe-4daa-a904-cd201476556c
