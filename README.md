@@ -68,3 +68,4 @@ xargs brew install < leaves.txt
 - [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [gretzky/dotfiles](https://github.com/gretzky/dotfiles)
 - [waytoabv/dotfiles](https://github.com/waytoabv/Dotfiles)
+- [Kcraft059/dotfiles](https://github.com/Kcraft059/sketchybar-config/?tab=readme-ov-file)
