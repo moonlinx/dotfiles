@@ -1,6 +1,6 @@
 # Theme
-# theme = catppuccin-mocha
-theme = rose-pine
+theme = catppuccin-mocha
+# theme = rose-pine
 # Opacity
 background-opacity = 0.75
 
