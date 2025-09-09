@@ -30,9 +30,10 @@ return {
 		-- bg = 0x00000000, -- Transparent background
 		-- bg = 0x00ffffff, -- Different Transparent background
 		-- bg = 0xf02c2e34, -- Grey Transparent
+		-- bg = 0x80414354, -- Light Transparent
 		-- bg = 0xff414141,
-		-- bg = 0x991c1c1c, -- Mostly dark transparent
-		bg = 0xf0181819, -- Black Transparent
+		bg = 0x991c1c1c, -- Mostly dark transparent
+		-- bg = 0xf0181819, -- Black Transparent
 		border = 0xff2c2e34,
 		blur_radius = 80,
 	},
