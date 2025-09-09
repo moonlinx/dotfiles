@@ -59,7 +59,7 @@ return {
       -- Optional, if you keep daily notes in a separate directory.
       folder = "06 - Daily/",
       -- Optional, if you want to change the date format for the ID of daily notes.
-      date_format = "%Y-%m-%d",
+      date_format = "%Y%m%d",
       -- Optional, if you want to change the date format of the default alias of daily notes.
       alias_format = "%B %-d, %Y",
       -- Optional, default tags to add to each new daily note created.
@@ -161,11 +161,15 @@ return {
 
     -- Optional, for templates (see below).
     templates = {
-      folder = "~/Notes/99 - Meta/templates",
+      folder = "/99 - Meta/templates/",
       date_format = "%Y-%m-%d",
       time_format = "%H:%M",
       -- A map for custom variables, the key should be the variable and the value a function
-      substitutions = {},
+      substitutions = {
+        yesterday = function()
+          return os.date("%Y-%m-%d", os.time() - 86400)
+        end,
+      },
     },
 
     -- Optional, by default when you use `:Obsidian followlink` on a link to an external

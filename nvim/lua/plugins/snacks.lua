@@ -135,7 +135,7 @@ return {
       },
       -- File picker
       {
-        "<leader><space>",
+        "ff",
         function()
           Snacks.picker.files({
             finder = "files",

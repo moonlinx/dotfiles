@@ -42,8 +42,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
 -- vim.diagnostic.config({ virtual_text = false })
 vim.diagnostic.config({
   signs = { priority = 9999 },
-  underline = true,
-  update_in_insert = false, -- false so diags are updated on InsertLeave
+  underline = false,
+  update_in_insert = true, -- false so diags are updated on InsertLeave
   virtual_text = { current_line = true, severity = { min = "INFO", max = "WARN" } },
   virtual_lines = { current_line = true, severity = { min = "ERROR" } },
   severity_sort = true,

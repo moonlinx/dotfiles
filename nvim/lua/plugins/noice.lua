@@ -5,6 +5,8 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    cmdline = { enabled = false },
+    messages = { enabled = false },
     presets = {
       bottom_search = false, -- use a classic bottom cmdline for search
       command_palette = false, -- position the cmdline and popupmenu together
