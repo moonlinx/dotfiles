@@ -11,11 +11,12 @@
 
 command_timeout = 1000
 
-add_newline = true 
+add_newline = true
 
 palette = "catppuccin_mocha"
 
-format = """[❯](lavender bold) \
+format = """
+[❯](lavender bold) \
 $directory\
 $git_branch\
 $git_status\
@@ -37,8 +38,8 @@ disabled = false
 success_symbol = '[✔](bold fg:green)'
 error_symbol = '[𝘹](bold fg:red)'
 vimcmd_symbol = '[ ](bold fg:sapphire)'
-vimcmd_replace_one_symbol = '[ ](bold fg:purple)'
-vimcmd_replace_symbol = '[ ](bold fg:purple)'
+vimcmd_replace_one_symbol = '[ ](bold fg:maroon)'
+vimcmd_replace_symbol = '[ ](bold fg:teal)'
 vimcmd_visual_symbol = '[ ](bold fg:peach)'
 # ---
 
@@ -103,32 +104,28 @@ disabled = false
 
 # Shows current git status
 [git_status]
-format = ' [(->   $all_status$ahead_behind )]($style)'
-# format = '[$all_status$ahead_behind]($style) '
-# style = 'bold green'
-# conflicted = ' 🏳'
-# up_to_date = ''
-# untracked = '  '
-# ahead = '⇡${count}'
-# diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-# behind = '⇣${count}'
-# stashed = '  '
-# modified = '  '
-# staged = '[++\($count\)](green)'
-# renamed = ' 襁'
-# deleted = '  '
-disabled = false
+format = ' [(->   $all_status$ahead_behind )]($style)'
+up_to_date = '[ ✓ ](bg:overlay fg:mauve)'
+untracked = '[?\($count\)](bg:overlay fg:yellow)'
+stashed = '[\$](bg:overlay fg:mauve)'
+modified = '[!\($count\)](bg:overlay fg:yellow)'
+renamed = '[»\($count\)](bg:overlay fg:mauve)'
+deleted = '[✘\($count\)](style)'
+staged = '[++\($count\)](bg:overlay fg:yellow)'
+ahead = '[⇡\(${count}\)](bg:overlay fg:teal)'
+diverged = '⇕[\[](bg:overlay fg:mauve)[⇡\(${ahead_count}\)](bg:overlay fg:teal)[⇣\(${behind_count}\)](bg:overlay fg:flamingo)[\]](bg:overlay fg:mauve)'
+behind = '[⇣\(${count}\)](bg:overlay fg:flamingo)'
 
 # Shows current git branch
 [git_branch]
 symbol = "[](black) "
-format =  'on [$symbol$branch]($style)[](black)'
+format =  ' on [$symbol$branch]($style)[](black)'
 truncation_symbol = '…/'
 style = 'fg:lavender bg:black'
 disabled = false
 
 [custom.giturl]
-# disabled = true
+disabled = false 
 description = "Display symbol for remote Git server"
 command = """
 GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
@@ -154,29 +151,30 @@ format = "at $output"
 disabled = false
 
 [aws]
-format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+format = 'via [$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
 disabled = true
-style = 'bold sky'
+style = 'bold green'
 symbol = " "
 
 [terraform]
 symbol = " "
-disabled = true 
-style = "bold maroon"
+disabled = false 
+style = "bold red"
 version_format = "v${raw}"
-format = '[$symbol$workspace]($style) '
+format = 'via [$symbol$workspace]($style) '
 
 [python]
 symbol = '  '
 disabled = false
-style = 'bold mauve'
+style = 'bold yellow'
 version_format = 'v${raw}'
 format = 'via [${symbol}(${version} )(\($virtualenv\) )]($style)'
 
 [docker_context]
 symbol = " "
+style = 'bold blue'
 disabled = false 
-format = '[ $symbol( $context) ]($style)'
+format = 'via [ $symbol( $context) ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -207,3 +205,31 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+
+# palette = "rose-pine"
+#
+# [palettes.rose-pine]
+# overlay = '#26233a'
+# love = '#eb6f92'
+# gold = '#f6c177'
+# rose = '#ebbcba'
+# pine = '#31748f'
+# foam = '#9ccfd8'
+# iris = '#c4a7e7'
+
+
+# [git_status]
+# disabled = false
+# style = "bg:overlay fg:love"
+# format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
+# up_to_date = '[ ✓ ](bg:overlay fg:iris)'
+# untracked = '[?\($count\)](bg:overlay fg:gold)'
+# stashed = '[\$](bg:overlay fg:iris)'
+# modified = '[!\($count\)](bg:overlay fg:gold)'
+# renamed = '[»\($count\)](bg:overlay fg:iris)'
+# deleted = '[✘\($count\)](style)'
+# staged = '[++\($count\)](bg:overlay fg:gold)'
+# ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
+# diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
+# behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
