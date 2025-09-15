@@ -34,10 +34,10 @@ end, { noremap = true, silent = true })
 -- https://github.com/folke/which-key.nvim?tab=readme-ov-file#%EF%B8%8F-mappings
 local wk = require("which-key")
 wk.add({
-  {
-    mode = { "n" },
-    { "<leader>t", group = "[P]todo" },
-  },
+  -- {
+  --   mode = { "n" },
+  --   { "<leader>t", group = "[P]todo" },
+  -- },
   {
     mode = { "n", "v" },
     { "<leader>m", group = "[P]markdown" },
@@ -198,11 +198,17 @@ vim.keymap.set("v", "<leader>mb", function()
   end
 end, { desc = "[P]BOLD current selection" })
 
--- -- Multiline unbold attempt
--- -- In normal mode, bold the current word under the cursor
--- -- If already bold, it will unbold the word under the cursor
--- -- If you're in a multiline bold, it will unbold it only if you're on the
--- -- first line
+-- Using keymaps to do terraform functions
+vim.keymap.set("n", "<leader>ti", ":terraform init<CR>")
+vim.keymap.set("n", "<leader>tv", ":terraform validate<CR>")
+vim.keymap.set("n", "<leader>tp", ":terraform plan<CR>")
+vim.keymap.set("n", "<leader>taa", ":terraform apply -auto-approve<CR>")
+
+-- Multiline unbold attempt
+-- In normal mode, bold the current word under the cursor
+-- If already bold, it will unbold the word under the cursor
+-- If you're in a multiline bold, it will unbold it only if you're on the
+-- first line
 vim.keymap.set("n", "<leader>mb", function()
   local cursor_pos = vim.api.nvim_win_get_cursor(0)
   local current_buffer = vim.api.nvim_get_current_buf()
@@ -486,25 +492,25 @@ end, { desc = "[P]Fold all headings level 4 or above" })
 -------------------------------------------------------------------------------
 -- Detect todos and toggle between ":" and ";", or show a message if not found
 -- This is to "mark them as done"
-vim.keymap.set("n", "<leader>td", function()
-  -- Get the current line
-  local current_line = vim.fn.getline(".")
-  -- Get the current line number
-  local line_number = vim.fn.line(".")
-  if string.find(current_line, "TODO:") then
-    -- Replace the first occurrence of ":" with ";"
-    local new_line = current_line:gsub("TODO:", "TODO;")
-    -- Set the modified line
-    vim.fn.setline(line_number, new_line)
-  elseif string.find(current_line, "TODO;") then
-    -- Replace the first occurrence of ";" with ":"
-    local new_line = current_line:gsub("TODO;", "TODO:")
-    -- Set the modified line
-    vim.fn.setline(line_number, new_line)
-  else
-    vim.cmd("echo 'todo item not detected'")
-  end
-end, { desc = "[P]TODO toggle item done or not" })
+-- vim.keymap.set("n", "<leader>td", function()
+--   -- Get the current line
+--   local current_line = vim.fn.getline(".")
+--   -- Get the current line number
+--   local line_number = vim.fn.line(".")
+--   if string.find(current_line, "TODO:") then
+--     -- Replace the first occurrence of ":" with ";"
+--     local new_line = current_line:gsub("TODO:", "TODO;")
+--     -- Set the modified line
+--     vim.fn.setline(line_number, new_line)
+--   elseif string.find(current_line, "TODO;") then
+--     -- Replace the first occurrence of ";" with ":"
+--     local new_line = current_line:gsub("TODO;", "TODO:")
+--     -- Set the modified line
+--     vim.fn.setline(line_number, new_line)
+--   else
+--     vim.cmd("echo 'todo item not detected'")
+--   end
+-- end, { desc = "[P]TODO toggle item done or not" })
 
 -- HACK: Create table of contents in neovim with markdown-toc
 -- https://youtu.be/BVyrXsZ_ViA
