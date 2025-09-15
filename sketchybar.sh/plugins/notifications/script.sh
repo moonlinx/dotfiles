@@ -1,15 +1,15 @@
 #!/bin/bash
-export RELPATH=$(dirname $0)/../..;
+export RELPATH=$(dirname $0)/../..
 source $RELPATH/colors.sh
 
 if [ -f ~/.github_token ]; then
-GITHUB_TOKEN="$(cat ~/.github_token)" # Should be a PAT with only notification reading permissions
+  GITHUB_TOKEN="$(cat ~/.github_token)" # Should be a PAT with only notification reading permissions
 
   notifications="$(curl -m 15 -s \
     -H "Accept: application/vnd.github+json" \
     -H "Authorization: Bearer $GITHUB_TOKEN" \
-    https://api.github.com/notifications )"
-  
+    https://api.github.com/notifications)"
+
   curlSuccess=$?
 
   count=$(echo $notifications | jq '. | length')
@@ -18,7 +18,7 @@ GITHUB_TOKEN="$(cat ~/.github_token)" # Should be a PAT with only notification r
     label="$count"
   )
 
-  if [[ $curlSuccess != 0 ]];then 
+  if [[ $curlSuccess != 0 ]]; then
     item+=(
       icon=􀋞
       icon.color=$SUBTLE_MOON
@@ -29,7 +29,7 @@ GITHUB_TOKEN="$(cat ~/.github_token)" # Should be a PAT with only notification r
       icon=􀝗
       icon.color=$LOVE_MOON
     )
-  else 
+  else
     item+=(
       icon=􀋚
       icon.color=$PINE_MOON
@@ -44,3 +44,4 @@ else
   )
   sketchybar --set "$NAME" "${item[@]}"
 fi
+

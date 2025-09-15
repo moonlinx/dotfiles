@@ -23,4 +23,3 @@ pkgs=(
 sketchybar --add item moremenu.pkgs right \
   --set moremenu.pkgs "${pkgs[@]}" \
   --subscribe moremenu.pkgs more-menu-update
-

@@ -1,5 +1,5 @@
 #!/bin/bash
-export RELPATH=$(dirname $0)/../..;
+export RELPATH=$(dirname $0)/../..
 source $RELPATH/colors.sh
 
 ICONS_MICROPHONE=(􀊲 􀊰 􀊱)
@@ -20,7 +20,7 @@ update_icon() {
     ;;
   esac
 
-  sketchybar --animate tanh 30 --set $NAME icon=$ICON icon.color=$COLOR
+  sketchybar --animate tanh 20 --set $NAME icon=$ICON icon.color=$COLOR
 }
 
 update_label() {
@@ -45,7 +45,7 @@ unmute_mic() {
 
 toggle_mic() {
   VOLUME=$(osascript -e 'set ivol to input volume of (get volume settings)')
-  if [ $VOLUME = 0 ]; then 
+  if [ $VOLUME = 0 ]; then
     update_label
     unmute_mic
   else
@@ -54,8 +54,12 @@ toggle_mic() {
 }
 
 case "$SENDER" in
-  "mouse.clicked") toggle_mic; update_icon
+"mouse.clicked")
+  toggle_mic
+  update_icon
   ;;
-  *) update_label; update_icon
+*)
+  update_label
+  update_icon
   ;;
 esac

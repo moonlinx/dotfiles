@@ -172,7 +172,7 @@ else
     "Airmail")
       icon_result=":airmail:"
       ;;
-    "Firefox Developer Edition" | "Firefox Nightly")
+    "Firefox Developer Edition" | "Firefox Nightly" | "Firefox")
       icon_result=":firefox_developer_edition:"
       ;;
     "Zen Browser" | "Zen" | "Twilight")
@@ -223,9 +223,9 @@ else
     "Vivaldi")
       icon_result=":vivaldi:"
       ;;
-    "Firefox")
-      icon_result=":firefox:"
-      ;;
+    # "Firefox")
+    #   icon_result=":firefox:"
+    #   ;;
     "Skype")
       icon_result=":skype:"
       ;;

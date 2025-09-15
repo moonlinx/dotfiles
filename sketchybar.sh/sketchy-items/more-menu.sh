@@ -13,13 +13,12 @@ menuitems=(
 
 SCRIPT_CLICK_SEPARATOR_MORE="export PATH=$PATH; \
 $RELPATH/plugins/more-menu/script.sh \
-\"${menucontrols[@]}\" \"${menuitems[@]}\" $INNER_PADDINGS \"$FONT\" "
+\"${menucontrols[*]}\" \"${menuitems[*]}\" $INNER_PADDINGS \"$FONT\" "
 
 separator=(
   icon=􀯶
   label.drawing=off
   icon.font="$FONT:Semibold:14.0"
-  #click_script='yabai -m space --create && sketchybar --trigger space_change'
   icon.color=$SUBTLE_MOON
   click_script="$SCRIPT_CLICK_SEPARATOR_MORE"
 )

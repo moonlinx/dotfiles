@@ -1,5 +1,5 @@
 #!/bin/bash
-export RELPATH=$(dirname $0)/../..;
+export RELPATH=$(dirname $0)/../..
 source $RELPATH/colors.sh
 
 ICON_HOTSPOT=􀉤
@@ -12,7 +12,10 @@ getname() {
   WIFI="$(system_profiler SPAirPortDataType | awk '/Current Network/ {getline;$1=$1; gsub(":",""); print;exit}')" #$(ipconfig getsummary $WIFI_PORT | awk -F': ' '/ SSID : / {print $2}')
   HOTSPOT=$(ipconfig getsummary $WIFI_PORT | grep sname | awk '{print $3}')
   IP_ADDRESS=$(scutil --nwi | grep address | sed 's/.*://' | tr -d ' ' | head -1)
-  PUBLIC_IP=$(curl -m 2 https://ipinfo.io 2>/dev/null 1>&2; echo $?)
+  PUBLIC_IP=$(
+    curl -m 2 https://ipinfo.io 2>/dev/null 1>&2
+    echo $?
+  )
 
   if [[ $HOTSPOT != "" ]]; then
     ICON=$ICON_HOTSPOT
@@ -32,13 +35,11 @@ getname() {
     LABEL="off"
   fi
 
-  if [[ $PUBLIC_IP != "0" && $LABEL != "off" ]];then
+  if [[ $PUBLIC_IP != "0" && $LABEL != "off" ]]; then
     ICON=$ICON_WIFI_ERROR
     ICON_COLOR=$SUBTLE_MOON
     LABEL="$WIFI (no internet)"
   fi
-  
-
 
   wifi=(
     icon=$ICON
@@ -53,23 +54,27 @@ setscroll() {
   STATE="$(sketchybar --query $NAME | sed 's/\\n//g; s/\\\$//g; s/\\ //g' | jq -r '.geometry.scroll_texts')"
 
   case "$1" in
-    "on") target="off"
+  "on")
+    target="off"
     ;;
-    "off") target="on"
+  "off")
+    target="on"
     ;;
   esac
 
   if [[ "$STATE" == "$target" ]]; then
     sketchybar --set "$NAME" scroll_texts=$1
   fi
-
 }
 
 case "$SENDER" in
-  "mouse.entered") setscroll on 
+"mouse.entered")
+  setscroll on
   ;;
-  "mouse.exited") setscroll off
+"mouse.exited")
+  setscroll off
   ;;
-  *) getname
+*)
+  getname
   ;;
 esac
