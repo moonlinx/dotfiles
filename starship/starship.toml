@@ -25,7 +25,7 @@ $character
 """
 
 # move the rest of the prompt to the right
-right_format = """$aws$python$docker_context$terraform$cmd_duration"""
+right_format = """$aws$python$docker_context$terraform"""
 
 # Drop ugly default prompt characters
 # [character]
