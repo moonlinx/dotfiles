@@ -47,7 +47,7 @@ abbr -a lg lazygit
 
 # Miscellaneous
 abbr d delta
-abbr ff fastfetch
+# abbr ff fastfetch
 
 abbr fi "fisher install"
 abbr fr "fisher refresh"

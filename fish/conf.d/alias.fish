@@ -8,9 +8,11 @@
 # https://fishshell.com/docs/current/cmds/alias.html
 
 alias ll="eza -l --icons --git "
-alias ls="eza --color=always --grid --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
-alias la="eza -a"
+alias ls="eza -lh --group-directories-first --git --icons=auto"
+alias la="ls -a"
 alias lt="eza --tree --level=2 --long --icons --git"
+alias lta="lt -a"
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias vimm="vim"
 alias cat="bat"
 alias py="python3"
