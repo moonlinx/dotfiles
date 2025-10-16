@@ -30,7 +30,7 @@ right_format = """$aws$python$docker_context$terraform"""
 # Drop ugly default prompt characters
 [character]
 disabled = false
-success_symbol = "[❯](mauve bold)"
+success_symbol = "[❯](bold fg:lavender)"
 error_symbol = "[❯❯](red bold)"
 vimcmd_symbol = '[ ](bold fg:sapphire)'
 vimcmd_replace_one_symbol = '[ ](bold fg:maroon)'
