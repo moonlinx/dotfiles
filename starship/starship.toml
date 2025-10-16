@@ -16,28 +16,23 @@ add_newline = true
 palette = "catppuccin_mocha"
 
 format = """
-[❯](lavender bold) \
+$character\
 $directory\
+${custom.git_host}\
 $git_branch\
 $git_status\
 $git_metrics\
-$character
 """
 
 # move the rest of the prompt to the right
 right_format = """$aws$python$docker_context$terraform"""
 
 # Drop ugly default prompt characters
-# [character]
-# success_symbol = "[❯](mauve bold)"
-# error_symbol = "[❯❯](red bold)"
-# vicmd_symbol = "[ ](blue bold)"
-
 [character]
 disabled = false
-success_symbol = '[✔](bold fg:green)'
-error_symbol = '[𝘹](bold fg:red)'
-vimcmd_symbol = '[ ](bold fg:sapphire)'
+success_symbol = "[❯](mauve bold)"
+error_symbol = "[❯❯](red bold)"
+vicmd_symbol = "[ ](sapphire bold)"
 vimcmd_replace_one_symbol = '[ ](bold fg:maroon)'
 vimcmd_replace_symbol = '[ ](bold fg:teal)'
 vimcmd_visual_symbol = '[ ](bold fg:peach)'
@@ -104,17 +99,17 @@ disabled = false
 
 # Shows current git status
 [git_status]
-format = ' [(->   $all_status$ahead_behind )]($style)'
-up_to_date = '[ ✓ ](bg:overlay fg:mauve)'
-untracked = '[?\($count\)](bg:overlay fg:yellow)'
-stashed = '[\$](bg:overlay fg:mauve)'
-modified = '[!\($count\)](bg:overlay fg:yellow)'
-renamed = '[»\($count\)](bg:overlay fg:mauve)'
-deleted = '[✘\($count\)](style)'
-staged = '[++\($count\)](bg:overlay fg:yellow)'
-ahead = '[⇡\(${count}\)](bg:overlay fg:teal)'
-diverged = '⇕[\[](bg:overlay fg:mauve)[⇡\(${ahead_count}\)](bg:overlay fg:teal)[⇣\(${behind_count}\)](bg:overlay fg:flamingo)[\]](bg:overlay fg:mauve)'
-behind = '[⇣\(${count}\)](bg:overlay fg:flamingo)'
+format = '(:[$all_status$ahead_behind]($style)) '
+conflicted = '\[ [$count](bright-white bold)\]'
+ahead = '\[[ ](bright-blue)[$count](bright-white bold)\]'
+behind = '\[[ ](white)[$count](bright-white bold)\]'
+diverged = '\[[ ](purple)|[ ﯁ ](bright-blue)[$ahead_count](bright-white bold)[ ﮾ ](white)[$behind_count](bright-white)\]'
+untracked = '\[ [$count](bright-white bold)\]'
+stashed = '\[[ ](yellow) [$count](bright-white bold)\]'
+modified = '\[[󰏫 ](bright-yellow)[$count](bright-white bold)\]'
+staged = '\[[ ](bright-green)[$count](bright-white bold)\]'
+renamed = '\[[󰜉 ](bright-cyan) [$count](bright-white bold)\]'
+deleted = '\[ [$count](bright-white bold)\]'
 
 # Shows current git branch
 [git_branch]
@@ -124,27 +119,43 @@ truncation_symbol = '…/'
 style = 'fg:lavender bg:black'
 disabled = false
 
-[custom.giturl]
-disabled = false 
-description = "Display symbol for remote Git server"
+[custom.git_host]
 command = """
-GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
-if [[ "$GIT_REMOTE" =~ "github" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "git" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-else
-    GIT_REMOTE_SYMBOL=" "
-fi
-echo "$GIT_REMOTE_SYMBOL "
-"""
+URL=$(command git ls-remote --get-url 2> /dev/null)
 
+if [[ "$URL" =~ "github" ]]; then
+    ICON=" "
+elif [[ "$URL" =~ "gitlab" ]]; then
+    ICON=" "
+elif [[ "$URL" =~ "bitbucket" ]];then
+    ICON=" "
+elif [[ "$URL" =~ "kernel" ]];then
+    ICON=" "
+elif [[ "$URL" =~ "archlinux" ]];then
+    ICON=" "
+elif [[ "$URL" =~ "gnu" ]];then
+    ICON=" "
+elif [[ "$URL" =~ "git" ]];then
+    ICON=" "
+else
+    ICON=" "
+    URL="localhost"
+fi
+
+for PATTERN in "https" "http" "git" "://" "@"; do
+    [[ "$URL" == "$PATTERN"* ]] && URL="${URL##$PATTERN}"
+done
+
+for PATTERN in "/" ".git"; do
+    [[ "$URL" == *"$PATTERN" ]] && URL="${URL%%$PATTERN}"
+done
+printf "%s%s" "$ICON" "$URL"
+"""
+directories = [".git"]
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
-format = "at $output"
+shell = ["sh","--norc","--noprofile"]
+style = "bright-yellow bold"
+format = " at [$output]($style)"
 
 #Show git metrics i.e: puts, files, pulls, etc.
 [git_metrics]
