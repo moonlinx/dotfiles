@@ -112,6 +112,13 @@ config = {
 	--    fi
 	--    ]],
 	-- },
+	keys = {
+		{
+			key = "f",
+			mods = "CTRL",
+			action = wezterm.action.ToggleFullScreen,
+		},
+	},
 
 	-- For example, changing the color scheme:
 	-- color_scheme = "AdventureTime"
@@ -124,7 +131,7 @@ config = {
 	window_decorations = "RESIZE",
 
 	-- Blur
-	macos_window_background_blur = 75,
+	macos_window_background_blur = 50,
 
 	-- Opacity
 	window_background_opacity = 0.7,
@@ -158,12 +165,12 @@ config = {
 	colors = {
 		-- foreground = "#fcfcfc",
 		-- background = "#0B0A08",
-		-- background = "#222222",
+		background = "#222222",
 		-- background = "#9B96B5",
 		-- background = "#444444",
 		-- background = "#3c3c3c",
 		-- background = "#464651",
-		background = "#2f2f3b",
+		-- background = "#2f2f3b",
 		-- cursor_bg = "#9B96B5",
 		cursor_bg = "#FBF1F5",
 		-- cursor_bg = "#fab387",
