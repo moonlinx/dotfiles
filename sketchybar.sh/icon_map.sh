@@ -58,6 +58,9 @@ else
     "Notes")
       icon_result=":notes:"
       ;;
+    "RustDesk")
+      icon_result=":rustdesk:"
+      ;;
     "Caprine")
       icon_result=":caprine:"
       ;;
