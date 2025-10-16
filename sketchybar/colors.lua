@@ -51,4 +51,5 @@ return {
 		end
 		return (color & 0x00ffffff) | (math.floor(alpha * 255.0) << 24)
 	end,
+	transparency = 0.9,
 }

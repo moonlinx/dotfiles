@@ -24,6 +24,7 @@ local icons = {
 		coffee_on = "􂊭",
 		coffee_off = "􀸘",
 		bluetooth = "󰂯 ",
+		control_center = "􀜊",
 
 		weather = {
 			sun = "􀆬",
