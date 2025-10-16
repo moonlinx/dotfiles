@@ -90,10 +90,10 @@ end
 starship init fish | source
 enable_transience
 
-# function for yabai window listing - fish version
-function f
-    yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
-end
+# # function for yabai window listing - fish version
+# function f
+#     yabai -m query --windows | jq -r '.[] | "\(.id) \(.app) - \(.title)"' | fzf --bind 'enter:execute(yabai -m window --focus {1})+abort'
+# end
 
 # Function to create a directory and cd diretctly into it
 function take
