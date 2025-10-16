@@ -32,7 +32,7 @@ right_format = """$aws$python$docker_context$terraform"""
 disabled = false
 success_symbol = "[❯](mauve bold)"
 error_symbol = "[❯❯](red bold)"
-vicmd_symbol = "[ ](sapphire bold)"
+vimcmd_symbol = '[ ](bold fg:sapphire)'
 vimcmd_replace_one_symbol = '[ ](bold fg:maroon)'
 vimcmd_replace_symbol = '[ ](bold fg:teal)'
 vimcmd_visual_symbol = '[ ](bold fg:peach)'
@@ -97,19 +97,18 @@ disabled = false
 "Pictures" = " "
 "Developer" = "󰲋 "
 
-# Shows current git status
 [git_status]
 format = '(:[$all_status$ahead_behind]($style)) '
-conflicted = '\[ [$count](bright-white bold)\]'
-ahead = '\[[ ](bright-blue)[$count](bright-white bold)\]'
-behind = '\[[ ](white)[$count](bright-white bold)\]'
-diverged = '\[[ ](purple)|[ ﯁ ](bright-blue)[$ahead_count](bright-white bold)[ ﮾ ](white)[$behind_count](bright-white)\]'
-untracked = '\[ [$count](bright-white bold)\]'
-stashed = '\[[ ](yellow) [$count](bright-white bold)\]'
-modified = '\[[󰏫 ](bright-yellow)[$count](bright-white bold)\]'
-staged = '\[[ ](bright-green)[$count](bright-white bold)\]'
-renamed = '\[[󰜉 ](bright-cyan) [$count](bright-white bold)\]'
-deleted = '\[ [$count](bright-white bold)\]'
+conflicted = '\[ [$count](white)\]'
+ahead = '\[[ ](blue)[$count](white)\]' # 󰜘
+behind = '\[[ ](white)[$count](white)\]' # 
+diverged = '\[[ ](purple)|[ ﯁ ](blue)[$ahead_count](white)[ ﮾ ](white)[$behind_count](white)\]'
+untracked = '\[ [$count](white)\]'
+stashed = '\[[ ](peach) [$count](white)\]'
+modified = '\[[󰏫 ](peach)[$count](white)\]'
+staged = '\[[󰏗 ](green)[$count](white)\]'
+renamed = '\[[󰜉 ](teal) [$count](white)\]'
+deleted = '\[ [$count](white)\]'
 
 # Shows current git branch
 [git_branch]
@@ -122,7 +121,6 @@ disabled = false
 [custom.git_host]
 command = """
 URL=$(command git ls-remote --get-url 2> /dev/null)
-
 if [[ "$URL" =~ "github" ]]; then
     ICON=" "
 elif [[ "$URL" =~ "gitlab" ]]; then
@@ -141,16 +139,15 @@ else
     ICON=" "
     URL="localhost"
 fi
-
 for PATTERN in "https" "http" "git" "://" "@"; do
     [[ "$URL" == "$PATTERN"* ]] && URL="${URL##$PATTERN}"
 done
-
 for PATTERN in "/" ".git"; do
     [[ "$URL" == *"$PATTERN" ]] && URL="${URL%%$PATTERN}"
 done
 printf "%s%s" "$ICON" "$URL"
 """
+
 directories = [".git"]
 when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
 shell = ["sh","--norc","--noprofile"]

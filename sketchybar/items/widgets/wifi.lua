@@ -213,9 +213,12 @@ local function toggle_details(env)
 		sbar.exec("ipconfig getifaddr en0", function(result)
 			ip:set({ label = result })
 		end)
-		sbar.exec("ipconfig getsummary en0 | awk -F ' SSID : '  '/ SSID : / {print $2}'", function(result)
-			ssid:set({ label = result })
-		end)
+		sbar.exec(
+			"networksetup -listpreferredwirelessnetworks en0 | sed -n '2p' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'",
+			function(result)
+				ssid:set({ label = result })
+			end
+		)
 		sbar.exec("networksetup -getinfo Wi-Fi | awk -F 'Subnet mask: ' '/^Subnet mask: / {print $2}'", function(result)
 			mask:set({ label = result })
 		end)

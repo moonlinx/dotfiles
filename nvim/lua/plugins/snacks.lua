@@ -15,6 +15,7 @@ return {
     "folke/snacks.nvim",
     keys = {
       -- Open git log in vertical view
+      { "<leader>e", false },
       {
         "<leader>gl",
         function()
@@ -37,7 +38,7 @@ return {
       },
       -- -- List git branches with Snacks_picker to quickly switch to a new branch
       {
-        "<leader>pb",
+        "<leader>gbr",
         function()
           Snacks.picker.git_branches({
             layout = "select",
@@ -58,10 +59,10 @@ return {
       -- configured as <leader>sk but I run it too often
       -- Sometimes I need to see if a keymap is already taken or not
       {
-        "<leader>pk",
+        "<leader>k",
         function()
           Snacks.picker.keymaps({
-            layout = "vertical",
+            layout = "ivy",
           })
         end,
         desc = "Keymaps",
@@ -105,7 +106,7 @@ return {
               list = { keys = { ["d"] = "bufdelete" } },
             },
             -- In case you want to override the layout for this keymap
-            -- layout = "ivy",
+            layout = "ivy",
           })
         end,
         desc = "[P]Snacks picker buffers",
@@ -114,14 +115,14 @@ return {
     opts = {
       -- Documentation for the picker
       -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
-      explorer = {
-        enabled = false,
-        git_status = true,
-        follow_file = false,
-        layout = {
-          cycle = false,
-        },
-      },
+      -- explorer = {
+      --   enabled = false,
+      --   git_status = true,
+      --   follow_file = false,
+      --   layout = {
+      --     cycle = false,
+      --   },
+      -- },
       picker = {
         -- My ~/github/dotfiles-latest/neovim/lazyvim/lua/config/keymaps.lua
         -- file was always showing at the top, I needed a way to decrease its

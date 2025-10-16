@@ -131,7 +131,9 @@ battery:subscribe("mouse.clicked", function(env)
 	end
 	-- A right click button in order to open up network preferences
 	if env.BUTTON == "right" then
-		sbar.exec("open /System/Library/PreferencePanes/Battery.prefPane")
+		sbar.exec(
+			'osascript -e \'tell application "System Events" to tell process "Battery Toolkit" to click menu bar item 1 of menu bar 2\''
+		)
 		return
 	end
 end)

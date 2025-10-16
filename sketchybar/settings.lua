@@ -19,4 +19,8 @@ return {
 	-- 		["Black"] = "ExtraBold",
 	-- 	},
 	-- },
+	wallpaper = {
+		path = os.getenv("HOME") .. "/Pictures/Wallpapers",
+		scale = 0.09,
+	},
 }
