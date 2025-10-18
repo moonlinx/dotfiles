@@ -14,8 +14,8 @@ alt - e : "${HOME}"/.config/scripts/choose/emoji.sh
 # alt - n : "${HOME}"/.config/scripts/choose/notes.sh
 
 # Applications
-# rcmd - return : open -n -a "wezterm"
-rcmd - return : open -n -a "kitty"
+rcmd - return : open -n -a "wezterm"
+# rcmd - return : open -n -a "kitty"
 
 # change layout of desktop
 lctrl + alt - b : yabai -m space --layout bsp

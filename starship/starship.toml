@@ -159,7 +159,7 @@ format = " at [$output]($style)"
 disabled = false
 
 [aws]
-format = 'via [$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+format = ' [$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
 disabled = true
 style = 'bold green'
 symbol = " "
@@ -169,20 +169,27 @@ symbol = " "
 disabled = false 
 style = "bold red"
 version_format = "v${raw}"
-format = 'via [$symbol$workspace]($style) '
+format = ' [$symbol$workspace]($style) '
 
 [python]
 symbol = '  '
 disabled = false
 style = 'bold yellow'
 version_format = 'v${raw}'
-format = 'via [${symbol}(${version} )(\($virtualenv\) )]($style)'
+format = ' [${symbol}(${version} )(\($virtualenv\) )]($style)'
 
 [docker_context]
 symbol = " "
 style = 'bold blue'
 disabled = false 
-format = 'via [ $symbol( $context) ]($style)'
+format = ' [ $symbol( $context) ]($style)'
+
+[kubernetes]
+symbol = '󱃾 '
+disabled = false
+style = 'bold sky'
+detect_files = ['k8s']
+format = ' [ $symbol( $context) ]($style)'
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
