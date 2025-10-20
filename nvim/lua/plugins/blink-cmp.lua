@@ -55,15 +55,8 @@ return {
           "buffer",
           "ripgrep",
           "dictionary",
-          "markdown",
         },
         providers = {
-          markdown = {
-            name = "RenderMarkdown",
-            module = "render-markdown.integ.blink",
-            fallbacks = { "lsp" },
-            score_offset = 80, -- the higher the number, the higher the priority
-          },
           lsp = {
             name = "lsp",
             enabled = true,
@@ -78,18 +71,10 @@ return {
             -- Disabling fallbacks as my snippets wouldn't show up when editing
             -- lua files
             -- fallbacks = { "snippets", "buffer" },
-            fallbacks = { "snippets", "luasnip", "buffer" },
-            score_offset = 95, -- the higher the number, the higher the priority
-          },
-          luasnip = {
-            name = "luasnip",
-            enabled = true,
-            module = "blink.cmp.sources.luasnip",
-            min_keyword_length = 2,
-            fallbacks = { "snippets" },
+            -- fallbacks = { "snippets", "luasnip", "buffer" },
             score_offset = 90, -- the higher the number, the higher the priority
-            max_items = 6,
           },
+
           path = {
             name = "Path",
             module = "blink.cmp.sources.path",
@@ -108,6 +93,7 @@ return {
               show_hidden_files_by_default = true,
             },
           },
+
           buffer = {
             name = "Buffer",
             enabled = true,
@@ -116,14 +102,16 @@ return {
             min_keyword_length = 4,
             score_offset = 15, -- the higher the number, the higher the priority
           },
+
           snippets = {
             name = "snippets",
             enabled = true,
             max_items = 15,
-            module = "blink.cmp.sources.snippets",
             min_keyword_length = 2,
+            module = "blink.cmp.sources.snippets",
             score_offset = 85, -- the higher the number, the higher the priority
           },
+
           ripgrep = {
             module = "blink-ripgrep",
             name = "Ripgrep",
