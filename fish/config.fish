@@ -34,7 +34,7 @@ end
 
 eval (/opt/homebrew/bin/brew shellenv)
 
-starship init fish | source # https://starship.rs/
+# starship init fish | source # https://starship.rs/
 zoxide init fish | source # ajeetdsouza/zoxide
 fzf --fish | source # https://github.com/junegunn/fzf
 atuin init fish | source # https://github.com/atuinsh/atuin
