@@ -1,0 +1,75 @@
+qprSections:
+  - title: My Pull Requests
+    filters: is:open author:@me
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+issuesSections:
+  - title: My Issues
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+defaults:
+  preview:
+    open: true
+    width: 80
+  prsLimit: 20
+  issuesLimit: 20
+  view: prs
+  layout:
+    prs:
+      updatedAt:
+        width: 7
+      repo:
+        width: 15
+      author:
+        width: 15
+      assignees:
+        width: 20
+        hidden: true
+      base:
+        width: 15
+        hidden: true
+      lines:
+        width: 16
+    issues:
+      updatedAt:
+        width: 7
+      repo:
+        width: 15
+      creator:
+        width: 10
+      assignees:
+        width: 20
+        hidden: true
+  refetchIntervalMinutes: 30
+keybindings:
+  issues:
+    - key: B
+      command: >
+        tmux display-popup -d {{.RepoPath}} -w 65 -h 10 -E 'ghprb {{.IssueNumber}}'
+    - key: e
+      command: >
+        tmux new-window -c {{.RepoPath}} 'nvim -c ":silent Octo issue edit {{.IssueNumber}}"'
+    - key: i
+      command: >
+        tmux display-popup -d {{.RepoPath}} -w 80% -h 90% -E 'nvim -c ":silent Octo issue create"'
+  prs:
+    - key: O
+      command: >
+        tmux new-window -c {{.RepoPath}} 'nvim -c ":silent Octo pr edit {{.PrNumber}}"'
+repoPaths:
+  moonlinx/dotfiles: ~/.dotfiles
+  fox/Notes-Vault: ~/Notes
+  fox/espanso: ~/Library/Application Support/espanso
+  fox/Wallpapers: ~/Pictures/Wallpapers
+theme:
+  ui:
+    table:
+      showSeparator: true
+      compact: false
+pager:
+  diff: ""
