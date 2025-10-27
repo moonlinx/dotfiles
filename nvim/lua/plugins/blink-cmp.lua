@@ -365,7 +365,7 @@ return {
         ["<C-d>"] = { "scroll_documentation_down", "fallback" },
 
         ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
       }
 
       return opts
