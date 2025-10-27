@@ -29,7 +29,7 @@ local cal = sbar.add("item", {
 		border_color = colors.transparent,
 		border_width = 1,
 	},
-	click_script = "open -a 'Calendar'",
+	click_script = "open -a 'Notion Calendar'",
 })
 
 -- Double border for calendar using a single item bracket
