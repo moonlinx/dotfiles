@@ -123,9 +123,9 @@ config = {
 	-- For example, changing the color scheme:
 	-- color_scheme = "AdventureTime"
 	-- color_scheme = "Catppuccin Frappé (Gogh)",
-	color_scheme = "Catppuccin Mocha (Gogh)",
+	-- color_scheme = "Catppuccin Mocha (Gogh)",
 	-- color_scheme = "Rosé Pine Moon (Gogh)",
-	-- color_scheme = "Rosé Pine (Gogh)",
+	color_scheme = "Rosé Pine (Gogh)",
 
 	-- Removes the macos bar at the top with the 3 buttons
 	window_decorations = "RESIZE",
@@ -165,7 +165,9 @@ config = {
 	colors = {
 		-- foreground = "#fcfcfc",
 		-- background = "#0B0A08",
-		background = "#222222",
+		background = "#100c08",
+		-- background = "#353839",
+		-- background = "#222222",
 		-- background = "#9B96B5",
 		-- background = "#444444",
 		-- background = "#3c3c3c",
