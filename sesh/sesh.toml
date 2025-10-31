@@ -22,8 +22,23 @@ preview_command = "eza --all --git --icons --color=always {}"
 
 [[session]]
 name = "Notes"
-path = "~/Notes-Vault"
+path = "~/Notes"
 startup_command = "nvim "
+
+[[session]]
+name = "Python-Dev (󰌠)"
+path = "~/Developer/Projects/Python"
+startup_command = "nvim "
+
+[[session]]
+name = "Developer (󰅴)"
+path = "~/Developer"
+startup_command = "yazi"
+
+[[session]]
+name = "Claude (󱙺)"
+path = "~/.claude"
+startup_command = "nvim"
 
 [[session]]
 name = "Downloads"
@@ -31,7 +46,7 @@ path = "~/Downloads"
 startup_command = "yazi"
 
 [[session]]
-name = "home ()"
+name = " "
 path = "~"
 startup_command = "ls"
 
