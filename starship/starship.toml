@@ -233,7 +233,6 @@ crust = "#11111b"
 # foam = '#9ccfd8'
 # iris = '#c4a7e7'
 
-
 # [git_status]
 # disabled = false
 # style = "bg:overlay fg:love"
