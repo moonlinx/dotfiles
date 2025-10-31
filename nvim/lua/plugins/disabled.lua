@@ -3,4 +3,6 @@ return {
   { "akinsho/bufferline.nvim", enabled = false },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   { "folke/flash.nvim", enabled = false },
+  { "MeanderingProgrammer/render-markdown.nvim", enabled = false },
+  { "OXY2DEV/markview.nvim", enabled = true },
 }

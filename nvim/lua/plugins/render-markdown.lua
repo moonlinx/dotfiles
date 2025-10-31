@@ -108,7 +108,7 @@ return {
         -- Turn on / off latex rendering.
         enabled = true,
         -- Additional modes to render latex.
-        render_modes = false,
+        render_modes = true,
         -- Executable used to convert latex formula to rendered unicode.
         converter = "latex2text",
         -- Highlight for latex blocks.
@@ -118,16 +118,16 @@ return {
         -- | below | below latex block |
         position = "below",
         -- Number of empty lines above latex blocks.
-        top_pad = 0,
+        top_pad = 1,
         -- Number of empty lines below latex blocks.
-        bottom_pad = 0,
+        bottom_pad = 1,
       },
       html = {
         -- Turn on / off all HTML rendering
         enabled = true,
         comment = {
           -- Turn on / off HTML comment concealing
-          conceal = false,
+          conceal = true,
         },
       },
       on = {
