@@ -38,24 +38,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   callback = update_winbar,
 })
 
--- Remove diagnostics
--- vim.diagnostic.config({ virtual_text = false })
-vim.diagnostic.config({
-  signs = { priority = 9999 },
-  underline = false,
-  update_in_insert = true, -- false so diags are updated on InsertLeave
-  virtual_text = { current_line = true, severity = { min = "INFO", max = "WARN" } },
-  virtual_lines = { current_line = true, severity = { min = "ERROR" } },
-  severity_sort = true,
-  float = {
-    focusable = false,
-    style = "minimal",
-    border = "rounded",
-    source = true,
-    header = "",
-  },
-})
-
 -- Remove borders
 vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
 
