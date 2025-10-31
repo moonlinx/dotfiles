@@ -9,7 +9,9 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = ['exec-and-forget sketchybar',
+'exec-and-forget borders',
+'exec-and-forget sh ~/.config/sketchybar/helpers/media-stream.sh']
 
 exec-on-workspace-change = [
     '/bin/bash',
@@ -43,7 +45,10 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # on-focused-monitor-changed = ['move-mouse monitor-lazy-center'] # Mouse lazily follows focused monitor (default in i3)
 # or
-on-focus-changed = ['move-mouse window-lazy-center'] # Mouse lazily follows any focus (window or workspace)
+# on-focus-changed = ['move-mouse window-lazy-center'] # Mouse lazily follows any focus (window or workspace)
+
+on-focus-changed = [ 'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_focus_change',
+'move-mouse window-lazy-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -81,11 +86,7 @@ if.app-name-regex-substring = 'dicord'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'mail'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-name-regex-substring = 'iina'
+if.app-name-regex-substring = 'mpv'
 run = 'layout floating'
 
 [[on-window-detected]]
@@ -103,12 +104,12 @@ run = 'layout floating'
 #
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 8
-inner.vertical =   8
-outer.left =       8
-outer.bottom =     8
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
 outer.top =        6
-outer.right =      8
+outer.right =      10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -166,8 +167,10 @@ alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
 # Open Wezterm shortcut
-cmd-enter = 'exec-and-forget open -n -a /Applications/WezTerm.app'
+# cmd-enter = 'exec-and-forget open -n -a /Applications/WezTerm.app'
 
+# Open Wezterm shortcut
+cmd-enter = 'exec-and-forget open -n -a /Applications/kitty.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
@@ -179,28 +182,6 @@ alt-5 = 'workspace 5'
 # alt-7 = 'workspace 7'
 # alt-8 = 'workspace 8'
 # alt-9 = 'workspace 9'
-# alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-# alt-b = 'workspace B'
-# alt-c = 'workspace C'
-# alt-d = 'workspace D'
-# alt-e = 'workspace E'
-# alt-f = 'workspace F'
-# alt-g = 'workspace G'
-# alt-i = 'workspace I'
-# alt-m = 'workspace M'
-# alt-n = 'workspace N'
-# alt-o = 'workspace O'
-# alt-p = 'workspace P'
-# alt-q = 'workspace Q'
-# alt-r = 'workspace R'
-# alt-s = 'workspace S'
-# alt-t = 'workspace T'
-# alt-u = 'workspace U'
-# alt-v = 'workspace V'
-# alt-w = 'workspace W'
-# alt-x = 'workspace X'
-# alt-y = 'workspace Y'
-# alt-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -212,28 +193,6 @@ alt-shift-5 = 'move-node-to-workspace 5'
 # alt-shift-7 = 'move-node-to-workspace 7'
 # alt-shift-8 = 'move-node-to-workspace 8'
 # alt-shift-9 = 'move-node-to-workspace 9'
-# alt-shift-a = 'move-node-to-workspace A'
-# alt-shift-b = 'move-node-to-workspace B'
-# alt-shift-c = 'move-node-to-workspace C'
-# alt-shift-d = 'move-node-to-workspace D'
-# alt-shift-e = 'move-node-to-workspace E'
-# alt-shift-f = 'move-node-to-workspace F'
-# alt-shift-g = 'move-node-to-workspace G'
-# alt-shift-i = 'move-node-to-workspace I'
-# alt-shift-m = 'move-node-to-workspace M'
-# alt-shift-n = 'move-node-to-workspace N'
-# alt-shift-o = 'move-node-to-workspace O'
-# alt-shift-p = 'move-node-to-workspace P'
-# alt-shift-q = 'move-node-to-workspace Q'
-# alt-shift-r = 'move-node-to-workspace R'
-# alt-shift-s = 'move-node-to-workspace S'
-# alt-shift-t = 'move-node-to-workspace T'
-# alt-shift-u = 'move-node-to-workspace U'
-# alt-shift-v = 'move-node-to-workspace V'
-# alt-shift-w = 'move-node-to-workspace W'
-# alt-shift-x = 'move-node-to-workspace X'
-# alt-shift-y = 'move-node-to-workspace Y'
-# alt-shift-z = 'move-node-to-workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -244,7 +203,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
 
-alt-w = 'exec-and-forget open -a /Applications/WezTerm.app'
+alt-t = 'exec-and-forget open -a /Applications/kitty.app'
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -266,3 +225,15 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [mode.apps.binding]
 alt-w = ['exec-and-forget open -a /Applications/WezTerm.app', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 3'
