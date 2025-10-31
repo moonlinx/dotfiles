@@ -4,7 +4,7 @@ local icons = {
 	sf_symbols = {
 		plus = "􀅼",
 		loading = "􀖇",
-		apple = "􀣺", --󱚞,
+		apple = "󰀶 ",
 		gear = "􀍟",
 		cpu = "􀫥",
 		calendar = "􀉉",
@@ -25,7 +25,19 @@ local icons = {
 		coffee_off = "􀸘",
 		bluetooth = "󰂯 ",
 		control_center = "􀜊",
+		brew = "􀐛",
 
+		-- App launchers and utilities
+		lm_studio = "􀞏",
+		onepassword = "􀎦",
+		quantumultx = "􀋞",
+		synergy = "􀈳",
+		time_machine = "􀣔 ",
+		lock = "􀎡",
+		translate = "🔍",
+		ubuntu = "ⓤ",
+
+		-- Weather
 		weather = {
 			sun = "􀆬",
 			cloudy = "􀇣",

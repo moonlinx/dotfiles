@@ -10,7 +10,7 @@ sbar.add("item", { width = 5 })
 
 local apple = sbar.add("item", {
 	icon = {
-		font = { size = 18.0 },
+		font = { size = 20.0 },
 		string = icons.apple,
 		color = colors.arise,
 		padding_right = 1,
@@ -98,7 +98,7 @@ local function create_menu_item(position, label, icon_string, click_command)
 				icon = {
 					padding_left = 5,
 					padding_right = 15,
-					color = colors.mauve,
+					color = colors.purple,
 					font = { size = 16 },
 				},
 				label = {
