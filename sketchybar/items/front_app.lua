@@ -78,7 +78,7 @@ local function update_windows(windows)
 	for _, window in ipairs(filtered_windows) do
 		local window_label
 		if max_length then
-			window_label = truncate_string(window["app"] .. ": " .. window["title"], max_length)
+			window_label = truncate_string(window["app"], max_length)
 		else
 			window_label = window["app"]
 		end
