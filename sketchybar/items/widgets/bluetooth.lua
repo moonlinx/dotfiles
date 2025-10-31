@@ -82,6 +82,7 @@ B.bluetooth_icon = sbar.add("item", {
 		-- string = icons_map["Bluetooth"],
 		-- font = "sketchybar-app-font:Regular:19.0",
 		string = "󰂯",
+		color = colors.blue,
 		font = { style = settings.font.style_map["Bold"], size = 17.0 },
 	},
 	popup = {
@@ -172,7 +173,7 @@ local function isInList(list, element)
 	return false
 end
 
-local function bluetooth_deivce_list()
+local function bluetooth_device_list()
 	local should_draw = bluetooth_bracket:query().popup.drawing == "off"
 	local connected_devices_list = {}
 	if should_draw then
@@ -216,6 +217,6 @@ local function bluetooth_deivce_list()
 	end
 end
 
-B.bluetooth_icon:subscribe("mouse.clicked", bluetooth_deivce_list)
+B.bluetooth_icon:subscribe("mouse.clicked", bluetooth_device_list)
 
 return B
